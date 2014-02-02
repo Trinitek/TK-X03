@@ -37,20 +37,24 @@ void dispSeg(char, char);
 
 /* Pin definitions for the RS-232 interface controller */
 #define serialEn    LATDbits.LD3    // enable controller
-#define serialTX    LATDbits.LD6
-#define serialRX    LATDbits.LD7
+#define serialTX    LATDbits.LD6    // outgoing TX
+#define serialRX    PORTDbits.RD7   // incoming RX
 #define serialREQ   LATDbits.LD5    // request to send
-#define serialOK    LATDbits.LD4    // clear to send
+#define serialOK    PORTDbits.RD4   // clear to send
 
 void main(void)
 {
 
     TRISA = 0;          // set all A, C, and E pins to outputs
     TRISC = 0;
-    TRISE = 0;          // (RE3 is static input)
-    TRISDbits.RD3 = 0;  // RS-232 interface enable
-    TRISDbits.RD4 = 1;  // RS-232 clear to send
-    TRISDbits.RD5 = 0;
+    TRISE = 0;          // (RE3 aka #MCLR is static input)
+
+    ANSELD = 0;         // disable analog i/o on port D (on by default)
+    TRISD3 = 0;         // RS-232 interface enable (out)
+    TRISD4 = 1;         // RS-232 clear to send (in)
+    TRISD5 = 0;         // RS-232 request to send (out)
+    TRISD6 = 1;         // RS-232 TX outgoing, set to 1 for EUSART compatibility
+    TRISD7 = 1;         // RS-232 RX incoming, set to 1 for EUSART compatibility
 
     LATA = 0;           // clear flip-flops
     LATC = 0;
@@ -98,8 +102,28 @@ void main(void)
 
     dispSeg(1, '-'); dispSeg(1, '-');
 
+    serialEn = 1;                   // enable RS-232 interface
+
+    RCSTA2bits.CREN = 1;            // enable UART receiver circuit
+    TXSTA2bits.SYNC = 0;            // asynchronous operation
+    RCSTA2bits.SPEN = 1;            // enable UART
+
+    while(1) {
+        if (serialRX == 0) dispSeg(1, '0');
+        if (serialRX == 1) dispSeg(1, '1');
+    }
+
     while(1) continue;
 
+}
+
+/**
+ * Configure the four data I/O pins for use with the RS-232 interface.
+ * Establishes the baud rate, signal polarity, etc.
+ */
+void configSerial(void)
+{
+    // TODO
 }
 
 /**
