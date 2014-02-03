@@ -1,6 +1,7 @@
 Version 3.2 HI-TECH Software Intermediate Code
+[; ;htc.h: 22: extern void __builtin_software_breakpoint(void);
 [; ;pic18f46k22.h: 44: extern volatile unsigned char ANSELA @ 0xF38;
-"46 C:\Program Files (x86)\Microchip\xc8\v1.21\include\pic18f46k22.h
+"46 C:\Program Files (x86)\Microchip\xc8\v1.30\include\pic18f46k22.h
 [; ;pic18f46k22.h: 46: asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
 [; ;pic18f46k22.h: 49: typedef union {
@@ -8186,9 +8187,10 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;delays.h: 31: void Delay1KTCYx(unsigned char);
 [; ;delays.h: 37: void Delay10KTCYx(unsigned char);
 [; ;pic18.h: 18: __attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned c
-[; ;pic18.h: 144: extern void _delay(unsigned long);
-[; ;pic18.h: 146: extern void _delaywdt(unsigned long);
-[; ;pic18.h: 148: extern void _delay3(unsigned char);
+[; ;pic18.h: 42: extern void __nop(void);
+[; ;pic18.h: 147: extern __nonreentrant void _delay(unsigned long);
+[; ;pic18.h: 149: extern __nonreentrant void _delaywdt(unsigned long);
+[; ;pic18.h: 151: extern __nonreentrant void _delay3(unsigned char);
 "18 source/configuration_bits.c
 [p x FOSC=INTIO67 ]
 "19

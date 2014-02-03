@@ -9,6 +9,7 @@
 /* PROTOTYPES */
 void wait_ms(uint16_t);
 void dispSeg(char, char);
+void cycleSegDisplays(uint16_t);
 
 /* Pin definitions for the individual LED segments
  * ...............
@@ -37,93 +38,45 @@ void dispSeg(char, char);
 
 /* Pin definitions for the RS-232 interface controller */
 #define serialEn    LATDbits.LD3    // enable controller
-#define serialTX    LATDbits.LD6    // outgoing TX
-#define serialRX    PORTDbits.RD7   // incoming RX
-#define serialREQ   LATDbits.LD5    // request to send
-#define serialOK    PORTDbits.RD4   // clear to send
+#define serialTX    LATDbits.LD5    //LATDbits.LD6    // TX outgoing
+#define serialRX    PORTDbits.RD6   //PORTDbits.RD7   // RX incoming
+#define serialREQ   LATDbits.LD4    //LATDbits.LD5    // request to send
+#define serialOK    PORTCbits.RC7   //PORTDbits.RD4   // clear to send
 
 void main(void)
 {
 
     TRISA = 0;          // set all A, C, and E pins to outputs
     TRISC = 0;
-    TRISE = 0;          // (RE3 aka #MCLR is static input)
+    TRISE = 0;          // (RE3 is static input
 
-    ANSELD = 0;         // disable analog i/o on port D (on by default)
-    TRISD3 = 0;         // RS-232 interface enable (out)
-    TRISD4 = 1;         // RS-232 clear to send (in)
-    TRISD5 = 0;         // RS-232 request to send (out)
-    TRISD6 = 1;         // RS-232 TX outgoing, set to 1 for EUSART compatibility
-    TRISD7 = 1;         // RS-232 RX incoming, set to 1 for EUSART compatibility
+    /* TODO :: reconfigure physical connections going to the RS-232 interface!*/
+    ANSELD = 0;         // disable analog functionality on D pins
+    TRISDbits.RD3 = 0;  // RS-232 interface enable (out)
+    //TRISDbits.RD5 = 0;  // RS-232 request to send (out)
+    TRISDbits.RD4 = 0;  // IMPROPERLY CONNECTED
+    //TRISDbits.RD4 = 1;  // RS-232 clear to send (in)
+    TRISCbits.RC7 = 1;  // IMPROPERLY CONNECTED
+    //TRISDbits.RD6 = 0;  // RS-232 TX outgoing (out)
+    TRISDbits.RD5 = 0;  // IMPROPERLY CONNECTED
+    //TRISDbits.RD7 = 1;  // RS-232 RX incoming (in)
+    TRISDbits.RD6 = 1;  // IMPROPERLY CONNECTED
 
     LATA = 0;           // clear flip-flops
     LATC = 0;
     LATD = 0;
     LATE = 0;
 
-    /*while(1) {
-        dispSeg(1, 0); dispSeg(2, 0);
-        wait_ms(1000);
-        dispSeg(1, '-'); dispSeg(2, '-');
-        wait_ms(1000);
-        dispSeg(1, '0'); dispSeg(2, '0');
-        wait_ms(1000);
-        dispSeg(1, '1'); dispSeg(2, '1');
-        wait_ms(1000);
-        dispSeg(1, '2'); dispSeg(2, '2');
-        wait_ms(1000);
-        dispSeg(1, '3'); dispSeg(2, '3');
-        wait_ms(1000);
-        dispSeg(1, '4'); dispSeg(2, '4');
-        wait_ms(1000);
-        dispSeg(1, '5'); dispSeg(2, '5');
-        wait_ms(1000);
-        dispSeg(1, '6'); dispSeg(2, '6');
-        wait_ms(1000);
-        dispSeg(1, '7'); dispSeg(2, '7');
-        wait_ms(1000);
-        dispSeg(1, '8'); dispSeg(2, '8');
-        wait_ms(1000);
-        dispSeg(1, '9'); dispSeg(2, '9');
-        wait_ms(1000);
-        dispSeg(1, 'a'); dispSeg(2, 'a');
-        wait_ms(1000);
-        dispSeg(1, 'b'); dispSeg(2, 'b');
-        wait_ms(1000);
-        dispSeg(1, 'c'); dispSeg(2, 'c');
-        wait_ms(1000);
-        dispSeg(1, 'd'); dispSeg(2, 'd');
-        wait_ms(1000);
-        dispSeg(1, 'e'); dispSeg(2, 'e');
-        wait_ms(1000);
-        dispSeg(1, 'f'); dispSeg(2, 'f');
-        wait_ms(1000);
-    }*/
-
     dispSeg(1, '-'); dispSeg(1, '-');
-
-    serialEn = 1;                   // enable RS-232 interface
-
-    RCSTA2bits.CREN = 1;            // enable UART receiver circuit
-    TXSTA2bits.SYNC = 0;            // asynchronous operation
-    RCSTA2bits.SPEN = 1;            // enable UART
-
-    while(1) {
-        if (serialRX == 0) dispSeg(1, '0');
+    while (1)
+    {
         if (serialRX == 1) dispSeg(1, '1');
+        if (serialRX == 0) dispSeg(1, '0');
+        else dispSeg(1, '0');
     }
 
-    while(1) continue;
+    //while(1) continue;
 
-}
-
-/**
- * Configure the four data I/O pins for use with the RS-232 interface.
- * Establishes the baud rate, signal polarity, etc.
- */
-void configSerial(void)
-{
-    // TODO
 }
 
 /**
@@ -302,4 +255,48 @@ void dispSeg(char segment, char letter)
             seg2b = seg2c = seg2d = 0;
             break;
     }
+}
+
+/**
+ * Cycle through the characters that both segment displays can show
+ * @param time - Wait period between characters
+ */
+void cycleSegDisplays(uint16_t time)
+{
+    dispSeg(1, 0); dispSeg(2, 0);
+    wait_ms(time);
+    dispSeg(1, '-'); dispSeg(2, '-');
+    wait_ms(time);
+    dispSeg(1, '0'); dispSeg(2, '0');
+    wait_ms(time);
+    dispSeg(1, '1'); dispSeg(2, '1');
+    wait_ms(time);
+    dispSeg(1, '2'); dispSeg(2, '2');
+    wait_ms(time);
+    dispSeg(1, '3'); dispSeg(2, '3');
+    wait_ms(time);
+    dispSeg(1, '4'); dispSeg(2, '4');
+    wait_ms(time);
+    dispSeg(1, '5'); dispSeg(2, '5');
+    wait_ms(time);
+    dispSeg(1, '6'); dispSeg(2, '6');
+    wait_ms(time);
+    dispSeg(1, '7'); dispSeg(2, '7');
+    wait_ms(time);
+    dispSeg(1, '8'); dispSeg(2, '8');
+    wait_ms(time);
+    dispSeg(1, '9'); dispSeg(2, '9');
+    wait_ms(time);
+    dispSeg(1, 'a'); dispSeg(2, 'a');
+    wait_ms(time);
+    dispSeg(1, 'b'); dispSeg(2, 'b');
+    wait_ms(time);
+    dispSeg(1, 'c'); dispSeg(2, 'c');
+    wait_ms(time);
+    dispSeg(1, 'd'); dispSeg(2, 'd');
+    wait_ms(time);
+    dispSeg(1, 'e'); dispSeg(2, 'e');
+    wait_ms(time);
+    dispSeg(1, 'f'); dispSeg(2, 'f');
+    wait_ms(time);
 }
