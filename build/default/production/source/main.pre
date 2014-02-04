@@ -10492,34 +10492,34 @@ void cycleSegDisplays(uint16_t);
 # 46
 void main(void)
 {
-
 TRISA = 0;
 TRISC = 0;
 TRISE = 0;
 
-
 ANSELD = 0;
 TRISDbits.RD3 = 0;
-
-TRISDbits.RD4 = 0;
-
-TRISCbits.RC7 = 1;
-
+TRISDbits.RD4 = 1;
 TRISDbits.RD5 = 0;
-
-TRISDbits.RD6 = 1;
+TRISDbits.RD6 = 0;
+TRISDbits.RD7 = 1;
 
 LATA = 0;
 LATC = 0;
 LATD = 0;
 LATE = 0;
 
+LATDbits.LD3 = 1;
+LATDbits.LD5 = 1;
+
+
+while (PORTDbits.RD4 = 0)
+
 dispSeg(1, '-'); dispSeg(1, '-');
 while (1)
 {
-if (PORTDbits.RD6 == 1) dispSeg(1, '1');
-if (PORTDbits.RD6 == 0) dispSeg(1, '0');
-else dispSeg(1, '0');
+if (PORTDbits.RD7 == 1) dispSeg(1, '1');
+if (PORTDbits.RD7 == 0) dispSeg(1, '0');
+else dispSeg(1, 'E');
 }
 
 

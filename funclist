@@ -1,4 +1,4 @@
-_main: CODE, 64610 0 128
-__initialization: CODE, 64592 0 8
+_main: CODE, 64618 0 120
+__initialization: CODE, 64600 0 8
 _dispSeg: CODE, 64738 0 798
-Total: 934
+Total: 926

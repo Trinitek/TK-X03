@@ -38,41 +38,38 @@ void cycleSegDisplays(uint16_t);
 
 /* Pin definitions for the RS-232 interface controller */
 #define serialEn    LATDbits.LD3    // enable controller
-#define serialTX    LATDbits.LD5    //LATDbits.LD6    // TX outgoing
-#define serialRX    PORTDbits.RD6   //PORTDbits.RD7   // RX incoming
-#define serialREQ   LATDbits.LD4    //LATDbits.LD5    // request to send
-#define serialOK    PORTCbits.RC7   //PORTDbits.RD4   // clear to send
+#define serialTX    LATDbits.LD6    // TX outgoing
+#define serialRX    PORTDbits.RD7   // RX incoming
+#define serialREQ   LATDbits.LD5    // request to send
+#define serialOK    PORTDbits.RD4   // clear to send
 
 void main(void)
 {
-
     TRISA = 0;          // set all A, C, and E pins to outputs
     TRISC = 0;
     TRISE = 0;          // (RE3 is static input
 
-    /* TODO :: reconfigure physical connections going to the RS-232 interface!*/
     ANSELD = 0;         // disable analog functionality on D pins
     TRISDbits.RD3 = 0;  // RS-232 interface enable (out)
-    //TRISDbits.RD5 = 0;  // RS-232 request to send (out)
-    TRISDbits.RD4 = 0;  // IMPROPERLY CONNECTED
-    //TRISDbits.RD4 = 1;  // RS-232 clear to send (in)
-    TRISCbits.RC7 = 1;  // IMPROPERLY CONNECTED
-    //TRISDbits.RD6 = 0;  // RS-232 TX outgoing (out)
-    TRISDbits.RD5 = 0;  // IMPROPERLY CONNECTED
-    //TRISDbits.RD7 = 1;  // RS-232 RX incoming (in)
-    TRISDbits.RD6 = 1;  // IMPROPERLY CONNECTED
+    TRISDbits.RD4 = 1;  // RS-232 clear to send (in)
+    TRISDbits.RD5 = 0;  // RS-232 request to send (out)
+    TRISDbits.RD6 = 0;  // RS-232 TX outgoing (out)
+    TRISDbits.RD7 = 1;  // RS-232 RX incoming (in)
 
     LATA = 0;           // clear flip-flops
     LATC = 0;
     LATD = 0;
     LATE = 0;
 
+    serialEn = 1;       // enable RS-232 interface
+
     dispSeg(1, '-'); dispSeg(1, '-');
+    
     while (1)
     {
         if (serialRX == 1) dispSeg(1, '1');
         if (serialRX == 0) dispSeg(1, '0');
-        else dispSeg(1, '0');
+        else dispSeg(1, 'E');
     }
 
     //while(1) continue;
