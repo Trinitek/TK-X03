@@ -1,7 +1,12 @@
 
 # 1 "source/main.c"
 
-# 44 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\pic18f46k22.h"
+
+# 21 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\htc.h"
+#pragma intrinsic(__builtin_software_breakpoint)
+extern void __builtin_software_breakpoint(void);
+
+# 44 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\pic18f46k22.h"
 extern volatile unsigned char ANSELA @ 0xF38;
 
 asm("ANSELA equ 0F38h");
@@ -9309,7 +9314,7 @@ extern volatile __bit nW2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
 extern volatile __bit nWRITE2 @ (((unsigned) &SSP2STAT)*8) + 2;
 
-# 2008 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\adc.h"
+# 2008 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\adc.h"
 union ADCResult
 {
 int lr;
@@ -9336,13 +9341,13 @@ void SetChanADC(unsigned char );
 # 2100
 void SelChanConvADC( unsigned char );
 
-# 90 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\ancomp.h"
+# 90 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\ancomp.h"
 void Close_ancomp1( void );
 void Open_ancomp1(unsigned char config);
 void Close_ancomp2( void );
 void Open_ancomp2(unsigned char config);
 
-# 236 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\spi.h"
+# 236 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\spi.h"
 void OpenSPI1( unsigned char sync_mode,
 unsigned char bus_mode,
 unsigned char smp_phase );
@@ -9368,7 +9373,7 @@ void putsSPI2( unsigned char *wrptr );
 
 unsigned char ReadSPI2( void );
 
-# 414 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\can2510.h"
+# 414 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\can2510.h"
 void CAN2510Initialize(  unsigned int configuration,
  unsigned char brp,
  unsigned char interruptFlags,
@@ -9475,7 +9480,7 @@ unsigned char CAN2510DataRead(  unsigned char bufferNum,
  unsigned char *numBytes,
  unsigned char *data );
 
-# 64 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\capture.h"
+# 64 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\capture.h"
 union capstatus
 {
 
@@ -9533,7 +9538,7 @@ void OpenECapture3 ( unsigned char config);
 unsigned int ReadECapture3 (void);
 void CloseECapture3 (void);
 
-# 403 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\compare.h"
+# 403 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\compare.h"
 void OpenCompare4(unsigned char config,unsigned int period);
 void CloseCompare4(void);
 
@@ -9551,19 +9556,19 @@ void CloseECompare2(void);
 void OpenECompare3(unsigned char config,unsigned int period);
 void CloseECompare3(void);
 
-# 374 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\ctmu.h"
+# 374 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\ctmu.h"
 void OpenCTMU(unsigned char config1,unsigned char config2,unsigned char config3);
 
 # 379
 void CurrentControlCTMU(unsigned char config);
 void CloseCTMU(void);
 
-# 36 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\EEP.h"
+# 36 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\EEP.h"
 void Busy_eep ( void );
 unsigned char Read_b_eep( unsigned int badd );
 void Write_b_eep( unsigned int badd, unsigned char bdat );
 
-# 2 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\stddef.h"
+# 2 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\stddef.h"
 typedef int ptrdiff_t;
 typedef unsigned size_t;
 typedef unsigned short wchar_t;
@@ -9571,7 +9576,7 @@ typedef unsigned short wchar_t;
 # 13
 extern int errno;
 
-# 65 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\GenericTypeDefs.h"
+# 65 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\GenericTypeDefs.h"
 typedef enum _BOOL { FALSE = 0, TRUE } BOOL;
 
 
@@ -10006,7 +10011,7 @@ struct
 } bits;
 } QWORD_VAL;
 
-# 113 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\flash.h"
+# 113 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\flash.h"
 extern void ReadFlash(unsigned long startaddr, unsigned int num_bytes, unsigned char *flash_array);
 
 # 120
@@ -10016,7 +10021,7 @@ extern void WriteBlockFlash(unsigned long startaddr, unsigned char num_blocks, u
 
 extern void WriteBytesFlash(unsigned long startaddr, unsigned int num_bytes, unsigned char *flash_array);
 
-# 244 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\i2c.h"
+# 244 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\i2c.h"
 void OpenI2C1( unsigned char sync_mode, unsigned char slew );
 
 # 264
@@ -10090,7 +10095,7 @@ unsigned char address,
 unsigned char *rdptr,
 unsigned char length );
 
-# 200 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\mwire.h"
+# 200 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\mwire.h"
 void OpenMwire1( unsigned char sync_mode );
 
 
@@ -10103,7 +10108,7 @@ signed char WriteMwire1( unsigned char data_out );
 # 234
 void getsMwire1( unsigned char *rdptr, unsigned char length );
 
-# 126 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\portb.h"
+# 126 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\portb.h"
 void OpenPORTB( unsigned char config);
 
 # 176
@@ -10115,7 +10120,7 @@ void OpenRB1INT( unsigned char config);
 # 211
 void OpenRB2INT( unsigned char config);
 
-# 85 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\pwm.h"
+# 85 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\pwm.h"
 union PWMDC
 {
 unsigned int lpwm;
@@ -10159,7 +10164,7 @@ void SetOutputEPWM3 ( unsigned char output_config,
 unsigned char pwm_mode);
 void CloseEPWM3 (void);
 
-# 16 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\reset.h"
+# 16 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\reset.h"
 char isMCLR(void);
 void StatusReset(void);
 char isPOR(void);
@@ -10177,12 +10182,12 @@ char isWDTWU(void);
 
 char isLVD(void);
 
-# 687 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\rtcc.h"
+# 687 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\rtcc.h"
 void Open_RTCC(void);
 void Close_RTCC(void);
 unsigned char update_RTCC(void);
 
-# 97 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\sw_i2c.h"
+# 97 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\sw_i2c.h"
 void SWStopI2C ( void );
 void SWStartI2C ( void );
 void SWRestartI2C ( void );
@@ -10195,7 +10200,7 @@ signed char SWWriteI2C(  unsigned char data_out );
 signed char SWGetsI2C(  unsigned char *rdptr,  unsigned char length );
 signed char SWPutsI2C(  unsigned char *wrptr );
 
-# 84 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\sw_spi.h"
+# 84 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\sw_spi.h"
 void OpenSWSPI(void);
 
 
@@ -10207,7 +10212,7 @@ void SetCSSWSPI(void);
 
 void ClearCSSWSPI(void);
 
-# 47 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\sw_uart.h"
+# 47 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\sw_uart.h"
 void OpenUART(void);
 
 unsigned char ReadUART(void);
@@ -10223,7 +10228,7 @@ extern void DelayRXBitUART (void);
 extern void DelayRXHalfBitUART(void);
 extern void DelayTXBitUART (void);
 
-# 36 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\timers.h"
+# 36 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\timers.h"
 union Timers
 {
 unsigned int lt;
@@ -10266,7 +10271,7 @@ void WriteTimer5 ( unsigned int Timer5);
 void OpenTimer6 ( unsigned char config);
 void CloseTimer6 (void);
 
-# 200 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\usart.h"
+# 200 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\usart.h"
 union USART1
 {
 unsigned char val;
@@ -10319,7 +10324,7 @@ void baud1USART ( unsigned char baudconfig);
 # 665
 void baud2USART ( unsigned char baudconfig);
 
-# 87 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\xlcd.h"
+# 87 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\xlcd.h"
 void OpenXLCD( unsigned char);
 
 # 92
@@ -10354,7 +10359,7 @@ extern void DelayFor18TCY(void);
 extern void DelayPORXLCD(void);
 extern void DelayXLCD(void);
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\plib\delays.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\plib\delays.h"
 void Delay1TCYx(unsigned char);
 
 # 19
@@ -10369,17 +10374,22 @@ void Delay1KTCYx(unsigned char);
 # 37
 void Delay10KTCYx(unsigned char);
 
-# 18 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\pic18.h"
+# 18 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\pic18.h"
 __attribute__((__unsupported__("The flash_write routine is no longer supported. Please use the peripheral library functions: WriteBytesFlash, WriteBlockFlash or WriteWordFlash"))) void flash_write(const unsigned char *, unsigned int, __far unsigned char *);
 
 
-# 143
+# 41
+#pragma intrinsic(__nop)
+extern void __nop(void);
+
+
+# 146
 #pragma intrinsic(_delay)
-extern void _delay(unsigned long);
+extern __nonreentrant void _delay(unsigned long);
 #pragma intrinsic(_delaywdt)
-extern void _delaywdt(unsigned long);
+extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
-extern void _delay3(unsigned char);
+extern __nonreentrant void _delay3(unsigned char);
 
 
 # 12 "source/configuration_bits.c"
@@ -10442,7 +10452,7 @@ extern void _delay3(unsigned char);
 
 #pragma config EBTRB = OFF
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\stdint.h"
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\stdint.h"
 typedef signed char int8_t;
 
 # 20
@@ -10532,12 +10542,13 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.21\include\stdbool.h"
+# 12 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\stdbool.h"
 typedef unsigned char bool;
 
 # 12 "source/main.c"
 void initPorts(void);
 void wait_ms(uint16_t);
+uint8_t hexToChar(uint8_t);
 void dispSeg(uint8_t, uint8_t);
 void cycleSegDisplays(uint16_t);
 void enableSerialRX(uint16_t);
@@ -10549,24 +10560,32 @@ enableSerialRX(1200);
 dispSeg(1, '-'); dispSeg(2, '-');
 
 while(1) {
-while(PIR3bits.RC2IF == 0) continue;
+while(PIR3bits.RC2IF == 0)
+{
+if (RCSTA2bits.OERR == 1)
+{
 
-uint8_t receivedByte = RCREG2 ^ 0xF0;
+dispSeg(2, '0');
+RCSTA2bits.CREN = 0; RCSTA2bits.CREN = 1;
+}
+if (RCSTA2bits.FERR == 1)
+{
+
+dispSeg(2, 'E');
+RCSTA2bits.SPEN = 0; RCSTA2bits.SPEN = 1;
+}
+else dispSeg(2, 0);
+}
+
+uint8_t receivedByte = hexToChar(RCREG2);
 
 dispSeg(1, receivedByte);
-
-switch (receivedByte) {
-case 10:
-break;
-case 11:
-break;
-}
 }
 
-# 52
+# 61
 }
 
-# 58
+# 67
 void initPorts(void)
 {
 TRISA = 0;
@@ -10586,7 +10605,7 @@ LATD = 0;
 LATE = 0;
 }
 
-# 82
+# 91
 void wait_ms(uint16_t time)
 {
 static long timel = 0;
@@ -10594,11 +10613,54 @@ timel = time * 10;
 for (; timel; timel--);
 }
 
-# 95
+# 104
+uint8_t hexToChar(uint8_t number)
+{
+number = number << 4;
+number = number >> 4;
+switch (number)
+{
+case 0:
+return '0';
+case 1:
+return '1';
+case 2:
+return '2';
+case 3:
+return '3';
+case 4:
+return '4';
+case 5:
+return '5';
+case 6:
+return '6';
+case 7:
+return '7';
+case 8:
+return '8';
+case 9:
+return '9';
+case 0xA:
+return 'A';
+case 0xB:
+return 'B';
+case 0xC:
+return 'C';
+case 0xD:
+return 'D';
+case 0xE:
+return 'E';
+case 0xF:
+return 'F';
+}
+return 0;
+}
+
+# 152
 void dispSeg(uint8_t segment, uint8_t letter)
 {
 switch (letter) {
-case 'x' | 'X':
+case 'x' | 'X' | 0:
 if (segment == 1) {
 LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 0;
 }
@@ -10612,7 +10674,7 @@ LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAb
 LATEbits.LE2 = 1;
 LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = 0;
 break;
-case '0' | 0x0:
+case '0':
 if (segment == 1) {
 LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = 1;
 LATAbits.LA1 = 0;
@@ -10621,7 +10683,7 @@ return;
 LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = 1;
 LATEbits.LE2 = 0;
 break;
-case '1' | 0x1:
+case '1':
 if (segment == 1) {
 LATAbits.LA3 = LATAbits.LA4 = 1;
 LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 0;
@@ -10630,7 +10692,7 @@ return;
 LATAbits.LA6 = LATCbits.LC2 = 1;
 LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 = 0;
 break;
-case '2' | 0x2:
+case '2':
 if (segment == 1) {
 LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA1 = LATEbits.LE0 = LATAbits.LA5 = 1;
 LATAbits.LA4 = LATAbits.LA0 = 0;
@@ -10639,7 +10701,7 @@ return;
 LATAbits.LA7 = LATAbits.LA6 = LATEbits.LE2 = LATCbits.LC1 = LATCbits.LC0 = 1;
 LATCbits.LC2 = LATEbits.LE1 = 0;
 break;
-case '3' | 0x3:
+case '3':
 if (segment == 1) {
 LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5 = 1;
 LATEbits.LE0 = LATAbits.LA0 = 0;
@@ -10648,7 +10710,7 @@ return;
 LATAbits.LA7 = LATAbits.LA6 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0 = 1;
 LATCbits.LC1 = LATEbits.LE1 = 0;
 break;
-case '4' | 0x4:
+case '4':
 if (segment == 1) {
 LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA3 = LATAbits.LA4 = 1;
 LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = 0;
@@ -10657,7 +10719,7 @@ return;
 LATEbits.LE1 = LATEbits.LE2 = LATAbits.LA6 = LATCbits.LC2 = 1;
 LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = 0;
 break;
-case '5' | 0x5:
+case '5':
 if (segment == 1) {
 LATAbits.LA2 = LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5 = 1;
 LATAbits.LA3 = LATEbits.LE0 = 0;
@@ -10666,7 +10728,7 @@ return;
 LATAbits.LA7 = LATEbits.LE1 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0 = 1;
 LATAbits.LA6 = LATCbits.LC1 = 0;
 break;
-case '6' | 0x6:
+case '6':
 if (segment == 1) {
 LATAbits.LA2 = LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = 1;
 LATAbits.LA3 = 0;
@@ -10675,7 +10737,7 @@ return;
 LATAbits.LA7 = LATEbits.LE1 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = 1;
 LATAbits.LA6 = 0;
 break;
-case '7' | 0x7:
+case '7':
 if (segment == 1) {
 LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = 1;
 LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 0;
@@ -10684,14 +10746,14 @@ return;
 LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = 1;
 LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 = 0;
 break;
-case '8' | 0x8:
+case '8':
 if (segment == 1) {
 LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 1;
 return;
 }
 LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 = 1;
 break;
-case '9' | 0x9:
+case '9':
 if (segment == 1) {
 LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATAbits.LA0 = LATAbits.LA1 = 1;
 LATEbits.LE0 = 0;
@@ -10700,7 +10762,7 @@ return;
 LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATEbits.LE1 = LATEbits.LE2 = 1;
 LATCbits.LC1 = 0;
 break;
-case 'a' | 'A' | 10:
+case 'a' | 'A':
 if (segment == 1) {
 LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 1;
 LATAbits.LA5 = 0;
@@ -10757,10 +10819,10 @@ break;
 }
 }
 
-# 262
+# 319
 void cycleSegDisplays(uint16_t time)
 {
-dispSeg(1, 'x'); dispSeg(2, 'x');
+dispSeg(1, 0); dispSeg(2, 0);
 wait_ms(time);
 dispSeg(1, '-'); dispSeg(2, '-');
 wait_ms(time);
@@ -10798,7 +10860,7 @@ dispSeg(1, 'f'); dispSeg(2, 'f');
 wait_ms(time);
 }
 
-# 316
+# 373
 void enableSerialRX(uint16_t baudRate)
 {
 LATDbits.LD3 = 1;
