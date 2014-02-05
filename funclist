@@ -1,4 +1,6 @@
-_main: CODE, 64618 0 120
-__initialization: CODE, 64600 0 8
-_dispSeg: CODE, 64738 0 798
-Total: 926
+_main: CODE, 64518 0 94
+_initPorts: CODE, 64470 0 48
+__initialization: CODE, 64452 0 8
+_enableSerialRX: CODE, 64612 0 130
+_dispSeg: CODE, 64742 0 794
+Total: 1074

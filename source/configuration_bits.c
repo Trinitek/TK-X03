@@ -2,17 +2,11 @@
 /* Files to Include                                                           */
 /******************************************************************************/
 
-#if defined(__XC)
-    #include <xc.h>         /* XC8 General Include File */
-#elif defined(HI_TECH_C)
-    #include <htc.h>        /* HiTech General Include File */
-#elif defined(__18CXX)
-    #include <p18cxxx.h>    /* C18 General Include File */
-#endif
-
-// PIC18F46K22 Configuration Bit Settings
-
 #include <xc.h>
+
+/*  ## ## ## ## ## ## ## ## ## ##
+ * PIC18F46K22 Configuration Bit Settings
+ */
 
 // CONFIG1H
 #pragma config FOSC = INTIO67   // Oscillator Selection bits (Internal oscillator block)
@@ -75,3 +69,42 @@
 #pragma config EBTRB = OFF      // Boot Block Table Read Protection bit (Boot Block (000000-0007FFh) not protected from table reads executed in other blocks)
 
 
+
+/* ## ## ## ## ## ## ## ## ## ##
+ * Pin definitions for the individual LED segments
+ * ...............
+ * .....=====.A...
+ * ..F.|.....|.B..
+ * ...G.=====.....
+ * ..E.|.....|.C..
+ * .....=====.D...
+ * ...............
+ */
+#define seg1a       LATAbits.LA2
+#define seg1b       LATAbits.LA3
+#define seg1c       LATAbits.LA4
+#define seg1d       LATAbits.LA5
+#define seg1e       LATEbits.LE0
+#define seg1f       LATAbits.LA0
+#define seg1g       LATAbits.LA1
+
+#define seg2a       LATAbits.LA7
+#define seg2b       LATAbits.LA6
+#define seg2c       LATCbits.LC2
+#define seg2d       LATCbits.LC0
+#define seg2e       LATCbits.LC1
+#define seg2f       LATEbits.LE1
+#define seg2g       LATEbits.LE2
+
+
+
+/* ## ## ## ## ## ## ## ## ## ##
+ * Pin and register definitions for the RS-232 interface controller and UART
+ */
+#define serialEn    LATDbits.LD3    // enable controller
+#define serialTX    LATDbits.LD6    // TX outgoing
+#define serialRX    PORTDbits.RD7   // RX incoming
+#define serialREQ   LATDbits.LD5    // request to send
+#define serialOK    PORTDbits.RD4   // clear to send
+
+#define rxByte      RCREG2          // buffer for received character
