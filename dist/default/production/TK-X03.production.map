@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.30\dat\en_msgs.txt -cs \
   -h+dist/default/production\TK-X03.production.sym \
   --cmf=dist/default/production\TK-X03.production.cmf -z -Q18F46K22 \
-  -oC:\Users\Blake\AppData\Local\Temp\s2s8.6 \
+  -oC:\Users\Blake\AppData\Local\Temp\s3o0.6 \
   -Mdist/default/production/TK-X03.production.map -E1 -ver=XC8 \
   -ASTACK=060h-09ffh -pstack=STACK -ACODE=00h-0FFFFh -ACONST=00h-0FFFFh \
   -ASMALLCONST=01000h-010FFhx240 -AMEDIUMCONST=01000h-0FFFFh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE \
-  C:\Users\Blake\AppData\Local\Temp\s2s8.obj \
+  C:\Users\Blake\AppData\Local\Temp\s3o0.obj \
   dist/default/production\TK-X03.production.obj 
 
 Object code version is 3.11
@@ -39,19 +39,19 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Blake\AppData\Local\Temp\s2s8.obj
+C:\Users\Blake\AppData\Local\Temp\s3o0.obj
                 end_init                              0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\TK-X03.production.obj
                 text4                              FCE2     FCE2      31E     7E71       0
-                text3                              FB26     FB26       82     7D93       0
+                text3                              FBA2     FBA2       88     7DD1       0
                 text2                              FC2A     FC2A       B8     7E15       0
-                text1                              FAF6     FAF6       30     7D7B       0
+                text1                              FB1C     FB1C       2C     7D8E       0
                 cstackCOMRAM                          1        1        6        1       1
                 bssCOMRAM                             7        7        4        1       1
-                cinit                              FAE4     FAE4       12     7D72       0
-                text0                              FBA8     FBA8       82     7DD4       0
+                cinit                              FB0A     FB0A       12     7D85       0
+                text0                              FB48     FB48       5A     7DA4       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -59,11 +59,11 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   CODE           
                 end_init                              0        0        4         0
                 text4                              FCE2     FCE2      31E         0
-                text3                              FB26     FB26       82         0
+                text3                              FBA2     FBA2       88         0
                 text2                              FC2A     FC2A       B8         0
-                text1                              FAF6     FAF6       30         0
-                cinit                              FAE4     FAE4       12         0
-                text0                              FBA8     FBA8       82         0
+                text1                              FB1C     FB1C       2C         0
+                cinit                              FB0A     FB0A       12         0
+                text0                              FB48     FB48       5A         0
 
         CLASS   CONST          
 
@@ -131,10 +131,10 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 cstackCOMRAM                   000001  00000A  00000B         1       1  COMRAM  
-                cinit                          00FAE4  000012  00FAF6      7D72       0  CODE    
-                text1                          00FAF6  000030  00FB26      7D7B       0  CODE    
-                text3                          00FB26  000082  00FBA8      7D93       0  CODE    
-                text0                          00FBA8  000082  00FC2A      7DD4       0  CODE    
+                cinit                          00FB0A  000012  00FB1C      7D85       0  CODE    
+                text1                          00FB1C  00002C  00FB48      7D8E       0  CODE    
+                text0                          00FB48  00005A  00FBA2      7DA4       0  CODE    
+                text3                          00FBA2  000088  00FC2A      7DD1       0  CODE    
                 text2                          00FC2A  0000B8  00FCE2      7E15       0  CODE    
                 text4                          00FCE2  00031E  010000      7E71       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
@@ -161,14 +161,14 @@ UNUSED ADDRESS RANGES
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
         BIGRAM           00000B-000F37              F2D
-        CODE             000004-00FAE3             FAE0
+        CODE             000004-00FB09             FB06
         COMRAM           00000B-00005F               55
-        CONST            000004-00FAE3             FAE0
+        CONST            000004-00FB09             FB06
         EEDATA           F00000-F003FF              400
-        MEDIUMCONST      001000-00FAE3             EAE4
+        MEDIUMCONST      001000-00FB09             EB0A
         RAM              000060-000F37              100
         SFR              000F38-000FFF               28
-        SMALLCONST       001000-00FAE3              100
+        SMALLCONST       001000-00FB09              100
         STACK            000060-0009FF              9A0
 
                                   Symbol Table
@@ -187,6 +187,7 @@ _PIR3bits                (abs)        000FA4
 _RCREG2                  (abs)        000F74
 _RCSTA2bits              (abs)        000F71
 _SPBRG2                  (abs)        000F75
+_SPBRGH2                 (abs)        000F76
 _TRISA                   (abs)        000F92
 _TRISC                   (abs)        000F94
 _TRISDbits               (abs)        000F95
@@ -378,21 +379,21 @@ ___intlo_sp              stack        000000
 ___sp                    stack        000000
 __accesstop              (abs)        000060
 __activetblptr           (abs)        000002
-__end_of__initialization cinit        00FAEC
+__end_of__initialization cinit        00FB12
 __end_of_dispSeg         text4        010000
-__end_of_enableSerialRX  text3        00FBA8
+__end_of_enableSerialRX  text3        00FC2A
 __end_of_hexToChar       text2        00FCE2
-__end_of_initPorts       text1        00FB26
-__end_of_main            text0        00FC2A
-__initialization         cinit        00FAE4
+__end_of_initPorts       text1        00FB48
+__end_of_main            text0        00FBA2
+__initialization         cinit        00FB0A
 __mediumconst            mediumconst  000000
 __pbssCOMRAM             bssCOMRAM    000007
-__pcinit                 cinit        00FAE4
+__pcinit                 cinit        00FB0A
 __pcstackCOMRAM          cstackCOMRAM 000001
-__ptext0                 text0        00FBA8
-__ptext1                 text1        00FAF6
+__ptext0                 text0        00FB48
+__ptext1                 text1        00FB1C
 __ptext2                 text2        00FC2A
-__ptext3                 text3        00FB26
+__ptext3                 text3        00FBA2
 __ptext4                 text4        00FCE2
 __ramtop                 ramtop       001000
 __size_of_dispSeg        (abs)        000000
@@ -402,14 +403,14 @@ __size_of_initPorts      (abs)        000000
 __size_of_main           (abs)        000000
 __smallconst             smallconst   000000
 _dispSeg                 text4        00FCE2
-_enableSerialRX          text3        00FB26
+_enableSerialRX          text3        00FBA2
 _hexToChar               text2        00FC2A
-_initPorts               text1        00FAF6
-_main                    text0        00FBA8
+_initPorts               text1        00FB1C
+_main                    text0        00FB48
 dispSeg@letter           cstackCOMRAM 000001
 dispSeg@segment          cstackCOMRAM 000002
 enableSerialRX@baudRate  cstackCOMRAM 000001
-end_of_initialization    cinit        00FAEC
+end_of_initialization    cinit        00FB12
 hexToChar@number         cstackCOMRAM 000001
 intlevel0                text         000000
 intlevel1                text         000000
@@ -419,7 +420,7 @@ main@receivedByte        cstackCOMRAM 000006
 stackhi                  (abs)        0009FF
 stacklo                  (abs)        000060
 start                    init         000000
-start_initialization     cinit        00FAE4
+start_initialization     cinit        00FB0A
 wait_ms@timel            bssCOMRAM    000007
 
 
@@ -459,7 +460,7 @@ Total ram usage:        2 bytes
 
  *************** function _initPorts *****************
  Defined at:
-		line 67 in file "source/main.c"
+		line 62 in file "source/main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -488,7 +489,7 @@ Total ram usage:        0 bytes
 
  *************** function _hexToChar *****************
  Defined at:
-		line 104 in file "source/main.c"
+		line 97 in file "source/main.c"
  Parameters:    Size  Location     Type
   number          1    wreg     unsigned char 
  Auto vars:     Size  Location     Type
@@ -517,7 +518,7 @@ Total ram usage:        1 bytes
 
  *************** function _enableSerialRX *****************
  Defined at:
-		line 373 in file "source/main.c"
+		line 366 in file "source/main.c"
  Parameters:    Size  Location     Type
   baudRate        2    0[COMRAM] unsigned int 
  Auto vars:     Size  Location     Type
@@ -546,7 +547,7 @@ Total ram usage:        4 bytes
 
  *************** function _dispSeg *****************
  Defined at:
-		line 152 in file "source/main.c"
+		line 145 in file "source/main.c"
  Parameters:    Size  Location     Type
   segment         1    wreg     unsigned char 
   letter          1    0[COMRAM] unsigned char 
@@ -580,16 +581,16 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 shared
-		__initializatio		CODE           	FAE4	0000	8
+		__initializatio		CODE           	FB0A	0000	8
 
 shared estimated size: 8
 
 source/main.c
-		_main          		CODE           	FBA8	0000	130
-		_initPorts     		CODE           	FAF6	0000	48
+		_main          		CODE           	FB48	0000	90
+		_initPorts     		CODE           	FB1C	0000	44
 		_hexToChar     		CODE           	FC2A	0000	184
-		_enableSerialRX		CODE           	FB26	0000	130
+		_enableSerialRX		CODE           	FBA2	0000	136
 		_dispSeg       		CODE           	FCE2	0000	798
 
-source/main.c estimated size: 1290
+source/main.c estimated size: 1252
 

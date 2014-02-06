@@ -10559,33 +10559,28 @@ initPorts();
 enableSerialRX(1200);
 dispSeg(1, '-'); dispSeg(2, '-');
 
-while(1) {
-while(PIR3bits.RC2IF == 0)
+while(1)
 {
+
+while(PIR3bits.RC2IF == 0) continue;
+
+
 if (RCSTA2bits.OERR == 1)
 {
 
 dispSeg(2, '0');
 RCSTA2bits.CREN = 0; RCSTA2bits.CREN = 1;
 }
-if (RCSTA2bits.FERR == 1)
-{
 
-dispSeg(2, 'E');
-RCSTA2bits.SPEN = 0; RCSTA2bits.SPEN = 1;
-}
-else dispSeg(2, 0);
-}
 
 uint8_t receivedByte = hexToChar(RCREG2);
-
 dispSeg(1, receivedByte);
 }
 
-# 61
+# 56
 }
 
-# 67
+# 62
 void initPorts(void)
 {
 TRISA = 0;
@@ -10596,8 +10591,6 @@ ANSELD = 0;
 TRISDbits.RD3 = 0;
 TRISDbits.RD4 = 1;
 TRISDbits.RD5 = 0;
-TRISDbits.RD6 = 0;
-TRISDbits.RD7 = 1;
 
 LATA = 0;
 LATC = 0;
@@ -10605,7 +10598,7 @@ LATD = 0;
 LATE = 0;
 }
 
-# 91
+# 84
 void wait_ms(uint16_t time)
 {
 static long timel = 0;
@@ -10613,7 +10606,7 @@ timel = time * 10;
 for (; timel; timel--);
 }
 
-# 104
+# 97
 uint8_t hexToChar(uint8_t number)
 {
 number = number << 4;
@@ -10656,7 +10649,7 @@ return 'F';
 return 0;
 }
 
-# 152
+# 145
 void dispSeg(uint8_t segment, uint8_t letter)
 {
 switch (letter) {
@@ -10819,7 +10812,7 @@ break;
 }
 }
 
-# 319
+# 312
 void cycleSegDisplays(uint16_t time)
 {
 dispSeg(1, 0); dispSeg(2, 0);
@@ -10860,7 +10853,7 @@ dispSeg(1, 'f'); dispSeg(2, 'f');
 wait_ms(time);
 }
 
-# 373
+# 366
 void enableSerialRX(uint16_t baudRate)
 {
 LATDbits.LD3 = 1;
@@ -10882,10 +10875,16 @@ break;
 case 19200:
 SPBRG2 = 12;
 break;
+default:
+SPBRG2 = 207;
 }
 
+SPBRGH2 = 0;
 TXSTA2bits.BRGH = 0;
 BAUDCON2bits.BRG16 = 0;
+
+TRISDbits.RD7 = 1;
+TRISDbits.RD6 = 1;
 
 RCSTA2bits.CREN = 1;
 TXSTA2bits.SYNC = 0;

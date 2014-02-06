@@ -22,26 +22,21 @@ void main(void)
     enableSerialRX(1200);
     dispSeg(1, '-'); dispSeg(2, '-');
 
-    while(1) {
-        while(PIR3bits.RC2IF == 0)
+    while(1)
+    {
+        // hang until byte is received
+        while(PIR3bits.RC2IF == 0) continue;
+
+        // check for FIFO error before reading
+        if (RCSTA2bits.OERR == 1)
         {
-            if (RCSTA2bits.OERR == 1)
-            {
-                // if FIFO overflow error set, reset receiver
-                dispSeg(2, '0');
-                RCSTA2bits.CREN = 0; RCSTA2bits.CREN = 1;
-            }
-            if (RCSTA2bits.FERR == 1)
-            {
-                // if FIFO stop bit error set, reset UART
-                dispSeg(2, 'E');
-                RCSTA2bits.SPEN = 0; RCSTA2bits.SPEN = 1;
-            }
-            else dispSeg(2, 0);
+            // if FIFO overflow error set, reset receiver
+            dispSeg(2, '0');
+            RCSTA2bits.CREN = 0; RCSTA2bits.CREN = 1;
         }
-                            // hang until RX byte is transferred to buffer
+
+        // grab byte and convert to character to display
         uint8_t receivedByte = hexToChar(rxByte);
-                            // perform XOR to clear top nibble
         dispSeg(1, receivedByte);
     }
 
@@ -74,8 +69,6 @@ void initPorts(void)
     TRISDbits.RD3 = 0;  // RS-232 interface enable (out)
     TRISDbits.RD4 = 1;  // RS-232 clear to send (in)
     TRISDbits.RD5 = 0;  // RS-232 request to send (out)
-    TRISDbits.RD6 = 0;  // RS-232 TX outgoing (out)
-    TRISDbits.RD7 = 1;  // RS-232 RX incoming (in)
 
     LATA = 0;           // clear flip-flops
     LATC = 0;
@@ -361,7 +354,7 @@ void cycleSegDisplays(uint16_t time)
  *
  * ...
  * 
- * Analog functionality already disabled, and direction settings are set.
+ * Analog functionality already disabled.
  *
  * The receiver looks for a single START bit, and a single STOP bit. No
  * error is triggered on a failed START bit, but a framing error is set on
@@ -374,7 +367,7 @@ void enableSerialRX(uint16_t baudRate)
 {
     serialEn = 1;           // enable RS-232 interface
 
-    /* Set the baud rate; selectable values listed: */
+    /* Set the baud rate; selectable values listed (1200 default): */
     switch (baudRate) {
         case 1200:          // 1200 baud, 0.16% error margin
             SPBRG2 = 207;
@@ -391,13 +384,19 @@ void enableSerialRX(uint16_t baudRate)
         case 19200:         // 19200 baud, 0.16% error margin
             SPBRG2 = 12;
             break;
+        default:
+            SPBRG2 = 207;   // 1200 baud default if no valid rate selected
     }
 
+    SPBRGH2 = 0;            // clear the high byte of the baud rate select
     TXSTA2bits.BRGH = 0;    // set the baud rate multiplier bits
     BAUDCON2bits.BRG16 = 0;
+
+    TRISDbits.RD7 = 1;      // incoming RX is input
+    TRISDbits.RD6 = 1;      // outgoing TX is input in accordance to datasheet
 
     RCSTA2bits.CREN = 1;    // enable onboard receiver
     TXSTA2bits.SYNC = 0;    // asynchronous operation
     RCSTA2bits.SPEN = 1;    // enable onboard UART
-    BAUDCON2bits.DTRXP = 1; // inverse logic polarity (1 = logic 1)
+    BAUDCON2bits.DTRXP = 1; // inverse logic polarity (active low = logic 1)
 }
