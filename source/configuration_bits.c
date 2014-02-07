@@ -107,4 +107,5 @@
 #define serialREQ   LATDbits.LD5    // request to send
 #define serialOK    PORTDbits.RD4   // clear to send
 
+#define txByte      TXREG2          // buffer for characters to be sent
 #define rxByte      RCREG2          // buffer for received character

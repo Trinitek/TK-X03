@@ -14,45 +14,51 @@ void wait_ms(uint16_t);
 uint8_t hexToChar(uint8_t);
 void dispSeg(uint8_t, uint8_t);
 void cycleSegDisplays(uint16_t);
-void enableSerialRX(uint16_t);
+void enableSerial(uint16_t);
+void isr(void);
 
 void main(void)
 {
-    initPorts();
-    enableSerialRX(1200);
+    initPorts();                        // initialize pin direction and function
+    enableSerial(1200);                 // initialize serial TX/RX at 1200 baud
     dispSeg(1, '-'); dispSeg(2, '-');
 
     while(1)
     {
+           if(PIR3bits.RC2IF == 1)      // is there something in the RX buffer?
+      {
+            if(PIR3bits.TX2IF == 1)     // is the TX buffer clear?
+            {
+                txByte = 'A';
+            }
+        }
+    }
+    /*{
         // hang until byte is received
-        while(PIR3bits.RC2IF == 0) continue;
+        if (PIR3bits.RC2IF == 1)
+        {
+            // grab byte and convert to character to display
+            //uint8_t receivedByte = hexToChar(rxByte);
+            //dispSeg(1, receivedByte);
+            dispSeg(1, '1');
+
+            if (PIR3bits.TX2IF == 1)
+            {
+                dispSeg(2, '1');
+                txByte = rxByte;
+            }
+            else dispSeg(2, '0');
+        }
+        else dispSeg(1, '0');
 
         // check for FIFO error before reading
-        if (RCSTA2bits.OERR == 1)
+        /*if (RCSTA2bits.OERR == 1)
         {
             // if FIFO overflow error set, reset receiver
             dispSeg(2, '0');
             RCSTA2bits.CREN = 0; RCSTA2bits.CREN = 1;
         }
-
-        // grab byte and convert to character to display
-        uint8_t receivedByte = hexToChar(rxByte);
-        dispSeg(1, receivedByte);
-    }
-
-    /*
-    dispSeg(1, '-'); dispSeg(1, '-');
-    
-    while (1)
-    {
-        if (serialRX == 1) dispSeg(1, '1');
-        if (serialRX == 0) dispSeg(1, '0');
-        else dispSeg(1, 'E');
-    }
-    */
-
-    //while(1) continue;
-
+    }*/
 }
 
 /**
@@ -69,6 +75,8 @@ void initPorts(void)
     TRISDbits.RD3 = 0;  // RS-232 interface enable (out)
     TRISDbits.RD4 = 1;  // RS-232 clear to send (in)
     TRISDbits.RD5 = 0;  // RS-232 request to send (out)
+    TRISDbits.RD7 = 1;  // RS-232 RX receive (in)
+    TRISDbits.RD6 = 0;  // RS-232 TX send (out)
 
     LATA = 0;           // clear flip-flops
     LATC = 0;
@@ -363,7 +371,7 @@ void cycleSegDisplays(uint16_t time)
  * If the FIFO buffer is overrun, the condition must be cleared by clearing the
  * CREN bit and resetting it before another byte can be captured.
  */
-void enableSerialRX(uint16_t baudRate)
+void enableSerial(uint16_t baudRate)
 {
     serialEn = 1;           // enable RS-232 interface
 
@@ -392,11 +400,19 @@ void enableSerialRX(uint16_t baudRate)
     TXSTA2bits.BRGH = 0;    // set the baud rate multiplier bits
     BAUDCON2bits.BRG16 = 0;
 
-    TRISDbits.RD7 = 1;      // incoming RX is input
-    TRISDbits.RD6 = 1;      // outgoing TX is input in accordance to datasheet
+    TXSTA2bits.TX9 = 0;     // 8-bit TX send
+    RCSTA2bits.RX9 = 0;     // 8-bit RX receive
 
-    RCSTA2bits.CREN = 1;    // enable onboard receiver
     TXSTA2bits.SYNC = 0;    // asynchronous operation
-    RCSTA2bits.SPEN = 1;    // enable onboard UART
     BAUDCON2bits.DTRXP = 1; // inverse logic polarity (active low = logic 1)
+  
+    TXSTA2bits.TXEN = 1;    // enable onboard transmitter
+    RCSTA2bits.CREN = 1;    // enable onboard receiver
+
+    RCSTA2bits.SPEN = 1;    // enable onboard UART and serial function on pins
+}
+
+void isr(void)
+{
+    
 }

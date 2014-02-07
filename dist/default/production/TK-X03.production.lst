@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.30 build 55553 
-                                                                                               Thu Feb 06 13:21:13 2014
+                                                                                               Fri Feb 07 13:46:01 2014
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 55553
      1                           	processor	18F46K22
@@ -15,1489 +15,1270 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
      9                           	psect	text1,global,reloc=2,class=CODE,delta=1
     10                           	psect	text2,global,reloc=2,class=CODE,delta=1
     11                           	psect	text3,global,reloc=2,class=CODE,delta=1
-    12                           	psect	text4,global,reloc=2,class=CODE,delta=1
-    13                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
-    14                           	psect	rparam,global,class=COMRAM,space=1,delta=1
-    15  0000                     _ANSELD	set	3899
-    16  0000                     _BAUDCON2bits	set	3952
-    17  0000                     _LATA	set	3977
-    18  0000                     _LATAbits	set	3977
-    19  0000                     _LATC	set	3979
-    20  0000                     _LATCbits	set	3979
-    21  0000                     _LATD	set	3980
-    22  0000                     _LATDbits	set	3980
-    23  0000                     _LATE	set	3981
-    24  0000                     _LATEbits	set	3981
-    25  0000                     _PIR3bits	set	4004
-    26  0000                     _RCREG2	set	3956
-    27  0000                     _RCSTA2bits	set	3953
-    28  0000                     _SPBRG2	set	3957
-    29  0000                     _SPBRGH2	set	3958
-    30  0000                     _TRISA	set	3986
-    31  0000                     _TRISC	set	3988
-    32  0000                     _TRISDbits	set	3989
-    33  0000                     _TRISE	set	3990
-    34  0000                     _TXSTA2bits	set	3954
-    35                           
-    36 ;;
-    37 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
-    38 ;;
-    39 ;; *************** function _main *****************
-    40 ;; Defined at:
-    41 ;;		line 19 in file "source/main.c"
-    42 ;; Parameters:    Size  Location     Type
-    43 ;;		None
-    44 ;; Auto vars:     Size  Location     Type
-    45 ;;  receivedByte    1    5[COMRAM] unsigned char 
-    46 ;; Return value:  Size  Location     Type
-    47 ;;		None               void
-    48 ;; Registers used:
-    49 ;;		wreg, status,2, status,0, cstack
-    50 ;; Tracked objects:
-    51 ;;		On entry : 0/0
-    52 ;;		On exit  : 0/0
-    53 ;;		Unchanged: 0/0
-    54 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+    12                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    13                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    14  0000                     _ANSELD	set	3899
+    15  0000                     _BAUDCON2bits	set	3952
+    16  0000                     _LATA	set	3977
+    17  0000                     _LATAbits	set	3977
+    18  0000                     _LATC	set	3979
+    19  0000                     _LATCbits	set	3979
+    20  0000                     _LATD	set	3980
+    21  0000                     _LATDbits	set	3980
+    22  0000                     _LATE	set	3981
+    23  0000                     _LATEbits	set	3981
+    24  0000                     _PIR3bits	set	4004
+    25  0000                     _RCSTA2bits	set	3953
+    26  0000                     _SPBRG2	set	3957
+    27  0000                     _SPBRGH2	set	3958
+    28  0000                     _TRISA	set	3986
+    29  0000                     _TRISC	set	3988
+    30  0000                     _TRISDbits	set	3989
+    31  0000                     _TRISE	set	3990
+    32  0000                     _TXREG2	set	3955
+    33  0000                     _TXSTA2bits	set	3954
+    34                           
+    35 ;;
+    36 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+    37 ;;
+    38 ;; *************** function _main *****************
+    39 ;; Defined at:
+    40 ;;		line 20 in file "source/main.c"
+    41 ;; Parameters:    Size  Location     Type
+    42 ;;		None
+    43 ;; Auto vars:     Size  Location     Type
+    44 ;;		None
+    45 ;; Return value:  Size  Location     Type
+    46 ;;		None               void
+    47 ;; Registers used:
+    48 ;;		wreg, status,2, status,0, cstack
+    49 ;; Tracked objects:
+    50 ;;		On entry : 0/0
+    51 ;;		On exit  : 0/0
+    52 ;;		Unchanged: 0/0
+    53 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-    55 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+    54 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-    56 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+    55 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-    57 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
+    56 ;;      Temps:          1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-    58 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+    57 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-    59 ;;Total ram usage:        2 bytes
-    60 ;; Hardware stack levels required when called:    1
-    61 ;; This function calls:
-    62 ;;		_dispSeg
-    63 ;;		_enableSerialRX
-    64 ;;		_hexToChar
-    65 ;;		_initPorts
-    66 ;; This function is called by:
-    67 ;;		Startup code after reset
-    68 ;; This function uses a non-reentrant model
-    69 ;;
-    70                           
-    71                           	psect	text0
-    72  00FB48                     __ptext0:
-    73                           	opt stack 0
-    74  00FB48                     _main:
-    75                           	opt stack 30
+    58 ;;Total ram usage:        1 bytes
+    59 ;; Hardware stack levels required when called:    1
+    60 ;; This function calls:
+    61 ;;		_dispSeg
+    62 ;;		_enableSerial
+    63 ;;		_initPorts
+    64 ;; This function is called by:
+    65 ;;		Startup code after reset
+    66 ;; This function uses a non-reentrant model
+    67 ;;
+    68                           
+    69                           	psect	text0
+    70  00FC20                     __ptext0:
+    71                           	opt stack 0
+    72  00FC20                     _main:
+    73                           	opt stack 30
+    74                           
+    75                           ;main.c: 22: initPorts();
     76                           
-    77                           ;main.c: 21: initPorts();
-    78                           
-    79                           ;incstack = 0
-    80  00FB48  EC8E  F07D         	call	_initPorts	;wreg free
-    81                           
-    82                           ;main.c: 22: enableSerialRX(1200);
-    83  00FB4C  0E04               	movlw	4
-    84  00FB4E  6E02               	movwf	enableSerialRX@baudRate+1,c
-    85  00FB50  0EB0               	movlw	176
-    86  00FB52  6E01               	movwf	enableSerialRX@baudRate,c
-    87  00FB54  ECD1  F07D         	call	_enableSerialRX	;wreg free
-    88                           
-    89                           ;main.c: 23: dispSeg(1, '-'); dispSeg(2, '-');
-    90  00FB58  6E05               	movwf	??_main& (0+255),c
-    91  00FB5A  0E2D               	movlw	45
-    92  00FB5C  6E01               	movwf	dispSeg@letter,c
-    93  00FB5E  5005               	movf	??_main& (0+255),w,c
-    94  00FB60  0E01               	movlw	1
-    95  00FB62  EC71  F07E         	call	_dispSeg
-    96  00FB66  6E05               	movwf	??_main& (0+255),c
-    97  00FB68  0E2D               	movlw	45
-    98  00FB6A  6E01               	movwf	dispSeg@letter,c
-    99  00FB6C  5005               	movf	??_main& (0+255),w,c
-   100  00FB6E  0E02               	movlw	2
-   101  00FB70  EC71  F07E         	call	_dispSeg
-   102  00FB74                     l52:
-   103  00FB74  AAA4               	btfss	4004,5,c	;volatile
-   104  00FB76  D7FE               	goto	l52
+    77                           ;incstack = 0
+    78  00FC20  ECF8  F07D         	call	_initPorts	;wreg free
+    79                           
+    80                           ;main.c: 23: enableSerial(1200);
+    81  00FC24  0E04               	movlw	4
+    82  00FC26  6E02               	movwf	enableSerial@baudRate+1,c
+    83  00FC28  0EB0               	movlw	176
+    84  00FC2A  6E01               	movwf	enableSerial@baudRate,c
+    85  00FC2C  EC2C  F07E         	call	_enableSerial	;wreg free
+    86                           
+    87                           ;main.c: 24: dispSeg(1, '-'); dispSeg(2, '-');
+    88  00FC30  6E05               	movwf	??_main& (0+255),c
+    89  00FC32  0E2D               	movlw	45
+    90  00FC34  6E01               	movwf	dispSeg@letter,c
+    91  00FC36  5005               	movf	??_main& (0+255),w,c
+    92  00FC38  0E01               	movlw	1
+    93  00FC3A  EC71  F07E         	call	_dispSeg
+    94  00FC3E  6E05               	movwf	??_main& (0+255),c
+    95  00FC40  0E2D               	movlw	45
+    96  00FC42  6E01               	movwf	dispSeg@letter,c
+    97  00FC44  5005               	movf	??_main& (0+255),w,c
+    98  00FC46  0E02               	movlw	2
+    99  00FC48  EC71  F07E         	call	_dispSeg
+   100  00FC4C                     l972:
+   101                           
+   102                           ;main.c: 27: {
+   103                           ;main.c: 28: if(PIR3bits.RC2IF == 1)
+   104  00FC4C  BAA4               	btfsc	4004,5,c	;volatile
    105                           
-   106                           ;main.c: 31: if (RCSTA2bits.OERR == 1)
-   107  00FB78  A271               	btfss	3953,1,c	;volatile
-   108  00FB7A  D009               	goto	l55
-   109                           
-   110                           ;main.c: 32: {
-   111                           ;main.c: 34: dispSeg(2, '0');
-   112  00FB7C  6E05               	movwf	??_main& (0+255),c
-   113  00FB7E  0E30               	movlw	48
-   114  00FB80  6E01               	movwf	dispSeg@letter,c
-   115  00FB82  5005               	movf	??_main& (0+255),w,c
-   116  00FB84  0E02               	movlw	2
-   117  00FB86  EC71  F07E         	call	_dispSeg
+   106                           ;main.c: 29: {
+   107                           ;main.c: 30: if(PIR3bits.TX2IF == 1)
+   108  00FC4E  A8A4               	btfss	4004,4,c	;volatile
+   109  00FC50  D7FD               	goto	l972
+   110                           
+   111                           ;main.c: 31: {
+   112                           ;main.c: 32: TXREG2 = 'A';
+   113  00FC52  0E41               	movlw	65
+   114  00FC54  6E73               	movwf	3955,c	;volatile
+   115  00FC56  D7FA               	goto	l972
+   116  00FC58                     __end_of_main:
+   117                           	opt stack 0
    118                           
-   119                           ;main.c: 35: RCSTA2bits.CREN = 0; RCSTA2bits.CREN = 1;
-   120  00FB8A  9871               	bcf	3953,4,c	;volatile
-   121  00FB8C  8871               	bsf	3953,4,c	;volatile
-   122  00FB8E                     l55:
-   123                           
-   124                           ;main.c: 36: }
-   125                           ;main.c: 39: uint8_t receivedByte = hexToChar(RCREG2);
-   126  00FB8E  5074               	movf	3956,w,c	;volatile
-   127  00FB90  EC15  F07E         	call	_hexToChar
-   128  00FB94  6E06               	movwf	main@receivedByte,c
-   129                           
-   130                           ;main.c: 40: dispSeg(1, receivedByte);
-   131  00FB96  C006  F001         	movff	main@receivedByte,dispSeg@letter
-   132  00FB9A  0E01               	movlw	1
-   133  00FB9C  EC71  F07E         	call	_dispSeg
-   134  00FBA0  D7E9               	goto	l52
-   135  00FBA2                     __end_of_main:
-   136                           	opt stack 0
-   137                           
-   138                           	psect	cinit
-   139  00FB0A                     __pcinit:
-   140                           	opt stack 0
-   141  00FB0A                     start_initialization:
-   142                           	opt stack 0
-   143  00FB0A                     __initialization:
+   119                           	psect	cinit
+   120  00FBDE                     __pcinit:
+   121                           	opt stack 0
+   122  00FBDE                     start_initialization:
+   123                           	opt stack 0
+   124  00FBDE                     __initialization:
+   125                           	opt stack 0
+   126                           
+   127                           ; Clear objects allocated to COMRAM (4 bytes)
+   128  00FBDE  6A09               	clrf	(__pbssCOMRAM+3)& (0+255),c
+   129  00FBE0  6A08               	clrf	(__pbssCOMRAM+2)& (0+255),c
+   130  00FBE2  6A07               	clrf	(__pbssCOMRAM+1)& (0+255),c
+   131  00FBE4  6A06               	clrf	__pbssCOMRAM& (0+255),c
+   132  00FBE6                     end_of_initialization:
+   133                           	opt stack 0
+   134  00FBE6                     __end_of__initialization:
+   135                           	opt stack 0
+   136  00FBE6  0E00               	movlw	low (__Lmediumconst shr (0+16))
+   137  00FBE8  6EF8               	movwf	tblptru,c
+   138  00FBEA  0100               	movlb	0
+   139  00FBEC  EF10  F07E         	goto	_main	;jump to C main() function
+   140                           tblptru	equ	0xFF8
+   141                           
+   142                           	psect	bssCOMRAM
+   143  000006                     __pbssCOMRAM:
    144                           	opt stack 0
-   145                           
-   146                           ; Clear objects allocated to COMRAM (4 bytes)
-   147  00FB0A  6A0A               	clrf	(__pbssCOMRAM+3)& (0+255),c
-   148  00FB0C  6A09               	clrf	(__pbssCOMRAM+2)& (0+255),c
-   149  00FB0E  6A08               	clrf	(__pbssCOMRAM+1)& (0+255),c
-   150  00FB10  6A07               	clrf	__pbssCOMRAM& (0+255),c
-   151  00FB12                     end_of_initialization:
+   145  000006                     wait_ms@timel:
+   146                           	opt stack 0
+   147  000006                     	ds	4
+   148                           tblptru	equ	0xFF8
+   149                           
+   150                           	psect	cstackCOMRAM
+   151  000001                     __pcstackCOMRAM:
    152                           	opt stack 0
-   153  00FB12                     __end_of__initialization:
+   153  000001                     dispSeg@letter:
    154                           	opt stack 0
-   155  00FB12  0E00               	movlw	low (__Lmediumconst shr (0+16))
-   156  00FB14  6EF8               	movwf	tblptru,c
-   157  00FB16  0100               	movlb	0
-   158  00FB18  EFA4  F07D         	goto	_main	;jump to C main() function
-   159                           tblptru	equ	0xFF8
-   160                           
-   161                           	psect	bssCOMRAM
-   162  000007                     __pbssCOMRAM:
-   163                           	opt stack 0
-   164  000007                     wait_ms@timel:
-   165                           	opt stack 0
-   166  000007                     	ds	4
-   167                           tblptru	equ	0xFF8
-   168                           
-   169                           	psect	cstackCOMRAM
-   170  000001                     __pcstackCOMRAM:
-   171                           	opt stack 0
-   172  000001                     hexToChar@number:
-   173                           	opt stack 0
-   174  000001                     dispSeg@letter:
-   175                           	opt stack 0
-   176  000001                     enableSerialRX@baudRate:
-   177                           	opt stack 0
-   178                           
-   179                           ; 2 bytes @ 0x0
-   180  000001                     	ds	1
-   181  000002                     dispSeg@segment:
-   182                           	opt stack 0
-   183                           
-   184                           ; 1 bytes @ 0x1
-   185  000002                     	ds	1
-   186  000003                     ??_enableSerialRX:
-   187                           
-   188                           ; 0 bytes @ 0x2
-   189  000003                     	ds	2
-   190  000005                     ??_main:
-   191                           
-   192                           ; 0 bytes @ 0x4
-   193  000005                     	ds	1
-   194  000006                     main@receivedByte:
-   195                           	opt stack 0
-   196                           
-   197                           ; 1 bytes @ 0x5
-   198  000006                     	ds	1
-   199                           tblptru	equ	0xFF8
-   200                           
-   201 ;; *************** function _initPorts *****************
-   202 ;; Defined at:
-   203 ;;		line 62 in file "source/main.c"
-   204 ;; Parameters:    Size  Location     Type
-   205 ;;		None
-   206 ;; Auto vars:     Size  Location     Type
-   207 ;;		None
-   208 ;; Return value:  Size  Location     Type
-   209 ;;		None               void
-   210 ;; Registers used:
-   211 ;;		wreg, status,2
-   212 ;; Tracked objects:
-   213 ;;		On entry : 0/0
-   214 ;;		On exit  : 0/0
-   215 ;;		Unchanged: 0/0
-   216 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   155  000001                     enableSerial@baudRate:
+   156                           	opt stack 0
+   157                           
+   158                           ; 2 bytes @ 0x0
+   159  000001                     	ds	1
+   160  000002                     dispSeg@segment:
+   161                           	opt stack 0
+   162                           
+   163                           ; 1 bytes @ 0x1
+   164  000002                     	ds	1
+   165  000003                     ??_enableSerial:
+   166                           
+   167                           ; 0 bytes @ 0x2
+   168  000003                     	ds	2
+   169  000005                     ??_main:
+   170                           
+   171                           ; 0 bytes @ 0x4
+   172  000005                     	ds	1
+   173                           tblptru	equ	0xFF8
+   174                           
+   175 ;; *************** function _initPorts *****************
+   176 ;; Defined at:
+   177 ;;		line 68 in file "source/main.c"
+   178 ;; Parameters:    Size  Location     Type
+   179 ;;		None
+   180 ;; Auto vars:     Size  Location     Type
+   181 ;;		None
+   182 ;; Return value:  Size  Location     Type
+   183 ;;		None               void
+   184 ;; Registers used:
+   185 ;;		wreg, status,2
+   186 ;; Tracked objects:
+   187 ;;		On entry : 0/0
+   188 ;;		On exit  : 0/0
+   189 ;;		Unchanged: 0/0
+   190 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   217 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   191 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   218 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   192 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   219 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   193 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   220 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
+   194 ;;      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   221 ;;Total ram usage:        0 bytes
-   222 ;; Hardware stack levels used:    1
-   223 ;; This function calls:
-   224 ;;		Nothing
-   225 ;; This function is called by:
-   226 ;;		_main
-   227 ;; This function uses a non-reentrant model
-   228 ;;
+   195 ;;Total ram usage:        0 bytes
+   196 ;; Hardware stack levels used:    1
+   197 ;; This function calls:
+   198 ;;		Nothing
+   199 ;; This function is called by:
+   200 ;;		_main
+   201 ;; This function uses a non-reentrant model
+   202 ;;
+   203                           
+   204                           	psect	text1
+   205  00FBF0                     __ptext1:
+   206                           	opt stack 0
+   207  00FBF0                     _initPorts:
+   208                           	opt stack 30
+   209                           
+   210                           ;main.c: 70: TRISA = 0;
+   211                           
+   212                           ;incstack = 0
+   213  00FBF0  0E00               	movlw	0
+   214  00FBF2  6E92               	movwf	3986,c	;volatile
+   215                           
+   216                           ;main.c: 71: TRISC = 0;
+   217  00FBF4  0E00               	movlw	0
+   218  00FBF6  6E94               	movwf	3988,c	;volatile
+   219                           
+   220                           ;main.c: 72: TRISE = 0;
+   221  00FBF8  0E00               	movlw	0
+   222  00FBFA  6E96               	movwf	3990,c	;volatile
+   223                           
+   224                           ;main.c: 74: ANSELD = 0;
+   225  00FBFC  0E00               	movlw	0
+   226  00FBFE  010F               	movlb	15	; () banked
+   227  00FC00  010F               	movlb	15	; () banked
+   228  00FC02  6F3B               	movwf	59,b	;volatile
    229                           
-   230                           	psect	text1
-   231  00FB1C                     __ptext1:
-   232                           	opt stack 0
-   233  00FB1C                     _initPorts:
-   234                           	opt stack 30
-   235                           
-   236                           ;main.c: 64: TRISA = 0;
+   230                           ; BSR set to: 15
+   231                           ;main.c: 75: TRISDbits.RD3 = 0;
+   232  00FC04  9695               	bcf	3989,3,c	;volatile
+   233                           
+   234                           ; BSR set to: 15
+   235                           ;main.c: 76: TRISDbits.RD4 = 1;
+   236  00FC06  8895               	bsf	3989,4,c	;volatile
    237                           
-   238                           ;incstack = 0
-   239  00FB1C  0E00               	movlw	0
-   240  00FB1E  6E92               	movwf	3986,c	;volatile
+   238                           ; BSR set to: 15
+   239                           ;main.c: 77: TRISDbits.RD5 = 0;
+   240  00FC08  9A95               	bcf	3989,5,c	;volatile
    241                           
-   242                           ;main.c: 65: TRISC = 0;
-   243  00FB20  0E00               	movlw	0
-   244  00FB22  6E94               	movwf	3988,c	;volatile
+   242                           ; BSR set to: 15
+   243                           ;main.c: 78: TRISDbits.RD7 = 1;
+   244  00FC0A  8E95               	bsf	3989,7,c	;volatile
    245                           
-   246                           ;main.c: 66: TRISE = 0;
-   247  00FB24  0E00               	movlw	0
-   248  00FB26  6E96               	movwf	3990,c	;volatile
+   246                           ; BSR set to: 15
+   247                           ;main.c: 79: TRISDbits.RD6 = 0;
+   248  00FC0C  9C95               	bcf	3989,6,c	;volatile
    249                           
-   250                           ;main.c: 68: ANSELD = 0;
-   251  00FB28  0E00               	movlw	0
-   252  00FB2A  010F               	movlb	15	; () banked
-   253  00FB2C  010F               	movlb	15	; () banked
-   254  00FB2E  6F3B               	movwf	59,b	;volatile
-   255                           
-   256                           ; BSR set to: 15
-   257                           ;main.c: 69: TRISDbits.RD3 = 0;
-   258  00FB30  9695               	bcf	3989,3,c	;volatile
-   259                           
-   260                           ; BSR set to: 15
-   261                           ;main.c: 70: TRISDbits.RD4 = 1;
-   262  00FB32  8895               	bsf	3989,4,c	;volatile
-   263                           
-   264                           ; BSR set to: 15
-   265                           ;main.c: 71: TRISDbits.RD5 = 0;
-   266  00FB34  9A95               	bcf	3989,5,c	;volatile
-   267                           
-   268                           ;main.c: 73: LATA = 0;
-   269  00FB36  0E00               	movlw	0
-   270  00FB38  6E89               	movwf	3977,c	;volatile
+   250                           ;main.c: 81: LATA = 0;
+   251  00FC0E  0E00               	movlw	0
+   252  00FC10  6E89               	movwf	3977,c	;volatile
+   253                           
+   254                           ;main.c: 82: LATC = 0;
+   255  00FC12  0E00               	movlw	0
+   256  00FC14  6E8B               	movwf	3979,c	;volatile
+   257                           
+   258                           ;main.c: 83: LATD = 0;
+   259  00FC16  0E00               	movlw	0
+   260  00FC18  6E8C               	movwf	3980,c	;volatile
+   261                           
+   262                           ;main.c: 84: LATE = 0;
+   263  00FC1A  0E00               	movlw	0
+   264  00FC1C  6E8D               	movwf	3981,c	;volatile
+   265                           
+   266                           ; BSR set to: 15
+   267  00FC1E  0012               	return	
+   268  00FC20                     __end_of_initPorts:
+   269                           	opt stack 0
+   270                           tblptru	equ	0xFF8
    271                           
-   272                           ;main.c: 74: LATC = 0;
-   273  00FB3A  0E00               	movlw	0
-   274  00FB3C  6E8B               	movwf	3979,c	;volatile
-   275                           
-   276                           ;main.c: 75: LATD = 0;
-   277  00FB3E  0E00               	movlw	0
-   278  00FB40  6E8C               	movwf	3980,c	;volatile
-   279                           
-   280                           ;main.c: 76: LATE = 0;
-   281  00FB42  0E00               	movlw	0
-   282  00FB44  6E8D               	movwf	3981,c	;volatile
-   283                           
-   284                           ; BSR set to: 15
-   285  00FB46  0012               	return	
-   286  00FB48                     __end_of_initPorts:
-   287                           	opt stack 0
-   288                           tblptru	equ	0xFF8
-   289                           
-   290 ;; *************** function _hexToChar *****************
-   291 ;; Defined at:
-   292 ;;		line 97 in file "source/main.c"
-   293 ;; Parameters:    Size  Location     Type
-   294 ;;  number          1    wreg     unsigned char 
-   295 ;; Auto vars:     Size  Location     Type
-   296 ;;  number          1    0[COMRAM] unsigned char 
-   297 ;; Return value:  Size  Location     Type
-   298 ;;                  1    wreg      unsigned char 
-   299 ;; Registers used:
-   300 ;;		wreg, status,2, status,0
-   301 ;; Tracked objects:
-   302 ;;		On entry : 0/0
-   303 ;;		On exit  : 0/0
-   304 ;;		Unchanged: 0/0
-   305 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   272 ;; *************** function _enableSerial *****************
+   273 ;; Defined at:
+   274 ;;		line 374 in file "source/main.c"
+   275 ;; Parameters:    Size  Location     Type
+   276 ;;  baudRate        2    0[COMRAM] unsigned int 
+   277 ;; Auto vars:     Size  Location     Type
+   278 ;;		None
+   279 ;; Return value:  Size  Location     Type
+   280 ;;		None               void
+   281 ;; Registers used:
+   282 ;;		wreg, status,2, status,0
+   283 ;; Tracked objects:
+   284 ;;		On entry : 0/0
+   285 ;;		On exit  : 0/0
+   286 ;;		Unchanged: 0/0
+   287 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   306 ;;      Params:         0       0       0       0       0       0       0       0       0       0       0       0       
+   288 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   307 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+   289 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   308 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   290 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   309 ;;      Totals:         1       0       0       0       0       0       0       0       0       0       0       0       
+   291 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   310 ;;Total ram usage:        1 bytes
-   311 ;; Hardware stack levels used:    1
-   312 ;; This function calls:
-   313 ;;		Nothing
-   314 ;; This function is called by:
-   315 ;;		_main
-   316 ;; This function uses a non-reentrant model
-   317 ;;
-   318                           
-   319                           	psect	text2
-   320  00FC2A                     __ptext2:
-   321                           	opt stack 0
-   322  00FC2A                     _hexToChar:
-   323                           	opt stack 30
-   324                           
-   325                           ; BSR set to: 15
-   326                           ;incstack = 0
-   327                           ;hexToChar@number stored from wreg
-   328  00FC2A  CFE8 F001          	movff	wreg,hexToChar@number
-   329                           
-   330                           ;main.c: 99: number = number << 4;
-   331  00FC2E  3801               	swapf	hexToChar@number,w,c
-   332  00FC30  0BF0               	andlw	240
-   333  00FC32  6E01               	movwf	hexToChar@number,c
-   334                           
-   335                           ;main.c: 100: number = number >> 4;
-   336  00FC34  3801               	swapf	hexToChar@number,w,c
-   337  00FC36  0B0F               	andlw	15
-   338  00FC38  6E01               	movwf	hexToChar@number,c
-   339                           
-   340                           ;main.c: 101: switch (number)
-   341  00FC3A  D020               	goto	l943
-   342  00FC3C                     l877:
-   343                           
-   344                           ;main.c: 104: return '0';
-   345  00FC3C  0E30               	movlw	48
-   346  00FC3E  0012               	return	
-   347  00FC40                     l881:
-   348                           
-   349                           ;main.c: 106: return '1';
-   350  00FC40  0E31               	movlw	49
-   351  00FC42  0012               	return	
-   352  00FC44                     l885:
-   353                           
-   354                           ;main.c: 108: return '2';
-   355  00FC44  0E32               	movlw	50
-   356  00FC46  0012               	return	
-   357  00FC48                     l889:
-   358                           
-   359                           ;main.c: 110: return '3';
-   360  00FC48  0E33               	movlw	51
-   361  00FC4A  0012               	return	
-   362  00FC4C                     l893:
-   363                           
-   364                           ;main.c: 112: return '4';
-   365  00FC4C  0E34               	movlw	52
-   366  00FC4E  0012               	return	
-   367  00FC50                     l897:
-   368                           
-   369                           ;main.c: 114: return '5';
-   370  00FC50  0E35               	movlw	53
-   371  00FC52  0012               	return	
-   372  00FC54                     l901:
-   373                           
-   374                           ;main.c: 116: return '6';
-   375  00FC54  0E36               	movlw	54
-   376  00FC56  0012               	return	
-   377  00FC58                     l905:
-   378                           
-   379                           ;main.c: 118: return '7';
-   380  00FC58  0E37               	movlw	55
-   381  00FC5A  0012               	return	
-   382  00FC5C                     l909:
-   383                           
-   384                           ;main.c: 120: return '8';
-   385  00FC5C  0E38               	movlw	56
-   386  00FC5E  0012               	return	
-   387  00FC60                     l913:
-   388                           
-   389                           ;main.c: 122: return '9';
-   390  00FC60  0E39               	movlw	57
-   391  00FC62  0012               	return	
-   392  00FC64                     l917:
-   393                           
-   394                           ;main.c: 124: return 'A';
-   395  00FC64  0E41               	movlw	65
-   396  00FC66  0012               	return	
-   397  00FC68                     l921:
-   398                           
-   399                           ;main.c: 126: return 'B';
-   400  00FC68  0E42               	movlw	66
-   401  00FC6A  0012               	return	
-   402  00FC6C                     l925:
-   403                           
-   404                           ;main.c: 128: return 'C';
-   405  00FC6C  0E43               	movlw	67
-   406  00FC6E  0012               	return	
-   407  00FC70                     l929:
-   408                           
-   409                           ;main.c: 130: return 'D';
-   410  00FC70  0E44               	movlw	68
-   411  00FC72  0012               	return	
-   412  00FC74                     l933:
-   413                           
-   414                           ;main.c: 132: return 'E';
-   415  00FC74  0E45               	movlw	69
-   416  00FC76  0012               	return	
-   417  00FC78                     l937:
-   418                           
-   419                           ;main.c: 134: return 'F';
-   420  00FC78  0E46               	movlw	70
-   421  00FC7A  0012               	return	
-   422  00FC7C                     l943:
-   423  00FC7C  5001               	movf	hexToChar@number,w,c
-   424                           
-   425                           ; Switch size 1, requested type "space"
-   426                           ; Number of cases is 16, Range of values is 0 to 15
-   427                           ; switch strategies available:
-   428                           ; Name         Instructions Cycles
-   429                           ; simple_byte           49    25 (average)
-   430                           ;	Chosen strategy is simple_byte
-   431  00FC7E  0A00               	xorlw	0	; case 0
-   432  00FC80  B4D8               	btfsc	status,2,c
-   433  00FC82  D7DC               	goto	l877
-   434  00FC84  0A01               	xorlw	1	; case 1
-   435  00FC86  B4D8               	btfsc	status,2,c
-   436  00FC88  D7DB               	goto	l881
-   437  00FC8A  0A03               	xorlw	3	; case 2
-   438  00FC8C  B4D8               	btfsc	status,2,c
-   439  00FC8E  D7DA               	goto	l885
-   440  00FC90  0A01               	xorlw	1	; case 3
-   441  00FC92  B4D8               	btfsc	status,2,c
-   442  00FC94  D7D9               	goto	l889
-   443  00FC96  0A07               	xorlw	7	; case 4
-   444  00FC98  B4D8               	btfsc	status,2,c
-   445  00FC9A  D7D8               	goto	l893
-   446  00FC9C  0A01               	xorlw	1	; case 5
-   447  00FC9E  B4D8               	btfsc	status,2,c
-   448  00FCA0  D7D7               	goto	l897
-   449  00FCA2  0A03               	xorlw	3	; case 6
-   450  00FCA4  B4D8               	btfsc	status,2,c
-   451  00FCA6  D7D6               	goto	l901
-   452  00FCA8  0A01               	xorlw	1	; case 7
-   453  00FCAA  B4D8               	btfsc	status,2,c
-   454  00FCAC  D7D5               	goto	l905
-   455  00FCAE  0A0F               	xorlw	15	; case 8
-   456  00FCB0  B4D8               	btfsc	status,2,c
-   457  00FCB2  D7D4               	goto	l909
-   458  00FCB4  0A01               	xorlw	1	; case 9
-   459  00FCB6  B4D8               	btfsc	status,2,c
-   460  00FCB8  D7D3               	goto	l913
-   461  00FCBA  0A03               	xorlw	3	; case 10
-   462  00FCBC  B4D8               	btfsc	status,2,c
-   463  00FCBE  D7D2               	goto	l917
-   464  00FCC0  0A01               	xorlw	1	; case 11
-   465  00FCC2  B4D8               	btfsc	status,2,c
-   466  00FCC4  D7D1               	goto	l921
-   467  00FCC6  0A07               	xorlw	7	; case 12
-   468  00FCC8  B4D8               	btfsc	status,2,c
-   469  00FCCA  D7D0               	goto	l925
-   470  00FCCC  0A01               	xorlw	1	; case 13
-   471  00FCCE  B4D8               	btfsc	status,2,c
-   472  00FCD0  D7CF               	goto	l929
-   473  00FCD2  0A03               	xorlw	3	; case 14
-   474  00FCD4  B4D8               	btfsc	status,2,c
-   475  00FCD6  D7CE               	goto	l933
-   476  00FCD8  0A01               	xorlw	1	; case 15
-   477  00FCDA  B4D8               	btfsc	status,2,c
-   478  00FCDC  D7CD               	goto	l937
-   479                           
-   480                           ;main.c: 136: return 0;
-   481  00FCDE  0E00               	movlw	0
-   482  00FCE0  0012               	return	
-   483  00FCE2                     __end_of_hexToChar:
-   484                           	opt stack 0
-   485                           tblptru	equ	0xFF8
-   486                           wreg	equ	0xFE8
-   487                           status	equ	0xFD8
-   488                           
-   489 ;; *************** function _enableSerialRX *****************
-   490 ;; Defined at:
-   491 ;;		line 366 in file "source/main.c"
-   492 ;; Parameters:    Size  Location     Type
-   493 ;;  baudRate        2    0[COMRAM] unsigned int 
-   494 ;; Auto vars:     Size  Location     Type
-   495 ;;		None
-   496 ;; Return value:  Size  Location     Type
-   497 ;;		None               void
-   498 ;; Registers used:
-   499 ;;		wreg, status,2, status,0
-   500 ;; Tracked objects:
-   501 ;;		On entry : 0/0
-   502 ;;		On exit  : 0/0
-   503 ;;		Unchanged: 0/0
-   504 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
-      +1  BANK12  BANK13  BANK14  BANK15
-   505 ;;      Params:         2       0       0       0       0       0       0       0       0       0       0       0       
-      +0       0       0       0       0
-   506 ;;      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       
-      +0       0       0       0       0
-   507 ;;      Temps:          2       0       0       0       0       0       0       0       0       0       0       0       
-      +0       0       0       0       0
-   508 ;;      Totals:         4       0       0       0       0       0       0       0       0       0       0       0       
-      +0       0       0       0       0
-   509 ;;Total ram usage:        4 bytes
-   510 ;; Hardware stack levels used:    1
-   511 ;; This function calls:
-   512 ;;		Nothing
-   513 ;; This function is called by:
-   514 ;;		_main
-   515 ;; This function uses a non-reentrant model
-   516 ;;
-   517                           
-   518                           	psect	text3
-   519  00FBA2                     __ptext3:
-   520                           	opt stack 0
-   521  00FBA2                     _enableSerialRX:
-   522                           	opt stack 30
-   523                           
-   524                           ;main.c: 368: LATDbits.LD3 = 1;
-   525                           
-   526                           ;incstack = 0
-   527  00FBA2  868C               	bsf	3980,3,c	;volatile
-   528                           
-   529                           ;main.c: 371: switch (baudRate) {
-   530  00FBA4  D00B               	goto	l757
-   531  00FBA6                     l747:
-   532                           
-   533                           ;main.c: 376: SPBRG2 = 103;
-   534  00FBA6  0E67               	movlw	103
-   535  00FBA8  D007               	goto	L5
-   536  00FBAA                     l749:
-   537                           
-   538                           ;main.c: 379: SPBRG2 = 25;
-   539  00FBAA  0E19               	movlw	25
-   540  00FBAC  D005               	goto	L5
-   541  00FBAE                     l751:
-   542                           
-   543                           ;main.c: 382: SPBRG2 = 23;
-   544  00FBAE  0E17               	movlw	23
-   545  00FBB0  D003               	goto	L5
-   546  00FBB2                     l753:
-   547                           
-   548                           ;main.c: 385: SPBRG2 = 12;
-   549  00FBB2  0E0C               	movlw	12
-   550  00FBB4  D001               	goto	L5
-   551  00FBB6                     l755:
-   552                           
-   553                           ;main.c: 388: SPBRG2 = 207;
-   554  00FBB6  0ECF               	movlw	207
-   555  00FBB8                     L5:
-   556  00FBB8  6E75               	movwf	3957,c	;volatile
-   557                           
-   558                           ;main.c: 389: }
-   559  00FBBA  D02C               	goto	l759
-   560  00FBBC                     l757:
-   561  00FBBC  C001  F003         	movff	enableSerialRX@baudRate,??_enableSerialRX
-   562  00FBC0  C002  F004         	movff	enableSerialRX@baudRate+1,??_enableSerialRX+1
-   563                           
-   564                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 5 sub-sw
+   292 ;;Total ram usage:        4 bytes
+   293 ;; Hardware stack levels used:    1
+   294 ;; This function calls:
+   295 ;;		Nothing
+   296 ;; This function is called by:
+   297 ;;		_main
+   298 ;; This function uses a non-reentrant model
+   299 ;;
+   300                           
+   301                           	psect	text2
+   302  00FC58                     __ptext2:
+   303                           	opt stack 0
+   304  00FC58                     _enableSerial:
+   305                           	opt stack 30
+   306                           
+   307                           ;main.c: 376: LATDbits.LD3 = 1;
+   308                           
+   309                           ; BSR set to: 15
+   310                           ;incstack = 0
+   311  00FC58  868C               	bsf	3980,3,c	;volatile
+   312                           
+   313                           ;main.c: 379: switch (baudRate) {
+   314  00FC5A  D00B               	goto	l760
+   315  00FC5C                     l750:
+   316                           
+   317                           ;main.c: 384: SPBRG2 = 103;
+   318  00FC5C  0E67               	movlw	103
+   319  00FC5E  D007               	goto	L5
+   320  00FC60                     l752:
+   321                           
+   322                           ;main.c: 387: SPBRG2 = 25;
+   323  00FC60  0E19               	movlw	25
+   324  00FC62  D005               	goto	L5
+   325  00FC64                     l754:
+   326                           
+   327                           ;main.c: 390: SPBRG2 = 23;
+   328  00FC64  0E17               	movlw	23
+   329  00FC66  D003               	goto	L5
+   330  00FC68                     l756:
+   331                           
+   332                           ;main.c: 393: SPBRG2 = 12;
+   333  00FC68  0E0C               	movlw	12
+   334  00FC6A  D001               	goto	L5
+   335  00FC6C                     l758:
+   336                           
+   337                           ;main.c: 396: SPBRG2 = 207;
+   338  00FC6C  0ECF               	movlw	207
+   339  00FC6E                     L5:
+   340  00FC6E  6E75               	movwf	3957,c	;volatile
+   341                           
+   342                           ;main.c: 397: }
+   343  00FC70  D02C               	goto	l762
+   344  00FC72                     l760:
+   345  00FC72  C001  F003         	movff	enableSerial@baudRate,??_enableSerial
+   346  00FC76  C002  F004         	movff	enableSerial@baudRate+1,??_enableSerial+1
+   347                           
+   348                           ; Switch on 2 bytes has been partitioned into a top level switch of size 1, and 5 sub-sw
       +                          itches
-   565                           ; Switch size 1, requested type "space"
-   566                           ; Number of cases is 5, Range of values is 4 to 75
-   567                           ; switch strategies available:
-   568                           ; Name         Instructions Cycles
-   569                           ; simple_byte           16     9 (average)
-   570                           ;	Chosen strategy is simple_byte
-   571  00FBC4  5004               	movf	??_enableSerialRX+1,w,c
-   572  00FBC6  0A04               	xorlw	4	; case 4
-   573  00FBC8  B4D8               	btfsc	status,2,c
-   574  00FBCA  D00D               	goto	l1141
-   575  00FBCC  0A0D               	xorlw	13	; case 9
-   576  00FBCE  B4D8               	btfsc	status,2,c
-   577  00FBD0  D00D               	goto	l1143
-   578  00FBD2  0A2C               	xorlw	44	; case 37
-   579  00FBD4  B4D8               	btfsc	status,2,c
-   580  00FBD6  D00F               	goto	l1145
-   581  00FBD8  0A0D               	xorlw	13	; case 40
-   582  00FBDA  B4D8               	btfsc	status,2,c
-   583  00FBDC  D011               	goto	l1147
-   584  00FBDE  0A63               	xorlw	99	; case 75
-   585  00FBE0  B4D8               	btfsc	status,2,c
-   586  00FBE2  D013               	goto	l1149
-   587  00FBE4  D7E8               	goto	l755
-   588  00FBE6                     l1141:
-   589                           
-   590                           ; Switch size 1, requested type "space"
-   591                           ; Number of cases is 1, Range of values is 176 to 176
-   592                           ; switch strategies available:
-   593                           ; Name         Instructions Cycles
-   594                           ; simple_byte            4     3 (average)
-   595                           ;	Chosen strategy is simple_byte
-   596  00FBE6  5003               	movf	??_enableSerialRX,w,c
-   597  00FBE8  0AB0               	xorlw	176	; case 176
-   598  00FBEA  D7E5               	goto	l755
-   599  00FBEC                     l1143:
-   600                           
-   601                           ; Switch size 1, requested type "space"
-   602                           ; Number of cases is 1, Range of values is 96 to 96
-   603                           ; switch strategies available:
-   604                           ; Name         Instructions Cycles
-   605                           ; simple_byte            4     3 (average)
-   606                           ;	Chosen strategy is simple_byte
-   607  00FBEC  5003               	movf	??_enableSerialRX,w,c
-   608  00FBEE  0A60               	xorlw	96	; case 96
-   609  00FBF0  B4D8               	btfsc	status,2,c
-   610  00FBF2  D7D9               	goto	l747
-   611  00FBF4  D7E0               	goto	l755
-   612  00FBF6                     l1145:
-   613                           
-   614                           ; Switch size 1, requested type "space"
-   615                           ; Number of cases is 1, Range of values is 128 to 128
-   616                           ; switch strategies available:
-   617                           ; Name         Instructions Cycles
-   618                           ; simple_byte            4     3 (average)
-   619                           ;	Chosen strategy is simple_byte
-   620  00FBF6  5003               	movf	??_enableSerialRX,w,c
-   621  00FBF8  0A80               	xorlw	128	; case 128
-   622  00FBFA  B4D8               	btfsc	status,2,c
-   623  00FBFC  D7D6               	goto	l749
-   624  00FBFE  D7DB               	goto	l755
-   625  00FC00                     l1147:
-   626                           
-   627                           ; Switch size 1, requested type "space"
-   628                           ; Number of cases is 1, Range of values is 177 to 177
-   629                           ; switch strategies available:
-   630                           ; Name         Instructions Cycles
-   631                           ; simple_byte            4     3 (average)
-   632                           ;	Chosen strategy is simple_byte
-   633  00FC00  5003               	movf	??_enableSerialRX,w,c
-   634  00FC02  0AB1               	xorlw	177	; case 177
-   635  00FC04  B4D8               	btfsc	status,2,c
-   636  00FC06  D7D3               	goto	l751
-   637  00FC08  D7D6               	goto	l755
-   638  00FC0A                     l1149:
-   639                           
-   640                           ; Switch size 1, requested type "space"
-   641                           ; Number of cases is 1, Range of values is 0 to 0
-   642                           ; switch strategies available:
-   643                           ; Name         Instructions Cycles
-   644                           ; simple_byte            4     3 (average)
-   645                           ;	Chosen strategy is simple_byte
-   646  00FC0A  5003               	movf	??_enableSerialRX,w,c
-   647  00FC0C  0A00               	xorlw	0	; case 0
-   648  00FC0E  B4D8               	btfsc	status,2,c
-   649  00FC10  D7D0               	goto	l753
-   650  00FC12  D7D1               	goto	l755
-   651  00FC14                     l759:
-   652                           
-   653                           ;main.c: 391: SPBRGH2 = 0;
-   654  00FC14  0E00               	movlw	0
-   655  00FC16  6E76               	movwf	3958,c	;volatile
-   656                           
-   657                           ;main.c: 392: TXSTA2bits.BRGH = 0;
-   658  00FC18  9472               	bcf	3954,2,c	;volatile
-   659                           
-   660                           ;main.c: 393: BAUDCON2bits.BRG16 = 0;
-   661  00FC1A  9670               	bcf	3952,3,c	;volatile
-   662                           
-   663                           ;main.c: 395: TRISDbits.RD7 = 1;
-   664  00FC1C  8E95               	bsf	3989,7,c	;volatile
-   665                           
-   666                           ;main.c: 396: TRISDbits.RD6 = 1;
-   667  00FC1E  8C95               	bsf	3989,6,c	;volatile
-   668                           
-   669                           ;main.c: 398: RCSTA2bits.CREN = 1;
-   670  00FC20  8871               	bsf	3953,4,c	;volatile
-   671                           
-   672                           ;main.c: 399: TXSTA2bits.SYNC = 0;
-   673  00FC22  9872               	bcf	3954,4,c	;volatile
-   674                           
-   675                           ;main.c: 400: RCSTA2bits.SPEN = 1;
-   676  00FC24  8E71               	bsf	3953,7,c	;volatile
-   677                           
-   678                           ;main.c: 401: BAUDCON2bits.DTRXP = 1;
-   679  00FC26  8A70               	bsf	3952,5,c	;volatile
-   680  00FC28  0012               	return	
-   681  00FC2A                     __end_of_enableSerialRX:
-   682                           	opt stack 0
-   683                           tblptru	equ	0xFF8
-   684                           wreg	equ	0xFE8
-   685                           status	equ	0xFD8
-   686                           
-   687 ;; *************** function _dispSeg *****************
-   688 ;; Defined at:
-   689 ;;		line 145 in file "source/main.c"
-   690 ;; Parameters:    Size  Location     Type
-   691 ;;  segment         1    wreg     unsigned char 
-   692 ;;  letter          1    0[COMRAM] unsigned char 
-   693 ;; Auto vars:     Size  Location     Type
-   694 ;;  segment         1    1[COMRAM] unsigned char 
-   695 ;; Return value:  Size  Location     Type
-   696 ;;		None               void
-   697 ;; Registers used:
-   698 ;;		wreg, status,2, status,0
-   699 ;; Tracked objects:
-   700 ;;		On entry : 0/0
-   701 ;;		On exit  : 0/0
-   702 ;;		Unchanged: 0/0
-   703 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
+   349                           ; Switch size 1, requested type "space"
+   350                           ; Number of cases is 5, Range of values is 4 to 75
+   351                           ; switch strategies available:
+   352                           ; Name         Instructions Cycles
+   353                           ; simple_byte           16     9 (average)
+   354                           ;	Chosen strategy is simple_byte
+   355  00FC7A  5004               	movf	??_enableSerial+1,w,c
+   356  00FC7C  0A04               	xorlw	4	; case 4
+   357  00FC7E  B4D8               	btfsc	status,2,c
+   358  00FC80  D00D               	goto	l1078
+   359  00FC82  0A0D               	xorlw	13	; case 9
+   360  00FC84  B4D8               	btfsc	status,2,c
+   361  00FC86  D00D               	goto	l1080
+   362  00FC88  0A2C               	xorlw	44	; case 37
+   363  00FC8A  B4D8               	btfsc	status,2,c
+   364  00FC8C  D00F               	goto	l1082
+   365  00FC8E  0A0D               	xorlw	13	; case 40
+   366  00FC90  B4D8               	btfsc	status,2,c
+   367  00FC92  D011               	goto	l1084
+   368  00FC94  0A63               	xorlw	99	; case 75
+   369  00FC96  B4D8               	btfsc	status,2,c
+   370  00FC98  D013               	goto	l1086
+   371  00FC9A  D7E8               	goto	l758
+   372  00FC9C                     l1078:
+   373                           
+   374                           ; Switch size 1, requested type "space"
+   375                           ; Number of cases is 1, Range of values is 176 to 176
+   376                           ; switch strategies available:
+   377                           ; Name         Instructions Cycles
+   378                           ; simple_byte            4     3 (average)
+   379                           ;	Chosen strategy is simple_byte
+   380  00FC9C  5003               	movf	??_enableSerial,w,c
+   381  00FC9E  0AB0               	xorlw	176	; case 176
+   382  00FCA0  D7E5               	goto	l758
+   383  00FCA2                     l1080:
+   384                           
+   385                           ; Switch size 1, requested type "space"
+   386                           ; Number of cases is 1, Range of values is 96 to 96
+   387                           ; switch strategies available:
+   388                           ; Name         Instructions Cycles
+   389                           ; simple_byte            4     3 (average)
+   390                           ;	Chosen strategy is simple_byte
+   391  00FCA2  5003               	movf	??_enableSerial,w,c
+   392  00FCA4  0A60               	xorlw	96	; case 96
+   393  00FCA6  B4D8               	btfsc	status,2,c
+   394  00FCA8  D7D9               	goto	l750
+   395  00FCAA  D7E0               	goto	l758
+   396  00FCAC                     l1082:
+   397                           
+   398                           ; Switch size 1, requested type "space"
+   399                           ; Number of cases is 1, Range of values is 128 to 128
+   400                           ; switch strategies available:
+   401                           ; Name         Instructions Cycles
+   402                           ; simple_byte            4     3 (average)
+   403                           ;	Chosen strategy is simple_byte
+   404  00FCAC  5003               	movf	??_enableSerial,w,c
+   405  00FCAE  0A80               	xorlw	128	; case 128
+   406  00FCB0  B4D8               	btfsc	status,2,c
+   407  00FCB2  D7D6               	goto	l752
+   408  00FCB4  D7DB               	goto	l758
+   409  00FCB6                     l1084:
+   410                           
+   411                           ; Switch size 1, requested type "space"
+   412                           ; Number of cases is 1, Range of values is 177 to 177
+   413                           ; switch strategies available:
+   414                           ; Name         Instructions Cycles
+   415                           ; simple_byte            4     3 (average)
+   416                           ;	Chosen strategy is simple_byte
+   417  00FCB6  5003               	movf	??_enableSerial,w,c
+   418  00FCB8  0AB1               	xorlw	177	; case 177
+   419  00FCBA  B4D8               	btfsc	status,2,c
+   420  00FCBC  D7D3               	goto	l754
+   421  00FCBE  D7D6               	goto	l758
+   422  00FCC0                     l1086:
+   423                           
+   424                           ; Switch size 1, requested type "space"
+   425                           ; Number of cases is 1, Range of values is 0 to 0
+   426                           ; switch strategies available:
+   427                           ; Name         Instructions Cycles
+   428                           ; simple_byte            4     3 (average)
+   429                           ;	Chosen strategy is simple_byte
+   430  00FCC0  5003               	movf	??_enableSerial,w,c
+   431  00FCC2  0A00               	xorlw	0	; case 0
+   432  00FCC4  B4D8               	btfsc	status,2,c
+   433  00FCC6  D7D0               	goto	l756
+   434  00FCC8  D7D1               	goto	l758
+   435  00FCCA                     l762:
+   436                           
+   437                           ;main.c: 399: SPBRGH2 = 0;
+   438  00FCCA  0E00               	movlw	0
+   439  00FCCC  6E76               	movwf	3958,c	;volatile
+   440                           
+   441                           ;main.c: 400: TXSTA2bits.BRGH = 0;
+   442  00FCCE  9472               	bcf	3954,2,c	;volatile
+   443                           
+   444                           ;main.c: 401: BAUDCON2bits.BRG16 = 0;
+   445  00FCD0  9670               	bcf	3952,3,c	;volatile
+   446                           
+   447                           ;main.c: 403: TXSTA2bits.TX9 = 0;
+   448  00FCD2  9C72               	bcf	3954,6,c	;volatile
+   449                           
+   450                           ;main.c: 404: RCSTA2bits.RX9 = 0;
+   451  00FCD4  9C71               	bcf	3953,6,c	;volatile
+   452                           
+   453                           ;main.c: 406: TXSTA2bits.SYNC = 0;
+   454  00FCD6  9872               	bcf	3954,4,c	;volatile
+   455                           
+   456                           ;main.c: 407: BAUDCON2bits.DTRXP = 1;
+   457  00FCD8  8A70               	bsf	3952,5,c	;volatile
+   458                           
+   459                           ;main.c: 409: TXSTA2bits.TXEN = 1;
+   460  00FCDA  8A72               	bsf	3954,5,c	;volatile
+   461                           
+   462                           ;main.c: 410: RCSTA2bits.CREN = 1;
+   463  00FCDC  8871               	bsf	3953,4,c	;volatile
+   464                           
+   465                           ;main.c: 412: RCSTA2bits.SPEN = 1;
+   466  00FCDE  8E71               	bsf	3953,7,c	;volatile
+   467  00FCE0  0012               	return	
+   468  00FCE2                     __end_of_enableSerial:
+   469                           	opt stack 0
+   470                           tblptru	equ	0xFF8
+   471                           status	equ	0xFD8
+   472                           
+   473 ;; *************** function _dispSeg *****************
+   474 ;; Defined at:
+   475 ;;		line 153 in file "source/main.c"
+   476 ;; Parameters:    Size  Location     Type
+   477 ;;  segment         1    wreg     unsigned char 
+   478 ;;  letter          1    0[COMRAM] unsigned char 
+   479 ;; Auto vars:     Size  Location     Type
+   480 ;;  segment         1    1[COMRAM] unsigned char 
+   481 ;; Return value:  Size  Location     Type
+   482 ;;		None               void
+   483 ;; Registers used:
+   484 ;;		wreg, status,2, status,0
+   485 ;; Tracked objects:
+   486 ;;		On entry : 0/0
+   487 ;;		On exit  : 0/0
+   488 ;;		Unchanged: 0/0
+   489 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK1
       +1  BANK12  BANK13  BANK14  BANK15
-   704 ;;      Params:         1       0       0       0       0       0       0       0       0       0       0       0       
+   490 ;;      Params:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   705 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
+   491 ;;      Locals:         1       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   706 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
+   492 ;;      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   707 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
+   493 ;;      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0
-   708 ;;Total ram usage:        2 bytes
-   709 ;; Hardware stack levels used:    1
-   710 ;; This function calls:
-   711 ;;		Nothing
-   712 ;; This function is called by:
-   713 ;;		_main
-   714 ;;		_cycleSegDisplays
-   715 ;; This function uses a non-reentrant model
-   716 ;;
-   717                           
-   718                           	psect	text4
-   719  00FCE2                     __ptext4:
-   720                           	opt stack 0
-   721  00FCE2                     _dispSeg:
-   722                           	opt stack 30
-   723                           
-   724                           ;incstack = 0
-   725                           ;dispSeg@segment stored from wreg
-   726  00FCE2  CFE8 F002          	movff	wreg,dispSeg@segment
-   727                           
-   728                           ;main.c: 147: switch (letter) {
-   729  00FCE6  D154               	goto	l873
-   730  00FCE8                     l799:
-   731                           
-   732                           ;main.c: 149: if (segment == 1) {
-   733  00FCE8  0402               	decf	dispSeg@segment,w,c
-   734  00FCEA  A4D8               	btfss	status,2,c
-   735  00FCEC  D007               	goto	l95
-   736                           
-   737                           ;main.c: 150: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 =
+   494 ;;Total ram usage:        2 bytes
+   495 ;; Hardware stack levels used:    1
+   496 ;; This function calls:
+   497 ;;		Nothing
+   498 ;; This function is called by:
+   499 ;;		_main
+   500 ;;		_cycleSegDisplays
+   501 ;; This function uses a non-reentrant model
+   502 ;;
+   503                           
+   504                           	psect	text3
+   505  00FCE2                     __ptext3:
+   506                           	opt stack 0
+   507  00FCE2                     _dispSeg:
+   508                           	opt stack 30
+   509                           
+   510                           ;incstack = 0
+   511                           ;dispSeg@segment stored from wreg
+   512  00FCE2  CFE8 F002          	movff	wreg,dispSeg@segment
+   513                           
+   514                           ;main.c: 155: switch (letter) {
+   515  00FCE6  D154               	goto	l878
+   516  00FCE8                     l804:
+   517                           
+   518                           ;main.c: 157: if (segment == 1) {
+   519  00FCE8  0402               	decf	dispSeg@segment,w,c
+   520  00FCEA  A4D8               	btfss	status,2,c
+   521  00FCEC  D007               	goto	l91
+   522                           
+   523                           ;main.c: 158: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 =
       +                           LATAbits.LA0 = LATAbits.LA1 = 0;
-   738  00FCEE  9289               	bcf	3977,1,c	;volatile
-   739  00FCF0  9089               	bcf	3977,0,c	;volatile
-   740  00FCF2  908D               	bcf	3981,0,c	;volatile
-   741  00FCF4  9A89               	bcf	3977,5,c	;volatile
-   742  00FCF6  9889               	bcf	3977,4,c	;volatile
-   743  00FCF8  9689               	bcf	3977,3,c	;volatile
-   744  00FCFA  9489               	bcf	3977,2,c	;volatile
-   745  00FCFC                     l95:
-   746                           
-   747                           ;main.c: 151: }
-   748                           ;main.c: 152: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 =
+   524  00FCEE  9289               	bcf	3977,1,c	;volatile
+   525  00FCF0  9089               	bcf	3977,0,c	;volatile
+   526  00FCF2  908D               	bcf	3981,0,c	;volatile
+   527  00FCF4  9A89               	bcf	3977,5,c	;volatile
+   528  00FCF6  9889               	bcf	3977,4,c	;volatile
+   529  00FCF8  9689               	bcf	3977,3,c	;volatile
+   530  00FCFA  9489               	bcf	3977,2,c	;volatile
+   531  00FCFC                     l91:
+   532                           
+   533                           ;main.c: 159: }
+   534                           ;main.c: 160: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 =
       +                           LATEbits.LE1 = LATEbits.LE2 = 0;
-   749  00FCFC  948D               	bcf	3981,2,c	;volatile
-   750  00FCFE  928D               	bcf	3981,1,c	;volatile
-   751  00FD00  928B               	bcf	3979,1,c	;volatile
-   752  00FD02  908B               	bcf	3979,0,c	;volatile
-   753  00FD04  948B               	bcf	3979,2,c	;volatile
-   754  00FD06  9C89               	bcf	3977,6,c	;volatile
-   755  00FD08  9E89               	bcf	3977,7,c	;volatile
-   756                           
-   757                           ;main.c: 153: break;
-   758  00FD0A  0012               	return	
-   759  00FD0C                     l803:
-   760                           
-   761                           ;main.c: 155: if (segment == 1) {
-   762  00FD0C  0402               	decf	dispSeg@segment,w,c
-   763  00FD0E  A4D8               	btfss	status,2,c
-   764  00FD10  D007               	goto	l98
-   765                           
-   766                           ;main.c: 156: LATAbits.LA1 = 1;
-   767  00FD12  8289               	bsf	3977,1,c	;volatile
-   768                           
-   769                           ;main.c: 157: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 =
+   535  00FCFC  948D               	bcf	3981,2,c	;volatile
+   536  00FCFE  928D               	bcf	3981,1,c	;volatile
+   537  00FD00  928B               	bcf	3979,1,c	;volatile
+   538  00FD02  908B               	bcf	3979,0,c	;volatile
+   539  00FD04  948B               	bcf	3979,2,c	;volatile
+   540  00FD06  9C89               	bcf	3977,6,c	;volatile
+   541  00FD08  9E89               	bcf	3977,7,c	;volatile
+   542                           
+   543                           ;main.c: 161: break;
+   544  00FD0A  0012               	return	
+   545  00FD0C                     l808:
+   546                           
+   547                           ;main.c: 163: if (segment == 1) {
+   548  00FD0C  0402               	decf	dispSeg@segment,w,c
+   549  00FD0E  A4D8               	btfss	status,2,c
+   550  00FD10  D007               	goto	l94
+   551                           
+   552                           ;main.c: 164: LATAbits.LA1 = 1;
+   553  00FD12  8289               	bsf	3977,1,c	;volatile
+   554                           
+   555                           ;main.c: 165: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 =
       +                           LATAbits.LA0 = 0;
-   770  00FD14  9089               	bcf	3977,0,c	;volatile
-   771  00FD16  908D               	bcf	3981,0,c	;volatile
-   772  00FD18  9A89               	bcf	3977,5,c	;volatile
-   773  00FD1A  9889               	bcf	3977,4,c	;volatile
-   774  00FD1C  9689               	bcf	3977,3,c	;volatile
-   775  00FD1E  9489               	bcf	3977,2,c	;volatile
-   776  00FD20                     l98:
-   777                           
-   778                           ;main.c: 158: }
-   779                           ;main.c: 159: LATEbits.LE2 = 1;
-   780  00FD20  848D               	bsf	3981,2,c	;volatile
-   781                           
-   782                           ;main.c: 160: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 =
+   556  00FD14  9089               	bcf	3977,0,c	;volatile
+   557  00FD16  908D               	bcf	3981,0,c	;volatile
+   558  00FD18  9A89               	bcf	3977,5,c	;volatile
+   559  00FD1A  9889               	bcf	3977,4,c	;volatile
+   560  00FD1C  9689               	bcf	3977,3,c	;volatile
+   561  00FD1E  9489               	bcf	3977,2,c	;volatile
+   562  00FD20                     l94:
+   563                           
+   564                           ;main.c: 166: }
+   565                           ;main.c: 167: LATEbits.LE2 = 1;
+   566  00FD20  848D               	bsf	3981,2,c	;volatile
+   567                           
+   568                           ;main.c: 168: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 =
       +                           LATEbits.LE1 = 0;
-   783  00FD22  928D               	bcf	3981,1,c	;volatile
-   784  00FD24  928B               	bcf	3979,1,c	;volatile
-   785  00FD26  908B               	bcf	3979,0,c	;volatile
-   786  00FD28  948B               	bcf	3979,2,c	;volatile
-   787  00FD2A  9C89               	bcf	3977,6,c	;volatile
-   788  00FD2C  9E89               	bcf	3977,7,c	;volatile
-   789                           
-   790                           ;main.c: 161: break;
-   791  00FD2E  0012               	return	
-   792  00FD30                     l807:
-   793                           
-   794                           ;main.c: 163: if (segment == 1) {
-   795  00FD30  0402               	decf	dispSeg@segment,w,c
-   796  00FD32  A4D8               	btfss	status,2,c
-   797  00FD34  D008               	goto	l100
-   798                           
-   799                           ;main.c: 164: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 =
+   569  00FD22  928D               	bcf	3981,1,c	;volatile
+   570  00FD24  928B               	bcf	3979,1,c	;volatile
+   571  00FD26  908B               	bcf	3979,0,c	;volatile
+   572  00FD28  948B               	bcf	3979,2,c	;volatile
+   573  00FD2A  9C89               	bcf	3977,6,c	;volatile
+   574  00FD2C  9E89               	bcf	3977,7,c	;volatile
+   575                           
+   576                           ;main.c: 169: break;
+   577  00FD2E  0012               	return	
+   578  00FD30                     l812:
+   579                           
+   580                           ;main.c: 171: if (segment == 1) {
+   581  00FD30  0402               	decf	dispSeg@segment,w,c
+   582  00FD32  A4D8               	btfss	status,2,c
+   583  00FD34  D008               	goto	l96
+   584                           
+   585                           ;main.c: 172: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 =
       +                           LATAbits.LA0 = 1;
-   800  00FD36  8089               	bsf	3977,0,c	;volatile
-   801  00FD38  808D               	bsf	3981,0,c	;volatile
-   802  00FD3A  8A89               	bsf	3977,5,c	;volatile
-   803  00FD3C  8889               	bsf	3977,4,c	;volatile
-   804  00FD3E  8689               	bsf	3977,3,c	;volatile
-   805  00FD40  8489               	bsf	3977,2,c	;volatile
-   806                           
-   807                           ;main.c: 165: LATAbits.LA1 = 0;
-   808  00FD42  9289               	bcf	3977,1,c	;volatile
-   809                           
-   810                           ;main.c: 166: return;
-   811  00FD44  0012               	return	
-   812  00FD46                     l100:
-   813                           
-   814                           ;main.c: 167: }
-   815                           ;main.c: 168: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 =
+   586  00FD36  8089               	bsf	3977,0,c	;volatile
+   587  00FD38  808D               	bsf	3981,0,c	;volatile
+   588  00FD3A  8A89               	bsf	3977,5,c	;volatile
+   589  00FD3C  8889               	bsf	3977,4,c	;volatile
+   590  00FD3E  8689               	bsf	3977,3,c	;volatile
+   591  00FD40  8489               	bsf	3977,2,c	;volatile
+   592                           
+   593                           ;main.c: 173: LATAbits.LA1 = 0;
+   594  00FD42  9289               	bcf	3977,1,c	;volatile
+   595                           
+   596                           ;main.c: 174: return;
+   597  00FD44  0012               	return	
+   598  00FD46                     l96:
+   599                           
+   600                           ;main.c: 175: }
+   601                           ;main.c: 176: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 =
       +                           LATEbits.LE1 = 1;
-   816  00FD46  828D               	bsf	3981,1,c	;volatile
-   817  00FD48  828B               	bsf	3979,1,c	;volatile
-   818  00FD4A  808B               	bsf	3979,0,c	;volatile
-   819  00FD4C  848B               	bsf	3979,2,c	;volatile
-   820  00FD4E  8C89               	bsf	3977,6,c	;volatile
-   821  00FD50  8E89               	bsf	3977,7,c	;volatile
-   822                           
-   823                           ;main.c: 169: LATEbits.LE2 = 0;
-   824  00FD52  948D               	bcf	3981,2,c	;volatile
-   825                           
-   826                           ;main.c: 170: break;
-   827  00FD54  0012               	return	
-   828  00FD56                     l811:
-   829                           
-   830                           ;main.c: 172: if (segment == 1) {
-   831  00FD56  0402               	decf	dispSeg@segment,w,c
-   832  00FD58  A4D8               	btfss	status,2,c
-   833  00FD5A  D008               	goto	l103
-   834                           
-   835                           ;main.c: 173: LATAbits.LA3 = LATAbits.LA4 = 1;
-   836  00FD5C  8889               	bsf	3977,4,c	;volatile
-   837  00FD5E  8689               	bsf	3977,3,c	;volatile
-   838                           
-   839                           ;main.c: 174: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 =
+   602  00FD46  828D               	bsf	3981,1,c	;volatile
+   603  00FD48  828B               	bsf	3979,1,c	;volatile
+   604  00FD4A  808B               	bsf	3979,0,c	;volatile
+   605  00FD4C  848B               	bsf	3979,2,c	;volatile
+   606  00FD4E  8C89               	bsf	3977,6,c	;volatile
+   607  00FD50  8E89               	bsf	3977,7,c	;volatile
+   608                           
+   609                           ;main.c: 177: LATEbits.LE2 = 0;
+   610  00FD52  948D               	bcf	3981,2,c	;volatile
+   611                           
+   612                           ;main.c: 178: break;
+   613  00FD54  0012               	return	
+   614  00FD56                     l816:
+   615                           
+   616                           ;main.c: 180: if (segment == 1) {
+   617  00FD56  0402               	decf	dispSeg@segment,w,c
+   618  00FD58  A4D8               	btfss	status,2,c
+   619  00FD5A  D008               	goto	l99
+   620                           
+   621                           ;main.c: 181: LATAbits.LA3 = LATAbits.LA4 = 1;
+   622  00FD5C  8889               	bsf	3977,4,c	;volatile
+   623  00FD5E  8689               	bsf	3977,3,c	;volatile
+   624                           
+   625                           ;main.c: 182: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 =
       +                           0;
-   840  00FD60  9289               	bcf	3977,1,c	;volatile
-   841  00FD62  9089               	bcf	3977,0,c	;volatile
-   842  00FD64  908D               	bcf	3981,0,c	;volatile
-   843  00FD66  9A89               	bcf	3977,5,c	;volatile
-   844  00FD68  9489               	bcf	3977,2,c	;volatile
-   845                           
-   846                           ;main.c: 175: return;
-   847  00FD6A  0012               	return	
-   848  00FD6C                     l103:
-   849                           
-   850                           ;main.c: 176: }
-   851                           ;main.c: 177: LATAbits.LA6 = LATCbits.LC2 = 1;
-   852  00FD6C  848B               	bsf	3979,2,c	;volatile
-   853  00FD6E  8C89               	bsf	3977,6,c	;volatile
-   854                           
-   855                           ;main.c: 178: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 =
+   626  00FD60  9289               	bcf	3977,1,c	;volatile
+   627  00FD62  9089               	bcf	3977,0,c	;volatile
+   628  00FD64  908D               	bcf	3981,0,c	;volatile
+   629  00FD66  9A89               	bcf	3977,5,c	;volatile
+   630  00FD68  9489               	bcf	3977,2,c	;volatile
+   631                           
+   632                           ;main.c: 183: return;
+   633  00FD6A  0012               	return	
+   634  00FD6C                     l99:
+   635                           
+   636                           ;main.c: 184: }
+   637                           ;main.c: 185: LATAbits.LA6 = LATCbits.LC2 = 1;
+   638  00FD6C  848B               	bsf	3979,2,c	;volatile
+   639  00FD6E  8C89               	bsf	3977,6,c	;volatile
+   640                           
+   641                           ;main.c: 186: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 =
       +                           0;
-   856  00FD70  948D               	bcf	3981,2,c	;volatile
-   857  00FD72  928D               	bcf	3981,1,c	;volatile
-   858  00FD74  928B               	bcf	3979,1,c	;volatile
-   859  00FD76  908B               	bcf	3979,0,c	;volatile
-   860  00FD78  9E89               	bcf	3977,7,c	;volatile
-   861                           
-   862                           ;main.c: 179: break;
-   863  00FD7A  0012               	return	
-   864  00FD7C                     l815:
-   865                           
-   866                           ;main.c: 181: if (segment == 1) {
-   867  00FD7C  0402               	decf	dispSeg@segment,w,c
-   868  00FD7E  A4D8               	btfss	status,2,c
-   869  00FD80  D008               	goto	l105
-   870                           
-   871                           ;main.c: 182: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA1 = LATEbits.LE0 = LATAbits.LA5 =
+   642  00FD70  948D               	bcf	3981,2,c	;volatile
+   643  00FD72  928D               	bcf	3981,1,c	;volatile
+   644  00FD74  928B               	bcf	3979,1,c	;volatile
+   645  00FD76  908B               	bcf	3979,0,c	;volatile
+   646  00FD78  9E89               	bcf	3977,7,c	;volatile
+   647                           
+   648                           ;main.c: 187: break;
+   649  00FD7A  0012               	return	
+   650  00FD7C                     l820:
+   651                           
+   652                           ;main.c: 189: if (segment == 1) {
+   653  00FD7C  0402               	decf	dispSeg@segment,w,c
+   654  00FD7E  A4D8               	btfss	status,2,c
+   655  00FD80  D008               	goto	l101
+   656                           
+   657                           ;main.c: 190: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA1 = LATEbits.LE0 = LATAbits.LA5 =
       +                           1;
-   872  00FD82  8A89               	bsf	3977,5,c	;volatile
-   873  00FD84  808D               	bsf	3981,0,c	;volatile
-   874  00FD86  8289               	bsf	3977,1,c	;volatile
-   875  00FD88  8689               	bsf	3977,3,c	;volatile
-   876  00FD8A  8489               	bsf	3977,2,c	;volatile
-   877                           
-   878                           ;main.c: 183: LATAbits.LA4 = LATAbits.LA0 = 0;
-   879  00FD8C  9089               	bcf	3977,0,c	;volatile
-   880  00FD8E  9889               	bcf	3977,4,c	;volatile
-   881                           
-   882                           ;main.c: 184: return;
-   883  00FD90  0012               	return	
-   884  00FD92                     l105:
-   885                           
-   886                           ;main.c: 185: }
-   887                           ;main.c: 186: LATAbits.LA7 = LATAbits.LA6 = LATEbits.LE2 = LATCbits.LC1 = LATCbits.LC0 =
+   658  00FD82  8A89               	bsf	3977,5,c	;volatile
+   659  00FD84  808D               	bsf	3981,0,c	;volatile
+   660  00FD86  8289               	bsf	3977,1,c	;volatile
+   661  00FD88  8689               	bsf	3977,3,c	;volatile
+   662  00FD8A  8489               	bsf	3977,2,c	;volatile
+   663                           
+   664                           ;main.c: 191: LATAbits.LA4 = LATAbits.LA0 = 0;
+   665  00FD8C  9089               	bcf	3977,0,c	;volatile
+   666  00FD8E  9889               	bcf	3977,4,c	;volatile
+   667                           
+   668                           ;main.c: 192: return;
+   669  00FD90  0012               	return	
+   670  00FD92                     l101:
+   671                           
+   672                           ;main.c: 193: }
+   673                           ;main.c: 194: LATAbits.LA7 = LATAbits.LA6 = LATEbits.LE2 = LATCbits.LC1 = LATCbits.LC0 =
       +                           1;
-   888  00FD92  808B               	bsf	3979,0,c	;volatile
-   889  00FD94  828B               	bsf	3979,1,c	;volatile
-   890  00FD96  848D               	bsf	3981,2,c	;volatile
-   891  00FD98  8C89               	bsf	3977,6,c	;volatile
-   892  00FD9A  8E89               	bsf	3977,7,c	;volatile
-   893                           
-   894                           ;main.c: 187: LATCbits.LC2 = LATEbits.LE1 = 0;
-   895  00FD9C  928D               	bcf	3981,1,c	;volatile
-   896  00FD9E  948B               	bcf	3979,2,c	;volatile
-   897                           
-   898                           ;main.c: 188: break;
-   899  00FDA0  0012               	return	
-   900  00FDA2                     l819:
-   901                           
-   902                           ;main.c: 190: if (segment == 1) {
-   903  00FDA2  0402               	decf	dispSeg@segment,w,c
-   904  00FDA4  A4D8               	btfss	status,2,c
-   905  00FDA6  D008               	goto	l107
-   906                           
-   907                           ;main.c: 191: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5 =
+   674  00FD92  808B               	bsf	3979,0,c	;volatile
+   675  00FD94  828B               	bsf	3979,1,c	;volatile
+   676  00FD96  848D               	bsf	3981,2,c	;volatile
+   677  00FD98  8C89               	bsf	3977,6,c	;volatile
+   678  00FD9A  8E89               	bsf	3977,7,c	;volatile
+   679                           
+   680                           ;main.c: 195: LATCbits.LC2 = LATEbits.LE1 = 0;
+   681  00FD9C  928D               	bcf	3981,1,c	;volatile
+   682  00FD9E  948B               	bcf	3979,2,c	;volatile
+   683                           
+   684                           ;main.c: 196: break;
+   685  00FDA0  0012               	return	
+   686  00FDA2                     l824:
+   687                           
+   688                           ;main.c: 198: if (segment == 1) {
+   689  00FDA2  0402               	decf	dispSeg@segment,w,c
+   690  00FDA4  A4D8               	btfss	status,2,c
+   691  00FDA6  D008               	goto	l103
+   692                           
+   693                           ;main.c: 199: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5 =
       +                           1;
-   908  00FDA8  8A89               	bsf	3977,5,c	;volatile
-   909  00FDAA  8889               	bsf	3977,4,c	;volatile
-   910  00FDAC  8289               	bsf	3977,1,c	;volatile
-   911  00FDAE  8689               	bsf	3977,3,c	;volatile
-   912  00FDB0  8489               	bsf	3977,2,c	;volatile
-   913                           
-   914                           ;main.c: 192: LATEbits.LE0 = LATAbits.LA0 = 0;
-   915  00FDB2  9089               	bcf	3977,0,c	;volatile
-   916  00FDB4  908D               	bcf	3981,0,c	;volatile
-   917                           
-   918                           ;main.c: 193: return;
-   919  00FDB6  0012               	return	
-   920  00FDB8                     l107:
-   921                           
-   922                           ;main.c: 194: }
-   923                           ;main.c: 195: LATAbits.LA7 = LATAbits.LA6 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0 =
+   694  00FDA8  8A89               	bsf	3977,5,c	;volatile
+   695  00FDAA  8889               	bsf	3977,4,c	;volatile
+   696  00FDAC  8289               	bsf	3977,1,c	;volatile
+   697  00FDAE  8689               	bsf	3977,3,c	;volatile
+   698  00FDB0  8489               	bsf	3977,2,c	;volatile
+   699                           
+   700                           ;main.c: 200: LATEbits.LE0 = LATAbits.LA0 = 0;
+   701  00FDB2  9089               	bcf	3977,0,c	;volatile
+   702  00FDB4  908D               	bcf	3981,0,c	;volatile
+   703                           
+   704                           ;main.c: 201: return;
+   705  00FDB6  0012               	return	
+   706  00FDB8                     l103:
+   707                           
+   708                           ;main.c: 202: }
+   709                           ;main.c: 203: LATAbits.LA7 = LATAbits.LA6 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0 =
       +                           1;
-   924  00FDB8  808B               	bsf	3979,0,c	;volatile
-   925  00FDBA  848B               	bsf	3979,2,c	;volatile
-   926  00FDBC  848D               	bsf	3981,2,c	;volatile
-   927  00FDBE  8C89               	bsf	3977,6,c	;volatile
-   928  00FDC0  8E89               	bsf	3977,7,c	;volatile
-   929                           
-   930                           ;main.c: 196: LATCbits.LC1 = LATEbits.LE1 = 0;
-   931  00FDC2  928D               	bcf	3981,1,c	;volatile
-   932  00FDC4  928B               	bcf	3979,1,c	;volatile
-   933                           
-   934                           ;main.c: 197: break;
-   935  00FDC6  0012               	return	
-   936  00FDC8                     l823:
-   937                           
-   938                           ;main.c: 199: if (segment == 1) {
-   939  00FDC8  0402               	decf	dispSeg@segment,w,c
-   940  00FDCA  A4D8               	btfss	status,2,c
-   941  00FDCC  D008               	goto	l109
-   942                           
-   943                           ;main.c: 200: LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA3 = LATAbits.LA4 = 1;
-   944  00FDCE  8889               	bsf	3977,4,c	;volatile
-   945  00FDD0  8689               	bsf	3977,3,c	;volatile
-   946  00FDD2  8289               	bsf	3977,1,c	;volatile
-   947  00FDD4  8089               	bsf	3977,0,c	;volatile
-   948                           
-   949                           ;main.c: 201: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = 0;
-   950  00FDD6  908D               	bcf	3981,0,c	;volatile
-   951  00FDD8  9A89               	bcf	3977,5,c	;volatile
-   952  00FDDA  9489               	bcf	3977,2,c	;volatile
-   953                           
-   954                           ;main.c: 202: return;
-   955  00FDDC  0012               	return	
-   956  00FDDE                     l109:
-   957                           
-   958                           ;main.c: 203: }
-   959                           ;main.c: 204: LATEbits.LE1 = LATEbits.LE2 = LATAbits.LA6 = LATCbits.LC2 = 1;
-   960  00FDDE  848B               	bsf	3979,2,c	;volatile
-   961  00FDE0  8C89               	bsf	3977,6,c	;volatile
-   962  00FDE2  848D               	bsf	3981,2,c	;volatile
-   963  00FDE4  828D               	bsf	3981,1,c	;volatile
-   964                           
-   965                           ;main.c: 205: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = 0;
-   966  00FDE6  928B               	bcf	3979,1,c	;volatile
-   967  00FDE8  908B               	bcf	3979,0,c	;volatile
-   968  00FDEA  9E89               	bcf	3977,7,c	;volatile
-   969                           
-   970                           ;main.c: 206: break;
-   971  00FDEC  0012               	return	
-   972  00FDEE                     l827:
-   973                           
-   974                           ;main.c: 208: if (segment == 1) {
-   975  00FDEE  0402               	decf	dispSeg@segment,w,c
-   976  00FDF0  A4D8               	btfss	status,2,c
-   977  00FDF2  D008               	goto	l111
-   978                           
-   979                           ;main.c: 209: LATAbits.LA2 = LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5 =
+   710  00FDB8  808B               	bsf	3979,0,c	;volatile
+   711  00FDBA  848B               	bsf	3979,2,c	;volatile
+   712  00FDBC  848D               	bsf	3981,2,c	;volatile
+   713  00FDBE  8C89               	bsf	3977,6,c	;volatile
+   714  00FDC0  8E89               	bsf	3977,7,c	;volatile
+   715                           
+   716                           ;main.c: 204: LATCbits.LC1 = LATEbits.LE1 = 0;
+   717  00FDC2  928D               	bcf	3981,1,c	;volatile
+   718  00FDC4  928B               	bcf	3979,1,c	;volatile
+   719                           
+   720                           ;main.c: 205: break;
+   721  00FDC6  0012               	return	
+   722  00FDC8                     l828:
+   723                           
+   724                           ;main.c: 207: if (segment == 1) {
+   725  00FDC8  0402               	decf	dispSeg@segment,w,c
+   726  00FDCA  A4D8               	btfss	status,2,c
+   727  00FDCC  D008               	goto	l105
+   728                           
+   729                           ;main.c: 208: LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA3 = LATAbits.LA4 = 1;
+   730  00FDCE  8889               	bsf	3977,4,c	;volatile
+   731  00FDD0  8689               	bsf	3977,3,c	;volatile
+   732  00FDD2  8289               	bsf	3977,1,c	;volatile
+   733  00FDD4  8089               	bsf	3977,0,c	;volatile
+   734                           
+   735                           ;main.c: 209: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = 0;
+   736  00FDD6  908D               	bcf	3981,0,c	;volatile
+   737  00FDD8  9A89               	bcf	3977,5,c	;volatile
+   738  00FDDA  9489               	bcf	3977,2,c	;volatile
+   739                           
+   740                           ;main.c: 210: return;
+   741  00FDDC  0012               	return	
+   742  00FDDE                     l105:
+   743                           
+   744                           ;main.c: 211: }
+   745                           ;main.c: 212: LATEbits.LE1 = LATEbits.LE2 = LATAbits.LA6 = LATCbits.LC2 = 1;
+   746  00FDDE  848B               	bsf	3979,2,c	;volatile
+   747  00FDE0  8C89               	bsf	3977,6,c	;volatile
+   748  00FDE2  848D               	bsf	3981,2,c	;volatile
+   749  00FDE4  828D               	bsf	3981,1,c	;volatile
+   750                           
+   751                           ;main.c: 213: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = 0;
+   752  00FDE6  928B               	bcf	3979,1,c	;volatile
+   753  00FDE8  908B               	bcf	3979,0,c	;volatile
+   754  00FDEA  9E89               	bcf	3977,7,c	;volatile
+   755                           
+   756                           ;main.c: 214: break;
+   757  00FDEC  0012               	return	
+   758  00FDEE                     l832:
+   759                           
+   760                           ;main.c: 216: if (segment == 1) {
+   761  00FDEE  0402               	decf	dispSeg@segment,w,c
+   762  00FDF0  A4D8               	btfss	status,2,c
+   763  00FDF2  D008               	goto	l107
+   764                           
+   765                           ;main.c: 217: LATAbits.LA2 = LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5 =
       +                           1;
-   980  00FDF4  8A89               	bsf	3977,5,c	;volatile
-   981  00FDF6  8889               	bsf	3977,4,c	;volatile
-   982  00FDF8  8289               	bsf	3977,1,c	;volatile
-   983  00FDFA  8089               	bsf	3977,0,c	;volatile
-   984  00FDFC  8489               	bsf	3977,2,c	;volatile
-   985                           
-   986                           ;main.c: 210: LATAbits.LA3 = LATEbits.LE0 = 0;
-   987  00FDFE  908D               	bcf	3981,0,c	;volatile
-   988  00FE00  9689               	bcf	3977,3,c	;volatile
-   989                           
-   990                           ;main.c: 211: return;
-   991  00FE02  0012               	return	
-   992  00FE04                     l111:
-   993                           
-   994                           ;main.c: 212: }
-   995                           ;main.c: 213: LATAbits.LA7 = LATEbits.LE1 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0 =
+   766  00FDF4  8A89               	bsf	3977,5,c	;volatile
+   767  00FDF6  8889               	bsf	3977,4,c	;volatile
+   768  00FDF8  8289               	bsf	3977,1,c	;volatile
+   769  00FDFA  8089               	bsf	3977,0,c	;volatile
+   770  00FDFC  8489               	bsf	3977,2,c	;volatile
+   771                           
+   772                           ;main.c: 218: LATAbits.LA3 = LATEbits.LE0 = 0;
+   773  00FDFE  908D               	bcf	3981,0,c	;volatile
+   774  00FE00  9689               	bcf	3977,3,c	;volatile
+   775                           
+   776                           ;main.c: 219: return;
+   777  00FE02  0012               	return	
+   778  00FE04                     l107:
+   779                           
+   780                           ;main.c: 220: }
+   781                           ;main.c: 221: LATAbits.LA7 = LATEbits.LE1 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0 =
       +                           1;
-   996  00FE04  808B               	bsf	3979,0,c	;volatile
-   997  00FE06  848B               	bsf	3979,2,c	;volatile
-   998  00FE08  848D               	bsf	3981,2,c	;volatile
-   999  00FE0A  828D               	bsf	3981,1,c	;volatile
-  1000  00FE0C  8E89               	bsf	3977,7,c	;volatile
-  1001                           
-  1002                           ;main.c: 214: LATAbits.LA6 = LATCbits.LC1 = 0;
-  1003  00FE0E  928B               	bcf	3979,1,c	;volatile
-  1004  00FE10  9C89               	bcf	3977,6,c	;volatile
-  1005                           
-  1006                           ;main.c: 215: break;
-  1007  00FE12  0012               	return	
-  1008  00FE14                     l831:
-  1009                           
-  1010                           ;main.c: 217: if (segment == 1) {
-  1011  00FE14  0402               	decf	dispSeg@segment,w,c
-  1012  00FE16  A4D8               	btfss	status,2,c
-  1013  00FE18  D008               	goto	l113
-  1014                           
-  1015                           ;main.c: 218: LATAbits.LA2 = LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5 =
+   782  00FE04  808B               	bsf	3979,0,c	;volatile
+   783  00FE06  848B               	bsf	3979,2,c	;volatile
+   784  00FE08  848D               	bsf	3981,2,c	;volatile
+   785  00FE0A  828D               	bsf	3981,1,c	;volatile
+   786  00FE0C  8E89               	bsf	3977,7,c	;volatile
+   787                           
+   788                           ;main.c: 222: LATAbits.LA6 = LATCbits.LC1 = 0;
+   789  00FE0E  928B               	bcf	3979,1,c	;volatile
+   790  00FE10  9C89               	bcf	3977,6,c	;volatile
+   791                           
+   792                           ;main.c: 223: break;
+   793  00FE12  0012               	return	
+   794  00FE14                     l836:
+   795                           
+   796                           ;main.c: 225: if (segment == 1) {
+   797  00FE14  0402               	decf	dispSeg@segment,w,c
+   798  00FE16  A4D8               	btfss	status,2,c
+   799  00FE18  D008               	goto	l109
+   800                           
+   801                           ;main.c: 226: LATAbits.LA2 = LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5 =
       +                           LATEbits.LE0 = 1;
-  1016  00FE1A  808D               	bsf	3981,0,c	;volatile
-  1017  00FE1C  8A89               	bsf	3977,5,c	;volatile
-  1018  00FE1E  8889               	bsf	3977,4,c	;volatile
-  1019  00FE20  8289               	bsf	3977,1,c	;volatile
-  1020  00FE22  8089               	bsf	3977,0,c	;volatile
-  1021  00FE24  8489               	bsf	3977,2,c	;volatile
-  1022                           
-  1023                           ;main.c: 219: LATAbits.LA3 = 0;
-  1024  00FE26  9689               	bcf	3977,3,c	;volatile
-  1025                           
-  1026                           ;main.c: 220: return;
-  1027  00FE28  0012               	return	
-  1028  00FE2A                     l113:
-  1029                           
-  1030                           ;main.c: 221: }
-  1031                           ;main.c: 222: LATAbits.LA7 = LATEbits.LE1 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0 =
+   802  00FE1A  808D               	bsf	3981,0,c	;volatile
+   803  00FE1C  8A89               	bsf	3977,5,c	;volatile
+   804  00FE1E  8889               	bsf	3977,4,c	;volatile
+   805  00FE20  8289               	bsf	3977,1,c	;volatile
+   806  00FE22  8089               	bsf	3977,0,c	;volatile
+   807  00FE24  8489               	bsf	3977,2,c	;volatile
+   808                           
+   809                           ;main.c: 227: LATAbits.LA3 = 0;
+   810  00FE26  9689               	bcf	3977,3,c	;volatile
+   811                           
+   812                           ;main.c: 228: return;
+   813  00FE28  0012               	return	
+   814  00FE2A                     l109:
+   815                           
+   816                           ;main.c: 229: }
+   817                           ;main.c: 230: LATAbits.LA7 = LATEbits.LE1 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0 =
       +                           LATCbits.LC1 = 1;
-  1032  00FE2A  828B               	bsf	3979,1,c	;volatile
-  1033  00FE2C  808B               	bsf	3979,0,c	;volatile
-  1034  00FE2E  848B               	bsf	3979,2,c	;volatile
-  1035  00FE30  848D               	bsf	3981,2,c	;volatile
-  1036  00FE32  828D               	bsf	3981,1,c	;volatile
-  1037  00FE34  8E89               	bsf	3977,7,c	;volatile
-  1038                           
-  1039                           ;main.c: 223: LATAbits.LA6 = 0;
-  1040  00FE36  9C89               	bcf	3977,6,c	;volatile
-  1041                           
-  1042                           ;main.c: 224: break;
-  1043  00FE38  0012               	return	
-  1044  00FE3A                     l835:
-  1045                           
-  1046                           ;main.c: 226: if (segment == 1) {
-  1047  00FE3A  0402               	decf	dispSeg@segment,w,c
-  1048  00FE3C  A4D8               	btfss	status,2,c
-  1049  00FE3E  D008               	goto	l115
-  1050                           
-  1051                           ;main.c: 227: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = 1;
-  1052  00FE40  8889               	bsf	3977,4,c	;volatile
-  1053  00FE42  8689               	bsf	3977,3,c	;volatile
-  1054  00FE44  8489               	bsf	3977,2,c	;volatile
-  1055                           
-  1056                           ;main.c: 228: LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 0;
-  1057  00FE46  9289               	bcf	3977,1,c	;volatile
-  1058  00FE48  9089               	bcf	3977,0,c	;volatile
-  1059  00FE4A  908D               	bcf	3981,0,c	;volatile
-  1060  00FE4C  9A89               	bcf	3977,5,c	;volatile
-  1061                           
-  1062                           ;main.c: 229: return;
-  1063  00FE4E  0012               	return	
-  1064  00FE50                     l115:
-  1065                           
-  1066                           ;main.c: 230: }
-  1067                           ;main.c: 231: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = 1;
-  1068  00FE50  848B               	bsf	3979,2,c	;volatile
-  1069  00FE52  8C89               	bsf	3977,6,c	;volatile
-  1070  00FE54  8E89               	bsf	3977,7,c	;volatile
-  1071                           
-  1072                           ;main.c: 232: LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 = 0;
-  1073  00FE56  948D               	bcf	3981,2,c	;volatile
-  1074  00FE58  928D               	bcf	3981,1,c	;volatile
-  1075  00FE5A  928B               	bcf	3979,1,c	;volatile
-  1076  00FE5C  908B               	bcf	3979,0,c	;volatile
-  1077                           
-  1078                           ;main.c: 233: break;
-  1079  00FE5E  0012               	return	
-  1080  00FE60                     l839:
-  1081                           
-  1082                           ;main.c: 235: if (segment == 1) {
-  1083  00FE60  0402               	decf	dispSeg@segment,w,c
-  1084  00FE62  A4D8               	btfss	status,2,c
-  1085  00FE64  D008               	goto	l117
-  1086                           
-  1087                           ;main.c: 236: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 =
+   818  00FE2A  828B               	bsf	3979,1,c	;volatile
+   819  00FE2C  808B               	bsf	3979,0,c	;volatile
+   820  00FE2E  848B               	bsf	3979,2,c	;volatile
+   821  00FE30  848D               	bsf	3981,2,c	;volatile
+   822  00FE32  828D               	bsf	3981,1,c	;volatile
+   823  00FE34  8E89               	bsf	3977,7,c	;volatile
+   824                           
+   825                           ;main.c: 231: LATAbits.LA6 = 0;
+   826  00FE36  9C89               	bcf	3977,6,c	;volatile
+   827                           
+   828                           ;main.c: 232: break;
+   829  00FE38  0012               	return	
+   830  00FE3A                     l840:
+   831                           
+   832                           ;main.c: 234: if (segment == 1) {
+   833  00FE3A  0402               	decf	dispSeg@segment,w,c
+   834  00FE3C  A4D8               	btfss	status,2,c
+   835  00FE3E  D008               	goto	l111
+   836                           
+   837                           ;main.c: 235: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = 1;
+   838  00FE40  8889               	bsf	3977,4,c	;volatile
+   839  00FE42  8689               	bsf	3977,3,c	;volatile
+   840  00FE44  8489               	bsf	3977,2,c	;volatile
+   841                           
+   842                           ;main.c: 236: LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 0;
+   843  00FE46  9289               	bcf	3977,1,c	;volatile
+   844  00FE48  9089               	bcf	3977,0,c	;volatile
+   845  00FE4A  908D               	bcf	3981,0,c	;volatile
+   846  00FE4C  9A89               	bcf	3977,5,c	;volatile
+   847                           
+   848                           ;main.c: 237: return;
+   849  00FE4E  0012               	return	
+   850  00FE50                     l111:
+   851                           
+   852                           ;main.c: 238: }
+   853                           ;main.c: 239: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = 1;
+   854  00FE50  848B               	bsf	3979,2,c	;volatile
+   855  00FE52  8C89               	bsf	3977,6,c	;volatile
+   856  00FE54  8E89               	bsf	3977,7,c	;volatile
+   857                           
+   858                           ;main.c: 240: LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 = 0;
+   859  00FE56  948D               	bcf	3981,2,c	;volatile
+   860  00FE58  928D               	bcf	3981,1,c	;volatile
+   861  00FE5A  928B               	bcf	3979,1,c	;volatile
+   862  00FE5C  908B               	bcf	3979,0,c	;volatile
+   863                           
+   864                           ;main.c: 241: break;
+   865  00FE5E  0012               	return	
+   866  00FE60                     l844:
+   867                           
+   868                           ;main.c: 243: if (segment == 1) {
+   869  00FE60  0402               	decf	dispSeg@segment,w,c
+   870  00FE62  A4D8               	btfss	status,2,c
+   871  00FE64  D008               	goto	l113
+   872                           
+   873                           ;main.c: 244: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 =
       +                           LATAbits.LA0 = LATAbits.LA1 = 1;
-  1088  00FE66  8289               	bsf	3977,1,c	;volatile
-  1089  00FE68  8089               	bsf	3977,0,c	;volatile
-  1090  00FE6A  808D               	bsf	3981,0,c	;volatile
-  1091  00FE6C  8A89               	bsf	3977,5,c	;volatile
-  1092  00FE6E  8889               	bsf	3977,4,c	;volatile
-  1093  00FE70  8689               	bsf	3977,3,c	;volatile
-  1094  00FE72  8489               	bsf	3977,2,c	;volatile
-  1095                           
-  1096                           ;main.c: 237: return;
-  1097  00FE74  0012               	return	
-  1098  00FE76                     l117:
-  1099                           
-  1100                           ;main.c: 238: }
-  1101                           ;main.c: 239: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 =
+   874  00FE66  8289               	bsf	3977,1,c	;volatile
+   875  00FE68  8089               	bsf	3977,0,c	;volatile
+   876  00FE6A  808D               	bsf	3981,0,c	;volatile
+   877  00FE6C  8A89               	bsf	3977,5,c	;volatile
+   878  00FE6E  8889               	bsf	3977,4,c	;volatile
+   879  00FE70  8689               	bsf	3977,3,c	;volatile
+   880  00FE72  8489               	bsf	3977,2,c	;volatile
+   881                           
+   882                           ;main.c: 245: return;
+   883  00FE74  0012               	return	
+   884  00FE76                     l113:
+   885                           
+   886                           ;main.c: 246: }
+   887                           ;main.c: 247: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 =
       +                           LATEbits.LE1 = LATEbits.LE2 = 1;
-  1102  00FE76  848D               	bsf	3981,2,c	;volatile
-  1103  00FE78  828D               	bsf	3981,1,c	;volatile
-  1104  00FE7A  828B               	bsf	3979,1,c	;volatile
-  1105  00FE7C  808B               	bsf	3979,0,c	;volatile
-  1106  00FE7E  848B               	bsf	3979,2,c	;volatile
-  1107  00FE80  8C89               	bsf	3977,6,c	;volatile
-  1108  00FE82  8E89               	bsf	3977,7,c	;volatile
-  1109                           
-  1110                           ;main.c: 240: break;
-  1111  00FE84  0012               	return	
-  1112  00FE86                     l843:
-  1113                           
-  1114                           ;main.c: 242: if (segment == 1) {
-  1115  00FE86  0402               	decf	dispSeg@segment,w,c
-  1116  00FE88  A4D8               	btfss	status,2,c
-  1117  00FE8A  D008               	goto	l119
-  1118                           
-  1119                           ;main.c: 243: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATAbits.LA0 =
+   888  00FE76  848D               	bsf	3981,2,c	;volatile
+   889  00FE78  828D               	bsf	3981,1,c	;volatile
+   890  00FE7A  828B               	bsf	3979,1,c	;volatile
+   891  00FE7C  808B               	bsf	3979,0,c	;volatile
+   892  00FE7E  848B               	bsf	3979,2,c	;volatile
+   893  00FE80  8C89               	bsf	3977,6,c	;volatile
+   894  00FE82  8E89               	bsf	3977,7,c	;volatile
+   895                           
+   896                           ;main.c: 248: break;
+   897  00FE84  0012               	return	
+   898  00FE86                     l848:
+   899                           
+   900                           ;main.c: 250: if (segment == 1) {
+   901  00FE86  0402               	decf	dispSeg@segment,w,c
+   902  00FE88  A4D8               	btfss	status,2,c
+   903  00FE8A  D008               	goto	l115
+   904                           
+   905                           ;main.c: 251: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATAbits.LA0 =
       +                           LATAbits.LA1 = 1;
-  1120  00FE8C  8289               	bsf	3977,1,c	;volatile
-  1121  00FE8E  8089               	bsf	3977,0,c	;volatile
-  1122  00FE90  8A89               	bsf	3977,5,c	;volatile
-  1123  00FE92  8889               	bsf	3977,4,c	;volatile
-  1124  00FE94  8689               	bsf	3977,3,c	;volatile
-  1125  00FE96  8489               	bsf	3977,2,c	;volatile
+   906  00FE8C  8289               	bsf	3977,1,c	;volatile
+   907  00FE8E  8089               	bsf	3977,0,c	;volatile
+   908  00FE90  8A89               	bsf	3977,5,c	;volatile
+   909  00FE92  8889               	bsf	3977,4,c	;volatile
+   910  00FE94  8689               	bsf	3977,3,c	;volatile
+   911  00FE96  8489               	bsf	3977,2,c	;volatile
+   912                           
+   913                           ;main.c: 252: LATEbits.LE0 = 0;
+   914  00FE98  908D               	bcf	3981,0,c	;volatile
+   915                           
+   916                           ;main.c: 253: return;
+   917  00FE9A  0012               	return	
+   918  00FE9C                     l115:
+   919                           
+   920                           ;main.c: 254: }
+   921                           ;main.c: 255: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATEbits.LE1 =
+      +                           LATEbits.LE2 = 1;
+   922  00FE9C  848D               	bsf	3981,2,c	;volatile
+   923  00FE9E  828D               	bsf	3981,1,c	;volatile
+   924  00FEA0  808B               	bsf	3979,0,c	;volatile
+   925  00FEA2  848B               	bsf	3979,2,c	;volatile
+   926  00FEA4  8C89               	bsf	3977,6,c	;volatile
+   927  00FEA6  8E89               	bsf	3977,7,c	;volatile
+   928                           
+   929                           ;main.c: 256: LATCbits.LC1 = 0;
+   930  00FEA8  928B               	bcf	3979,1,c	;volatile
+   931                           
+   932                           ;main.c: 257: break;
+   933  00FEAA  0012               	return	
+   934  00FEAC                     l852:
+   935                           
+   936                           ;main.c: 259: if (segment == 1) {
+   937  00FEAC  0402               	decf	dispSeg@segment,w,c
+   938  00FEAE  A4D8               	btfss	status,2,c
+   939  00FEB0  D008               	goto	l117
+   940                           
+   941                           ;main.c: 260: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATEbits.LE0 = LATAbits.LA0 =
+      +                           LATAbits.LA1 = 1;
+   942  00FEB2  8289               	bsf	3977,1,c	;volatile
+   943  00FEB4  8089               	bsf	3977,0,c	;volatile
+   944  00FEB6  808D               	bsf	3981,0,c	;volatile
+   945  00FEB8  8889               	bsf	3977,4,c	;volatile
+   946  00FEBA  8689               	bsf	3977,3,c	;volatile
+   947  00FEBC  8489               	bsf	3977,2,c	;volatile
+   948                           
+   949                           ;main.c: 261: LATAbits.LA5 = 0;
+   950  00FEBE  9A89               	bcf	3977,5,c	;volatile
+   951                           
+   952                           ;main.c: 262: return;
+   953  00FEC0  0012               	return	
+   954  00FEC2                     l117:
+   955                           
+   956                           ;main.c: 263: }
+   957                           ;main.c: 264: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC1 = LATEbits.LE1 =
+      +                           LATEbits.LE2 = 1;
+   958  00FEC2  848D               	bsf	3981,2,c	;volatile
+   959  00FEC4  828D               	bsf	3981,1,c	;volatile
+   960  00FEC6  828B               	bsf	3979,1,c	;volatile
+   961  00FEC8  848B               	bsf	3979,2,c	;volatile
+   962  00FECA  8C89               	bsf	3977,6,c	;volatile
+   963  00FECC  8E89               	bsf	3977,7,c	;volatile
+   964                           
+   965                           ;main.c: 265: LATCbits.LC0 = 0;
+   966  00FECE  908B               	bcf	3979,0,c	;volatile
+   967                           
+   968                           ;main.c: 266: break;
+   969  00FED0  0012               	return	
+   970  00FED2                     l856:
+   971                           
+   972                           ;main.c: 268: if (segment == 1) {
+   973  00FED2  0402               	decf	dispSeg@segment,w,c
+   974  00FED4  A4D8               	btfss	status,2,c
+   975  00FED6  D008               	goto	l119
+   976                           
+   977                           ;main.c: 269: LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 =
+      +                           1;
+   978  00FED8  8289               	bsf	3977,1,c	;volatile
+   979  00FEDA  8089               	bsf	3977,0,c	;volatile
+   980  00FEDC  808D               	bsf	3981,0,c	;volatile
+   981  00FEDE  8A89               	bsf	3977,5,c	;volatile
+   982  00FEE0  8889               	bsf	3977,4,c	;volatile
+   983                           
+   984                           ;main.c: 270: LATAbits.LA2 = LATAbits.LA3 = 0;
+   985  00FEE2  9689               	bcf	3977,3,c	;volatile
+   986  00FEE4  9489               	bcf	3977,2,c	;volatile
+   987                           
+   988                           ;main.c: 271: return;
+   989  00FEE6  0012               	return	
+   990  00FEE8                     l119:
+   991                           
+   992                           ;main.c: 272: }
+   993                           ;main.c: 273: LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 =
+      +                           1;
+   994  00FEE8  848D               	bsf	3981,2,c	;volatile
+   995  00FEEA  828D               	bsf	3981,1,c	;volatile
+   996  00FEEC  828B               	bsf	3979,1,c	;volatile
+   997  00FEEE  808B               	bsf	3979,0,c	;volatile
+   998  00FEF0  848B               	bsf	3979,2,c	;volatile
+   999                           
+  1000                           ;main.c: 274: LATAbits.LA7 = LATAbits.LA6 = 0;
+  1001  00FEF2  9C89               	bcf	3977,6,c	;volatile
+  1002  00FEF4  9E89               	bcf	3977,7,c	;volatile
+  1003                           
+  1004                           ;main.c: 275: break;
+  1005  00FEF6  0012               	return	
+  1006  00FEF8                     l860:
+  1007                           
+  1008                           ;main.c: 277: if (segment == 1) {
+  1009  00FEF8  0402               	decf	dispSeg@segment,w,c
+  1010  00FEFA  A4D8               	btfss	status,2,c
+  1011  00FEFC  D008               	goto	l121
+  1012                           
+  1013                           ;main.c: 278: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = 1;
+  1014  00FEFE  8089               	bsf	3977,0,c	;volatile
+  1015  00FF00  808D               	bsf	3981,0,c	;volatile
+  1016  00FF02  8A89               	bsf	3977,5,c	;volatile
+  1017  00FF04  8489               	bsf	3977,2,c	;volatile
+  1018                           
+  1019                           ;main.c: 279: LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA1 = 0;
+  1020  00FF06  9289               	bcf	3977,1,c	;volatile
+  1021  00FF08  9889               	bcf	3977,4,c	;volatile
+  1022  00FF0A  9689               	bcf	3977,3,c	;volatile
+  1023                           
+  1024                           ;main.c: 280: return;
+  1025  00FF0C  0012               	return	
+  1026  00FF0E                     l121:
+  1027                           
+  1028                           ;main.c: 281: }
+  1029                           ;main.c: 282: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = 1;
+  1030  00FF0E  828D               	bsf	3981,1,c	;volatile
+  1031  00FF10  828B               	bsf	3979,1,c	;volatile
+  1032  00FF12  808B               	bsf	3979,0,c	;volatile
+  1033  00FF14  8E89               	bsf	3977,7,c	;volatile
+  1034                           
+  1035                           ;main.c: 283: LATAbits.LA6 = LATCbits.LC2 = LATEbits.LE2 = 0;
+  1036  00FF16  948D               	bcf	3981,2,c	;volatile
+  1037  00FF18  948B               	bcf	3979,2,c	;volatile
+  1038  00FF1A  9C89               	bcf	3977,6,c	;volatile
+  1039                           
+  1040                           ;main.c: 284: break;
+  1041  00FF1C  0012               	return	
+  1042  00FF1E                     l864:
+  1043                           
+  1044                           ;main.c: 286: if (segment == 1) {
+  1045  00FF1E  0402               	decf	dispSeg@segment,w,c
+  1046  00FF20  A4D8               	btfss	status,2,c
+  1047  00FF22  D008               	goto	l123
+  1048                           
+  1049                           ;main.c: 287: LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA1 =
+      +                           1;
+  1050  00FF24  8289               	bsf	3977,1,c	;volatile
+  1051  00FF26  808D               	bsf	3981,0,c	;volatile
+  1052  00FF28  8A89               	bsf	3977,5,c	;volatile
+  1053  00FF2A  8889               	bsf	3977,4,c	;volatile
+  1054  00FF2C  8689               	bsf	3977,3,c	;volatile
+  1055                           
+  1056                           ;main.c: 288: LATAbits.LA2 = LATAbits.LA0 = 0;
+  1057  00FF2E  9089               	bcf	3977,0,c	;volatile
+  1058  00FF30  9489               	bcf	3977,2,c	;volatile
+  1059                           
+  1060                           ;main.c: 289: return;
+  1061  00FF32  0012               	return	
+  1062  00FF34                     l123:
+  1063                           
+  1064                           ;main.c: 290: }
+  1065                           ;main.c: 291: LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE2 =
+      +                           1;
+  1066  00FF34  848D               	bsf	3981,2,c	;volatile
+  1067  00FF36  828B               	bsf	3979,1,c	;volatile
+  1068  00FF38  808B               	bsf	3979,0,c	;volatile
+  1069  00FF3A  848B               	bsf	3979,2,c	;volatile
+  1070  00FF3C  8C89               	bsf	3977,6,c	;volatile
+  1071                           
+  1072                           ;main.c: 292: LATAbits.LA7 = LATEbits.LE1 = 0;
+  1073  00FF3E  928D               	bcf	3981,1,c	;volatile
+  1074  00FF40  9E89               	bcf	3977,7,c	;volatile
+  1075                           
+  1076                           ;main.c: 293: break;
+  1077  00FF42  0012               	return	
+  1078  00FF44                     l868:
+  1079                           
+  1080                           ;main.c: 295: if (segment == 1) {
+  1081  00FF44  0402               	decf	dispSeg@segment,w,c
+  1082  00FF46  A4D8               	btfss	status,2,c
+  1083  00FF48  D008               	goto	l125
+  1084                           
+  1085                           ;main.c: 296: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 =
+      +                           1;
+  1086  00FF4A  8289               	bsf	3977,1,c	;volatile
+  1087  00FF4C  8089               	bsf	3977,0,c	;volatile
+  1088  00FF4E  808D               	bsf	3981,0,c	;volatile
+  1089  00FF50  8A89               	bsf	3977,5,c	;volatile
+  1090  00FF52  8489               	bsf	3977,2,c	;volatile
+  1091                           
+  1092                           ;main.c: 297: LATAbits.LA3 = LATAbits.LA4 = 0;
+  1093  00FF54  9889               	bcf	3977,4,c	;volatile
+  1094  00FF56  9689               	bcf	3977,3,c	;volatile
+  1095                           
+  1096                           ;main.c: 298: return;
+  1097  00FF58  0012               	return	
+  1098  00FF5A                     l125:
+  1099                           
+  1100                           ;main.c: 299: }
+  1101                           ;main.c: 300: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 =
+      +                           1;
+  1102  00FF5A  848D               	bsf	3981,2,c	;volatile
+  1103  00FF5C  828D               	bsf	3981,1,c	;volatile
+  1104  00FF5E  828B               	bsf	3979,1,c	;volatile
+  1105  00FF60  808B               	bsf	3979,0,c	;volatile
+  1106  00FF62  8E89               	bsf	3977,7,c	;volatile
+  1107                           
+  1108                           ;main.c: 301: LATAbits.LA6 = LATCbits.LC2 = 0;
+  1109  00FF64  948B               	bcf	3979,2,c	;volatile
+  1110  00FF66  9C89               	bcf	3977,6,c	;volatile
+  1111                           
+  1112                           ;main.c: 302: break;
+  1113  00FF68  0012               	return	
+  1114  00FF6A                     l872:
+  1115                           
+  1116                           ;main.c: 304: if (segment == 1) {
+  1117  00FF6A  0402               	decf	dispSeg@segment,w,c
+  1118  00FF6C  A4D8               	btfss	status,2,c
+  1119  00FF6E  D008               	goto	l127
+  1120                           
+  1121                           ;main.c: 305: LATAbits.LA2 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 1;
+  1122  00FF70  8289               	bsf	3977,1,c	;volatile
+  1123  00FF72  8089               	bsf	3977,0,c	;volatile
+  1124  00FF74  808D               	bsf	3981,0,c	;volatile
+  1125  00FF76  8489               	bsf	3977,2,c	;volatile
   1126                           
-  1127                           ;main.c: 244: LATEbits.LE0 = 0;
-  1128  00FE98  908D               	bcf	3981,0,c	;volatile
-  1129                           
-  1130                           ;main.c: 245: return;
-  1131  00FE9A  0012               	return	
-  1132  00FE9C                     l119:
-  1133                           
-  1134                           ;main.c: 246: }
-  1135                           ;main.c: 247: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATEbits.LE1 =
-      +                           LATEbits.LE2 = 1;
-  1136  00FE9C  848D               	bsf	3981,2,c	;volatile
-  1137  00FE9E  828D               	bsf	3981,1,c	;volatile
-  1138  00FEA0  808B               	bsf	3979,0,c	;volatile
-  1139  00FEA2  848B               	bsf	3979,2,c	;volatile
-  1140  00FEA4  8C89               	bsf	3977,6,c	;volatile
-  1141  00FEA6  8E89               	bsf	3977,7,c	;volatile
+  1127                           ;main.c: 306: LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = 0;
+  1128  00FF78  9A89               	bcf	3977,5,c	;volatile
+  1129  00FF7A  9889               	bcf	3977,4,c	;volatile
+  1130  00FF7C  9689               	bcf	3977,3,c	;volatile
+  1131                           
+  1132                           ;main.c: 307: return;
+  1133  00FF7E  0012               	return	
+  1134  00FF80                     l127:
+  1135                           
+  1136                           ;main.c: 308: }
+  1137                           ;main.c: 309: LATAbits.LA7 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 = 1;
+  1138  00FF80  848D               	bsf	3981,2,c	;volatile
+  1139  00FF82  828D               	bsf	3981,1,c	;volatile
+  1140  00FF84  828B               	bsf	3979,1,c	;volatile
+  1141  00FF86  8E89               	bsf	3977,7,c	;volatile
   1142                           
-  1143                           ;main.c: 248: LATCbits.LC1 = 0;
-  1144  00FEA8  928B               	bcf	3979,1,c	;volatile
-  1145                           
-  1146                           ;main.c: 249: break;
-  1147  00FEAA  0012               	return	
-  1148  00FEAC                     l847:
-  1149                           
-  1150                           ;main.c: 251: if (segment == 1) {
-  1151  00FEAC  0402               	decf	dispSeg@segment,w,c
-  1152  00FEAE  A4D8               	btfss	status,2,c
-  1153  00FEB0  D008               	goto	l121
-  1154                           
-  1155                           ;main.c: 252: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATEbits.LE0 = LATAbits.LA0 =
-      +                           LATAbits.LA1 = 1;
-  1156  00FEB2  8289               	bsf	3977,1,c	;volatile
-  1157  00FEB4  8089               	bsf	3977,0,c	;volatile
-  1158  00FEB6  808D               	bsf	3981,0,c	;volatile
-  1159  00FEB8  8889               	bsf	3977,4,c	;volatile
-  1160  00FEBA  8689               	bsf	3977,3,c	;volatile
-  1161  00FEBC  8489               	bsf	3977,2,c	;volatile
-  1162                           
-  1163                           ;main.c: 253: LATAbits.LA5 = 0;
-  1164  00FEBE  9A89               	bcf	3977,5,c	;volatile
-  1165                           
-  1166                           ;main.c: 254: return;
-  1167  00FEC0  0012               	return	
-  1168  00FEC2                     l121:
-  1169                           
-  1170                           ;main.c: 255: }
-  1171                           ;main.c: 256: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC1 = LATEbits.LE1 =
-      +                           LATEbits.LE2 = 1;
-  1172  00FEC2  848D               	bsf	3981,2,c	;volatile
-  1173  00FEC4  828D               	bsf	3981,1,c	;volatile
-  1174  00FEC6  828B               	bsf	3979,1,c	;volatile
-  1175  00FEC8  848B               	bsf	3979,2,c	;volatile
-  1176  00FECA  8C89               	bsf	3977,6,c	;volatile
-  1177  00FECC  8E89               	bsf	3977,7,c	;volatile
-  1178                           
-  1179                           ;main.c: 257: LATCbits.LC0 = 0;
-  1180  00FECE  908B               	bcf	3979,0,c	;volatile
-  1181                           
-  1182                           ;main.c: 258: break;
-  1183  00FED0  0012               	return	
-  1184  00FED2                     l851:
-  1185                           
-  1186                           ;main.c: 260: if (segment == 1) {
-  1187  00FED2  0402               	decf	dispSeg@segment,w,c
-  1188  00FED4  A4D8               	btfss	status,2,c
-  1189  00FED6  D008               	goto	l123
-  1190                           
-  1191                           ;main.c: 261: LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 =
-      +                           1;
-  1192  00FED8  8289               	bsf	3977,1,c	;volatile
-  1193  00FEDA  8089               	bsf	3977,0,c	;volatile
-  1194  00FEDC  808D               	bsf	3981,0,c	;volatile
-  1195  00FEDE  8A89               	bsf	3977,5,c	;volatile
-  1196  00FEE0  8889               	bsf	3977,4,c	;volatile
-  1197                           
-  1198                           ;main.c: 262: LATAbits.LA2 = LATAbits.LA3 = 0;
-  1199  00FEE2  9689               	bcf	3977,3,c	;volatile
-  1200  00FEE4  9489               	bcf	3977,2,c	;volatile
-  1201                           
-  1202                           ;main.c: 263: return;
-  1203  00FEE6  0012               	return	
-  1204  00FEE8                     l123:
-  1205                           
-  1206                           ;main.c: 264: }
-  1207                           ;main.c: 265: LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 =
-      +                           1;
-  1208  00FEE8  848D               	bsf	3981,2,c	;volatile
-  1209  00FEEA  828D               	bsf	3981,1,c	;volatile
-  1210  00FEEC  828B               	bsf	3979,1,c	;volatile
-  1211  00FEEE  808B               	bsf	3979,0,c	;volatile
-  1212  00FEF0  848B               	bsf	3979,2,c	;volatile
-  1213                           
-  1214                           ;main.c: 266: LATAbits.LA7 = LATAbits.LA6 = 0;
-  1215  00FEF2  9C89               	bcf	3977,6,c	;volatile
-  1216  00FEF4  9E89               	bcf	3977,7,c	;volatile
-  1217                           
-  1218                           ;main.c: 267: break;
-  1219  00FEF6  0012               	return	
-  1220  00FEF8                     l855:
-  1221                           
-  1222                           ;main.c: 269: if (segment == 1) {
-  1223  00FEF8  0402               	decf	dispSeg@segment,w,c
-  1224  00FEFA  A4D8               	btfss	status,2,c
-  1225  00FEFC  D008               	goto	l125
-  1226                           
-  1227                           ;main.c: 270: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = 1;
-  1228  00FEFE  8089               	bsf	3977,0,c	;volatile
-  1229  00FF00  808D               	bsf	3981,0,c	;volatile
-  1230  00FF02  8A89               	bsf	3977,5,c	;volatile
-  1231  00FF04  8489               	bsf	3977,2,c	;volatile
-  1232                           
-  1233                           ;main.c: 271: LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA1 = 0;
-  1234  00FF06  9289               	bcf	3977,1,c	;volatile
-  1235  00FF08  9889               	bcf	3977,4,c	;volatile
-  1236  00FF0A  9689               	bcf	3977,3,c	;volatile
-  1237                           
-  1238                           ;main.c: 272: return;
-  1239  00FF0C  0012               	return	
-  1240  00FF0E                     l125:
-  1241                           
-  1242                           ;main.c: 273: }
-  1243                           ;main.c: 274: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = 1;
-  1244  00FF0E  828D               	bsf	3981,1,c	;volatile
-  1245  00FF10  828B               	bsf	3979,1,c	;volatile
-  1246  00FF12  808B               	bsf	3979,0,c	;volatile
-  1247  00FF14  8E89               	bsf	3977,7,c	;volatile
-  1248                           
-  1249                           ;main.c: 275: LATAbits.LA6 = LATCbits.LC2 = LATEbits.LE2 = 0;
-  1250  00FF16  948D               	bcf	3981,2,c	;volatile
-  1251  00FF18  948B               	bcf	3979,2,c	;volatile
-  1252  00FF1A  9C89               	bcf	3977,6,c	;volatile
-  1253                           
-  1254                           ;main.c: 276: break;
-  1255  00FF1C  0012               	return	
-  1256  00FF1E                     l859:
-  1257                           
-  1258                           ;main.c: 278: if (segment == 1) {
-  1259  00FF1E  0402               	decf	dispSeg@segment,w,c
-  1260  00FF20  A4D8               	btfss	status,2,c
-  1261  00FF22  D008               	goto	l127
-  1262                           
-  1263                           ;main.c: 279: LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA1 =
-      +                           1;
-  1264  00FF24  8289               	bsf	3977,1,c	;volatile
-  1265  00FF26  808D               	bsf	3981,0,c	;volatile
-  1266  00FF28  8A89               	bsf	3977,5,c	;volatile
-  1267  00FF2A  8889               	bsf	3977,4,c	;volatile
-  1268  00FF2C  8689               	bsf	3977,3,c	;volatile
-  1269                           
-  1270                           ;main.c: 280: LATAbits.LA2 = LATAbits.LA0 = 0;
-  1271  00FF2E  9089               	bcf	3977,0,c	;volatile
-  1272  00FF30  9489               	bcf	3977,2,c	;volatile
-  1273                           
-  1274                           ;main.c: 281: return;
-  1275  00FF32  0012               	return	
-  1276  00FF34                     l127:
-  1277                           
-  1278                           ;main.c: 282: }
-  1279                           ;main.c: 283: LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE2 =
-      +                           1;
-  1280  00FF34  848D               	bsf	3981,2,c	;volatile
-  1281  00FF36  828B               	bsf	3979,1,c	;volatile
-  1282  00FF38  808B               	bsf	3979,0,c	;volatile
-  1283  00FF3A  848B               	bsf	3979,2,c	;volatile
-  1284  00FF3C  8C89               	bsf	3977,6,c	;volatile
-  1285                           
-  1286                           ;main.c: 284: LATAbits.LA7 = LATEbits.LE1 = 0;
-  1287  00FF3E  928D               	bcf	3981,1,c	;volatile
-  1288  00FF40  9E89               	bcf	3977,7,c	;volatile
-  1289                           
-  1290                           ;main.c: 285: break;
-  1291  00FF42  0012               	return	
-  1292  00FF44                     l863:
-  1293                           
-  1294                           ;main.c: 287: if (segment == 1) {
-  1295  00FF44  0402               	decf	dispSeg@segment,w,c
-  1296  00FF46  A4D8               	btfss	status,2,c
-  1297  00FF48  D008               	goto	l129
-  1298                           
-  1299                           ;main.c: 288: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 =
-      +                           1;
-  1300  00FF4A  8289               	bsf	3977,1,c	;volatile
-  1301  00FF4C  8089               	bsf	3977,0,c	;volatile
-  1302  00FF4E  808D               	bsf	3981,0,c	;volatile
-  1303  00FF50  8A89               	bsf	3977,5,c	;volatile
-  1304  00FF52  8489               	bsf	3977,2,c	;volatile
-  1305                           
-  1306                           ;main.c: 289: LATAbits.LA3 = LATAbits.LA4 = 0;
-  1307  00FF54  9889               	bcf	3977,4,c	;volatile
-  1308  00FF56  9689               	bcf	3977,3,c	;volatile
-  1309                           
-  1310                           ;main.c: 290: return;
-  1311  00FF58  0012               	return	
-  1312  00FF5A                     l129:
-  1313                           
-  1314                           ;main.c: 291: }
-  1315                           ;main.c: 292: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 =
-      +                           1;
-  1316  00FF5A  848D               	bsf	3981,2,c	;volatile
-  1317  00FF5C  828D               	bsf	3981,1,c	;volatile
-  1318  00FF5E  828B               	bsf	3979,1,c	;volatile
-  1319  00FF60  808B               	bsf	3979,0,c	;volatile
-  1320  00FF62  8E89               	bsf	3977,7,c	;volatile
-  1321                           
-  1322                           ;main.c: 293: LATAbits.LA6 = LATCbits.LC2 = 0;
-  1323  00FF64  948B               	bcf	3979,2,c	;volatile
-  1324  00FF66  9C89               	bcf	3977,6,c	;volatile
-  1325                           
-  1326                           ;main.c: 294: break;
-  1327  00FF68  0012               	return	
-  1328  00FF6A                     l867:
-  1329                           
-  1330                           ;main.c: 296: if (segment == 1) {
-  1331  00FF6A  0402               	decf	dispSeg@segment,w,c
-  1332  00FF6C  A4D8               	btfss	status,2,c
-  1333  00FF6E  D008               	goto	l131
-  1334                           
-  1335                           ;main.c: 297: LATAbits.LA2 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 1;
-  1336  00FF70  8289               	bsf	3977,1,c	;volatile
-  1337  00FF72  8089               	bsf	3977,0,c	;volatile
-  1338  00FF74  808D               	bsf	3981,0,c	;volatile
-  1339  00FF76  8489               	bsf	3977,2,c	;volatile
-  1340                           
-  1341                           ;main.c: 298: LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = 0;
-  1342  00FF78  9A89               	bcf	3977,5,c	;volatile
-  1343  00FF7A  9889               	bcf	3977,4,c	;volatile
-  1344  00FF7C  9689               	bcf	3977,3,c	;volatile
-  1345                           
-  1346                           ;main.c: 299: return;
-  1347  00FF7E  0012               	return	
-  1348  00FF80                     l131:
-  1349                           
-  1350                           ;main.c: 300: }
-  1351                           ;main.c: 301: LATAbits.LA7 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 = 1;
-  1352  00FF80  848D               	bsf	3981,2,c	;volatile
-  1353  00FF82  828D               	bsf	3981,1,c	;volatile
-  1354  00FF84  828B               	bsf	3979,1,c	;volatile
-  1355  00FF86  8E89               	bsf	3977,7,c	;volatile
-  1356                           
-  1357                           ;main.c: 302: LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = 0;
-  1358  00FF88  908B               	bcf	3979,0,c	;volatile
-  1359  00FF8A  948B               	bcf	3979,2,c	;volatile
-  1360  00FF8C  9C89               	bcf	3977,6,c	;volatile
-  1361                           
-  1362                           ;main.c: 303: break;
-  1363  00FF8E  0012               	return	
-  1364  00FF90                     l873:
-  1365  00FF90  5001               	movf	dispSeg@letter,w,c
-  1366                           
-  1367                           ; Switch size 1, requested type "space"
-  1368                           ; Number of cases is 18, Range of values is 45 to 120
-  1369                           ; switch strategies available:
-  1370                           ; Name         Instructions Cycles
-  1371                           ; simple_byte           55    28 (average)
-  1372                           ;	Chosen strategy is simple_byte
-  1373  00FF92  0A2D               	xorlw	45	; case 45
-  1374  00FF94  B4D8               	btfsc	status,2,c
-  1375  00FF96  D6BA               	goto	l803
-  1376  00FF98  0A1D               	xorlw	29	; case 48
-  1377  00FF9A  B4D8               	btfsc	status,2,c
-  1378  00FF9C  D6C9               	goto	l807
-  1379  00FF9E  0A01               	xorlw	1	; case 49
-  1380  00FFA0  B4D8               	btfsc	status,2,c
-  1381  00FFA2  D6D9               	goto	l811
-  1382  00FFA4  0A03               	xorlw	3	; case 50
-  1383  00FFA6  B4D8               	btfsc	status,2,c
-  1384  00FFA8  D6E9               	goto	l815
-  1385  00FFAA  0A01               	xorlw	1	; case 51
-  1386  00FFAC  B4D8               	btfsc	status,2,c
-  1387  00FFAE  D6F9               	goto	l819
-  1388  00FFB0  0A07               	xorlw	7	; case 52
-  1389  00FFB2  B4D8               	btfsc	status,2,c
-  1390  00FFB4  D709               	goto	l823
-  1391  00FFB6  0A01               	xorlw	1	; case 53
-  1392  00FFB8  B4D8               	btfsc	status,2,c
-  1393  00FFBA  D719               	goto	l827
-  1394  00FFBC  0A03               	xorlw	3	; case 54
-  1395  00FFBE  B4D8               	btfsc	status,2,c
-  1396  00FFC0  D729               	goto	l831
-  1397  00FFC2  0A01               	xorlw	1	; case 55
-  1398  00FFC4  B4D8               	btfsc	status,2,c
-  1399  00FFC6  D739               	goto	l835
-  1400  00FFC8  0A0F               	xorlw	15	; case 56
-  1401  00FFCA  B4D8               	btfsc	status,2,c
-  1402  00FFCC  D749               	goto	l839
-  1403  00FFCE  0A01               	xorlw	1	; case 57
-  1404  00FFD0  B4D8               	btfsc	status,2,c
-  1405  00FFD2  D759               	goto	l843
-  1406  00FFD4  0A58               	xorlw	88	; case 97
-  1407  00FFD6  B4D8               	btfsc	status,2,c
-  1408  00FFD8  D769               	goto	l847
-  1409  00FFDA  0A03               	xorlw	3	; case 98
-  1410  00FFDC  B4D8               	btfsc	status,2,c
-  1411  00FFDE  D779               	goto	l851
-  1412  00FFE0  0A01               	xorlw	1	; case 99
-  1413  00FFE2  B4D8               	btfsc	status,2,c
-  1414  00FFE4  D789               	goto	l855
-  1415  00FFE6  0A07               	xorlw	7	; case 100
-  1416  00FFE8  B4D8               	btfsc	status,2,c
-  1417  00FFEA  D799               	goto	l859
-  1418  00FFEC  0A01               	xorlw	1	; case 101
-  1419  00FFEE  B4D8               	btfsc	status,2,c
-  1420  00FFF0  D7A9               	goto	l863
-  1421  00FFF2  0A03               	xorlw	3	; case 102
-  1422  00FFF4  B4D8               	btfsc	status,2,c
-  1423  00FFF6  D7B9               	goto	l867
-  1424  00FFF8  0A1E               	xorlw	30	; case 120
-  1425  00FFFA  A4D8               	btfss	status,2,c
-  1426  00FFFC  0012               	return	
-  1427  00FFFE  D674               	goto	l799
-  1428  010000                     __end_of_dispSeg:
-  1429                           	opt stack 0
-  1430  0000                     tblptru	equ	0xFF8
-  1431                           wreg	equ	0xFE8
-  1432                           status	equ	0xFD8
-  1433                           tblptru	equ	0xFF8
-  1434                           wreg	equ	0xFE8
-  1435                           status	equ	0xFD8
-  1436                           
-  1437                           	psect	rparam
-  1438  0000                     tblptru	equ	0xFF8
-  1439                           wreg	equ	0xFE8
-  1440                           status	equ	0xFD8
+  1143                           ;main.c: 310: LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = 0;
+  1144  00FF88  908B               	bcf	3979,0,c	;volatile
+  1145  00FF8A  948B               	bcf	3979,2,c	;volatile
+  1146  00FF8C  9C89               	bcf	3977,6,c	;volatile
+  1147                           
+  1148                           ;main.c: 311: break;
+  1149  00FF8E  0012               	return	
+  1150  00FF90                     l878:
+  1151  00FF90  5001               	movf	dispSeg@letter,w,c
+  1152                           
+  1153                           ; Switch size 1, requested type "space"
+  1154                           ; Number of cases is 18, Range of values is 45 to 120
+  1155                           ; switch strategies available:
+  1156                           ; Name         Instructions Cycles
+  1157                           ; simple_byte           55    28 (average)
+  1158                           ;	Chosen strategy is simple_byte
+  1159  00FF92  0A2D               	xorlw	45	; case 45
+  1160  00FF94  B4D8               	btfsc	status,2,c
+  1161  00FF96  D6BA               	goto	l808
+  1162  00FF98  0A1D               	xorlw	29	; case 48
+  1163  00FF9A  B4D8               	btfsc	status,2,c
+  1164  00FF9C  D6C9               	goto	l812
+  1165  00FF9E  0A01               	xorlw	1	; case 49
+  1166  00FFA0  B4D8               	btfsc	status,2,c
+  1167  00FFA2  D6D9               	goto	l816
+  1168  00FFA4  0A03               	xorlw	3	; case 50
+  1169  00FFA6  B4D8               	btfsc	status,2,c
+  1170  00FFA8  D6E9               	goto	l820
+  1171  00FFAA  0A01               	xorlw	1	; case 51
+  1172  00FFAC  B4D8               	btfsc	status,2,c
+  1173  00FFAE  D6F9               	goto	l824
+  1174  00FFB0  0A07               	xorlw	7	; case 52
+  1175  00FFB2  B4D8               	btfsc	status,2,c
+  1176  00FFB4  D709               	goto	l828
+  1177  00FFB6  0A01               	xorlw	1	; case 53
+  1178  00FFB8  B4D8               	btfsc	status,2,c
+  1179  00FFBA  D719               	goto	l832
+  1180  00FFBC  0A03               	xorlw	3	; case 54
+  1181  00FFBE  B4D8               	btfsc	status,2,c
+  1182  00FFC0  D729               	goto	l836
+  1183  00FFC2  0A01               	xorlw	1	; case 55
+  1184  00FFC4  B4D8               	btfsc	status,2,c
+  1185  00FFC6  D739               	goto	l840
+  1186  00FFC8  0A0F               	xorlw	15	; case 56
+  1187  00FFCA  B4D8               	btfsc	status,2,c
+  1188  00FFCC  D749               	goto	l844
+  1189  00FFCE  0A01               	xorlw	1	; case 57
+  1190  00FFD0  B4D8               	btfsc	status,2,c
+  1191  00FFD2  D759               	goto	l848
+  1192  00FFD4  0A58               	xorlw	88	; case 97
+  1193  00FFD6  B4D8               	btfsc	status,2,c
+  1194  00FFD8  D769               	goto	l852
+  1195  00FFDA  0A03               	xorlw	3	; case 98
+  1196  00FFDC  B4D8               	btfsc	status,2,c
+  1197  00FFDE  D779               	goto	l856
+  1198  00FFE0  0A01               	xorlw	1	; case 99
+  1199  00FFE2  B4D8               	btfsc	status,2,c
+  1200  00FFE4  D789               	goto	l860
+  1201  00FFE6  0A07               	xorlw	7	; case 100
+  1202  00FFE8  B4D8               	btfsc	status,2,c
+  1203  00FFEA  D799               	goto	l864
+  1204  00FFEC  0A01               	xorlw	1	; case 101
+  1205  00FFEE  B4D8               	btfsc	status,2,c
+  1206  00FFF0  D7A9               	goto	l868
+  1207  00FFF2  0A03               	xorlw	3	; case 102
+  1208  00FFF4  B4D8               	btfsc	status,2,c
+  1209  00FFF6  D7B9               	goto	l872
+  1210  00FFF8  0A1E               	xorlw	30	; case 120
+  1211  00FFFA  A4D8               	btfss	status,2,c
+  1212  00FFFC  0012               	return	
+  1213  00FFFE  D674               	goto	l804
+  1214  010000                     __end_of_dispSeg:
+  1215                           	opt stack 0
+  1216  0000                     tblptru	equ	0xFF8
+  1217                           wreg	equ	0xFE8
+  1218                           status	equ	0xFD8
+  1219                           tblptru	equ	0xFF8
+  1220                           wreg	equ	0xFE8
+  1221                           status	equ	0xFD8
+  1222                           
+  1223                           	psect	rparam
+  1224  0000                     tblptru	equ	0xFF8
+  1225                           wreg	equ	0xFE8
+  1226                           status	equ	0xFD8
 
 
 Data Sizes:
@@ -1510,7 +1291,7 @@ Data Sizes:
 
 Auto Spaces:
     Space          Size  Autos    Used
-    COMRAM           95      6      10
+    COMRAM           95      5       9
     BANK0           160      0       0
     BANK1           256      0       0
     BANK2           256      0       0
@@ -1534,7 +1315,7 @@ Pointer List with Targets:
 
 Critical Paths under _main in COMRAM
 
-    _main->_enableSerialRX
+    _main->_enableSerial
 
 Critical Paths under _main in BANK0
 
@@ -1605,22 +1386,18 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 2     2      0    1754
-                                              4 COMRAM     2     2      0
+ (0) _main                                                 1     1      0    1626
+                                              4 COMRAM     1     1      0
                             _dispSeg
-                     _enableSerialRX
-                          _hexToChar
+                       _enableSerial
                           _initPorts
  ---------------------------------------------------------------------------------
  (1) _initPorts                                            0     0      0       0
  ---------------------------------------------------------------------------------
- (1) _hexToChar                                            1     1      0      45
-                                              0 COMRAM     1     1      0
- ---------------------------------------------------------------------------------
- (1) _enableSerialRX                                       4     2      2      49
+ (1) _enableSerial                                         4     2      2      49
                                               0 COMRAM     4     2      2
  ---------------------------------------------------------------------------------
- (1) _dispSeg                                              2     1      1    1645
+ (1) _dispSeg                                              2     1      1    1577
                                               0 COMRAM     2     1      1
  ---------------------------------------------------------------------------------
  Estimated maximum stack depth 1
@@ -1630,8 +1407,7 @@ Call Graph Tables:
 
  _main (ROOT)
    _dispSeg
-   _enableSerialRX
-   _hexToChar
+   _enableSerial
    _initPorts
 
  Address spaces:
@@ -1669,7 +1445,7 @@ BANK1              100      0       0       7        0.0%
 BITBANK0            A0      0       0       4        0.0%
 BANK0               A0      0       0       5        0.0%
 BITCOMRAM           5F      0       0       0        0.0%
-COMRAM              5F      6       A       1       10.5%
+COMRAM              5F      5       9       1        9.5%
 BITBANK15           38      0       0      35        0.0%
 BANK15              38      0       0      36        0.0%
 BITSFR_1             0      0       0      40        0.0%
@@ -1678,42 +1454,36 @@ BITSFR               0      0       0      40        0.0%
 SFR                  0      0       0      40        0.0%
 STACK                0      0       0       2        0.0%
 NULL                 0      0       0       0        0.0%
-ABS                  0      0       A      12        0.0%
-DATA                 0      0       A       3        0.0%
+ABS                  0      0       9      12        0.0%
+DATA                 0      0       9       3        0.0%
 CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.30 build 55553 
-Symbol Table                                                                                   Thu Feb 06 13:21:13 2014
+Symbol Table                                                                                   Fri Feb 07 13:46:01 2014
 
-                     l52 FB74                       l55 FB8E                       l95 FCFC  
-                     l98 FD20             __CFG_CP0$OFF 000000             __CFG_CP1$OFF 000000  
-           __CFG_CP2$OFF 000000             __CFG_CP3$OFF 000000                      l100 FD46  
-                    l111 FE04                      l103 FD6C                      l121 FEC2  
-                    l113 FE2A                      l105 FD92                      l131 FF80  
-                    l123 FEE8                      l115 FE50                      l107 FDB8  
-                    l125 FF0E                      l117 FE76                      l109 FDDE  
-                    l127 FF34                      l119 FE9C                      l129 FF5A  
-                    l811 FD56                      l803 FD0C                      l901 FC54  
-                    l831 FE14                      l823 FDC8                      l815 FD7C  
-                    l807 FD30                      l751 FBAE                      l753 FBB2  
-                    l921 FC68                      l913 FC60                      l905 FC58  
-                    l851 FED2                      l843 FE86                      l835 FE3A  
-                    l827 FDEE                      l819 FDA2                      l755 FBB6  
-                    l747 FBA6                      l749 FBAA                      l757 FBBC  
-                    l933 FC74                      l925 FC6C                      l917 FC64  
-                    l909 FC5C                      l863 FF44                      l855 FEF8  
-                    l847 FEAC                      l839 FE60                      l759 FC14  
-                    l943 FC7C                      l873 FF90                      l937 FC78  
-                    l929 FC70                      l881 FC40                      l867 FF6A  
-                    l859 FF1E                      l893 FC4C                      l885 FC44  
-                    l877 FC3C                      l799 FCE8                      l897 FC50  
-                    l889 FC48             __CFG_CPB$OFF 000000             __CFG_CPD$OFF 000000  
+                     l91 FCFC                       l94 FD20                       l96 FD46  
+                     l99 FD6C             __CFG_CP0$OFF 000000             __CFG_CP1$OFF 000000  
+           __CFG_CP2$OFF 000000             __CFG_CP3$OFF 000000                      l101 FD92  
+                    l111 FE50                      l103 FDB8                      l121 FF0E  
+                    l113 FE76                      l105 FDDE                      l123 FF34  
+                    l115 FE9C                      l107 FE04                      l125 FF5A  
+                    l117 FEC2                      l109 FE2A                      l127 FF80  
+                    l119 FEE8                      l820 FD7C                      l812 FD30  
+                    l804 FCE8                      l750 FC5C                      l840 FE3A  
+                    l832 FDEE                      l824 FDA2                      l816 FD56  
+                    l808 FD0C                      l752 FC60                      l760 FC72  
+                    l754 FC64                      l762 FCCA                      l860 FEF8  
+                    l852 FEAC                      l844 FE60                      l836 FE14  
+                    l828 FDC8                      l756 FC68                      l758 FC6C  
+                    l872 FF6A                      l864 FF1E                      l856 FED2  
+                    l848 FE86                      l868 FF44                      l972 FC4C  
+                    l878 FF90             __CFG_CPB$OFF 000000             __CFG_CPD$OFF 000000  
                     wreg 000FE8               _TXSTA2bits 000F72             __CFG_LVP$OFF 000000  
-                   l1141 FBE6                     l1143 FBEC                     l1145 FBF6  
-                   l1147 FC00                     l1149 FC0A                     _LATA 000F89  
+                   l1080 FCA2                     l1082 FCAC                     l1084 FCB6  
+                   l1086 FCC0                     l1078 FC9C                     _LATA 000F89  
                    _LATC 000F8B                     _LATD 000F8C                     _LATE 000F8D  
-                   _main FB48            __CFG_BORV$190 000000                     start 0000  
+                   _main FC20            __CFG_BORV$190 000000                     start 0000  
           __CFG_IESO$OFF 000000             _BAUDCON2bits 000F70                    ?_main 0001  
                   _TRISA 000F92                    _TRISC 000F94                    _TRISE 000F96  
           __CFG_WRT0$OFF 000000            __CFG_WRT1$OFF 000000            __CFG_WRT2$OFF 000000  
@@ -1722,28 +1492,25 @@ Symbol Table                                                                    
         __end_of_dispSeg 0000            __CFG_WRTB$OFF 000000            __CFG_WRTC$OFF 000000  
           __CFG_WRTD$OFF 000000           __CFG_EBTRB$OFF 000000       __CFG_MCLRE$EXTMCLR 000000  
          __CFG_BOREN$OFF 000000                    status 000FD8           __CFG_HFOFST$ON 000000  
-        __initialization FB0A             __end_of_main FBA2                   ??_main 0005  
-          __activetblptr 000002           __CFG_PLLCFG$ON 000000                   _ANSELD 000F3B  
-         __CFG_WDTEN$OFF 000000                   _RCREG2 000F74                   _SPBRG2 000F75  
-         __CFG_XINST$OFF 000000           __CFG_STVREN$ON 000000                ??_dispSeg 0002  
-                 tblptru 000FF8          hexToChar@number 0001               __accesstop 0060  
-__end_of__initialization FB12          __CFG_PBADEN$OFF 000000           __pcstackCOMRAM 0001  
-     __size_of_hexToChar 00B8       __size_of_initPorts 002C       __CFG_CCP2MX$PORTC1 000000  
-__size_of_enableSerialRX 0088       __CFG_CCP3MX$PORTB5 000000        __CFG_PRICLKEN$OFF 000000  
-                _SPBRGH2 000F76          __CFG_PWRTEN$OFF 000000                  __Hparam 0000  
-                __Lparam 0000        __end_of_hexToChar FCE2                  __pcinit FB0A  
-                __ramtop 1000                  __ptext0 FB48                  __ptext1 FB1C  
-                __ptext2 FC2A                  __ptext3 FBA2                  __ptext4 FCE2  
-                _dispSeg FCE2        __end_of_initPorts FB48     end_of_initialization FB12  
-          __Lmediumconst 0000                _TRISDbits 000F95           _enableSerialRX FBA2  
-    start_initialization FB0A         main@receivedByte 0006   __end_of_enableSerialRX FC2A  
-            __pbssCOMRAM 0007          ?_enableSerialRX 0001                _hexToChar FC2A  
- enableSerialRX@baudRate 0001                 ?_dispSeg 0001                _initPorts FB1C  
-               _LATAbits 000F89                 _LATCbits 000F8B                 _LATDbits 000F8C  
-               _LATEbits 000F8D                 _PIR3bits 000FA4         __CFG_WDTPS$32768 000000  
-             ?_hexToChar 0001               ?_initPorts 0001                 __Hrparam 0000  
-               __Lrparam 0000        __CFG_P2BMX$PORTD2 000000         __size_of_dispSeg 031E  
-          __size_of_main 005A              ??_hexToChar 0001              ??_initPorts 0001  
-       ??_enableSerialRX 0003               _RCSTA2bits 000F71           dispSeg@segment 0002  
-           wait_ms@timel 0007        __CFG_T3CMX$PORTC0 000000            dispSeg@letter 0001  
-      __CFG_FOSC$INTIO67 000000  
+        __initialization FBDE             __end_of_main FC58     __end_of_enableSerial FCE2  
+                 ??_main 0005            __activetblptr 000002           __CFG_PLLCFG$ON 000000  
+   enableSerial@baudRate 0001                   _ANSELD 000F3B           __CFG_WDTEN$OFF 000000  
+                 _SPBRG2 000F75                   _TXREG2 000F73           __CFG_XINST$OFF 000000  
+         __CFG_STVREN$ON 000000                ??_dispSeg 0002                   tblptru 000FF8  
+             __accesstop 0060  __end_of__initialization FBE6          __CFG_PBADEN$OFF 000000  
+         __pcstackCOMRAM 0001       __size_of_initPorts 0030       __CFG_CCP2MX$PORTC1 000000  
+  __size_of_enableSerial 008A       __CFG_CCP3MX$PORTB5 000000        __CFG_PRICLKEN$OFF 000000  
+                _SPBRGH2 000F76             _enableSerial FC58          __CFG_PWRTEN$OFF 000000  
+                __Hparam 0000                  __Lparam 0000                  __pcinit FBDE  
+                __ramtop 1000                  __ptext0 FC20                  __ptext1 FBF0  
+                __ptext2 FC58                  __ptext3 FCE2                  _dispSeg FCE2  
+      __end_of_initPorts FC20     end_of_initialization FBE6            __Lmediumconst 0000  
+              _TRISDbits 000F95      start_initialization FBDE              __pbssCOMRAM 0006  
+               ?_dispSeg 0001                _initPorts FBF0                 _LATAbits 000F89  
+               _LATCbits 000F8B                 _LATDbits 000F8C                 _LATEbits 000F8D  
+               _PIR3bits 000FA4         __CFG_WDTPS$32768 000000               ?_initPorts 0001  
+               __Hrparam 0000                 __Lrparam 0000        __CFG_P2BMX$PORTD2 000000  
+       __size_of_dispSeg 031E            __size_of_main 0038              ??_initPorts 0001  
+          ?_enableSerial 0001               _RCSTA2bits 000F71           dispSeg@segment 0002  
+           wait_ms@timel 0006        __CFG_T3CMX$PORTC0 000000            dispSeg@letter 0001  
+         ??_enableSerial 0003        __CFG_FOSC$INTIO67 000000  
