@@ -1,6 +1,7 @@
-_main: CODE, 64544 0 56
-_initPorts: CODE, 64496 0 48
-__initialization: CODE, 64478 0 8
+_main: CODE, 64522 0 78
+_initPorts: CODE, 64474 0 48
+__initialization: CODE, 64428 0 8
 _enableSerial: CODE, 64600 0 138
+_initOscillator: CODE, 64446 0 28
 _dispSeg: CODE, 64738 0 798
-Total: 1048
+Total: 1098

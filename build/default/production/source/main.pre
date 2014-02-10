@@ -10394,7 +10394,7 @@ extern __nonreentrant void _delay3(unsigned char);
 
 # 12 "source/configuration_bits.c"
 #pragma config FOSC = INTIO67
-#pragma config PLLCFG = ON
+#pragma config PLLCFG = OFF
 #pragma config PRICLKEN = OFF
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
@@ -10546,16 +10546,17 @@ typedef uint16_t uintptr_t;
 typedef unsigned char bool;
 
 # 12 "source/main.c"
+void initOscillator(void);
 void initPorts(void);
 void wait_ms(uint16_t);
 uint8_t hexToChar(uint8_t);
 void dispSeg(uint8_t, uint8_t);
 void cycleSegDisplays(uint16_t);
 void enableSerial(uint16_t);
-void isr(void);
 
 void main(void)
 {
+initOscillator();
 initPorts();
 enableSerial(1200);
 dispSeg(1, '-'); dispSeg(2, '-');
@@ -10566,15 +10567,33 @@ if(PIR3bits.RC2IF == 1)
 {
 if(PIR3bits.TX2IF == 1)
 {
-TXREG2 = 'A';
-}
-}
+if(RCSTA2bits.FERR2 == 1)
+{
+dispSeg(1, 'F');
 }
 
-# 62
+TXREG2 = RCREG2;
+}
+}
 }
 
 # 68
+}
+
+# 78
+void initOscillator(void)
+{
+OSCCONbits.IDLEN = 0;
+OSCCONbits.IRCF = 0b111;
+OSCCONbits.SCS = 0b10;
+OSCCON2bits.MFIOSEL = 0;
+OSCCON2bits.SOSCGO = 0;
+OSCCON2bits.PRISD = 0;
+
+
+while (OSCCONbits.HFIOFS == 0) continue;
+}
+
 void initPorts(void)
 {
 TRISA = 0;
@@ -10594,7 +10613,7 @@ LATD = 0;
 LATE = 0;
 }
 
-# 92
+# 115
 void wait_ms(uint16_t time)
 {
 static long timel = 0;
@@ -10602,7 +10621,7 @@ timel = time * 10;
 for (; timel; timel--);
 }
 
-# 105
+# 128
 uint8_t hexToChar(uint8_t number)
 {
 number = number << 4;
@@ -10645,7 +10664,7 @@ return 'F';
 return 0;
 }
 
-# 153
+# 176
 void dispSeg(uint8_t segment, uint8_t letter)
 {
 switch (letter) {
@@ -10808,7 +10827,7 @@ break;
 }
 }
 
-# 320
+# 343
 void cycleSegDisplays(uint16_t time)
 {
 dispSeg(1, 0); dispSeg(2, 0);
@@ -10849,7 +10868,7 @@ dispSeg(1, 'f'); dispSeg(2, 'f');
 wait_ms(time);
 }
 
-# 374
+# 397
 void enableSerial(uint16_t baudRate)
 {
 LATDbits.LD3 = 1;
@@ -10883,15 +10902,10 @@ TXSTA2bits.TX9 = 0;
 RCSTA2bits.RX9 = 0;
 
 TXSTA2bits.SYNC = 0;
-BAUDCON2bits.DTRXP = 1;
+BAUDCON2bits.DTRXP = 0;
 
 TXSTA2bits.TXEN = 1;
 RCSTA2bits.CREN = 1;
 
 RCSTA2bits.SPEN = 1;
-}
-
-void isr(void)
-{
-
 }

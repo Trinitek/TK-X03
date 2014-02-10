@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.30\dat\en_msgs.txt -cs \
   -h+dist/default/production\TK-X03.production.sym \
   --cmf=dist/default/production\TK-X03.production.cmf -z -Q18F46K22 \
-  -oC:\Users\Blake\AppData\Local\Temp\s2k4.6 \
+  -oC:\Users\Blake\AppData\Local\Temp\s3b8.6 \
   -Mdist/default/production/TK-X03.production.map -E1 -ver=XC8 \
   -ASTACK=060h-09ffh -pstack=STACK -ACODE=00h-0FFFFh -ACONST=00h-0FFFFh \
   -ASMALLCONST=01000h-010FFhx240 -AMEDIUMCONST=01000h-0FFFFh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE \
-  C:\Users\Blake\AppData\Local\Temp\s2k4.obj \
+  C:\Users\Blake\AppData\Local\Temp\s3b8.obj \
   dist/default/production\TK-X03.production.obj 
 
 Object code version is 3.11
@@ -39,29 +39,31 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Blake\AppData\Local\Temp\s2k4.obj
+C:\Users\Blake\AppData\Local\Temp\s3b8.obj
                 end_init                              0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
 dist/default/production\TK-X03.production.obj
-                text3                              FCE2     FCE2      31E     7E71       0
-                text2                              FC58     FC58       8A     7E2C       0
-                text1                              FBF0     FBF0       30     7DF8       0
+                text4                              FCE2     FCE2      31E     7E71       0
+                text3                              FC58     FC58       8A     7E2C       0
+                text2                              FBBE     FBBE       1C     7DDF       0
+                text1                              FBDA     FBDA       30     7DED       0
                 cstackCOMRAM                          1        1        5        1       1
                 bssCOMRAM                             6        6        4        1       1
-                cinit                              FBDE     FBDE       12     7DEF       0
-                text0                              FC20     FC20       38     7E10       0
+                cinit                              FBAC     FBAC       12     7DD6       0
+                text0                              FC0A     FC0A       4E     7E05       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
 
         CLASS   CODE           
                 end_init                              0        0        4         0
-                text3                              FCE2     FCE2      31E         0
-                text2                              FC58     FC58       8A         0
-                text1                              FBF0     FBF0       30         0
-                cinit                              FBDE     FBDE       12         0
-                text0                              FC20     FC20       38         0
+                text4                              FCE2     FCE2      31E         0
+                text3                              FC58     FC58       8A         0
+                text2                              FBBE     FBBE       1C         0
+                text1                              FBDA     FBDA       30         0
+                cinit                              FBAC     FBAC       12         0
+                text0                              FC0A     FC0A       4E         0
 
         CLASS   CONST          
 
@@ -129,11 +131,12 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 cstackCOMRAM                   000001  000009  00000A         1       1  COMRAM  
-                cinit                          00FBDE  000012  00FBF0      7DEF       0  CODE    
-                text1                          00FBF0  000030  00FC20      7DF8       0  CODE    
-                text0                          00FC20  000038  00FC58      7E10       0  CODE    
-                text2                          00FC58  00008A  00FCE2      7E2C       0  CODE    
-                text3                          00FCE2  00031E  010000      7E71       0  CODE    
+                cinit                          00FBAC  000012  00FBBE      7DD6       0  CODE    
+                text2                          00FBBE  00001C  00FBDA      7DDF       0  CODE    
+                text1                          00FBDA  000030  00FC0A      7DED       0  CODE    
+                text0                          00FC0A  00004E  00FC58      7E05       0  CODE    
+                text3                          00FC58  00008A  00FCE2      7E2C       0  CODE    
+                text4                          00FCE2  00031E  010000      7E71       0  CODE    
                 idloc                          200000  000008  200008    200000       0  IDLOC   
                 config                         300000  00000E  30000E    300000       0  CONFIG  
 
@@ -158,14 +161,14 @@ UNUSED ADDRESS RANGES
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
         BIGRAM           00000A-000F37              F2E
-        CODE             000004-00FBDD             FBDA
+        CODE             000004-00FBAB             FBA8
         COMRAM           00000A-00005F               56
-        CONST            000004-00FBDD             FBDA
+        CONST            000004-00FBAB             FBA8
         EEDATA           F00000-F003FF              400
-        MEDIUMCONST      001000-00FBDD             EBDE
+        MEDIUMCONST      001000-00FBAB             EBAC
         RAM              000060-000F37              100
         SFR              000F38-000FFF               28
-        SMALLCONST       001000-00FBDD              100
+        SMALLCONST       001000-00FBAB              100
         STACK            000060-0009FF              9A0
 
                                   Symbol Table
@@ -180,7 +183,10 @@ _LATD                    (abs)        000F8C
 _LATDbits                (abs)        000F8C
 _LATE                    (abs)        000F8D
 _LATEbits                (abs)        000F8D
+_OSCCON2bits             (abs)        000FD2
+_OSCCONbits              (abs)        000FD3
 _PIR3bits                (abs)        000FA4
+_RCREG2                  (abs)        000F74
 _RCSTA2bits              (abs)        000F71
 _SPBRG2                  (abs)        000F75
 _SPBRGH2                 (abs)        000F76
@@ -213,7 +219,7 @@ __CFG_LVP$OFF            (abs)        000000
 __CFG_MCLRE$EXTMCLR      (abs)        000000
 __CFG_P2BMX$PORTD2       (abs)        000000
 __CFG_PBADEN$OFF         (abs)        000000
-__CFG_PLLCFG$ON          (abs)        000000
+__CFG_PLLCFG$OFF         (abs)        000000
 __CFG_PRICLKEN$OFF       (abs)        000000
 __CFG_PWRTEN$OFF         (abs)        000000
 __CFG_STVREN$ON          (abs)        000000
@@ -297,6 +303,7 @@ __Htext0                 text0        000000
 __Htext1                 text1        000000
 __Htext2                 text2        000000
 __Htext3                 text3        000000
+__Htext4                 text4        000000
 __LRAM                   (abs)        000001
 __Labs1                  abs1         000000
 __Lbank0                 bank0        000000
@@ -366,6 +373,7 @@ __Ltext0                 text0        000000
 __Ltext1                 text1        000000
 __Ltext2                 text2        000000
 __Ltext3                 text3        000000
+__Ltext4                 text4        000000
 __S0                     (abs)        30000E
 __S1                     (abs)        00000A
 __S2                     (abs)        000000
@@ -374,34 +382,38 @@ ___intlo_sp              stack        000000
 ___sp                    stack        000000
 __accesstop              (abs)        000060
 __activetblptr           (abs)        000002
-__end_of__initialization cinit        00FBE6
-__end_of_dispSeg         text3        010000
-__end_of_enableSerial    text2        00FCE2
-__end_of_initPorts       text1        00FC20
+__end_of__initialization cinit        00FBB4
+__end_of_dispSeg         text4        010000
+__end_of_enableSerial    text3        00FCE2
+__end_of_initOscillator  text2        00FBDA
+__end_of_initPorts       text1        00FC0A
 __end_of_main            text0        00FC58
-__initialization         cinit        00FBDE
+__initialization         cinit        00FBAC
 __mediumconst            mediumconst  000000
 __pbssCOMRAM             bssCOMRAM    000006
-__pcinit                 cinit        00FBDE
+__pcinit                 cinit        00FBAC
 __pcstackCOMRAM          cstackCOMRAM 000001
-__ptext0                 text0        00FC20
-__ptext1                 text1        00FBF0
-__ptext2                 text2        00FC58
-__ptext3                 text3        00FCE2
+__ptext0                 text0        00FC0A
+__ptext1                 text1        00FBDA
+__ptext2                 text2        00FBBE
+__ptext3                 text3        00FC58
+__ptext4                 text4        00FCE2
 __ramtop                 ramtop       001000
 __size_of_dispSeg        (abs)        000000
 __size_of_enableSerial   (abs)        000000
+__size_of_initOscillator (abs)        000000
 __size_of_initPorts      (abs)        000000
 __size_of_main           (abs)        000000
 __smallconst             smallconst   000000
-_dispSeg                 text3        00FCE2
-_enableSerial            text2        00FC58
-_initPorts               text1        00FBF0
-_main                    text0        00FC20
+_dispSeg                 text4        00FCE2
+_enableSerial            text3        00FC58
+_initOscillator          text2        00FBBE
+_initPorts               text1        00FBDA
+_main                    text0        00FC0A
 dispSeg@letter           cstackCOMRAM 000001
 dispSeg@segment          cstackCOMRAM 000002
 enableSerial@baudRate    cstackCOMRAM 000001
-end_of_initialization    cinit        00FBE6
+end_of_initialization    cinit        00FBB4
 intlevel0                text         000000
 intlevel1                text         000000
 intlevel2                text         000000
@@ -409,7 +421,7 @@ intlevel3                text         000000
 stackhi                  (abs)        0009FF
 stacklo                  (abs)        000060
 start                    init         000000
-start_initialization     cinit        00FBDE
+start_initialization     cinit        00FBAC
 wait_ms@timel            bssCOMRAM    000006
 
 
@@ -440,6 +452,7 @@ Total ram usage:        1 bytes
  This function calls:
 		_dispSeg
 		_enableSerial
+		_initOscillator
 		_initPorts
  This function is called by:
 		Startup code after reset
@@ -448,7 +461,36 @@ Total ram usage:        1 bytes
 
  *************** function _initPorts *****************
  Defined at:
-		line 68 in file "source/main.c"
+		line 91 in file "source/main.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ This function calls:
+		Nothing
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _initOscillator *****************
+ Defined at:
+		line 78 in file "source/main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -477,7 +519,7 @@ Total ram usage:        0 bytes
 
  *************** function _enableSerial *****************
  Defined at:
-		line 374 in file "source/main.c"
+		line 397 in file "source/main.c"
  Parameters:    Size  Location     Type
   baudRate        2    0[COMRAM] unsigned int 
  Auto vars:     Size  Location     Type
@@ -506,7 +548,7 @@ Total ram usage:        4 bytes
 
  *************** function _dispSeg *****************
  Defined at:
-		line 153 in file "source/main.c"
+		line 176 in file "source/main.c"
  Parameters:    Size  Location     Type
   segment         1    wreg     unsigned char 
   letter          1    0[COMRAM] unsigned char 
@@ -540,15 +582,16 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 shared
-		__initializatio		CODE           	FBDE	0000	8
+		__initializatio		CODE           	FBAC	0000	8
 
 shared estimated size: 8
 
 source/main.c
-		_main          		CODE           	FC20	0000	56
-		_initPorts     		CODE           	FBF0	0000	48
+		_main          		CODE           	FC0A	0000	78
+		_initPorts     		CODE           	FBDA	0000	48
 		_enableSerial  		CODE           	FC58	0000	138
+		_initOscillator		CODE           	FBBE	0000	28
 		_dispSeg       		CODE           	FCE2	0000	798
 
-source/main.c estimated size: 1040
+source/main.c estimated size: 1090
 

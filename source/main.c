@@ -9,16 +9,17 @@
 #include <stdbool.h>        // For true/false definition
 
 /* PROTOTYPES */
+void initOscillator(void);
 void initPorts(void);
 void wait_ms(uint16_t);
 uint8_t hexToChar(uint8_t);
 void dispSeg(uint8_t, uint8_t);
 void cycleSegDisplays(uint16_t);
 void enableSerial(uint16_t);
-void isr(void);
 
 void main(void)
 {
+    initOscillator();                   // initialize oscillator configuration
     initPorts();                        // initialize pin direction and function
     enableSerial(1200);                 // initialize serial TX/RX at 1200 baud
     dispSeg(1, '-'); dispSeg(2, '-');
@@ -29,42 +30,38 @@ void main(void)
       {
             if(PIR3bits.TX2IF == 1)     // is the TX buffer clear?
             {
-                txByte = 'A';
+                if(RCSTA2bits.FERR2 == 1)   // check for stop error
+                {
+                    dispSeg(1, 'F');
+                }
+
+                txByte = rxByte;        // echo received byte
             }
         }
     }
-    /*{
-        // hang until byte is received
-        if (PIR3bits.RC2IF == 1)
-        {
-            // grab byte and convert to character to display
-            //uint8_t receivedByte = hexToChar(rxByte);
-            //dispSeg(1, receivedByte);
-            dispSeg(1, '1');
-
-            if (PIR3bits.TX2IF == 1)
-            {
-                dispSeg(2, '1');
-                txByte = rxByte;
-            }
-            else dispSeg(2, '0');
-        }
-        else dispSeg(1, '0');
-
-        // check for FIFO error before reading
-        /*if (RCSTA2bits.OERR == 1)
-        {
-            // if FIFO overflow error set, reset receiver
-            dispSeg(2, '0');
-            RCSTA2bits.CREN = 0; RCSTA2bits.CREN = 1;
-        }
-    }*/
 }
 
 /**
  * Initialize all of the physically connected and used pins on the controller,
  * and specify their I/O direction and their functionality.
  */
+
+/**
+ * Initialize the internal oscillator
+ */
+void initOscillator(void)
+{
+    OSCCONbits.IDLEN = 0;       // sleep on SLEEP instruction
+    OSCCONbits.IRCF = 0b111;    // 16 MHz internal RC oscillator
+    OSCCONbits.SCS = 0b10;      // set internal block as system oscillator
+    OSCCON2bits.MFIOSEL = 0;    // low frequency block disabled
+    OSCCON2bits.SOSCGO = 0;     // secondary oscillator disabled
+    OSCCON2bits.PRISD = 0;      // oscillator power circuit off
+
+    // hang until frequency is stable
+    while (OSCCONbits.HFIOFS == 0) continue;
+}
+
 void initPorts(void)
 {
     TRISA = 0;          // set all A, C, and E pins to outputs
@@ -404,15 +401,10 @@ void enableSerial(uint16_t baudRate)
     RCSTA2bits.RX9 = 0;     // 8-bit RX receive
 
     TXSTA2bits.SYNC = 0;    // asynchronous operation
-    BAUDCON2bits.DTRXP = 1; // inverse logic polarity (active low = logic 1)
+    BAUDCON2bits.DTRXP = 0; // do not invert incoming data
   
     TXSTA2bits.TXEN = 1;    // enable onboard transmitter
     RCSTA2bits.CREN = 1;    // enable onboard receiver
 
     RCSTA2bits.SPEN = 1;    // enable onboard UART and serial function on pins
-}
-
-void isr(void)
-{
-    
 }

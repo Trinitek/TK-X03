@@ -8194,7 +8194,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 "12 source/configuration_bits.c
 [p x FOSC=INTIO67 ]
 "13
-[p x PLLCFG=ON ]
+[p x PLLCFG=OFF ]
 "14
 [p x PRICLKEN=OFF ]
 "15

@@ -10394,7 +10394,7 @@ extern __nonreentrant void _delay3(unsigned char);
 
 # 12 "source/configuration_bits.c"
 #pragma config FOSC = INTIO67
-#pragma config PLLCFG = ON
+#pragma config PLLCFG = OFF
 #pragma config PRICLKEN = OFF
 #pragma config FCMEN = OFF
 #pragma config IESO = OFF
