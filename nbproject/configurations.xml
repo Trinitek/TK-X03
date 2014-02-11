@@ -14,6 +14,12 @@
                    projectFiles="true">
       <itemPath>source/configuration_bits.c</itemPath>
       <itemPath>source/main.c</itemPath>
+      <itemPath>source/system.c</itemPath>
+      <itemPath>source/system.h</itemPath>
+      <itemPath>source/segment.c</itemPath>
+      <itemPath>source/segment.h</itemPath>
+      <itemPath>source/serial.c</itemPath>
+      <itemPath>source/serial.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -125,6 +131,7 @@
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
+        <property key="firmware.download.all" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
         <property key="memories.aux" value="false"/>
         <property key="memories.bootflash" value="true"/>

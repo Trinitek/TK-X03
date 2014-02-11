@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.30\dat\en_msgs.txt -cs \
   -h+dist/default/production\TK-X03.production.sym \
   --cmf=dist/default/production\TK-X03.production.cmf -z -Q18F46K22 \
-  -oC:\Users\Blake\AppData\Local\Temp\s3b8.6 \
+  -oC:\Users\Blake\AppData\Local\Temp\s5n4.6 \
   -Mdist/default/production/TK-X03.production.map -E1 -ver=XC8 \
   -ASTACK=060h-09ffh -pstack=STACK -ACODE=00h-0FFFFh -ACONST=00h-0FFFFh \
   -ASMALLCONST=01000h-010FFhx240 -AMEDIUMCONST=01000h-0FFFFh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE \
-  C:\Users\Blake\AppData\Local\Temp\s3b8.obj \
+  C:\Users\Blake\AppData\Local\Temp\s5n4.obj \
   dist/default/production\TK-X03.production.obj 
 
 Object code version is 3.11
@@ -39,7 +39,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Blake\AppData\Local\Temp\s3b8.obj
+C:\Users\Blake\AppData\Local\Temp\s5n4.obj
                 end_init                              0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
@@ -429,7 +429,7 @@ FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 20 in file "source/main.c"
+		line 17 in file "source/main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -461,7 +461,7 @@ Total ram usage:        1 bytes
 
  *************** function _initPorts *****************
  Defined at:
-		line 91 in file "source/main.c"
+		line 26 in file "source/system.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -490,7 +490,7 @@ Total ram usage:        0 bytes
 
  *************** function _initOscillator *****************
  Defined at:
-		line 78 in file "source/main.c"
+		line 9 in file "source/system.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -519,7 +519,7 @@ Total ram usage:        0 bytes
 
  *************** function _enableSerial *****************
  Defined at:
-		line 397 in file "source/main.c"
+		line 20 in file "source/serial.c"
  Parameters:    Size  Location     Type
   baudRate        2    0[COMRAM] unsigned int 
  Auto vars:     Size  Location     Type
@@ -548,7 +548,7 @@ Total ram usage:        4 bytes
 
  *************** function _dispSeg *****************
  Defined at:
-		line 176 in file "source/main.c"
+		line 13 in file "source/segment.c"
  Parameters:    Size  Location     Type
   segment         1    wreg     unsigned char 
   letter          1    0[COMRAM] unsigned char 
@@ -581,6 +581,17 @@ Total ram usage:        2 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
+source/system.c
+		_initPorts     		CODE           	FBDA	0000	48
+		_initOscillator		CODE           	FBBE	0000	28
+
+source/system.c estimated size: 76
+
+source/serial.c
+		_enableSerial  		CODE           	FC58	0000	138
+
+source/serial.c estimated size: 138
+
 shared
 		__initializatio		CODE           	FBAC	0000	8
 
@@ -588,10 +599,11 @@ shared estimated size: 8
 
 source/main.c
 		_main          		CODE           	FC0A	0000	78
-		_initPorts     		CODE           	FBDA	0000	48
-		_enableSerial  		CODE           	FC58	0000	138
-		_initOscillator		CODE           	FBBE	0000	28
+
+source/main.c estimated size: 78
+
+source/segment.c
 		_dispSeg       		CODE           	FCE2	0000	798
 
-source/main.c estimated size: 1090
+source/segment.c estimated size: 798
 

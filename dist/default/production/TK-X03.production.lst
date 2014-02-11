@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.30 build 55553 
-                                                                                               Mon Feb 10 13:33:22 2014
+                                                                                               Tue Feb 11 13:45:55 2014
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 55553
      1                           	processor	18F46K22
@@ -47,7 +47,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
     41 ;;
     42 ;; *************** function _main *****************
     43 ;; Defined at:
-    44 ;;		line 20 in file "source/main.c"
+    44 ;;		line 17 in file "source/main.c"
     45 ;; Parameters:    Size  Location     Type
     46 ;;		None
     47 ;; Auto vars:     Size  Location     Type
@@ -88,22 +88,22 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
     77  00FC0A                     _main:
     78                           	opt stack 30
     79                           
-    80                           ;main.c: 22: initOscillator();
+    80                           ;main.c: 19: initOscillator();
     81                           
     82                           ;incstack = 0
     83  00FC0A  ECDF  F07D         	call	_initOscillator	;wreg free
     84                           
-    85                           ;main.c: 23: initPorts();
+    85                           ;main.c: 20: initPorts();
     86  00FC0E  ECED  F07D         	call	_initPorts	;wreg free
     87                           
-    88                           ;main.c: 24: enableSerial(1200);
+    88                           ;main.c: 21: enableSerial(1200);
     89  00FC12  0E04               	movlw	4
     90  00FC14  6E02               	movwf	enableSerial@baudRate+1,c
     91  00FC16  0EB0               	movlw	176
     92  00FC18  6E01               	movwf	enableSerial@baudRate,c
     93  00FC1A  EC2C  F07E         	call	_enableSerial	;wreg free
     94                           
-    95                           ;main.c: 25: dispSeg(1, '-'); dispSeg(2, '-');
+    95                           ;main.c: 22: dispSeg(1, '-'); dispSeg(2, '-');
     96  00FC1E  6E05               	movwf	??_main& (0+255),c
     97  00FC20  0E2D               	movlw	45
     98  00FC22  6E01               	movwf	dispSeg@letter,c
@@ -116,36 +116,36 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    105  00FC32  5005               	movf	??_main& (0+255),w,c
    106  00FC34  0E02               	movlw	2
    107  00FC36  EC71  F07E         	call	_dispSeg
-   108  00FC3A                     l994:
+   108  00FC3A                     l998:
    109                           
-   110                           ;main.c: 28: {
-   111                           ;main.c: 29: if(PIR3bits.RC2IF == 1)
+   110                           ;main.c: 25: {
+   111                           ;main.c: 26: if(PIR3bits.RC2IF == 1)
    112  00FC3A  BAA4               	btfsc	4004,5,c	;volatile
    113                           
-   114                           ;main.c: 30: {
-   115                           ;main.c: 31: if(PIR3bits.TX2IF == 1)
+   114                           ;main.c: 27: {
+   115                           ;main.c: 28: if(PIR3bits.TX2IF == 1)
    116  00FC3C  A8A4               	btfss	4004,4,c	;volatile
-   117  00FC3E  D7FD               	goto	l994
+   117  00FC3E  D7FD               	goto	l998
    118                           
-   119                           ;main.c: 32: {
-   120                           ;main.c: 33: if(RCSTA2bits.FERR2 == 1)
+   119                           ;main.c: 29: {
+   120                           ;main.c: 30: if(RCSTA2bits.FERR2 == 1)
    121  00FC40  A471               	btfss	3953,2,c	;volatile
-   122  00FC42  D007               	goto	l1002
+   122  00FC42  D007               	goto	l1006
    123                           
-   124                           ;main.c: 34: {
-   125                           ;main.c: 35: dispSeg(1, 'F');
+   124                           ;main.c: 31: {
+   125                           ;main.c: 32: dispSeg(1, 'F');
    126  00FC44  6E05               	movwf	??_main& (0+255),c
    127  00FC46  0E46               	movlw	70
    128  00FC48  6E01               	movwf	dispSeg@letter,c
    129  00FC4A  5005               	movf	??_main& (0+255),w,c
    130  00FC4C  0E01               	movlw	1
    131  00FC4E  EC71  F07E         	call	_dispSeg
-   132  00FC52                     l1002:
+   132  00FC52                     l1006:
    133                           
-   134                           ;main.c: 36: }
-   135                           ;main.c: 38: TXREG2 = RCREG2;
+   134                           ;main.c: 33: }
+   135                           ;main.c: 35: TXREG2 = RCREG2;
    136  00FC52  CF74 FF73          	movff	3956,3955	;volatile
-   137  00FC56  D7F1               	goto	l994
+   137  00FC56  D7F1               	goto	l998
    138  00FC58                     __end_of_main:
    139                           	opt stack 0
    140                           
@@ -207,7 +207,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    196                           
    197 ;; *************** function _initPorts *****************
    198 ;; Defined at:
-   199 ;;		line 91 in file "source/main.c"
+   199 ;;		line 26 in file "source/system.c"
    200 ;; Parameters:    Size  Location     Type
    201 ;;		None
    202 ;; Auto vars:     Size  Location     Type
@@ -245,59 +245,59 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    229  00FBDA                     _initPorts:
    230                           	opt stack 30
    231                           
-   232                           ;main.c: 93: TRISA = 0;
+   232                           ;system.c: 28: TRISA = 0;
    233                           
    234                           ;incstack = 0
    235  00FBDA  0E00               	movlw	0
    236  00FBDC  6E92               	movwf	3986,c	;volatile
    237                           
-   238                           ;main.c: 94: TRISC = 0;
+   238                           ;system.c: 29: TRISC = 0;
    239  00FBDE  0E00               	movlw	0
    240  00FBE0  6E94               	movwf	3988,c	;volatile
    241                           
-   242                           ;main.c: 95: TRISE = 0;
+   242                           ;system.c: 30: TRISE = 0;
    243  00FBE2  0E00               	movlw	0
    244  00FBE4  6E96               	movwf	3990,c	;volatile
    245                           
-   246                           ;main.c: 97: ANSELD = 0;
+   246                           ;system.c: 32: ANSELD = 0;
    247  00FBE6  0E00               	movlw	0
    248  00FBE8  010F               	movlb	15	; () banked
    249  00FBEA  010F               	movlb	15	; () banked
    250  00FBEC  6F3B               	movwf	59,b	;volatile
    251                           
    252                           ; BSR set to: 15
-   253                           ;main.c: 98: TRISDbits.RD3 = 0;
+   253                           ;system.c: 33: TRISDbits.RD3 = 0;
    254  00FBEE  9695               	bcf	3989,3,c	;volatile
    255                           
    256                           ; BSR set to: 15
-   257                           ;main.c: 99: TRISDbits.RD4 = 1;
+   257                           ;system.c: 34: TRISDbits.RD4 = 1;
    258  00FBF0  8895               	bsf	3989,4,c	;volatile
    259                           
    260                           ; BSR set to: 15
-   261                           ;main.c: 100: TRISDbits.RD5 = 0;
+   261                           ;system.c: 35: TRISDbits.RD5 = 0;
    262  00FBF2  9A95               	bcf	3989,5,c	;volatile
    263                           
    264                           ; BSR set to: 15
-   265                           ;main.c: 101: TRISDbits.RD7 = 1;
+   265                           ;system.c: 36: TRISDbits.RD7 = 1;
    266  00FBF4  8E95               	bsf	3989,7,c	;volatile
    267                           
    268                           ; BSR set to: 15
-   269                           ;main.c: 102: TRISDbits.RD6 = 0;
+   269                           ;system.c: 37: TRISDbits.RD6 = 0;
    270  00FBF6  9C95               	bcf	3989,6,c	;volatile
    271                           
-   272                           ;main.c: 104: LATA = 0;
+   272                           ;system.c: 39: LATA = 0;
    273  00FBF8  0E00               	movlw	0
    274  00FBFA  6E89               	movwf	3977,c	;volatile
    275                           
-   276                           ;main.c: 105: LATC = 0;
+   276                           ;system.c: 40: LATC = 0;
    277  00FBFC  0E00               	movlw	0
    278  00FBFE  6E8B               	movwf	3979,c	;volatile
    279                           
-   280                           ;main.c: 106: LATD = 0;
+   280                           ;system.c: 41: LATD = 0;
    281  00FC00  0E00               	movlw	0
    282  00FC02  6E8C               	movwf	3980,c	;volatile
    283                           
-   284                           ;main.c: 107: LATE = 0;
+   284                           ;system.c: 42: LATE = 0;
    285  00FC04  0E00               	movlw	0
    286  00FC06  6E8D               	movwf	3981,c	;volatile
    287                           
@@ -309,7 +309,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    293                           
    294 ;; *************** function _initOscillator *****************
    295 ;; Defined at:
-   296 ;;		line 78 in file "source/main.c"
+   296 ;;		line 9 in file "source/system.c"
    297 ;; Parameters:    Size  Location     Type
    298 ;;		None
    299 ;; Auto vars:     Size  Location     Type
@@ -347,42 +347,42 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    326  00FBBE                     _initOscillator:
    327                           	opt stack 30
    328                           
-   329                           ;main.c: 80: OSCCONbits.IDLEN = 0;
+   329                           ;system.c: 11: OSCCONbits.IDLEN = 0;
    330                           
    331                           ; BSR set to: 15
    332                           ;incstack = 0
    333  00FBBE  9ED3               	bcf	4051,7,c	;volatile
    334                           
-   335                           ;main.c: 81: OSCCONbits.IRCF = 0b111;
+   335                           ;system.c: 12: OSCCONbits.IRCF = 0b111;
    336  00FBC0  88D3               	bsf	4051,4,c	;volatile
    337  00FBC2  8AD3               	bsf	4051,5,c	;volatile
    338  00FBC4  8CD3               	bsf	4051,6,c	;volatile
    339                           
-   340                           ;main.c: 82: OSCCONbits.SCS = 0b10;
+   340                           ;system.c: 13: OSCCONbits.SCS = 0b10;
    341  00FBC6  50D3               	movf	4051,w,c	;volatile
    342  00FBC8  0BFC               	andlw	-4
    343  00FBCA  0902               	iorlw	2
    344  00FBCC  6ED3               	movwf	4051,c	;volatile
    345                           
-   346                           ;main.c: 83: OSCCON2bits.MFIOSEL = 0;
+   346                           ;system.c: 14: OSCCON2bits.MFIOSEL = 0;
    347  00FBCE  98D2               	bcf	4050,4,c	;volatile
    348                           
-   349                           ;main.c: 84: OSCCON2bits.SOSCGO = 0;
+   349                           ;system.c: 15: OSCCON2bits.SOSCGO = 0;
    350  00FBD0  96D2               	bcf	4050,3,c	;volatile
    351                           
-   352                           ;main.c: 85: OSCCON2bits.PRISD = 0;
+   352                           ;system.c: 16: OSCCON2bits.PRISD = 0;
    353  00FBD2  94D2               	bcf	4050,2,c	;volatile
-   354  00FBD4                     l66:
+   354  00FBD4                     l71:
    355  00FBD4  B4D3               	btfsc	4051,2,c	;volatile
    356  00FBD6  0012               	return	
-   357  00FBD8  D7FD               	goto	l66
+   357  00FBD8  D7FD               	goto	l71
    358  00FBDA                     __end_of_initOscillator:
    359                           	opt stack 0
    360                           tblptru	equ	0xFF8
    361                           
    362 ;; *************** function _enableSerial *****************
    363 ;; Defined at:
-   364 ;;		line 397 in file "source/main.c"
+   364 ;;		line 20 in file "source/serial.c"
    365 ;; Parameters:    Size  Location     Type
    366 ;;  baudRate        2    0[COMRAM] unsigned int 
    367 ;; Auto vars:     Size  Location     Type
@@ -420,43 +420,43 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    394  00FC58                     _enableSerial:
    395                           	opt stack 30
    396                           
-   397                           ;main.c: 399: LATDbits.LD3 = 1;
+   397                           ;serial.c: 22: LATDbits.LD3 = 1;
    398                           
    399                           ;incstack = 0
    400  00FC58  868C               	bsf	3980,3,c	;volatile
    401                           
-   402                           ;main.c: 402: switch (baudRate) {
-   403  00FC5A  D00B               	goto	l782
-   404  00FC5C                     l772:
+   402                           ;serial.c: 25: switch (baudRate) {
+   403  00FC5A  D00B               	goto	l786
+   404  00FC5C                     l776:
    405                           
-   406                           ;main.c: 407: SPBRG2 = 103;
+   406                           ;serial.c: 30: SPBRG2 = 103;
    407  00FC5C  0E67               	movlw	103
    408  00FC5E  D007               	goto	L5
-   409  00FC60                     l774:
+   409  00FC60                     l778:
    410                           
-   411                           ;main.c: 410: SPBRG2 = 25;
+   411                           ;serial.c: 33: SPBRG2 = 25;
    412  00FC60  0E19               	movlw	25
    413  00FC62  D005               	goto	L5
-   414  00FC64                     l776:
+   414  00FC64                     l780:
    415                           
-   416                           ;main.c: 413: SPBRG2 = 23;
+   416                           ;serial.c: 36: SPBRG2 = 23;
    417  00FC64  0E17               	movlw	23
    418  00FC66  D003               	goto	L5
-   419  00FC68                     l778:
+   419  00FC68                     l782:
    420                           
-   421                           ;main.c: 416: SPBRG2 = 12;
+   421                           ;serial.c: 39: SPBRG2 = 12;
    422  00FC68  0E0C               	movlw	12
    423  00FC6A  D001               	goto	L5
-   424  00FC6C                     l780:
+   424  00FC6C                     l784:
    425                           
-   426                           ;main.c: 419: SPBRG2 = 207;
+   426                           ;serial.c: 42: SPBRG2 = 207;
    427  00FC6C  0ECF               	movlw	207
    428  00FC6E                     L5:
    429  00FC6E  6E75               	movwf	3957,c	;volatile
    430                           
-   431                           ;main.c: 420: }
-   432  00FC70  D02C               	goto	l784
-   433  00FC72                     l782:
+   431                           ;serial.c: 43: }
+   432  00FC70  D02C               	goto	l788
+   433  00FC72                     l786:
    434  00FC72  C001  F003         	movff	enableSerial@baudRate,??_enableSerial
    435  00FC76  C002  F004         	movff	enableSerial@baudRate+1,??_enableSerial+1
    436                           
@@ -471,21 +471,21 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    444  00FC7A  5004               	movf	??_enableSerial+1,w,c
    445  00FC7C  0A04               	xorlw	4	; case 4
    446  00FC7E  B4D8               	btfsc	status,2,c
-   447  00FC80  D00D               	goto	l1104
+   447  00FC80  D00D               	goto	l1108
    448  00FC82  0A0D               	xorlw	13	; case 9
    449  00FC84  B4D8               	btfsc	status,2,c
-   450  00FC86  D00D               	goto	l1106
+   450  00FC86  D00D               	goto	l1110
    451  00FC88  0A2C               	xorlw	44	; case 37
    452  00FC8A  B4D8               	btfsc	status,2,c
-   453  00FC8C  D00F               	goto	l1108
+   453  00FC8C  D00F               	goto	l1112
    454  00FC8E  0A0D               	xorlw	13	; case 40
    455  00FC90  B4D8               	btfsc	status,2,c
-   456  00FC92  D011               	goto	l1110
+   456  00FC92  D011               	goto	l1114
    457  00FC94  0A63               	xorlw	99	; case 75
    458  00FC96  B4D8               	btfsc	status,2,c
-   459  00FC98  D013               	goto	l1112
-   460  00FC9A  D7E8               	goto	l780
-   461  00FC9C                     l1104:
+   459  00FC98  D013               	goto	l1116
+   460  00FC9A  D7E8               	goto	l784
+   461  00FC9C                     l1108:
    462                           
    463                           ; Switch size 1, requested type "space"
    464                           ; Number of cases is 1, Range of values is 176 to 176
@@ -495,8 +495,8 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    468                           ;	Chosen strategy is simple_byte
    469  00FC9C  5003               	movf	??_enableSerial,w,c
    470  00FC9E  0AB0               	xorlw	176	; case 176
-   471  00FCA0  D7E5               	goto	l780
-   472  00FCA2                     l1106:
+   471  00FCA0  D7E5               	goto	l784
+   472  00FCA2                     l1110:
    473                           
    474                           ; Switch size 1, requested type "space"
    475                           ; Number of cases is 1, Range of values is 96 to 96
@@ -507,9 +507,9 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    480  00FCA2  5003               	movf	??_enableSerial,w,c
    481  00FCA4  0A60               	xorlw	96	; case 96
    482  00FCA6  B4D8               	btfsc	status,2,c
-   483  00FCA8  D7D9               	goto	l772
-   484  00FCAA  D7E0               	goto	l780
-   485  00FCAC                     l1108:
+   483  00FCA8  D7D9               	goto	l776
+   484  00FCAA  D7E0               	goto	l784
+   485  00FCAC                     l1112:
    486                           
    487                           ; Switch size 1, requested type "space"
    488                           ; Number of cases is 1, Range of values is 128 to 128
@@ -520,9 +520,9 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    493  00FCAC  5003               	movf	??_enableSerial,w,c
    494  00FCAE  0A80               	xorlw	128	; case 128
    495  00FCB0  B4D8               	btfsc	status,2,c
-   496  00FCB2  D7D6               	goto	l774
-   497  00FCB4  D7DB               	goto	l780
-   498  00FCB6                     l1110:
+   496  00FCB2  D7D6               	goto	l778
+   497  00FCB4  D7DB               	goto	l784
+   498  00FCB6                     l1114:
    499                           
    500                           ; Switch size 1, requested type "space"
    501                           ; Number of cases is 1, Range of values is 177 to 177
@@ -533,9 +533,9 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    506  00FCB6  5003               	movf	??_enableSerial,w,c
    507  00FCB8  0AB1               	xorlw	177	; case 177
    508  00FCBA  B4D8               	btfsc	status,2,c
-   509  00FCBC  D7D3               	goto	l776
-   510  00FCBE  D7D6               	goto	l780
-   511  00FCC0                     l1112:
+   509  00FCBC  D7D3               	goto	l780
+   510  00FCBE  D7D6               	goto	l784
+   511  00FCC0                     l1116:
    512                           
    513                           ; Switch size 1, requested type "space"
    514                           ; Number of cases is 1, Range of values is 0 to 0
@@ -546,39 +546,39 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    519  00FCC0  5003               	movf	??_enableSerial,w,c
    520  00FCC2  0A00               	xorlw	0	; case 0
    521  00FCC4  B4D8               	btfsc	status,2,c
-   522  00FCC6  D7D0               	goto	l778
-   523  00FCC8  D7D1               	goto	l780
-   524  00FCCA                     l784:
+   522  00FCC6  D7D0               	goto	l782
+   523  00FCC8  D7D1               	goto	l784
+   524  00FCCA                     l788:
    525                           
-   526                           ;main.c: 422: SPBRGH2 = 0;
+   526                           ;serial.c: 45: SPBRGH2 = 0;
    527  00FCCA  0E00               	movlw	0
    528  00FCCC  6E76               	movwf	3958,c	;volatile
    529                           
-   530                           ;main.c: 423: TXSTA2bits.BRGH = 0;
+   530                           ;serial.c: 46: TXSTA2bits.BRGH = 0;
    531  00FCCE  9472               	bcf	3954,2,c	;volatile
    532                           
-   533                           ;main.c: 424: BAUDCON2bits.BRG16 = 0;
+   533                           ;serial.c: 47: BAUDCON2bits.BRG16 = 0;
    534  00FCD0  9670               	bcf	3952,3,c	;volatile
    535                           
-   536                           ;main.c: 426: TXSTA2bits.TX9 = 0;
+   536                           ;serial.c: 49: TXSTA2bits.TX9 = 0;
    537  00FCD2  9C72               	bcf	3954,6,c	;volatile
    538                           
-   539                           ;main.c: 427: RCSTA2bits.RX9 = 0;
+   539                           ;serial.c: 50: RCSTA2bits.RX9 = 0;
    540  00FCD4  9C71               	bcf	3953,6,c	;volatile
    541                           
-   542                           ;main.c: 429: TXSTA2bits.SYNC = 0;
+   542                           ;serial.c: 52: TXSTA2bits.SYNC = 0;
    543  00FCD6  9872               	bcf	3954,4,c	;volatile
    544                           
-   545                           ;main.c: 430: BAUDCON2bits.DTRXP = 0;
+   545                           ;serial.c: 53: BAUDCON2bits.DTRXP = 0;
    546  00FCD8  9A70               	bcf	3952,5,c	;volatile
    547                           
-   548                           ;main.c: 432: TXSTA2bits.TXEN = 1;
+   548                           ;serial.c: 55: TXSTA2bits.TXEN = 1;
    549  00FCDA  8A72               	bsf	3954,5,c	;volatile
    550                           
-   551                           ;main.c: 433: RCSTA2bits.CREN = 1;
+   551                           ;serial.c: 56: RCSTA2bits.CREN = 1;
    552  00FCDC  8871               	bsf	3953,4,c	;volatile
    553                           
-   554                           ;main.c: 435: RCSTA2bits.SPEN = 1;
+   554                           ;serial.c: 58: RCSTA2bits.SPEN = 1;
    555  00FCDE  8E71               	bsf	3953,7,c	;volatile
    556  00FCE0  0012               	return	
    557  00FCE2                     __end_of_enableSerial:
@@ -588,7 +588,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    561                           
    562 ;; *************** function _dispSeg *****************
    563 ;; Defined at:
-   564 ;;		line 176 in file "source/main.c"
+   564 ;;		line 13 in file "source/segment.c"
    565 ;; Parameters:    Size  Location     Type
    566 ;;  segment         1    wreg     unsigned char 
    567 ;;  letter          1    0[COMRAM] unsigned char 
@@ -632,17 +632,17 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    600                           ;dispSeg@segment stored from wreg
    601  00FCE2  CFE8 F002          	movff	wreg,dispSeg@segment
    602                           
-   603                           ;main.c: 178: switch (letter) {
-   604  00FCE6  D154               	goto	l900
-   605  00FCE8                     l826:
+   603                           ;segment.c: 15: switch (letter) {
+   604  00FCE6  D154               	goto	l904
+   605  00FCE8                     l830:
    606                           
-   607                           ;main.c: 180: if (segment == 1) {
+   607                           ;segment.c: 17: if (segment == 1) {
    608  00FCE8  0402               	decf	dispSeg@segment,w,c
    609  00FCEA  A4D8               	btfss	status,2,c
-   610  00FCEC  D007               	goto	l106
+   610  00FCEC  D007               	goto	l98
    611                           
-   612                           ;main.c: 181: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 =
-      +                           LATAbits.LA0 = LATAbits.LA1 = 0;
+   612                           ;segment.c: 18: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0
+      +                           = LATAbits.LA0 = LATAbits.LA1 = 0;
    613  00FCEE  9289               	bcf	3977,1,c	;volatile
    614  00FCF0  9089               	bcf	3977,0,c	;volatile
    615  00FCF2  908D               	bcf	3981,0,c	;volatile
@@ -650,11 +650,11 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    617  00FCF6  9889               	bcf	3977,4,c	;volatile
    618  00FCF8  9689               	bcf	3977,3,c	;volatile
    619  00FCFA  9489               	bcf	3977,2,c	;volatile
-   620  00FCFC                     l106:
+   620  00FCFC                     l98:
    621                           
-   622                           ;main.c: 182: }
-   623                           ;main.c: 183: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 =
-      +                           LATEbits.LE1 = LATEbits.LE2 = 0;
+   622                           ;segment.c: 19: }
+   623                           ;segment.c: 20: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1
+      +                           = LATEbits.LE1 = LATEbits.LE2 = 0;
    624  00FCFC  948D               	bcf	3981,2,c	;volatile
    625  00FCFE  928D               	bcf	3981,1,c	;volatile
    626  00FD00  928B               	bcf	3979,1,c	;volatile
@@ -663,34 +663,34 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    629  00FD06  9C89               	bcf	3977,6,c	;volatile
    630  00FD08  9E89               	bcf	3977,7,c	;volatile
    631                           
-   632                           ;main.c: 184: break;
+   632                           ;segment.c: 21: break;
    633  00FD0A  0012               	return	
-   634  00FD0C                     l830:
+   634  00FD0C                     l834:
    635                           
-   636                           ;main.c: 186: if (segment == 1) {
+   636                           ;segment.c: 23: if (segment == 1) {
    637  00FD0C  0402               	decf	dispSeg@segment,w,c
    638  00FD0E  A4D8               	btfss	status,2,c
-   639  00FD10  D007               	goto	l109
+   639  00FD10  D007               	goto	l101
    640                           
-   641                           ;main.c: 187: LATAbits.LA1 = 1;
+   641                           ;segment.c: 24: LATAbits.LA1 = 1;
    642  00FD12  8289               	bsf	3977,1,c	;volatile
    643                           
-   644                           ;main.c: 188: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 =
-      +                           LATAbits.LA0 = 0;
+   644                           ;segment.c: 25: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0
+      +                           = LATAbits.LA0 = 0;
    645  00FD14  9089               	bcf	3977,0,c	;volatile
    646  00FD16  908D               	bcf	3981,0,c	;volatile
    647  00FD18  9A89               	bcf	3977,5,c	;volatile
    648  00FD1A  9889               	bcf	3977,4,c	;volatile
    649  00FD1C  9689               	bcf	3977,3,c	;volatile
    650  00FD1E  9489               	bcf	3977,2,c	;volatile
-   651  00FD20                     l109:
+   651  00FD20                     l101:
    652                           
-   653                           ;main.c: 189: }
-   654                           ;main.c: 190: LATEbits.LE2 = 1;
+   653                           ;segment.c: 26: }
+   654                           ;segment.c: 27: LATEbits.LE2 = 1;
    655  00FD20  848D               	bsf	3981,2,c	;volatile
    656                           
-   657                           ;main.c: 191: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 =
-      +                           LATEbits.LE1 = 0;
+   657                           ;segment.c: 28: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1
+      +                           = LATEbits.LE1 = 0;
    658  00FD22  928D               	bcf	3981,1,c	;volatile
    659  00FD24  928B               	bcf	3979,1,c	;volatile
    660  00FD26  908B               	bcf	3979,0,c	;volatile
@@ -698,17 +698,17 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    662  00FD2A  9C89               	bcf	3977,6,c	;volatile
    663  00FD2C  9E89               	bcf	3977,7,c	;volatile
    664                           
-   665                           ;main.c: 192: break;
+   665                           ;segment.c: 29: break;
    666  00FD2E  0012               	return	
-   667  00FD30                     l834:
+   667  00FD30                     l838:
    668                           
-   669                           ;main.c: 194: if (segment == 1) {
+   669                           ;segment.c: 31: if (segment == 1) {
    670  00FD30  0402               	decf	dispSeg@segment,w,c
    671  00FD32  A4D8               	btfss	status,2,c
-   672  00FD34  D008               	goto	l111
+   672  00FD34  D008               	goto	l103
    673                           
-   674                           ;main.c: 195: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 =
-      +                           LATAbits.LA0 = 1;
+   674                           ;segment.c: 32: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0
+      +                           = LATAbits.LA0 = 1;
    675  00FD36  8089               	bsf	3977,0,c	;volatile
    676  00FD38  808D               	bsf	3981,0,c	;volatile
    677  00FD3A  8A89               	bsf	3977,5,c	;volatile
@@ -716,16 +716,16 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    679  00FD3E  8689               	bsf	3977,3,c	;volatile
    680  00FD40  8489               	bsf	3977,2,c	;volatile
    681                           
-   682                           ;main.c: 196: LATAbits.LA1 = 0;
+   682                           ;segment.c: 33: LATAbits.LA1 = 0;
    683  00FD42  9289               	bcf	3977,1,c	;volatile
    684                           
-   685                           ;main.c: 197: return;
+   685                           ;segment.c: 34: return;
    686  00FD44  0012               	return	
-   687  00FD46                     l111:
+   687  00FD46                     l103:
    688                           
-   689                           ;main.c: 198: }
-   690                           ;main.c: 199: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 =
-      +                           LATEbits.LE1 = 1;
+   689                           ;segment.c: 35: }
+   690                           ;segment.c: 36: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1
+      +                           = LATEbits.LE1 = 1;
    691  00FD46  828D               	bsf	3981,1,c	;volatile
    692  00FD48  828B               	bsf	3979,1,c	;volatile
    693  00FD4A  808B               	bsf	3979,0,c	;volatile
@@ -733,208 +733,208 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    695  00FD4E  8C89               	bsf	3977,6,c	;volatile
    696  00FD50  8E89               	bsf	3977,7,c	;volatile
    697                           
-   698                           ;main.c: 200: LATEbits.LE2 = 0;
+   698                           ;segment.c: 37: LATEbits.LE2 = 0;
    699  00FD52  948D               	bcf	3981,2,c	;volatile
    700                           
-   701                           ;main.c: 201: break;
+   701                           ;segment.c: 38: break;
    702  00FD54  0012               	return	
-   703  00FD56                     l838:
+   703  00FD56                     l842:
    704                           
-   705                           ;main.c: 203: if (segment == 1) {
+   705                           ;segment.c: 40: if (segment == 1) {
    706  00FD56  0402               	decf	dispSeg@segment,w,c
    707  00FD58  A4D8               	btfss	status,2,c
-   708  00FD5A  D008               	goto	l114
+   708  00FD5A  D008               	goto	l106
    709                           
-   710                           ;main.c: 204: LATAbits.LA3 = LATAbits.LA4 = 1;
+   710                           ;segment.c: 41: LATAbits.LA3 = LATAbits.LA4 = 1;
    711  00FD5C  8889               	bsf	3977,4,c	;volatile
    712  00FD5E  8689               	bsf	3977,3,c	;volatile
    713                           
-   714                           ;main.c: 205: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 =
-      +                           0;
+   714                           ;segment.c: 42: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1
+      +                           = 0;
    715  00FD60  9289               	bcf	3977,1,c	;volatile
    716  00FD62  9089               	bcf	3977,0,c	;volatile
    717  00FD64  908D               	bcf	3981,0,c	;volatile
    718  00FD66  9A89               	bcf	3977,5,c	;volatile
    719  00FD68  9489               	bcf	3977,2,c	;volatile
    720                           
-   721                           ;main.c: 206: return;
+   721                           ;segment.c: 43: return;
    722  00FD6A  0012               	return	
-   723  00FD6C                     l114:
+   723  00FD6C                     l106:
    724                           
-   725                           ;main.c: 207: }
-   726                           ;main.c: 208: LATAbits.LA6 = LATCbits.LC2 = 1;
+   725                           ;segment.c: 44: }
+   726                           ;segment.c: 45: LATAbits.LA6 = LATCbits.LC2 = 1;
    727  00FD6C  848B               	bsf	3979,2,c	;volatile
    728  00FD6E  8C89               	bsf	3977,6,c	;volatile
    729                           
-   730                           ;main.c: 209: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 =
-      +                           0;
+   730                           ;segment.c: 46: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2
+      +                           = 0;
    731  00FD70  948D               	bcf	3981,2,c	;volatile
    732  00FD72  928D               	bcf	3981,1,c	;volatile
    733  00FD74  928B               	bcf	3979,1,c	;volatile
    734  00FD76  908B               	bcf	3979,0,c	;volatile
    735  00FD78  9E89               	bcf	3977,7,c	;volatile
    736                           
-   737                           ;main.c: 210: break;
+   737                           ;segment.c: 47: break;
    738  00FD7A  0012               	return	
-   739  00FD7C                     l842:
+   739  00FD7C                     l846:
    740                           
-   741                           ;main.c: 212: if (segment == 1) {
+   741                           ;segment.c: 49: if (segment == 1) {
    742  00FD7C  0402               	decf	dispSeg@segment,w,c
    743  00FD7E  A4D8               	btfss	status,2,c
-   744  00FD80  D008               	goto	l116
+   744  00FD80  D008               	goto	l108
    745                           
-   746                           ;main.c: 213: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA1 = LATEbits.LE0 = LATAbits.LA5 =
-      +                           1;
+   746                           ;segment.c: 50: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA1 = LATEbits.LE0 = LATAbits.LA5
+      +                           = 1;
    747  00FD82  8A89               	bsf	3977,5,c	;volatile
    748  00FD84  808D               	bsf	3981,0,c	;volatile
    749  00FD86  8289               	bsf	3977,1,c	;volatile
    750  00FD88  8689               	bsf	3977,3,c	;volatile
    751  00FD8A  8489               	bsf	3977,2,c	;volatile
    752                           
-   753                           ;main.c: 214: LATAbits.LA4 = LATAbits.LA0 = 0;
+   753                           ;segment.c: 51: LATAbits.LA4 = LATAbits.LA0 = 0;
    754  00FD8C  9089               	bcf	3977,0,c	;volatile
    755  00FD8E  9889               	bcf	3977,4,c	;volatile
    756                           
-   757                           ;main.c: 215: return;
+   757                           ;segment.c: 52: return;
    758  00FD90  0012               	return	
-   759  00FD92                     l116:
+   759  00FD92                     l108:
    760                           
-   761                           ;main.c: 216: }
-   762                           ;main.c: 217: LATAbits.LA7 = LATAbits.LA6 = LATEbits.LE2 = LATCbits.LC1 = LATCbits.LC0 =
-      +                           1;
+   761                           ;segment.c: 53: }
+   762                           ;segment.c: 54: LATAbits.LA7 = LATAbits.LA6 = LATEbits.LE2 = LATCbits.LC1 = LATCbits.LC0
+      +                           = 1;
    763  00FD92  808B               	bsf	3979,0,c	;volatile
    764  00FD94  828B               	bsf	3979,1,c	;volatile
    765  00FD96  848D               	bsf	3981,2,c	;volatile
    766  00FD98  8C89               	bsf	3977,6,c	;volatile
    767  00FD9A  8E89               	bsf	3977,7,c	;volatile
    768                           
-   769                           ;main.c: 218: LATCbits.LC2 = LATEbits.LE1 = 0;
+   769                           ;segment.c: 55: LATCbits.LC2 = LATEbits.LE1 = 0;
    770  00FD9C  928D               	bcf	3981,1,c	;volatile
    771  00FD9E  948B               	bcf	3979,2,c	;volatile
    772                           
-   773                           ;main.c: 219: break;
+   773                           ;segment.c: 56: break;
    774  00FDA0  0012               	return	
-   775  00FDA2                     l846:
+   775  00FDA2                     l850:
    776                           
-   777                           ;main.c: 221: if (segment == 1) {
+   777                           ;segment.c: 58: if (segment == 1) {
    778  00FDA2  0402               	decf	dispSeg@segment,w,c
    779  00FDA4  A4D8               	btfss	status,2,c
-   780  00FDA6  D008               	goto	l118
+   780  00FDA6  D008               	goto	l110
    781                           
-   782                           ;main.c: 222: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5 =
-      +                           1;
+   782                           ;segment.c: 59: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5
+      +                           = 1;
    783  00FDA8  8A89               	bsf	3977,5,c	;volatile
    784  00FDAA  8889               	bsf	3977,4,c	;volatile
    785  00FDAC  8289               	bsf	3977,1,c	;volatile
    786  00FDAE  8689               	bsf	3977,3,c	;volatile
    787  00FDB0  8489               	bsf	3977,2,c	;volatile
    788                           
-   789                           ;main.c: 223: LATEbits.LE0 = LATAbits.LA0 = 0;
+   789                           ;segment.c: 60: LATEbits.LE0 = LATAbits.LA0 = 0;
    790  00FDB2  9089               	bcf	3977,0,c	;volatile
    791  00FDB4  908D               	bcf	3981,0,c	;volatile
    792                           
-   793                           ;main.c: 224: return;
+   793                           ;segment.c: 61: return;
    794  00FDB6  0012               	return	
-   795  00FDB8                     l118:
+   795  00FDB8                     l110:
    796                           
-   797                           ;main.c: 225: }
-   798                           ;main.c: 226: LATAbits.LA7 = LATAbits.LA6 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0 =
-      +                           1;
+   797                           ;segment.c: 62: }
+   798                           ;segment.c: 63: LATAbits.LA7 = LATAbits.LA6 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0
+      +                           = 1;
    799  00FDB8  808B               	bsf	3979,0,c	;volatile
    800  00FDBA  848B               	bsf	3979,2,c	;volatile
    801  00FDBC  848D               	bsf	3981,2,c	;volatile
    802  00FDBE  8C89               	bsf	3977,6,c	;volatile
    803  00FDC0  8E89               	bsf	3977,7,c	;volatile
    804                           
-   805                           ;main.c: 227: LATCbits.LC1 = LATEbits.LE1 = 0;
+   805                           ;segment.c: 64: LATCbits.LC1 = LATEbits.LE1 = 0;
    806  00FDC2  928D               	bcf	3981,1,c	;volatile
    807  00FDC4  928B               	bcf	3979,1,c	;volatile
    808                           
-   809                           ;main.c: 228: break;
+   809                           ;segment.c: 65: break;
    810  00FDC6  0012               	return	
-   811  00FDC8                     l850:
+   811  00FDC8                     l854:
    812                           
-   813                           ;main.c: 230: if (segment == 1) {
+   813                           ;segment.c: 67: if (segment == 1) {
    814  00FDC8  0402               	decf	dispSeg@segment,w,c
    815  00FDCA  A4D8               	btfss	status,2,c
-   816  00FDCC  D008               	goto	l120
+   816  00FDCC  D008               	goto	l112
    817                           
-   818                           ;main.c: 231: LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA3 = LATAbits.LA4 = 1;
+   818                           ;segment.c: 68: LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA3 = LATAbits.LA4 = 1;
    819  00FDCE  8889               	bsf	3977,4,c	;volatile
    820  00FDD0  8689               	bsf	3977,3,c	;volatile
    821  00FDD2  8289               	bsf	3977,1,c	;volatile
    822  00FDD4  8089               	bsf	3977,0,c	;volatile
    823                           
-   824                           ;main.c: 232: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = 0;
+   824                           ;segment.c: 69: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = 0;
    825  00FDD6  908D               	bcf	3981,0,c	;volatile
    826  00FDD8  9A89               	bcf	3977,5,c	;volatile
    827  00FDDA  9489               	bcf	3977,2,c	;volatile
    828                           
-   829                           ;main.c: 233: return;
+   829                           ;segment.c: 70: return;
    830  00FDDC  0012               	return	
-   831  00FDDE                     l120:
+   831  00FDDE                     l112:
    832                           
-   833                           ;main.c: 234: }
-   834                           ;main.c: 235: LATEbits.LE1 = LATEbits.LE2 = LATAbits.LA6 = LATCbits.LC2 = 1;
+   833                           ;segment.c: 71: }
+   834                           ;segment.c: 72: LATEbits.LE1 = LATEbits.LE2 = LATAbits.LA6 = LATCbits.LC2 = 1;
    835  00FDDE  848B               	bsf	3979,2,c	;volatile
    836  00FDE0  8C89               	bsf	3977,6,c	;volatile
    837  00FDE2  848D               	bsf	3981,2,c	;volatile
    838  00FDE4  828D               	bsf	3981,1,c	;volatile
    839                           
-   840                           ;main.c: 236: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = 0;
+   840                           ;segment.c: 73: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = 0;
    841  00FDE6  928B               	bcf	3979,1,c	;volatile
    842  00FDE8  908B               	bcf	3979,0,c	;volatile
    843  00FDEA  9E89               	bcf	3977,7,c	;volatile
    844                           
-   845                           ;main.c: 237: break;
+   845                           ;segment.c: 74: break;
    846  00FDEC  0012               	return	
-   847  00FDEE                     l854:
+   847  00FDEE                     l858:
    848                           
-   849                           ;main.c: 239: if (segment == 1) {
+   849                           ;segment.c: 76: if (segment == 1) {
    850  00FDEE  0402               	decf	dispSeg@segment,w,c
    851  00FDF0  A4D8               	btfss	status,2,c
-   852  00FDF2  D008               	goto	l122
+   852  00FDF2  D008               	goto	l114
    853                           
-   854                           ;main.c: 240: LATAbits.LA2 = LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5 =
-      +                           1;
+   854                           ;segment.c: 77: LATAbits.LA2 = LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5
+      +                           = 1;
    855  00FDF4  8A89               	bsf	3977,5,c	;volatile
    856  00FDF6  8889               	bsf	3977,4,c	;volatile
    857  00FDF8  8289               	bsf	3977,1,c	;volatile
    858  00FDFA  8089               	bsf	3977,0,c	;volatile
    859  00FDFC  8489               	bsf	3977,2,c	;volatile
    860                           
-   861                           ;main.c: 241: LATAbits.LA3 = LATEbits.LE0 = 0;
+   861                           ;segment.c: 78: LATAbits.LA3 = LATEbits.LE0 = 0;
    862  00FDFE  908D               	bcf	3981,0,c	;volatile
    863  00FE00  9689               	bcf	3977,3,c	;volatile
    864                           
-   865                           ;main.c: 242: return;
+   865                           ;segment.c: 79: return;
    866  00FE02  0012               	return	
-   867  00FE04                     l122:
+   867  00FE04                     l114:
    868                           
-   869                           ;main.c: 243: }
-   870                           ;main.c: 244: LATAbits.LA7 = LATEbits.LE1 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0 =
-      +                           1;
+   869                           ;segment.c: 80: }
+   870                           ;segment.c: 81: LATAbits.LA7 = LATEbits.LE1 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0
+      +                           = 1;
    871  00FE04  808B               	bsf	3979,0,c	;volatile
    872  00FE06  848B               	bsf	3979,2,c	;volatile
    873  00FE08  848D               	bsf	3981,2,c	;volatile
    874  00FE0A  828D               	bsf	3981,1,c	;volatile
    875  00FE0C  8E89               	bsf	3977,7,c	;volatile
    876                           
-   877                           ;main.c: 245: LATAbits.LA6 = LATCbits.LC1 = 0;
+   877                           ;segment.c: 82: LATAbits.LA6 = LATCbits.LC1 = 0;
    878  00FE0E  928B               	bcf	3979,1,c	;volatile
    879  00FE10  9C89               	bcf	3977,6,c	;volatile
    880                           
-   881                           ;main.c: 246: break;
+   881                           ;segment.c: 83: break;
    882  00FE12  0012               	return	
-   883  00FE14                     l858:
+   883  00FE14                     l862:
    884                           
-   885                           ;main.c: 248: if (segment == 1) {
+   885                           ;segment.c: 85: if (segment == 1) {
    886  00FE14  0402               	decf	dispSeg@segment,w,c
    887  00FE16  A4D8               	btfss	status,2,c
-   888  00FE18  D008               	goto	l124
+   888  00FE18  D008               	goto	l116
    889                           
-   890                           ;main.c: 249: LATAbits.LA2 = LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5 =
-      +                           LATEbits.LE0 = 1;
+   890                           ;segment.c: 86: LATAbits.LA2 = LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5
+      +                           = LATEbits.LE0 = 1;
    891  00FE1A  808D               	bsf	3981,0,c	;volatile
    892  00FE1C  8A89               	bsf	3977,5,c	;volatile
    893  00FE1E  8889               	bsf	3977,4,c	;volatile
@@ -942,16 +942,16 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    895  00FE22  8089               	bsf	3977,0,c	;volatile
    896  00FE24  8489               	bsf	3977,2,c	;volatile
    897                           
-   898                           ;main.c: 250: LATAbits.LA3 = 0;
+   898                           ;segment.c: 87: LATAbits.LA3 = 0;
    899  00FE26  9689               	bcf	3977,3,c	;volatile
    900                           
-   901                           ;main.c: 251: return;
+   901                           ;segment.c: 88: return;
    902  00FE28  0012               	return	
-   903  00FE2A                     l124:
+   903  00FE2A                     l116:
    904                           
-   905                           ;main.c: 252: }
-   906                           ;main.c: 253: LATAbits.LA7 = LATEbits.LE1 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0 =
-      +                           LATCbits.LC1 = 1;
+   905                           ;segment.c: 89: }
+   906                           ;segment.c: 90: LATAbits.LA7 = LATEbits.LE1 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0
+      +                           = LATCbits.LC1 = 1;
    907  00FE2A  828B               	bsf	3979,1,c	;volatile
    908  00FE2C  808B               	bsf	3979,0,c	;volatile
    909  00FE2E  848B               	bsf	3979,2,c	;volatile
@@ -959,56 +959,56 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    911  00FE32  828D               	bsf	3981,1,c	;volatile
    912  00FE34  8E89               	bsf	3977,7,c	;volatile
    913                           
-   914                           ;main.c: 254: LATAbits.LA6 = 0;
+   914                           ;segment.c: 91: LATAbits.LA6 = 0;
    915  00FE36  9C89               	bcf	3977,6,c	;volatile
    916                           
-   917                           ;main.c: 255: break;
+   917                           ;segment.c: 92: break;
    918  00FE38  0012               	return	
-   919  00FE3A                     l862:
+   919  00FE3A                     l866:
    920                           
-   921                           ;main.c: 257: if (segment == 1) {
+   921                           ;segment.c: 94: if (segment == 1) {
    922  00FE3A  0402               	decf	dispSeg@segment,w,c
    923  00FE3C  A4D8               	btfss	status,2,c
-   924  00FE3E  D008               	goto	l126
+   924  00FE3E  D008               	goto	l118
    925                           
-   926                           ;main.c: 258: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = 1;
+   926                           ;segment.c: 95: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = 1;
    927  00FE40  8889               	bsf	3977,4,c	;volatile
    928  00FE42  8689               	bsf	3977,3,c	;volatile
    929  00FE44  8489               	bsf	3977,2,c	;volatile
    930                           
-   931                           ;main.c: 259: LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 0;
+   931                           ;segment.c: 96: LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 0;
    932  00FE46  9289               	bcf	3977,1,c	;volatile
    933  00FE48  9089               	bcf	3977,0,c	;volatile
    934  00FE4A  908D               	bcf	3981,0,c	;volatile
    935  00FE4C  9A89               	bcf	3977,5,c	;volatile
    936                           
-   937                           ;main.c: 260: return;
+   937                           ;segment.c: 97: return;
    938  00FE4E  0012               	return	
-   939  00FE50                     l126:
+   939  00FE50                     l118:
    940                           
-   941                           ;main.c: 261: }
-   942                           ;main.c: 262: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = 1;
+   941                           ;segment.c: 98: }
+   942                           ;segment.c: 99: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = 1;
    943  00FE50  848B               	bsf	3979,2,c	;volatile
    944  00FE52  8C89               	bsf	3977,6,c	;volatile
    945  00FE54  8E89               	bsf	3977,7,c	;volatile
    946                           
-   947                           ;main.c: 263: LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 = 0;
+   947                           ;segment.c: 100: LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 = 0;
    948  00FE56  948D               	bcf	3981,2,c	;volatile
    949  00FE58  928D               	bcf	3981,1,c	;volatile
    950  00FE5A  928B               	bcf	3979,1,c	;volatile
    951  00FE5C  908B               	bcf	3979,0,c	;volatile
    952                           
-   953                           ;main.c: 264: break;
+   953                           ;segment.c: 101: break;
    954  00FE5E  0012               	return	
-   955  00FE60                     l866:
+   955  00FE60                     l870:
    956                           
-   957                           ;main.c: 266: if (segment == 1) {
+   957                           ;segment.c: 103: if (segment == 1) {
    958  00FE60  0402               	decf	dispSeg@segment,w,c
    959  00FE62  A4D8               	btfss	status,2,c
-   960  00FE64  D008               	goto	l128
+   960  00FE64  D008               	goto	l120
    961                           
-   962                           ;main.c: 267: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 =
-      +                           LATAbits.LA0 = LATAbits.LA1 = 1;
+   962                           ;segment.c: 104: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE
+      +                          0 = LATAbits.LA0 = LATAbits.LA1 = 1;
    963  00FE66  8289               	bsf	3977,1,c	;volatile
    964  00FE68  8089               	bsf	3977,0,c	;volatile
    965  00FE6A  808D               	bsf	3981,0,c	;volatile
@@ -1017,13 +1017,13 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    968  00FE70  8689               	bsf	3977,3,c	;volatile
    969  00FE72  8489               	bsf	3977,2,c	;volatile
    970                           
-   971                           ;main.c: 268: return;
+   971                           ;segment.c: 105: return;
    972  00FE74  0012               	return	
-   973  00FE76                     l128:
+   973  00FE76                     l120:
    974                           
-   975                           ;main.c: 269: }
-   976                           ;main.c: 270: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 =
-      +                           LATEbits.LE1 = LATEbits.LE2 = 1;
+   975                           ;segment.c: 106: }
+   976                           ;segment.c: 107: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC
+      +                          1 = LATEbits.LE1 = LATEbits.LE2 = 1;
    977  00FE76  848D               	bsf	3981,2,c	;volatile
    978  00FE78  828D               	bsf	3981,1,c	;volatile
    979  00FE7A  828B               	bsf	3979,1,c	;volatile
@@ -1032,17 +1032,17 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    982  00FE80  8C89               	bsf	3977,6,c	;volatile
    983  00FE82  8E89               	bsf	3977,7,c	;volatile
    984                           
-   985                           ;main.c: 271: break;
+   985                           ;segment.c: 108: break;
    986  00FE84  0012               	return	
-   987  00FE86                     l870:
+   987  00FE86                     l874:
    988                           
-   989                           ;main.c: 273: if (segment == 1) {
+   989                           ;segment.c: 110: if (segment == 1) {
    990  00FE86  0402               	decf	dispSeg@segment,w,c
    991  00FE88  A4D8               	btfss	status,2,c
-   992  00FE8A  D008               	goto	l130
+   992  00FE8A  D008               	goto	l122
    993                           
-   994                           ;main.c: 274: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATAbits.LA0 =
-      +                           LATAbits.LA1 = 1;
+   994                           ;segment.c: 111: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATAbits.LA
+      +                          0 = LATAbits.LA1 = 1;
    995  00FE8C  8289               	bsf	3977,1,c	;volatile
    996  00FE8E  8089               	bsf	3977,0,c	;volatile
    997  00FE90  8A89               	bsf	3977,5,c	;volatile
@@ -1050,16 +1050,16 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    999  00FE94  8689               	bsf	3977,3,c	;volatile
   1000  00FE96  8489               	bsf	3977,2,c	;volatile
   1001                           
-  1002                           ;main.c: 275: LATEbits.LE0 = 0;
+  1002                           ;segment.c: 112: LATEbits.LE0 = 0;
   1003  00FE98  908D               	bcf	3981,0,c	;volatile
   1004                           
-  1005                           ;main.c: 276: return;
+  1005                           ;segment.c: 113: return;
   1006  00FE9A  0012               	return	
-  1007  00FE9C                     l130:
+  1007  00FE9C                     l122:
   1008                           
-  1009                           ;main.c: 277: }
-  1010                           ;main.c: 278: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATEbits.LE1 =
-      +                           LATEbits.LE2 = 1;
+  1009                           ;segment.c: 114: }
+  1010                           ;segment.c: 115: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATEbits.LE
+      +                          1 = LATEbits.LE2 = 1;
   1011  00FE9C  848D               	bsf	3981,2,c	;volatile
   1012  00FE9E  828D               	bsf	3981,1,c	;volatile
   1013  00FEA0  808B               	bsf	3979,0,c	;volatile
@@ -1067,20 +1067,20 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1015  00FEA4  8C89               	bsf	3977,6,c	;volatile
   1016  00FEA6  8E89               	bsf	3977,7,c	;volatile
   1017                           
-  1018                           ;main.c: 279: LATCbits.LC1 = 0;
+  1018                           ;segment.c: 116: LATCbits.LC1 = 0;
   1019  00FEA8  928B               	bcf	3979,1,c	;volatile
   1020                           
-  1021                           ;main.c: 280: break;
+  1021                           ;segment.c: 117: break;
   1022  00FEAA  0012               	return	
-  1023  00FEAC                     l874:
+  1023  00FEAC                     l878:
   1024                           
-  1025                           ;main.c: 282: if (segment == 1) {
+  1025                           ;segment.c: 119: if (segment == 1) {
   1026  00FEAC  0402               	decf	dispSeg@segment,w,c
   1027  00FEAE  A4D8               	btfss	status,2,c
-  1028  00FEB0  D008               	goto	l132
+  1028  00FEB0  D008               	goto	l124
   1029                           
-  1030                           ;main.c: 283: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATEbits.LE0 = LATAbits.LA0 =
-      +                           LATAbits.LA1 = 1;
+  1030                           ;segment.c: 120: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATEbits.LE0 = LATAbits.LA
+      +                          0 = LATAbits.LA1 = 1;
   1031  00FEB2  8289               	bsf	3977,1,c	;volatile
   1032  00FEB4  8089               	bsf	3977,0,c	;volatile
   1033  00FEB6  808D               	bsf	3981,0,c	;volatile
@@ -1088,16 +1088,16 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1035  00FEBA  8689               	bsf	3977,3,c	;volatile
   1036  00FEBC  8489               	bsf	3977,2,c	;volatile
   1037                           
-  1038                           ;main.c: 284: LATAbits.LA5 = 0;
+  1038                           ;segment.c: 121: LATAbits.LA5 = 0;
   1039  00FEBE  9A89               	bcf	3977,5,c	;volatile
   1040                           
-  1041                           ;main.c: 285: return;
+  1041                           ;segment.c: 122: return;
   1042  00FEC0  0012               	return	
-  1043  00FEC2                     l132:
+  1043  00FEC2                     l124:
   1044                           
-  1045                           ;main.c: 286: }
-  1046                           ;main.c: 287: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC1 = LATEbits.LE1 =
-      +                           LATEbits.LE2 = 1;
+  1045                           ;segment.c: 123: }
+  1046                           ;segment.c: 124: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC1 = LATEbits.LE
+      +                          1 = LATEbits.LE2 = 1;
   1047  00FEC2  848D               	bsf	3981,2,c	;volatile
   1048  00FEC4  828D               	bsf	3981,1,c	;volatile
   1049  00FEC6  828B               	bsf	3979,1,c	;volatile
@@ -1105,198 +1105,198 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1051  00FECA  8C89               	bsf	3977,6,c	;volatile
   1052  00FECC  8E89               	bsf	3977,7,c	;volatile
   1053                           
-  1054                           ;main.c: 288: LATCbits.LC0 = 0;
+  1054                           ;segment.c: 125: LATCbits.LC0 = 0;
   1055  00FECE  908B               	bcf	3979,0,c	;volatile
   1056                           
-  1057                           ;main.c: 289: break;
+  1057                           ;segment.c: 126: break;
   1058  00FED0  0012               	return	
-  1059  00FED2                     l878:
+  1059  00FED2                     l882:
   1060                           
-  1061                           ;main.c: 291: if (segment == 1) {
+  1061                           ;segment.c: 128: if (segment == 1) {
   1062  00FED2  0402               	decf	dispSeg@segment,w,c
   1063  00FED4  A4D8               	btfss	status,2,c
-  1064  00FED6  D008               	goto	l134
+  1064  00FED6  D008               	goto	l126
   1065                           
-  1066                           ;main.c: 292: LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 =
-      +                           1;
+  1066                           ;segment.c: 129: LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA
+      +                          1 = 1;
   1067  00FED8  8289               	bsf	3977,1,c	;volatile
   1068  00FEDA  8089               	bsf	3977,0,c	;volatile
   1069  00FEDC  808D               	bsf	3981,0,c	;volatile
   1070  00FEDE  8A89               	bsf	3977,5,c	;volatile
   1071  00FEE0  8889               	bsf	3977,4,c	;volatile
   1072                           
-  1073                           ;main.c: 293: LATAbits.LA2 = LATAbits.LA3 = 0;
+  1073                           ;segment.c: 130: LATAbits.LA2 = LATAbits.LA3 = 0;
   1074  00FEE2  9689               	bcf	3977,3,c	;volatile
   1075  00FEE4  9489               	bcf	3977,2,c	;volatile
   1076                           
-  1077                           ;main.c: 294: return;
+  1077                           ;segment.c: 131: return;
   1078  00FEE6  0012               	return	
-  1079  00FEE8                     l134:
+  1079  00FEE8                     l126:
   1080                           
-  1081                           ;main.c: 295: }
-  1082                           ;main.c: 296: LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 =
-      +                           1;
+  1081                           ;segment.c: 132: }
+  1082                           ;segment.c: 133: LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE
+      +                          2 = 1;
   1083  00FEE8  848D               	bsf	3981,2,c	;volatile
   1084  00FEEA  828D               	bsf	3981,1,c	;volatile
   1085  00FEEC  828B               	bsf	3979,1,c	;volatile
   1086  00FEEE  808B               	bsf	3979,0,c	;volatile
   1087  00FEF0  848B               	bsf	3979,2,c	;volatile
   1088                           
-  1089                           ;main.c: 297: LATAbits.LA7 = LATAbits.LA6 = 0;
+  1089                           ;segment.c: 134: LATAbits.LA7 = LATAbits.LA6 = 0;
   1090  00FEF2  9C89               	bcf	3977,6,c	;volatile
   1091  00FEF4  9E89               	bcf	3977,7,c	;volatile
   1092                           
-  1093                           ;main.c: 298: break;
+  1093                           ;segment.c: 135: break;
   1094  00FEF6  0012               	return	
-  1095  00FEF8                     l882:
+  1095  00FEF8                     l886:
   1096                           
-  1097                           ;main.c: 300: if (segment == 1) {
+  1097                           ;segment.c: 137: if (segment == 1) {
   1098  00FEF8  0402               	decf	dispSeg@segment,w,c
   1099  00FEFA  A4D8               	btfss	status,2,c
-  1100  00FEFC  D008               	goto	l136
+  1100  00FEFC  D008               	goto	l128
   1101                           
-  1102                           ;main.c: 301: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = 1;
+  1102                           ;segment.c: 138: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = 1;
   1103  00FEFE  8089               	bsf	3977,0,c	;volatile
   1104  00FF00  808D               	bsf	3981,0,c	;volatile
   1105  00FF02  8A89               	bsf	3977,5,c	;volatile
   1106  00FF04  8489               	bsf	3977,2,c	;volatile
   1107                           
-  1108                           ;main.c: 302: LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA1 = 0;
+  1108                           ;segment.c: 139: LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA1 = 0;
   1109  00FF06  9289               	bcf	3977,1,c	;volatile
   1110  00FF08  9889               	bcf	3977,4,c	;volatile
   1111  00FF0A  9689               	bcf	3977,3,c	;volatile
   1112                           
-  1113                           ;main.c: 303: return;
+  1113                           ;segment.c: 140: return;
   1114  00FF0C  0012               	return	
-  1115  00FF0E                     l136:
+  1115  00FF0E                     l128:
   1116                           
-  1117                           ;main.c: 304: }
-  1118                           ;main.c: 305: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = 1;
+  1117                           ;segment.c: 141: }
+  1118                           ;segment.c: 142: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = 1;
   1119  00FF0E  828D               	bsf	3981,1,c	;volatile
   1120  00FF10  828B               	bsf	3979,1,c	;volatile
   1121  00FF12  808B               	bsf	3979,0,c	;volatile
   1122  00FF14  8E89               	bsf	3977,7,c	;volatile
   1123                           
-  1124                           ;main.c: 306: LATAbits.LA6 = LATCbits.LC2 = LATEbits.LE2 = 0;
+  1124                           ;segment.c: 143: LATAbits.LA6 = LATCbits.LC2 = LATEbits.LE2 = 0;
   1125  00FF16  948D               	bcf	3981,2,c	;volatile
   1126  00FF18  948B               	bcf	3979,2,c	;volatile
   1127  00FF1A  9C89               	bcf	3977,6,c	;volatile
   1128                           
-  1129                           ;main.c: 307: break;
+  1129                           ;segment.c: 144: break;
   1130  00FF1C  0012               	return	
-  1131  00FF1E                     l886:
+  1131  00FF1E                     l890:
   1132                           
-  1133                           ;main.c: 309: if (segment == 1) {
+  1133                           ;segment.c: 146: if (segment == 1) {
   1134  00FF1E  0402               	decf	dispSeg@segment,w,c
   1135  00FF20  A4D8               	btfss	status,2,c
-  1136  00FF22  D008               	goto	l138
+  1136  00FF22  D008               	goto	l130
   1137                           
-  1138                           ;main.c: 310: LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA1 =
-      +                           1;
+  1138                           ;segment.c: 147: LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA
+      +                          1 = 1;
   1139  00FF24  8289               	bsf	3977,1,c	;volatile
   1140  00FF26  808D               	bsf	3981,0,c	;volatile
   1141  00FF28  8A89               	bsf	3977,5,c	;volatile
   1142  00FF2A  8889               	bsf	3977,4,c	;volatile
   1143  00FF2C  8689               	bsf	3977,3,c	;volatile
   1144                           
-  1145                           ;main.c: 311: LATAbits.LA2 = LATAbits.LA0 = 0;
+  1145                           ;segment.c: 148: LATAbits.LA2 = LATAbits.LA0 = 0;
   1146  00FF2E  9089               	bcf	3977,0,c	;volatile
   1147  00FF30  9489               	bcf	3977,2,c	;volatile
   1148                           
-  1149                           ;main.c: 312: return;
+  1149                           ;segment.c: 149: return;
   1150  00FF32  0012               	return	
-  1151  00FF34                     l138:
+  1151  00FF34                     l130:
   1152                           
-  1153                           ;main.c: 313: }
-  1154                           ;main.c: 314: LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE2 =
-      +                           1;
+  1153                           ;segment.c: 150: }
+  1154                           ;segment.c: 151: LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE
+      +                          2 = 1;
   1155  00FF34  848D               	bsf	3981,2,c	;volatile
   1156  00FF36  828B               	bsf	3979,1,c	;volatile
   1157  00FF38  808B               	bsf	3979,0,c	;volatile
   1158  00FF3A  848B               	bsf	3979,2,c	;volatile
   1159  00FF3C  8C89               	bsf	3977,6,c	;volatile
   1160                           
-  1161                           ;main.c: 315: LATAbits.LA7 = LATEbits.LE1 = 0;
+  1161                           ;segment.c: 152: LATAbits.LA7 = LATEbits.LE1 = 0;
   1162  00FF3E  928D               	bcf	3981,1,c	;volatile
   1163  00FF40  9E89               	bcf	3977,7,c	;volatile
   1164                           
-  1165                           ;main.c: 316: break;
+  1165                           ;segment.c: 153: break;
   1166  00FF42  0012               	return	
-  1167  00FF44                     l890:
+  1167  00FF44                     l894:
   1168                           
-  1169                           ;main.c: 318: if (segment == 1) {
+  1169                           ;segment.c: 155: if (segment == 1) {
   1170  00FF44  0402               	decf	dispSeg@segment,w,c
   1171  00FF46  A4D8               	btfss	status,2,c
-  1172  00FF48  D008               	goto	l140
+  1172  00FF48  D008               	goto	l132
   1173                           
-  1174                           ;main.c: 319: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 =
-      +                           1;
+  1174                           ;segment.c: 156: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA
+      +                          1 = 1;
   1175  00FF4A  8289               	bsf	3977,1,c	;volatile
   1176  00FF4C  8089               	bsf	3977,0,c	;volatile
   1177  00FF4E  808D               	bsf	3981,0,c	;volatile
   1178  00FF50  8A89               	bsf	3977,5,c	;volatile
   1179  00FF52  8489               	bsf	3977,2,c	;volatile
   1180                           
-  1181                           ;main.c: 320: LATAbits.LA3 = LATAbits.LA4 = 0;
+  1181                           ;segment.c: 157: LATAbits.LA3 = LATAbits.LA4 = 0;
   1182  00FF54  9889               	bcf	3977,4,c	;volatile
   1183  00FF56  9689               	bcf	3977,3,c	;volatile
   1184                           
-  1185                           ;main.c: 321: return;
+  1185                           ;segment.c: 158: return;
   1186  00FF58  0012               	return	
-  1187  00FF5A                     l140:
+  1187  00FF5A                     l132:
   1188                           
-  1189                           ;main.c: 322: }
-  1190                           ;main.c: 323: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 =
-      +                           1;
+  1189                           ;segment.c: 159: }
+  1190                           ;segment.c: 160: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE
+      +                          2 = 1;
   1191  00FF5A  848D               	bsf	3981,2,c	;volatile
   1192  00FF5C  828D               	bsf	3981,1,c	;volatile
   1193  00FF5E  828B               	bsf	3979,1,c	;volatile
   1194  00FF60  808B               	bsf	3979,0,c	;volatile
   1195  00FF62  8E89               	bsf	3977,7,c	;volatile
   1196                           
-  1197                           ;main.c: 324: LATAbits.LA6 = LATCbits.LC2 = 0;
+  1197                           ;segment.c: 161: LATAbits.LA6 = LATCbits.LC2 = 0;
   1198  00FF64  948B               	bcf	3979,2,c	;volatile
   1199  00FF66  9C89               	bcf	3977,6,c	;volatile
   1200                           
-  1201                           ;main.c: 325: break;
+  1201                           ;segment.c: 162: break;
   1202  00FF68  0012               	return	
-  1203  00FF6A                     l894:
+  1203  00FF6A                     l898:
   1204                           
-  1205                           ;main.c: 327: if (segment == 1) {
+  1205                           ;segment.c: 164: if (segment == 1) {
   1206  00FF6A  0402               	decf	dispSeg@segment,w,c
   1207  00FF6C  A4D8               	btfss	status,2,c
-  1208  00FF6E  D008               	goto	l142
+  1208  00FF6E  D008               	goto	l134
   1209                           
-  1210                           ;main.c: 328: LATAbits.LA2 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 1;
+  1210                           ;segment.c: 165: LATAbits.LA2 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 1;
   1211  00FF70  8289               	bsf	3977,1,c	;volatile
   1212  00FF72  8089               	bsf	3977,0,c	;volatile
   1213  00FF74  808D               	bsf	3981,0,c	;volatile
   1214  00FF76  8489               	bsf	3977,2,c	;volatile
   1215                           
-  1216                           ;main.c: 329: LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = 0;
+  1216                           ;segment.c: 166: LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = 0;
   1217  00FF78  9A89               	bcf	3977,5,c	;volatile
   1218  00FF7A  9889               	bcf	3977,4,c	;volatile
   1219  00FF7C  9689               	bcf	3977,3,c	;volatile
   1220                           
-  1221                           ;main.c: 330: return;
+  1221                           ;segment.c: 167: return;
   1222  00FF7E  0012               	return	
-  1223  00FF80                     l142:
+  1223  00FF80                     l134:
   1224                           
-  1225                           ;main.c: 331: }
-  1226                           ;main.c: 332: LATAbits.LA7 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 = 1;
+  1225                           ;segment.c: 168: }
+  1226                           ;segment.c: 169: LATAbits.LA7 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 = 1;
   1227  00FF80  848D               	bsf	3981,2,c	;volatile
   1228  00FF82  828D               	bsf	3981,1,c	;volatile
   1229  00FF84  828B               	bsf	3979,1,c	;volatile
   1230  00FF86  8E89               	bsf	3977,7,c	;volatile
   1231                           
-  1232                           ;main.c: 333: LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = 0;
+  1232                           ;segment.c: 170: LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = 0;
   1233  00FF88  908B               	bcf	3979,0,c	;volatile
   1234  00FF8A  948B               	bcf	3979,2,c	;volatile
   1235  00FF8C  9C89               	bcf	3977,6,c	;volatile
   1236                           
-  1237                           ;main.c: 334: break;
+  1237                           ;segment.c: 171: break;
   1238  00FF8E  0012               	return	
-  1239  00FF90                     l900:
+  1239  00FF90                     l904:
   1240  00FF90  5001               	movf	dispSeg@letter,w,c
   1241                           
   1242                           ; Switch size 1, requested type "space"
@@ -1307,59 +1307,59 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1247                           ;	Chosen strategy is simple_byte
   1248  00FF92  0A2D               	xorlw	45	; case 45
   1249  00FF94  B4D8               	btfsc	status,2,c
-  1250  00FF96  D6BA               	goto	l830
+  1250  00FF96  D6BA               	goto	l834
   1251  00FF98  0A1D               	xorlw	29	; case 48
   1252  00FF9A  B4D8               	btfsc	status,2,c
-  1253  00FF9C  D6C9               	goto	l834
+  1253  00FF9C  D6C9               	goto	l838
   1254  00FF9E  0A01               	xorlw	1	; case 49
   1255  00FFA0  B4D8               	btfsc	status,2,c
-  1256  00FFA2  D6D9               	goto	l838
+  1256  00FFA2  D6D9               	goto	l842
   1257  00FFA4  0A03               	xorlw	3	; case 50
   1258  00FFA6  B4D8               	btfsc	status,2,c
-  1259  00FFA8  D6E9               	goto	l842
+  1259  00FFA8  D6E9               	goto	l846
   1260  00FFAA  0A01               	xorlw	1	; case 51
   1261  00FFAC  B4D8               	btfsc	status,2,c
-  1262  00FFAE  D6F9               	goto	l846
+  1262  00FFAE  D6F9               	goto	l850
   1263  00FFB0  0A07               	xorlw	7	; case 52
   1264  00FFB2  B4D8               	btfsc	status,2,c
-  1265  00FFB4  D709               	goto	l850
+  1265  00FFB4  D709               	goto	l854
   1266  00FFB6  0A01               	xorlw	1	; case 53
   1267  00FFB8  B4D8               	btfsc	status,2,c
-  1268  00FFBA  D719               	goto	l854
+  1268  00FFBA  D719               	goto	l858
   1269  00FFBC  0A03               	xorlw	3	; case 54
   1270  00FFBE  B4D8               	btfsc	status,2,c
-  1271  00FFC0  D729               	goto	l858
+  1271  00FFC0  D729               	goto	l862
   1272  00FFC2  0A01               	xorlw	1	; case 55
   1273  00FFC4  B4D8               	btfsc	status,2,c
-  1274  00FFC6  D739               	goto	l862
+  1274  00FFC6  D739               	goto	l866
   1275  00FFC8  0A0F               	xorlw	15	; case 56
   1276  00FFCA  B4D8               	btfsc	status,2,c
-  1277  00FFCC  D749               	goto	l866
+  1277  00FFCC  D749               	goto	l870
   1278  00FFCE  0A01               	xorlw	1	; case 57
   1279  00FFD0  B4D8               	btfsc	status,2,c
-  1280  00FFD2  D759               	goto	l870
+  1280  00FFD2  D759               	goto	l874
   1281  00FFD4  0A58               	xorlw	88	; case 97
   1282  00FFD6  B4D8               	btfsc	status,2,c
-  1283  00FFD8  D769               	goto	l874
+  1283  00FFD8  D769               	goto	l878
   1284  00FFDA  0A03               	xorlw	3	; case 98
   1285  00FFDC  B4D8               	btfsc	status,2,c
-  1286  00FFDE  D779               	goto	l878
+  1286  00FFDE  D779               	goto	l882
   1287  00FFE0  0A01               	xorlw	1	; case 99
   1288  00FFE2  B4D8               	btfsc	status,2,c
-  1289  00FFE4  D789               	goto	l882
+  1289  00FFE4  D789               	goto	l886
   1290  00FFE6  0A07               	xorlw	7	; case 100
   1291  00FFE8  B4D8               	btfsc	status,2,c
-  1292  00FFEA  D799               	goto	l886
+  1292  00FFEA  D799               	goto	l890
   1293  00FFEC  0A01               	xorlw	1	; case 101
   1294  00FFEE  B4D8               	btfsc	status,2,c
-  1295  00FFF0  D7A9               	goto	l890
+  1295  00FFF0  D7A9               	goto	l894
   1296  00FFF2  0A03               	xorlw	3	; case 102
   1297  00FFF4  B4D8               	btfsc	status,2,c
-  1298  00FFF6  D7B9               	goto	l894
+  1298  00FFF6  D7B9               	goto	l898
   1299  00FFF8  0A1E               	xorlw	30	; case 120
   1300  00FFFA  A4D8               	btfss	status,2,c
   1301  00FFFC  0012               	return	
-  1302  00FFFE  D674               	goto	l826
+  1302  00FFFE  D674               	goto	l830
   1303  010000                     __end_of_dispSeg:
   1304                           	opt stack 0
   1305  0000                     tblptru	equ	0xFF8
@@ -1558,29 +1558,29 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.30 build 55553 
-Symbol Table                                                                                   Mon Feb 10 13:33:22 2014
+Symbol Table                                                                                   Tue Feb 11 13:45:55 2014
 
-                     l66 FBD4             __CFG_CP0$OFF 000000             __CFG_CP1$OFF 000000  
-           __CFG_CP2$OFF 000000             __CFG_CP3$OFF 000000                      l111 FD46  
-                    l120 FDDE                      l130 FE9C                      l122 FE04  
-                    l114 FD6C                      l106 FCFC                      l140 FF5A  
-                    l132 FEC2                      l124 FE2A                      l116 FD92  
-                    l109 FD20                      l142 FF80                      l134 FEE8  
-                    l126 FE50                      l118 FDB8                      l136 FF0E  
-                    l128 FE76                      l138 FF34                      l900 FF90  
-                    l830 FD0C                      l850 FDC8                      l842 FD7C  
-                    l834 FD30                      l826 FCE8                      l780 FC6C  
-                    l772 FC5C                      l870 FE86                      l862 FE3A  
-                    l854 FDEE                      l846 FDA2                      l838 FD56  
-                    l774 FC60                      l782 FC72                      l776 FC64  
-                    l784 FCCA                      l890 FF44                      l882 FEF8  
-                    l874 FEAC                      l866 FE60                      l858 FE14  
-                    l778 FC68                      l894 FF6A                      l886 FF1E  
-                    l878 FED2                      l994 FC3A             __CFG_CPB$OFF 000000  
+                     l71 FBD4                       l98 FCFC             __CFG_CP0$OFF 000000  
+           __CFG_CP1$OFF 000000             __CFG_CP2$OFF 000000             __CFG_CP3$OFF 000000  
+                    l101 FD20                      l110 FDB8                      l103 FD46  
+                    l120 FE76                      l112 FDDE                      l130 FF34  
+                    l122 FE9C                      l114 FE04                      l106 FD6C  
+                    l132 FF5A                      l124 FEC2                      l116 FE2A  
+                    l108 FD92                      l134 FF80                      l126 FEE8  
+                    l118 FE50                      l128 FF0E                      l830 FCE8  
+                    l904 FF90                      l850 FDA2                      l842 FD56  
+                    l834 FD0C                      l780 FC64                      l870 FE60  
+                    l862 FE14                      l854 FDC8                      l846 FD7C  
+                    l838 FD30                      l782 FC68                      l784 FC6C  
+                    l776 FC5C                      l890 FF1E                      l882 FED2  
+                    l874 FE86                      l866 FE3A                      l858 FDEE  
+                    l778 FC60                      l786 FC72                      l788 FCCA  
+                    l894 FF44                      l886 FEF8                      l878 FEAC  
+                    l898 FF6A                      l998 FC3A             __CFG_CPB$OFF 000000  
            __CFG_CPD$OFF 000000                      wreg 000FE8               _TXSTA2bits 000F72  
-           __CFG_LVP$OFF 000000                     l1002 FC52                     l1110 FCB6  
-                   l1112 FCC0                     l1104 FC9C                     l1106 FCA2  
-                   l1108 FCAC                     _LATA 000F89                     _LATC 000F8B  
+           __CFG_LVP$OFF 000000                     l1110 FCA2                     l1006 FC52  
+                   l1112 FCAC                     l1114 FCB6                     l1116 FCC0  
+                   l1108 FC9C                     _LATA 000F89                     _LATC 000F8B  
                    _LATD 000F8C                     _LATE 000F8D                     _main FC0A  
           __CFG_BORV$190 000000                     start 0000            __CFG_IESO$OFF 000000  
            _BAUDCON2bits 000F70                    ?_main 0001                    _TRISA 000F92  

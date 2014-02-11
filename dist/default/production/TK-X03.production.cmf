@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Blake\AppData\Local\Temp\s3b8.obj
+$C:\Users\Blake\AppData\Local\Temp\s5n4.obj
 end_init CODE 0 0 0 4 1
 idloc IDLOC 0 200000 200000 8 1
 config CONFIG 0 300000 300000 E 1
@@ -70,220 +70,220 @@ STACK 000060-0009FF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\TK-X03.production.obj
-"C:\Users\Blake\AppData\Local\Temp\s3b8.":1297 FBAC cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s3b8.":1299 FBAC cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s3b8.":1302 FBAC cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s3b8.":1312 FBAC cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s3b8.":1313 FBAE cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s3b8.":1314 FBB0 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s3b8.":1315 FBB2 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s3b8.":1321 FBB4 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s3b8.":1322 FBB4 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s3b8.":1323 FBB4 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s3b8.":1324 FBB6 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s3b8.":1325 FBB8 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s3b8.":1326 FBBA cinit CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":78 FBBE text2 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":80 FBBE text2 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":81 FBC0 text2 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":82 FBC6 text2 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":83 FBCE text2 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":84 FBD0 text2 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":85 FBD2 text2 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":88 FBD4 text2 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":89 FBD6 text2 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":88 FBD8 text2 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":89 FBDA text2 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":91 FBDA text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":93 FBDA text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":94 FBDE text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":95 FBE2 text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":97 FBE6 text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":98 FBEE text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":99 FBF0 text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":100 FBF2 text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":101 FBF4 text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":102 FBF6 text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":104 FBF8 text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":105 FBFC text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":106 FC00 text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":107 FC04 text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":108 FC08 text1 CODE
+"C:\Users\Blake\AppData\Local\Temp\s5n4.":2815 FBAC cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s5n4.":2817 FBAC cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s5n4.":2820 FBAC cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s5n4.":2830 FBAC cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s5n4.":2831 FBAE cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s5n4.":2832 FBB0 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s5n4.":2833 FBB2 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s5n4.":2839 FBB4 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s5n4.":2840 FBB4 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s5n4.":2841 FBB4 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s5n4.":2842 FBB6 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s5n4.":2843 FBB8 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s5n4.":2844 FBBA cinit CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":9 FBBE text2 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":11 FBBE text2 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":12 FBC0 text2 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":13 FBC6 text2 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":14 FBCE text2 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":15 FBD0 text2 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":16 FBD2 text2 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":19 FBD4 text2 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":20 FBD6 text2 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":19 FBD8 text2 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":20 FBDA text2 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":26 FBDA text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":28 FBDA text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":29 FBDE text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":30 FBE2 text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":32 FBE6 text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":33 FBEE text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":34 FBF0 text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":35 FBF2 text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":36 FBF4 text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":37 FBF6 text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":39 FBF8 text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":40 FBFC text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":41 FC00 text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":42 FC04 text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":43 FC08 text1 CODE
 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\pic18f46k22.h":4969 FC0A text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":20 FC0A text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":22 FC0A text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":23 FC0E text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":24 FC12 text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":25 FC1E text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":29 FC3A text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":31 FC3C text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":33 FC40 text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":35 FC44 text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":38 FC52 text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":68 FC58 text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":397 FC58 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":399 FC58 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":402 FC5A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":407 FC5C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":410 FC60 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":413 FC64 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":416 FC68 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":419 FC6C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":420 FC70 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":402 FC72 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":422 FCCA text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":423 FCCE text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":424 FCD0 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":426 FCD2 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":427 FCD4 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":429 FCD6 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":430 FCD8 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":432 FCDA text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":433 FCDC text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":435 FCDE text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":436 FCE0 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":176 FCE2 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":178 FCE6 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":180 FCE8 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":181 FCEE text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":182 FCFC text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":183 FCFC text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":184 FD0A text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":186 FD0C text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":187 FD12 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":188 FD14 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":189 FD20 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":190 FD20 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":191 FD22 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":192 FD2E text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":194 FD30 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":195 FD36 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":196 FD42 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":197 FD44 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":198 FD46 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":199 FD46 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":200 FD52 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":201 FD54 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":203 FD56 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":204 FD5C text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":205 FD60 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":206 FD6A text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":207 FD6C text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":208 FD6C text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":209 FD70 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":210 FD7A text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":212 FD7C text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":213 FD82 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":214 FD8C text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":215 FD90 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":216 FD92 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":217 FD92 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":218 FD9C text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":219 FDA0 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":221 FDA2 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":222 FDA8 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":223 FDB2 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":224 FDB6 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":225 FDB8 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":226 FDB8 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":227 FDC2 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":228 FDC6 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":230 FDC8 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":231 FDCE text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":232 FDD6 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":233 FDDC text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":234 FDDE text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":235 FDDE text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":236 FDE6 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":237 FDEC text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":239 FDEE text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":240 FDF4 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":241 FDFE text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":242 FE02 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":243 FE04 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":244 FE04 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":245 FE0E text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":246 FE12 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":248 FE14 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":249 FE1A text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":250 FE26 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":251 FE28 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":252 FE2A text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":253 FE2A text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":254 FE36 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":255 FE38 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":257 FE3A text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":258 FE40 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":259 FE46 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":260 FE4E text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":261 FE50 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":262 FE50 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":263 FE56 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":264 FE5E text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":266 FE60 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":267 FE66 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":268 FE74 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":269 FE76 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":270 FE76 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":271 FE84 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":273 FE86 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":274 FE8C text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":275 FE98 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":276 FE9A text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":277 FE9C text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":278 FE9C text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":279 FEA8 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":280 FEAA text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":282 FEAC text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":283 FEB2 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":284 FEBE text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":285 FEC0 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":286 FEC2 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":287 FEC2 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":288 FECE text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":289 FED0 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":291 FED2 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":292 FED8 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":293 FEE2 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":294 FEE6 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":295 FEE8 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":296 FEE8 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":297 FEF2 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":298 FEF6 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":300 FEF8 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":301 FEFE text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":302 FF06 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":303 FF0C text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":304 FF0E text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":305 FF0E text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":306 FF16 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":307 FF1C text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":309 FF1E text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":310 FF24 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":311 FF2E text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":312 FF32 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":313 FF34 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":314 FF34 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":315 FF3E text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":316 FF42 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":318 FF44 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":319 FF4A text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":320 FF54 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":321 FF58 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":322 FF5A text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":323 FF5A text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":324 FF64 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":325 FF68 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":327 FF6A text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":328 FF70 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":329 FF78 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":330 FF7E text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":331 FF80 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":332 FF80 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":333 FF88 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":334 FF8E text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":178 FF90 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":336 10000 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":17 FC0A text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":19 FC0A text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":20 FC0E text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":21 FC12 text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":22 FC1E text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":26 FC3A text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":28 FC3C text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":30 FC40 text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":32 FC44 text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":35 FC52 text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":39 FC58 text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":20 FC58 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":22 FC58 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":25 FC5A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":30 FC5C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":33 FC60 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":36 FC64 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":39 FC68 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":42 FC6C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":43 FC70 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":25 FC72 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":45 FCCA text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":46 FCCE text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":47 FCD0 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":49 FCD2 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":50 FCD4 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":52 FCD6 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":53 FCD8 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":55 FCDA text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":56 FCDC text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":58 FCDE text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":59 FCE0 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":13 FCE2 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":15 FCE6 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":17 FCE8 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":18 FCEE text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":19 FCFC text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":20 FCFC text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":21 FD0A text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":23 FD0C text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":24 FD12 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":25 FD14 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":26 FD20 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":27 FD20 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":28 FD22 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":29 FD2E text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":31 FD30 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":32 FD36 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":33 FD42 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":34 FD44 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":35 FD46 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":36 FD46 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":37 FD52 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":38 FD54 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":40 FD56 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":41 FD5C text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":42 FD60 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":43 FD6A text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":44 FD6C text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":45 FD6C text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":46 FD70 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":47 FD7A text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":49 FD7C text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":50 FD82 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":51 FD8C text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":52 FD90 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":53 FD92 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":54 FD92 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":55 FD9C text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":56 FDA0 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":58 FDA2 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":59 FDA8 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":60 FDB2 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":61 FDB6 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":62 FDB8 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":63 FDB8 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":64 FDC2 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":65 FDC6 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":67 FDC8 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":68 FDCE text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":69 FDD6 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":70 FDDC text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":71 FDDE text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":72 FDDE text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":73 FDE6 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":74 FDEC text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":76 FDEE text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":77 FDF4 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":78 FDFE text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":79 FE02 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":80 FE04 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":81 FE04 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":82 FE0E text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":83 FE12 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":85 FE14 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":86 FE1A text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":87 FE26 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":88 FE28 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":89 FE2A text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":90 FE2A text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":91 FE36 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":92 FE38 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":94 FE3A text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":95 FE40 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":96 FE46 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":97 FE4E text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":98 FE50 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":99 FE50 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":100 FE56 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":101 FE5E text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":103 FE60 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":104 FE66 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":105 FE74 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":106 FE76 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":107 FE76 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":108 FE84 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":110 FE86 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":111 FE8C text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":112 FE98 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":113 FE9A text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":114 FE9C text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":115 FE9C text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":116 FEA8 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":117 FEAA text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":119 FEAC text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":120 FEB2 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":121 FEBE text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":122 FEC0 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":123 FEC2 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":124 FEC2 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":125 FECE text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":126 FED0 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":128 FED2 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":129 FED8 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":130 FEE2 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":131 FEE6 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":132 FEE8 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":133 FEE8 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":134 FEF2 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":135 FEF6 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":137 FEF8 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":138 FEFE text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":139 FF06 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":140 FF0C text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":141 FF0E text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":142 FF0E text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":143 FF16 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":144 FF1C text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":146 FF1E text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":147 FF24 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":148 FF2E text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":149 FF32 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":150 FF34 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":151 FF34 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":152 FF3E text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":153 FF42 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":155 FF44 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":156 FF4A text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":157 FF54 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":158 FF58 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":159 FF5A text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":160 FF5A text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":161 FF64 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":162 FF68 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":164 FF6A text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":165 FF70 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":166 FF78 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":167 FF7E text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":168 FF80 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":169 FF80 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":170 FF88 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":171 FF8E text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":15 FF90 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":173 10000 text4 CODE
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -311,8 +311,8 @@ _LATC F8B 0 ABS 0 - dist/default/production\TK-X03.production.obj
 _LATD F8C 0 ABS 0 - dist/default/production\TK-X03.production.obj
 _LATE F8D 0 ABS 0 - dist/default/production\TK-X03.production.obj
 _main FC0A 0 CODE 0 text0 dist/default/production\TK-X03.production.obj
-___sp 0 0 STACK 2 stack C:\Users\Blake\AppData\Local\Temp\s3b8.obj
-start 0 0 CODE 0 init C:\Users\Blake\AppData\Local\Temp\s3b8.obj
+___sp 0 0 STACK 2 stack C:\Users\Blake\AppData\Local\Temp\s5n4.obj
+start 0 0 CODE 0 init C:\Users\Blake\AppData\Local\Temp\s5n4.obj
 _TRISA F92 0 ABS 0 - dist/default/production\TK-X03.production.obj
 _TRISC F94 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __Hirdata 0 0 CODE 0 irdata dist/default/production\TK-X03.production.obj
@@ -385,10 +385,10 @@ __Hdata 0 0 ABS 0 data dist/default/production\TK-X03.production.obj
 __Ldata 0 0 ABS 0 data dist/default/production\TK-X03.production.obj
 __CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 enableSerial@baudRate 1 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
-stackhi 9FF 0 ABS 0 - C:\Users\Blake\AppData\Local\Temp\s3b8.obj
+stackhi 9FF 0 ABS 0 - C:\Users\Blake\AppData\Local\Temp\s5n4.obj
 __Htemp 0 0 COMRAM 1 temp dist/default/production\TK-X03.production.obj
 __Ltemp 0 0 COMRAM 1 temp dist/default/production\TK-X03.production.obj
-stacklo 60 0 ABS 0 - C:\Users\Blake\AppData\Local\Temp\s3b8.obj
+stacklo 60 0 ABS 0 - C:\Users\Blake\AppData\Local\Temp\s5n4.obj
 __Hrbit 0 0 COMRAM 1 rbit dist/default/production\TK-X03.production.obj
 __Lrbit 0 0 COMRAM 1 rbit dist/default/production\TK-X03.production.obj
 __Hinit 0 0 CODE 0 init dist/default/production\TK-X03.production.obj
@@ -481,8 +481,8 @@ __Hcinit 0 0 ABS 0 cinit dist/default/production\TK-X03.production.obj
 __Lcinit 0 0 ABS 0 cinit dist/default/production\TK-X03.production.obj
 __pcinit FBAC 0 CODE 0 cinit dist/default/production\TK-X03.production.obj
 __CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-__ramtop 1000 0 RAM 0 ramtop C:\Users\Blake\AppData\Local\Temp\s3b8.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Blake\AppData\Local\Temp\s3b8.obj
+__ramtop 1000 0 RAM 0 ramtop C:\Users\Blake\AppData\Local\Temp\s5n4.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Blake\AppData\Local\Temp\s5n4.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __end_of_enableSerial FCE2 0 CODE 0 text3 dist/default/production\TK-X03.production.obj
 __end_of_initOscillator FBDA 0 CODE 0 text2 dist/default/production\TK-X03.production.obj
@@ -508,29 +508,29 @@ __Hbank15 0 0 ABS 0 bank15 dist/default/production\TK-X03.production.obj
 __Lbank15 0 0 ABS 0 bank15 dist/default/production\TK-X03.production.obj
 _RCSTA2bits F71 0 ABS 0 - dist/default/production\TK-X03.production.obj
 _TXSTA2bits F72 0 ABS 0 - dist/default/production\TK-X03.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\Blake\AppData\Local\Temp\s3b8.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\Blake\AppData\Local\Temp\s5n4.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\Blake\AppData\Local\Temp\s3b8.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\Blake\AppData\Local\Temp\s5n4.obj
 _OSCCONbits FD3 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __Hend_init 4 0 CODE 0 end_init dist/default/production\TK-X03.production.obj
 __Lend_init 0 0 CODE 0 end_init dist/default/production\TK-X03.production.obj
 __CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Blake\AppData\Local\Temp\s3b8.obj
+__smallconst 0 0 SMALLCONST 0 smallconst C:\Users\Blake\AppData\Local\Temp\s5n4.obj
 __CFG_CP1$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __Hreset_vec 0 0 CODE 0 reset_vec dist/default/production\TK-X03.production.obj
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\TK-X03.production.obj
 __CFG_CP2$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __CFG_CP3$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __CFG_BORV$190 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\Blake\AppData\Local\Temp\s3b8.obj
+__accesstop 60 0 ABS 0 - C:\Users\Blake\AppData\Local\Temp\s5n4.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\TK-X03.production.obj
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\TK-X03.production.obj
-intlevel0 0 0 CODE 0 text C:\Users\Blake\AppData\Local\Temp\s3b8.obj
-intlevel1 0 0 CODE 0 text C:\Users\Blake\AppData\Local\Temp\s3b8.obj
+intlevel0 0 0 CODE 0 text C:\Users\Blake\AppData\Local\Temp\s5n4.obj
+intlevel1 0 0 CODE 0 text C:\Users\Blake\AppData\Local\Temp\s5n4.obj
 __CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-intlevel2 0 0 CODE 0 text C:\Users\Blake\AppData\Local\Temp\s3b8.obj
-intlevel3 0 0 CODE 0 text C:\Users\Blake\AppData\Local\Temp\s3b8.obj
+intlevel2 0 0 CODE 0 text C:\Users\Blake\AppData\Local\Temp\s5n4.obj
+intlevel3 0 0 CODE 0 text C:\Users\Blake\AppData\Local\Temp\s5n4.obj
 __CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __end_of_dispSeg 10000 0 CODE 0 text4 dist/default/production\TK-X03.production.obj
 __CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
