@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.30 build 55553 
-                                                                                               Tue Feb 11 13:45:55 2014
+                                                                                               Fri Feb 14 13:27:40 2014
 
 Microchip Technology Omniscient Code Generator (Lite mode) build 55553
      1                           	processor	18F46K22
@@ -116,7 +116,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    105  00FC32  5005               	movf	??_main& (0+255),w,c
    106  00FC34  0E02               	movlw	2
    107  00FC36  EC71  F07E         	call	_dispSeg
-   108  00FC3A                     l998:
+   108  00FC3A                     l1016:
    109                           
    110                           ;main.c: 25: {
    111                           ;main.c: 26: if(PIR3bits.RC2IF == 1)
@@ -125,12 +125,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    114                           ;main.c: 27: {
    115                           ;main.c: 28: if(PIR3bits.TX2IF == 1)
    116  00FC3C  A8A4               	btfss	4004,4,c	;volatile
-   117  00FC3E  D7FD               	goto	l998
+   117  00FC3E  D7FD               	goto	l1016
    118                           
    119                           ;main.c: 29: {
    120                           ;main.c: 30: if(RCSTA2bits.FERR2 == 1)
    121  00FC40  A471               	btfss	3953,2,c	;volatile
-   122  00FC42  D007               	goto	l1006
+   122  00FC42  D007               	goto	l1024
    123                           
    124                           ;main.c: 31: {
    125                           ;main.c: 32: dispSeg(1, 'F');
@@ -140,12 +140,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    129  00FC4A  5005               	movf	??_main& (0+255),w,c
    130  00FC4C  0E01               	movlw	1
    131  00FC4E  EC71  F07E         	call	_dispSeg
-   132  00FC52                     l1006:
+   132  00FC52                     l1024:
    133                           
    134                           ;main.c: 33: }
    135                           ;main.c: 35: TXREG2 = RCREG2;
    136  00FC52  CF74 FF73          	movff	3956,3955	;volatile
-   137  00FC56  D7F1               	goto	l998
+   137  00FC56  D7F1               	goto	l1016
    138  00FC58                     __end_of_main:
    139                           	opt stack 0
    140                           
@@ -372,10 +372,10 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    351                           
    352                           ;system.c: 16: OSCCON2bits.PRISD = 0;
    353  00FBD2  94D2               	bcf	4050,2,c	;volatile
-   354  00FBD4                     l71:
+   354  00FBD4                     l146:
    355  00FBD4  B4D3               	btfsc	4051,2,c	;volatile
    356  00FBD6  0012               	return	
-   357  00FBD8  D7FD               	goto	l71
+   357  00FBD8  D7FD               	goto	l146
    358  00FBDA                     __end_of_initOscillator:
    359                           	opt stack 0
    360                           tblptru	equ	0xFF8
@@ -426,28 +426,28 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    400  00FC58  868C               	bsf	3980,3,c	;volatile
    401                           
    402                           ;serial.c: 25: switch (baudRate) {
-   403  00FC5A  D00B               	goto	l786
-   404  00FC5C                     l776:
+   403  00FC5A  D00B               	goto	l798
+   404  00FC5C                     l788:
    405                           
    406                           ;serial.c: 30: SPBRG2 = 103;
    407  00FC5C  0E67               	movlw	103
    408  00FC5E  D007               	goto	L5
-   409  00FC60                     l778:
+   409  00FC60                     l790:
    410                           
    411                           ;serial.c: 33: SPBRG2 = 25;
    412  00FC60  0E19               	movlw	25
    413  00FC62  D005               	goto	L5
-   414  00FC64                     l780:
+   414  00FC64                     l792:
    415                           
    416                           ;serial.c: 36: SPBRG2 = 23;
    417  00FC64  0E17               	movlw	23
    418  00FC66  D003               	goto	L5
-   419  00FC68                     l782:
+   419  00FC68                     l794:
    420                           
    421                           ;serial.c: 39: SPBRG2 = 12;
    422  00FC68  0E0C               	movlw	12
    423  00FC6A  D001               	goto	L5
-   424  00FC6C                     l784:
+   424  00FC6C                     l796:
    425                           
    426                           ;serial.c: 42: SPBRG2 = 207;
    427  00FC6C  0ECF               	movlw	207
@@ -455,8 +455,8 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    429  00FC6E  6E75               	movwf	3957,c	;volatile
    430                           
    431                           ;serial.c: 43: }
-   432  00FC70  D02C               	goto	l788
-   433  00FC72                     l786:
+   432  00FC70  D02C               	goto	l800
+   433  00FC72                     l798:
    434  00FC72  C001  F003         	movff	enableSerial@baudRate,??_enableSerial
    435  00FC76  C002  F004         	movff	enableSerial@baudRate+1,??_enableSerial+1
    436                           
@@ -471,21 +471,21 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    444  00FC7A  5004               	movf	??_enableSerial+1,w,c
    445  00FC7C  0A04               	xorlw	4	; case 4
    446  00FC7E  B4D8               	btfsc	status,2,c
-   447  00FC80  D00D               	goto	l1108
+   447  00FC80  D00D               	goto	l1126
    448  00FC82  0A0D               	xorlw	13	; case 9
    449  00FC84  B4D8               	btfsc	status,2,c
-   450  00FC86  D00D               	goto	l1110
+   450  00FC86  D00D               	goto	l1128
    451  00FC88  0A2C               	xorlw	44	; case 37
    452  00FC8A  B4D8               	btfsc	status,2,c
-   453  00FC8C  D00F               	goto	l1112
+   453  00FC8C  D00F               	goto	l1130
    454  00FC8E  0A0D               	xorlw	13	; case 40
    455  00FC90  B4D8               	btfsc	status,2,c
-   456  00FC92  D011               	goto	l1114
+   456  00FC92  D011               	goto	l1132
    457  00FC94  0A63               	xorlw	99	; case 75
    458  00FC96  B4D8               	btfsc	status,2,c
-   459  00FC98  D013               	goto	l1116
-   460  00FC9A  D7E8               	goto	l784
-   461  00FC9C                     l1108:
+   459  00FC98  D013               	goto	l1134
+   460  00FC9A  D7E8               	goto	l796
+   461  00FC9C                     l1126:
    462                           
    463                           ; Switch size 1, requested type "space"
    464                           ; Number of cases is 1, Range of values is 176 to 176
@@ -495,8 +495,8 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    468                           ;	Chosen strategy is simple_byte
    469  00FC9C  5003               	movf	??_enableSerial,w,c
    470  00FC9E  0AB0               	xorlw	176	; case 176
-   471  00FCA0  D7E5               	goto	l784
-   472  00FCA2                     l1110:
+   471  00FCA0  D7E5               	goto	l796
+   472  00FCA2                     l1128:
    473                           
    474                           ; Switch size 1, requested type "space"
    475                           ; Number of cases is 1, Range of values is 96 to 96
@@ -507,9 +507,9 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    480  00FCA2  5003               	movf	??_enableSerial,w,c
    481  00FCA4  0A60               	xorlw	96	; case 96
    482  00FCA6  B4D8               	btfsc	status,2,c
-   483  00FCA8  D7D9               	goto	l776
-   484  00FCAA  D7E0               	goto	l784
-   485  00FCAC                     l1112:
+   483  00FCA8  D7D9               	goto	l788
+   484  00FCAA  D7E0               	goto	l796
+   485  00FCAC                     l1130:
    486                           
    487                           ; Switch size 1, requested type "space"
    488                           ; Number of cases is 1, Range of values is 128 to 128
@@ -520,9 +520,9 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    493  00FCAC  5003               	movf	??_enableSerial,w,c
    494  00FCAE  0A80               	xorlw	128	; case 128
    495  00FCB0  B4D8               	btfsc	status,2,c
-   496  00FCB2  D7D6               	goto	l778
-   497  00FCB4  D7DB               	goto	l784
-   498  00FCB6                     l1114:
+   496  00FCB2  D7D6               	goto	l790
+   497  00FCB4  D7DB               	goto	l796
+   498  00FCB6                     l1132:
    499                           
    500                           ; Switch size 1, requested type "space"
    501                           ; Number of cases is 1, Range of values is 177 to 177
@@ -533,9 +533,9 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    506  00FCB6  5003               	movf	??_enableSerial,w,c
    507  00FCB8  0AB1               	xorlw	177	; case 177
    508  00FCBA  B4D8               	btfsc	status,2,c
-   509  00FCBC  D7D3               	goto	l780
-   510  00FCBE  D7D6               	goto	l784
-   511  00FCC0                     l1116:
+   509  00FCBC  D7D3               	goto	l792
+   510  00FCBE  D7D6               	goto	l796
+   511  00FCC0                     l1134:
    512                           
    513                           ; Switch size 1, requested type "space"
    514                           ; Number of cases is 1, Range of values is 0 to 0
@@ -546,9 +546,9 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    519  00FCC0  5003               	movf	??_enableSerial,w,c
    520  00FCC2  0A00               	xorlw	0	; case 0
    521  00FCC4  B4D8               	btfsc	status,2,c
-   522  00FCC6  D7D0               	goto	l782
-   523  00FCC8  D7D1               	goto	l784
-   524  00FCCA                     l788:
+   522  00FCC6  D7D0               	goto	l794
+   523  00FCC8  D7D1               	goto	l796
+   524  00FCCA                     l800:
    525                           
    526                           ;serial.c: 45: SPBRGH2 = 0;
    527  00FCCA  0E00               	movlw	0
@@ -633,13 +633,13 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    601  00FCE2  CFE8 F002          	movff	wreg,dispSeg@segment
    602                           
    603                           ;segment.c: 15: switch (letter) {
-   604  00FCE6  D154               	goto	l904
-   605  00FCE8                     l830:
+   604  00FCE6  D154               	goto	l916
+   605  00FCE8                     l842:
    606                           
    607                           ;segment.c: 17: if (segment == 1) {
    608  00FCE8  0402               	decf	dispSeg@segment,w,c
    609  00FCEA  A4D8               	btfss	status,2,c
-   610  00FCEC  D007               	goto	l98
+   610  00FCEC  D007               	goto	l59
    611                           
    612                           ;segment.c: 18: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0
       +                           = LATAbits.LA0 = LATAbits.LA1 = 0;
@@ -650,7 +650,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    617  00FCF6  9889               	bcf	3977,4,c	;volatile
    618  00FCF8  9689               	bcf	3977,3,c	;volatile
    619  00FCFA  9489               	bcf	3977,2,c	;volatile
-   620  00FCFC                     l98:
+   620  00FCFC                     l59:
    621                           
    622                           ;segment.c: 19: }
    623                           ;segment.c: 20: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1
@@ -665,12 +665,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    631                           
    632                           ;segment.c: 21: break;
    633  00FD0A  0012               	return	
-   634  00FD0C                     l834:
+   634  00FD0C                     l846:
    635                           
    636                           ;segment.c: 23: if (segment == 1) {
    637  00FD0C  0402               	decf	dispSeg@segment,w,c
    638  00FD0E  A4D8               	btfss	status,2,c
-   639  00FD10  D007               	goto	l101
+   639  00FD10  D007               	goto	l62
    640                           
    641                           ;segment.c: 24: LATAbits.LA1 = 1;
    642  00FD12  8289               	bsf	3977,1,c	;volatile
@@ -683,7 +683,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    648  00FD1A  9889               	bcf	3977,4,c	;volatile
    649  00FD1C  9689               	bcf	3977,3,c	;volatile
    650  00FD1E  9489               	bcf	3977,2,c	;volatile
-   651  00FD20                     l101:
+   651  00FD20                     l62:
    652                           
    653                           ;segment.c: 26: }
    654                           ;segment.c: 27: LATEbits.LE2 = 1;
@@ -700,12 +700,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    664                           
    665                           ;segment.c: 29: break;
    666  00FD2E  0012               	return	
-   667  00FD30                     l838:
+   667  00FD30                     l850:
    668                           
    669                           ;segment.c: 31: if (segment == 1) {
    670  00FD30  0402               	decf	dispSeg@segment,w,c
    671  00FD32  A4D8               	btfss	status,2,c
-   672  00FD34  D008               	goto	l103
+   672  00FD34  D008               	goto	l64
    673                           
    674                           ;segment.c: 32: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0
       +                           = LATAbits.LA0 = 1;
@@ -721,7 +721,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    684                           
    685                           ;segment.c: 34: return;
    686  00FD44  0012               	return	
-   687  00FD46                     l103:
+   687  00FD46                     l64:
    688                           
    689                           ;segment.c: 35: }
    690                           ;segment.c: 36: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1
@@ -738,12 +738,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    700                           
    701                           ;segment.c: 38: break;
    702  00FD54  0012               	return	
-   703  00FD56                     l842:
+   703  00FD56                     l854:
    704                           
    705                           ;segment.c: 40: if (segment == 1) {
    706  00FD56  0402               	decf	dispSeg@segment,w,c
    707  00FD58  A4D8               	btfss	status,2,c
-   708  00FD5A  D008               	goto	l106
+   708  00FD5A  D008               	goto	l67
    709                           
    710                           ;segment.c: 41: LATAbits.LA3 = LATAbits.LA4 = 1;
    711  00FD5C  8889               	bsf	3977,4,c	;volatile
@@ -759,7 +759,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    720                           
    721                           ;segment.c: 43: return;
    722  00FD6A  0012               	return	
-   723  00FD6C                     l106:
+   723  00FD6C                     l67:
    724                           
    725                           ;segment.c: 44: }
    726                           ;segment.c: 45: LATAbits.LA6 = LATCbits.LC2 = 1;
@@ -776,12 +776,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    736                           
    737                           ;segment.c: 47: break;
    738  00FD7A  0012               	return	
-   739  00FD7C                     l846:
+   739  00FD7C                     l858:
    740                           
    741                           ;segment.c: 49: if (segment == 1) {
    742  00FD7C  0402               	decf	dispSeg@segment,w,c
    743  00FD7E  A4D8               	btfss	status,2,c
-   744  00FD80  D008               	goto	l108
+   744  00FD80  D008               	goto	l69
    745                           
    746                           ;segment.c: 50: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA1 = LATEbits.LE0 = LATAbits.LA5
       +                           = 1;
@@ -797,7 +797,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    756                           
    757                           ;segment.c: 52: return;
    758  00FD90  0012               	return	
-   759  00FD92                     l108:
+   759  00FD92                     l69:
    760                           
    761                           ;segment.c: 53: }
    762                           ;segment.c: 54: LATAbits.LA7 = LATAbits.LA6 = LATEbits.LE2 = LATCbits.LC1 = LATCbits.LC0
@@ -814,12 +814,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    772                           
    773                           ;segment.c: 56: break;
    774  00FDA0  0012               	return	
-   775  00FDA2                     l850:
+   775  00FDA2                     l862:
    776                           
    777                           ;segment.c: 58: if (segment == 1) {
    778  00FDA2  0402               	decf	dispSeg@segment,w,c
    779  00FDA4  A4D8               	btfss	status,2,c
-   780  00FDA6  D008               	goto	l110
+   780  00FDA6  D008               	goto	l71
    781                           
    782                           ;segment.c: 59: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5
       +                           = 1;
@@ -835,7 +835,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    792                           
    793                           ;segment.c: 61: return;
    794  00FDB6  0012               	return	
-   795  00FDB8                     l110:
+   795  00FDB8                     l71:
    796                           
    797                           ;segment.c: 62: }
    798                           ;segment.c: 63: LATAbits.LA7 = LATAbits.LA6 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0
@@ -852,12 +852,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    808                           
    809                           ;segment.c: 65: break;
    810  00FDC6  0012               	return	
-   811  00FDC8                     l854:
+   811  00FDC8                     l866:
    812                           
    813                           ;segment.c: 67: if (segment == 1) {
    814  00FDC8  0402               	decf	dispSeg@segment,w,c
    815  00FDCA  A4D8               	btfss	status,2,c
-   816  00FDCC  D008               	goto	l112
+   816  00FDCC  D008               	goto	l73
    817                           
    818                           ;segment.c: 68: LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA3 = LATAbits.LA4 = 1;
    819  00FDCE  8889               	bsf	3977,4,c	;volatile
@@ -872,7 +872,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    828                           
    829                           ;segment.c: 70: return;
    830  00FDDC  0012               	return	
-   831  00FDDE                     l112:
+   831  00FDDE                     l73:
    832                           
    833                           ;segment.c: 71: }
    834                           ;segment.c: 72: LATEbits.LE1 = LATEbits.LE2 = LATAbits.LA6 = LATCbits.LC2 = 1;
@@ -888,12 +888,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    844                           
    845                           ;segment.c: 74: break;
    846  00FDEC  0012               	return	
-   847  00FDEE                     l858:
+   847  00FDEE                     l870:
    848                           
    849                           ;segment.c: 76: if (segment == 1) {
    850  00FDEE  0402               	decf	dispSeg@segment,w,c
    851  00FDF0  A4D8               	btfss	status,2,c
-   852  00FDF2  D008               	goto	l114
+   852  00FDF2  D008               	goto	l75
    853                           
    854                           ;segment.c: 77: LATAbits.LA2 = LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5
       +                           = 1;
@@ -909,7 +909,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    864                           
    865                           ;segment.c: 79: return;
    866  00FE02  0012               	return	
-   867  00FE04                     l114:
+   867  00FE04                     l75:
    868                           
    869                           ;segment.c: 80: }
    870                           ;segment.c: 81: LATAbits.LA7 = LATEbits.LE1 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0
@@ -926,12 +926,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    880                           
    881                           ;segment.c: 83: break;
    882  00FE12  0012               	return	
-   883  00FE14                     l862:
+   883  00FE14                     l874:
    884                           
    885                           ;segment.c: 85: if (segment == 1) {
    886  00FE14  0402               	decf	dispSeg@segment,w,c
    887  00FE16  A4D8               	btfss	status,2,c
-   888  00FE18  D008               	goto	l116
+   888  00FE18  D008               	goto	l77
    889                           
    890                           ;segment.c: 86: LATAbits.LA2 = LATAbits.LA0 = LATAbits.LA1 = LATAbits.LA4 = LATAbits.LA5
       +                           = LATEbits.LE0 = 1;
@@ -947,7 +947,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    900                           
    901                           ;segment.c: 88: return;
    902  00FE28  0012               	return	
-   903  00FE2A                     l116:
+   903  00FE2A                     l77:
    904                           
    905                           ;segment.c: 89: }
    906                           ;segment.c: 90: LATAbits.LA7 = LATEbits.LE1 = LATEbits.LE2 = LATCbits.LC2 = LATCbits.LC0
@@ -964,12 +964,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    916                           
    917                           ;segment.c: 92: break;
    918  00FE38  0012               	return	
-   919  00FE3A                     l866:
+   919  00FE3A                     l878:
    920                           
    921                           ;segment.c: 94: if (segment == 1) {
    922  00FE3A  0402               	decf	dispSeg@segment,w,c
    923  00FE3C  A4D8               	btfss	status,2,c
-   924  00FE3E  D008               	goto	l118
+   924  00FE3E  D008               	goto	l79
    925                           
    926                           ;segment.c: 95: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = 1;
    927  00FE40  8889               	bsf	3977,4,c	;volatile
@@ -984,7 +984,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    936                           
    937                           ;segment.c: 97: return;
    938  00FE4E  0012               	return	
-   939  00FE50                     l118:
+   939  00FE50                     l79:
    940                           
    941                           ;segment.c: 98: }
    942                           ;segment.c: 99: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = 1;
@@ -1000,12 +1000,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    952                           
    953                           ;segment.c: 101: break;
    954  00FE5E  0012               	return	
-   955  00FE60                     l870:
+   955  00FE60                     l882:
    956                           
    957                           ;segment.c: 103: if (segment == 1) {
    958  00FE60  0402               	decf	dispSeg@segment,w,c
    959  00FE62  A4D8               	btfss	status,2,c
-   960  00FE64  D008               	goto	l120
+   960  00FE64  D008               	goto	l81
    961                           
    962                           ;segment.c: 104: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE
       +                          0 = LATAbits.LA0 = LATAbits.LA1 = 1;
@@ -1019,7 +1019,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    970                           
    971                           ;segment.c: 105: return;
    972  00FE74  0012               	return	
-   973  00FE76                     l120:
+   973  00FE76                     l81:
    974                           
    975                           ;segment.c: 106: }
    976                           ;segment.c: 107: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC
@@ -1034,12 +1034,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
    984                           
    985                           ;segment.c: 108: break;
    986  00FE84  0012               	return	
-   987  00FE86                     l874:
+   987  00FE86                     l886:
    988                           
    989                           ;segment.c: 110: if (segment == 1) {
    990  00FE86  0402               	decf	dispSeg@segment,w,c
    991  00FE88  A4D8               	btfss	status,2,c
-   992  00FE8A  D008               	goto	l122
+   992  00FE8A  D008               	goto	l83
    993                           
    994                           ;segment.c: 111: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATAbits.LA
       +                          0 = LATAbits.LA1 = 1;
@@ -1055,7 +1055,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1004                           
   1005                           ;segment.c: 113: return;
   1006  00FE9A  0012               	return	
-  1007  00FE9C                     l122:
+  1007  00FE9C                     l83:
   1008                           
   1009                           ;segment.c: 114: }
   1010                           ;segment.c: 115: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATEbits.LE
@@ -1072,12 +1072,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1020                           
   1021                           ;segment.c: 117: break;
   1022  00FEAA  0012               	return	
-  1023  00FEAC                     l878:
+  1023  00FEAC                     l890:
   1024                           
   1025                           ;segment.c: 119: if (segment == 1) {
   1026  00FEAC  0402               	decf	dispSeg@segment,w,c
   1027  00FEAE  A4D8               	btfss	status,2,c
-  1028  00FEB0  D008               	goto	l124
+  1028  00FEB0  D008               	goto	l85
   1029                           
   1030                           ;segment.c: 120: LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATEbits.LE0 = LATAbits.LA
       +                          0 = LATAbits.LA1 = 1;
@@ -1093,7 +1093,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1040                           
   1041                           ;segment.c: 122: return;
   1042  00FEC0  0012               	return	
-  1043  00FEC2                     l124:
+  1043  00FEC2                     l85:
   1044                           
   1045                           ;segment.c: 123: }
   1046                           ;segment.c: 124: LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC1 = LATEbits.LE
@@ -1110,12 +1110,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1056                           
   1057                           ;segment.c: 126: break;
   1058  00FED0  0012               	return	
-  1059  00FED2                     l882:
+  1059  00FED2                     l894:
   1060                           
   1061                           ;segment.c: 128: if (segment == 1) {
   1062  00FED2  0402               	decf	dispSeg@segment,w,c
   1063  00FED4  A4D8               	btfss	status,2,c
-  1064  00FED6  D008               	goto	l126
+  1064  00FED6  D008               	goto	l87
   1065                           
   1066                           ;segment.c: 129: LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA
       +                          1 = 1;
@@ -1131,7 +1131,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1076                           
   1077                           ;segment.c: 131: return;
   1078  00FEE6  0012               	return	
-  1079  00FEE8                     l126:
+  1079  00FEE8                     l87:
   1080                           
   1081                           ;segment.c: 132: }
   1082                           ;segment.c: 133: LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE
@@ -1148,12 +1148,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1092                           
   1093                           ;segment.c: 135: break;
   1094  00FEF6  0012               	return	
-  1095  00FEF8                     l886:
+  1095  00FEF8                     l898:
   1096                           
   1097                           ;segment.c: 137: if (segment == 1) {
   1098  00FEF8  0402               	decf	dispSeg@segment,w,c
   1099  00FEFA  A4D8               	btfss	status,2,c
-  1100  00FEFC  D008               	goto	l128
+  1100  00FEFC  D008               	goto	l89
   1101                           
   1102                           ;segment.c: 138: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = 1;
   1103  00FEFE  8089               	bsf	3977,0,c	;volatile
@@ -1168,7 +1168,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1112                           
   1113                           ;segment.c: 140: return;
   1114  00FF0C  0012               	return	
-  1115  00FF0E                     l128:
+  1115  00FF0E                     l89:
   1116                           
   1117                           ;segment.c: 141: }
   1118                           ;segment.c: 142: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = 1;
@@ -1184,12 +1184,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1128                           
   1129                           ;segment.c: 144: break;
   1130  00FF1C  0012               	return	
-  1131  00FF1E                     l890:
+  1131  00FF1E                     l902:
   1132                           
   1133                           ;segment.c: 146: if (segment == 1) {
   1134  00FF1E  0402               	decf	dispSeg@segment,w,c
   1135  00FF20  A4D8               	btfss	status,2,c
-  1136  00FF22  D008               	goto	l130
+  1136  00FF22  D008               	goto	l91
   1137                           
   1138                           ;segment.c: 147: LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA
       +                          1 = 1;
@@ -1205,7 +1205,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1148                           
   1149                           ;segment.c: 149: return;
   1150  00FF32  0012               	return	
-  1151  00FF34                     l130:
+  1151  00FF34                     l91:
   1152                           
   1153                           ;segment.c: 150: }
   1154                           ;segment.c: 151: LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE
@@ -1222,12 +1222,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1164                           
   1165                           ;segment.c: 153: break;
   1166  00FF42  0012               	return	
-  1167  00FF44                     l894:
+  1167  00FF44                     l906:
   1168                           
   1169                           ;segment.c: 155: if (segment == 1) {
   1170  00FF44  0402               	decf	dispSeg@segment,w,c
   1171  00FF46  A4D8               	btfss	status,2,c
-  1172  00FF48  D008               	goto	l132
+  1172  00FF48  D008               	goto	l93
   1173                           
   1174                           ;segment.c: 156: LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA
       +                          1 = 1;
@@ -1243,7 +1243,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1184                           
   1185                           ;segment.c: 158: return;
   1186  00FF58  0012               	return	
-  1187  00FF5A                     l132:
+  1187  00FF5A                     l93:
   1188                           
   1189                           ;segment.c: 159: }
   1190                           ;segment.c: 160: LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE
@@ -1260,12 +1260,12 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1200                           
   1201                           ;segment.c: 162: break;
   1202  00FF68  0012               	return	
-  1203  00FF6A                     l898:
+  1203  00FF6A                     l910:
   1204                           
   1205                           ;segment.c: 164: if (segment == 1) {
   1206  00FF6A  0402               	decf	dispSeg@segment,w,c
   1207  00FF6C  A4D8               	btfss	status,2,c
-  1208  00FF6E  D008               	goto	l134
+  1208  00FF6E  D008               	goto	l95
   1209                           
   1210                           ;segment.c: 165: LATAbits.LA2 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 1;
   1211  00FF70  8289               	bsf	3977,1,c	;volatile
@@ -1280,7 +1280,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1220                           
   1221                           ;segment.c: 167: return;
   1222  00FF7E  0012               	return	
-  1223  00FF80                     l134:
+  1223  00FF80                     l95:
   1224                           
   1225                           ;segment.c: 168: }
   1226                           ;segment.c: 169: LATAbits.LA7 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 = 1;
@@ -1296,7 +1296,7 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1236                           
   1237                           ;segment.c: 171: break;
   1238  00FF8E  0012               	return	
-  1239  00FF90                     l904:
+  1239  00FF90                     l916:
   1240  00FF90  5001               	movf	dispSeg@letter,w,c
   1241                           
   1242                           ; Switch size 1, requested type "space"
@@ -1307,59 +1307,59 @@ Microchip Technology Omniscient Code Generator (Lite mode) build 55553
   1247                           ;	Chosen strategy is simple_byte
   1248  00FF92  0A2D               	xorlw	45	; case 45
   1249  00FF94  B4D8               	btfsc	status,2,c
-  1250  00FF96  D6BA               	goto	l834
+  1250  00FF96  D6BA               	goto	l846
   1251  00FF98  0A1D               	xorlw	29	; case 48
   1252  00FF9A  B4D8               	btfsc	status,2,c
-  1253  00FF9C  D6C9               	goto	l838
+  1253  00FF9C  D6C9               	goto	l850
   1254  00FF9E  0A01               	xorlw	1	; case 49
   1255  00FFA0  B4D8               	btfsc	status,2,c
-  1256  00FFA2  D6D9               	goto	l842
+  1256  00FFA2  D6D9               	goto	l854
   1257  00FFA4  0A03               	xorlw	3	; case 50
   1258  00FFA6  B4D8               	btfsc	status,2,c
-  1259  00FFA8  D6E9               	goto	l846
+  1259  00FFA8  D6E9               	goto	l858
   1260  00FFAA  0A01               	xorlw	1	; case 51
   1261  00FFAC  B4D8               	btfsc	status,2,c
-  1262  00FFAE  D6F9               	goto	l850
+  1262  00FFAE  D6F9               	goto	l862
   1263  00FFB0  0A07               	xorlw	7	; case 52
   1264  00FFB2  B4D8               	btfsc	status,2,c
-  1265  00FFB4  D709               	goto	l854
+  1265  00FFB4  D709               	goto	l866
   1266  00FFB6  0A01               	xorlw	1	; case 53
   1267  00FFB8  B4D8               	btfsc	status,2,c
-  1268  00FFBA  D719               	goto	l858
+  1268  00FFBA  D719               	goto	l870
   1269  00FFBC  0A03               	xorlw	3	; case 54
   1270  00FFBE  B4D8               	btfsc	status,2,c
-  1271  00FFC0  D729               	goto	l862
+  1271  00FFC0  D729               	goto	l874
   1272  00FFC2  0A01               	xorlw	1	; case 55
   1273  00FFC4  B4D8               	btfsc	status,2,c
-  1274  00FFC6  D739               	goto	l866
+  1274  00FFC6  D739               	goto	l878
   1275  00FFC8  0A0F               	xorlw	15	; case 56
   1276  00FFCA  B4D8               	btfsc	status,2,c
-  1277  00FFCC  D749               	goto	l870
+  1277  00FFCC  D749               	goto	l882
   1278  00FFCE  0A01               	xorlw	1	; case 57
   1279  00FFD0  B4D8               	btfsc	status,2,c
-  1280  00FFD2  D759               	goto	l874
+  1280  00FFD2  D759               	goto	l886
   1281  00FFD4  0A58               	xorlw	88	; case 97
   1282  00FFD6  B4D8               	btfsc	status,2,c
-  1283  00FFD8  D769               	goto	l878
+  1283  00FFD8  D769               	goto	l890
   1284  00FFDA  0A03               	xorlw	3	; case 98
   1285  00FFDC  B4D8               	btfsc	status,2,c
-  1286  00FFDE  D779               	goto	l882
+  1286  00FFDE  D779               	goto	l894
   1287  00FFE0  0A01               	xorlw	1	; case 99
   1288  00FFE2  B4D8               	btfsc	status,2,c
-  1289  00FFE4  D789               	goto	l886
+  1289  00FFE4  D789               	goto	l898
   1290  00FFE6  0A07               	xorlw	7	; case 100
   1291  00FFE8  B4D8               	btfsc	status,2,c
-  1292  00FFEA  D799               	goto	l890
+  1292  00FFEA  D799               	goto	l902
   1293  00FFEC  0A01               	xorlw	1	; case 101
   1294  00FFEE  B4D8               	btfsc	status,2,c
-  1295  00FFF0  D7A9               	goto	l894
+  1295  00FFF0  D7A9               	goto	l906
   1296  00FFF2  0A03               	xorlw	3	; case 102
   1297  00FFF4  B4D8               	btfsc	status,2,c
-  1298  00FFF6  D7B9               	goto	l898
+  1298  00FFF6  D7B9               	goto	l910
   1299  00FFF8  0A1E               	xorlw	30	; case 120
   1300  00FFFA  A4D8               	btfss	status,2,c
   1301  00FFFC  0012               	return	
-  1302  00FFFE  D674               	goto	l830
+  1302  00FFFE  D674               	goto	l842
   1303  010000                     __end_of_dispSeg:
   1304                           	opt stack 0
   1305  0000                     tblptru	equ	0xFF8
@@ -1558,29 +1558,29 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.30 build 55553 
-Symbol Table                                                                                   Tue Feb 11 13:45:55 2014
+Symbol Table                                                                                   Fri Feb 14 13:27:40 2014
 
-                     l71 FBD4                       l98 FCFC             __CFG_CP0$OFF 000000  
-           __CFG_CP1$OFF 000000             __CFG_CP2$OFF 000000             __CFG_CP3$OFF 000000  
-                    l101 FD20                      l110 FDB8                      l103 FD46  
-                    l120 FE76                      l112 FDDE                      l130 FF34  
-                    l122 FE9C                      l114 FE04                      l106 FD6C  
-                    l132 FF5A                      l124 FEC2                      l116 FE2A  
-                    l108 FD92                      l134 FF80                      l126 FEE8  
-                    l118 FE50                      l128 FF0E                      l830 FCE8  
-                    l904 FF90                      l850 FDA2                      l842 FD56  
-                    l834 FD0C                      l780 FC64                      l870 FE60  
-                    l862 FE14                      l854 FDC8                      l846 FD7C  
-                    l838 FD30                      l782 FC68                      l784 FC6C  
-                    l776 FC5C                      l890 FF1E                      l882 FED2  
-                    l874 FE86                      l866 FE3A                      l858 FDEE  
-                    l778 FC60                      l786 FC72                      l788 FCCA  
-                    l894 FF44                      l886 FEF8                      l878 FEAC  
-                    l898 FF6A                      l998 FC3A             __CFG_CPB$OFF 000000  
-           __CFG_CPD$OFF 000000                      wreg 000FE8               _TXSTA2bits 000F72  
-           __CFG_LVP$OFF 000000                     l1110 FCA2                     l1006 FC52  
-                   l1112 FCAC                     l1114 FCB6                     l1116 FCC0  
-                   l1108 FC9C                     _LATA 000F89                     _LATC 000F8B  
+                     l62 FD20                       l71 FDB8                       l64 FD46  
+                     l81 FE76                       l73 FDDE                       l91 FF34  
+                     l83 FE9C                       l75 FE04                       l67 FD6C  
+                     l59 FCFC                       l93 FF5A                       l85 FEC2  
+                     l77 FE2A                       l69 FD92                       l95 FF80  
+                     l87 FEE8                       l79 FE50                       l89 FF0E  
+           __CFG_CP0$OFF 000000             __CFG_CP1$OFF 000000             __CFG_CP2$OFF 000000  
+           __CFG_CP3$OFF 000000                      l146 FBD4                      l800 FCCA  
+                    l910 FF6A                      l902 FF1E                      l906 FF44  
+                    l850 FD30                      l842 FCE8                      l916 FF90  
+                    l870 FDEE                      l862 FDA2                      l854 FD56  
+                    l846 FD0C                      l790 FC60                      l792 FC64  
+                    l890 FEAC                      l882 FE60                      l874 FE14  
+                    l866 FDC8                      l858 FD7C                      l794 FC68  
+                    l796 FC6C                      l788 FC5C                      l894 FED2  
+                    l886 FE86                      l878 FE3A                      l798 FC72  
+                    l898 FEF8             __CFG_CPB$OFF 000000             __CFG_CPD$OFF 000000  
+                    wreg 000FE8               _TXSTA2bits 000F72             __CFG_LVP$OFF 000000  
+                   l1024 FC52                     l1016 FC3A                     l1130 FCAC  
+                   l1132 FCB6                     l1134 FCC0                     l1126 FC9C  
+                   l1128 FCA2                     _LATA 000F89                     _LATC 000F8B  
                    _LATD 000F8C                     _LATE 000F8D                     _main FC0A  
           __CFG_BORV$190 000000                     start 0000            __CFG_IESO$OFF 000000  
            _BAUDCON2bits 000F70                    ?_main 0001                    _TRISA 000F92  

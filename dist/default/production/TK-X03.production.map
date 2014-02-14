@@ -5,7 +5,7 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.30\dat\en_msgs.txt -cs \
   -h+dist/default/production\TK-X03.production.sym \
   --cmf=dist/default/production\TK-X03.production.cmf -z -Q18F46K22 \
-  -oC:\Users\Blake\AppData\Local\Temp\s5n4.6 \
+  -oC:\Users\Blake\AppData\Local\Temp\s3rk.6 \
   -Mdist/default/production/TK-X03.production.map -E1 -ver=XC8 \
   -ASTACK=060h-09ffh -pstack=STACK -ACODE=00h-0FFFFh -ACONST=00h-0FFFFh \
   -ASMALLCONST=01000h-010FFhx240 -AMEDIUMCONST=01000h-0FFFFh \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE \
-  C:\Users\Blake\AppData\Local\Temp\s5n4.obj \
+  C:\Users\Blake\AppData\Local\Temp\s3rk.obj \
   dist/default/production\TK-X03.production.obj 
 
 Object code version is 3.11
@@ -39,7 +39,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Blake\AppData\Local\Temp\s5n4.obj
+C:\Users\Blake\AppData\Local\Temp\s3rk.obj
                 end_init                              0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
