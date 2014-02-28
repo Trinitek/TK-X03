@@ -1,7 +1,15 @@
-_main: CODE, 64522 0 78
-_initPorts: CODE, 64474 0 48
-__initialization: CODE, 64428 0 8
-_enableSerial: CODE, 64600 0 138
-_initOscillator: CODE, 64446 0 28
-_dispSeg: CODE, 64738 0 798
-Total: 1098
+_processOpcode: CODE, 63926 0 1610
+_pointerTo_regMX: CODE, 62034 0 18
+_main: CODE, 62590 0 180
+_getPortData: CODE, 62052 0 18
+_initPorts: CODE, 62188 0 48
+_initializeRegisters: CODE, 62236 0 56
+_setPortData: CODE, 62430 0 160
+__initialization: CODE, 62146 0 32
+_enableSerial: CODE, 62292 0 138
+_initOscillator: CODE, 62118 0 28
+_decode_immData: CODE, 62770 0 362
+_regMX_toPointer: CODE, 62070 0 24
+_immData_toPointer: CODE, 62094 0 24
+_dispSeg: CODE, 63132 0 794
+Total: 3492

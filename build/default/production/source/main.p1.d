@@ -4,4 +4,6 @@
 source/system.h  \
 source/serial.h  \
 source/segment.h  \
+source/emulator.h  \
+source/registers.c  \
 source/configuration_bits.c 

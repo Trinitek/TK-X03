@@ -2,6 +2,7 @@
 
 #include <stdint.h>                 // For uint8_t definition
 #include "configuration_bits.c"     // For pin definitions
+#include "serial.h"                 // For UART port and register definitions
 
 /**
  * Initialize the UART to receive data from the RS-232 port.

@@ -4,6 +4,10 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>source/segment.h</itemPath>
+      <itemPath>source/system.h</itemPath>
+      <itemPath>source/emulator.h</itemPath>
+      <itemPath>source/serial.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -12,29 +16,14 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
-      <logicalFolder name="f4" displayName="emulator" projectFiles="true">
-        <itemPath>source/emulator.h</itemPath>
-        <itemPath>source/emulator.c</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f5" displayName="memory" projectFiles="true">
-        <itemPath>source/memory.c</itemPath>
-        <itemPath>source/memory.h</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f1" displayName="segment" projectFiles="true">
-        <itemPath>source/segment.h</itemPath>
-        <itemPath>source/segment.c</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f2" displayName="serial" projectFiles="true">
-        <itemPath>source/serial.h</itemPath>
-        <itemPath>source/serial.c</itemPath>
-      </logicalFolder>
-      <logicalFolder name="f3" displayName="system" projectFiles="true">
-        <itemPath>source/system.h</itemPath>
-        <itemPath>source/system.c</itemPath>
-      </logicalFolder>
       <itemPath>source/configuration_bits.c</itemPath>
       <itemPath>source/main.c</itemPath>
-      <itemPath>source/registers.h</itemPath>
+      <itemPath>source/registers.c</itemPath>
+      <itemPath>source/ports.c</itemPath>
+      <itemPath>source/segment.c</itemPath>
+      <itemPath>source/system.c</itemPath>
+      <itemPath>source/emulator.c</itemPath>
+      <itemPath>source/serial.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -55,7 +44,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>1.30</languageToolchainVersion>
+        <languageToolchainVersion>1.21</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <compileType>
