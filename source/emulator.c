@@ -97,17 +97,12 @@ void setPortData(uint8_t portNumber, uint8_t outputData)
 
 void decode_immData(struct immData_t immData)
 {
-    // is arg1 and/or arg2 in the stack region?
-    if (regPC + 1 < 256) immData.arg1 = memoryMap.stack[regPC + 1];
-    if (regPC + 2 < 256) immData.arg2 = memoryMap.stack[regPC + 2];
+    // loop immData around to readOnly section if arg1 and/or arg2 points outside array boundaries
+    if (regPC + 1 = memScratchPad_e + 1) immData.arg1 = memReadOnly;
+    if (regPC + 2 = memScratchPad_e + 1) immData.arg2 = memReadOnly;
+    if (regPC + 2 = memScratchPad_e + 2) immData.arg2 = memReadOnly + 1;
 
-    // is arg1 and/or arg2 in the readOnly region?
-    if (regPC + 1 > 255 && regPC + 1 < 512) immData.arg1 = memoryMap.readOnly[regPC + 1];
-    if (regPC + 2 > 255 && regPC + 2 < 512) immData.arg2 = memoryMap.readOnly[regPC + 2];
-
-    // is arg1 and/or arg2 in the scratchPad region?
-    if (regPC + 1 > 511) immData.arg1 = memoryMap.scratchPad[regPC + 1];
-    if (regPC + 2 > 511) immData.arg2 = memoryMap.scratchPad[regPC + 2];
+    // immData.arg1 should never be farther away from the end of memory than memScratchPad_e + 1
 }
 
 /**

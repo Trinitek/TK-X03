@@ -30,11 +30,13 @@ struct immData_t {                          // temp storage of the imm# data req
 	uint8_t arg2;
 }; uint16_t immData_16;
 
-struct memoryMap {                          // memory space available to the virtual processor
-	uint8_t stack [256];                // stack space 0-255 (256 bytes)
-	uint8_t readOnly [256];             // read only memory 256-511 (256 bytes) - reset vector at base
-	uint8_t scratchPad [1536];          // scratchpad space 512-2047 (1536 bytes) - usable by program
-} memoryMap;
+uint8_t virtualMemory[2048];
+#define memStack        0                   // stack space 0-255 (256 bytes)
+#define memStack_e      255
+#define memReadOnly     256                 // read only memory 256-511 (256 bytes) - reset vector at base
+#define memReadOnly_e   511
+#define memScratchPad   512                 // scratchpad space 512-2047 (1536 bytes) - usable by program
+#define memScratchPad_e 2047
 
 /* Processor and flag control */
 

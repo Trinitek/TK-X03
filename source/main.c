@@ -11,6 +11,7 @@
 #include "segment.h"                // For segment display handling
 #include "serial.h"                 // For RS-232 serial controller
 #include "emulator.h"               // For TK3081 processor emulator
+//#include "registers.c"              // For TK3081 register and
 
 struct immData_t immData;           // immediate data to be passed to instruction decoder
 
@@ -18,7 +19,6 @@ void main(void)
 {
     initOscillator();                   // initialize oscillator configuration
     initPorts();                        // initialize pin direction and function
-    //enableSerial(1200);                 // initialize serial TX/RX at 1200 baud
     dispSeg(1, '-'); dispSeg(2, '-');
 
     initializeRegisters();              // initialize virtual processor registers
@@ -27,13 +27,13 @@ void main(void)
     {
         decode_immData(immData);               // determine where the immediate data is and load that data into temporary vars
 
-        if (regPC < 256)
+        if (regPC < memReadOnly || regPC > memScratchPad_e)
         {
-            regPC = 256;                // soft reset if PC overflows into stack
+            regPC = memReadOnly;               // soft reset if PC overflows into stack or out of virtual memory boundaries
             continue;
         }
 
-        if (regPC > 255 && regPC < 512) processOpcode(memoryMap.readOnly[regPC], immData);
-        if (regPC > 511) processOpcode(memoryMap.scratchPad[regPC], immData);
+        if (regPC > memStack_e && regPC < memScratchPad) processOpcode(virtualMemory[regPC], immData);
+        if (regPC > memReadOnly_e) processOpcode(virtualMemory[regPC], immData);
     }
 }
