@@ -8,6 +8,7 @@
       <itemPath>source/system.h</itemPath>
       <itemPath>source/emulator.h</itemPath>
       <itemPath>source/serial.h</itemPath>
+      <itemPath>source/registers.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -18,7 +19,6 @@
                    projectFiles="true">
       <itemPath>source/configuration_bits.c</itemPath>
       <itemPath>source/main.c</itemPath>
-      <itemPath>source/registers.c</itemPath>
       <itemPath>source/ports.c</itemPath>
       <itemPath>source/segment.c</itemPath>
       <itemPath>source/system.c</itemPath>
@@ -44,7 +44,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>PICkit3PlatformTool</platformTool>
         <languageToolchain>XC8</languageToolchain>
-        <languageToolchainVersion>1.30</languageToolchainVersion>
+        <languageToolchainVersion>1.21</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <compileType>

@@ -2,36 +2,47 @@
 
 #include <xc.h>                     // XC8 General Include File
 #include <stdint.h>                 // For uint8_t definition
-#include "registers.c"              // For register, opcode, and memory definitions
+#include "registers.h"              // For register, opcode, and memory definitions
 #include "ports.c"                  // For virtual port number definitions
 #include "serial.h"                 // For UART port and register definitions
 #include "segment.h"                // For segment display handling
 
-uint16_t regMX_toPointer()
+/*uint16_t regMX_toPointer()
 {
     uint16_t pointer = (uint16_t) regMXbits.MH;
     pointer << 8;
     pointer += regMXbits.ML;
     regMX = pointer;
     return pointer;
-}
+}/**/
 
 
-void pointerTo_regMX(uint16_t pointer)
+/*void pointerTo_regMX(uint16_t pointer)
 {
     uint16_t pointer_lowByte = pointer;
     pointer_lowByte << 8; pointer_lowByte >> 8;
     regMXbits.ML = (uint8_t) pointer_lowByte;
     pointer >> 8;
     regMXbits.MH = (uint8_t) pointer;
+}/**/
+
+uint8_t getMXbits(uint8_t subRegister)
+{
+    uint16_t regMX_temp = regMX;
+
+    if (subRegister == MH)
+    {
+        regMX_temp >> 8;
+    }
+
+    return (uint8_t) regMX_temp;
 }
 
-uint16_t immData_toPointer(struct immData_t immData)
+uint16_t immData_toPointer(uint8_t immData_1, uint8_t immData_2)
 {
-    uint16_t pointer = (uint16_t) immData.arg1;
+    uint16_t pointer = (uint16_t) immData_1;
     pointer << 8;
-    pointer += immData.arg2;
-    immData_16 = pointer;
+    pointer += immData_2;
     return pointer;
 }
 

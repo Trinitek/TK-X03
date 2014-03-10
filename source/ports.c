@@ -1,10 +1,5 @@
 /* Virtual port definitions for the TK3081 processor emulator */
 
-//#include <xc.h>                     // XC8 General Include File
-//#include <stdint.h>                 // For uint8_t definition
-//#include "registers.c"              // For register, opcode, and memory definitions
-
-
 /* Serial port I/O and UART control */
 
 #define UART_BAUD           0b00000000      // o: set UART baud rate

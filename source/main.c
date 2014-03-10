@@ -11,9 +11,9 @@
 #include "segment.h"                // For segment display handling
 #include "serial.h"                 // For RS-232 serial controller
 #include "emulator.h"               // For TK3081 processor emulator
-//#include "registers.c"              // For TK3081 register and
+#include "registers.h"              // For TK3081 register and
 
-struct immData_t immData;           // immediate data to be passed to instruction decoder
+//struct immData_t immData;           // immediate data to be passed to instruction decoder
 
 void main(void)
 {
