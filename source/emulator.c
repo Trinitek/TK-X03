@@ -26,6 +26,12 @@
     regMXbits.MH = (uint8_t) pointer;
 }/**/
 
+/**
+ * Get the value of the subregister specified
+ * 
+ * @param subregister
+ * @return value
+ */
 uint8_t getMXbits(uint8_t subRegister)
 {
     uint16_t regMX_temp = regMX;
@@ -36,6 +42,123 @@ uint8_t getMXbits(uint8_t subRegister)
     }
 
     return (uint8_t) regMX_temp;
+}
+
+/**
+ * Set the subregister specified to the value specified
+ * 
+ * @param subRegister, value
+ */
+void setMXbits(uint8_t subRegister, uint8_t value)
+{
+    uint16_t value_temp = (uint16_t) value;
+    uint16_t regMX_temp = regMX;
+    
+    switch(subRegister)
+    {
+        case MH:
+            regMX_temp << 8;
+            regMX_temp >> 8;
+            value_temp << 8;
+            break;
+        
+        case ML:
+            regMX_temp >> 8;
+            regMX_temp << 8;
+            break;
+    }
+    
+    regMX = regMX_temp + value_temp;
+}
+
+/**
+ * Get the value of the flag specified
+ * 
+ * @param flag
+ * @return value
+ */
+uint8_t getFbits(uint8_t subRegister)
+{
+    uint8_t regF_temp = regF;
+    
+    switch(subRegister)
+    {
+        case CF:
+            regF_temp << 7;
+            regF_temp >> 7;
+            break;
+            
+        case GF:
+            regF_temp << 6;
+            regF_temp >> 7;
+            break;
+            
+        case LF:
+            regF_temp << 5;
+            regF_temp >> 7;
+            break;
+            
+        case ZF:
+            regF_temp << 4;
+            regF_temp >> 7;
+            break;
+            
+        case OF:
+            regF_temp << 3;
+            regF_temp >> 7;
+            break;
+    }
+    
+    return regF_temp;
+}
+
+/**
+ * Set the flag specified to the value specified
+ * 
+ * @param flag, value
+ */
+void setFbits(uint8_t subRegister, uint8_t value)
+{
+    uint8_t regF_temp1 = regF_temp2 = regF;
+    
+    switch(subRegister)
+    {
+        case CF:
+            regF_temp1 >> 1;
+            regF_temp1 << 1;
+            regF_temp2 = 0;
+            break;
+            
+        case GF:
+            regF_temp1 >> 2;
+            regF_temp1 << 2;
+            regF_temp2 << 6;
+            regF_temp2 >> 6;
+            break;
+            
+        case LF:
+            regF_temp1 >> 3;
+            regF_temp1 << 3;
+            regF_temp2 << 5;
+            regF_temp2 >> 5;
+            break;
+            
+        case ZF:
+            regF_temp1 >> 4;
+            regF_temp1 << 4;
+            regF_temp2 << 4;
+            regF_temp2 >> 4;
+            break;
+            
+        case OF:
+            regF_temp1 >> 5;
+            regF_temp1 << 5;
+            regF_temp2 << 3;
+            regF_temp2 >> 3;
+            break;
+    }
+    
+    regF = regF_temp1 + regF_temp2 + value;
 }
 
 uint16_t immData_toPointer(uint8_t immData_1, uint8_t immData_2)
