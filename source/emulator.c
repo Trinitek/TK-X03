@@ -20,11 +20,13 @@
 /*void pointerTo_regMX(uint16_t pointer)
 {
     uint16_t pointer_lowByte = pointer;
-    pointer_lowByte << 8; pointer_lowByte >> 8;
-    regMXbits.ML = (uint8_t) pointer_lowByte;
+    pointer_lowByte << 8;
+    pointer_lowByte >> 8;
+    setMXbits(ML, (uint8_t) pointer_lowByte);
+    
     pointer >> 8;
-    regMXbits.MH = (uint8_t) pointer;
-}/**/
+    setMXbits(MH, (uint8_t) pointer);
+}*/
 
 /**
  * Get the value of the subregister specified
@@ -119,7 +121,8 @@ uint8_t getFbits(uint8_t subRegister)
  */
 void setFbits(uint8_t subRegister, uint8_t value)
 {
-    uint8_t regF_temp1 = regF_temp2 = regF;
+    uint8_t regF_temp1 = regF;
+    uint8_t regF_temp2 = regF;
     
     switch(subRegister)
     {
@@ -161,7 +164,7 @@ void setFbits(uint8_t subRegister, uint8_t value)
     regF = regF_temp1 + regF_temp2 + value;
 }
 
-uint16_t immData_toPointer(uint8_t immData_1, uint8_t immData_2)
+uint16_t immData_toPointer(void)
 {
     uint16_t pointer = (uint16_t) immData_1;
     pointer << 8;
@@ -229,33 +232,32 @@ void setPortData(uint8_t portNumber, uint8_t outputData)
     }
 }
 
-void decode_immData(struct immData_t immData)
+void update_immData(void)
 {
     // loop immData around to readOnly section if arg1 and/or arg2 points outside array boundaries
-    if (regPC + 1 = memScratchPad_e + 1) immData.arg1 = memReadOnly;
-    if (regPC + 2 = memScratchPad_e + 1) immData.arg2 = memReadOnly;
-    if (regPC + 2 = memScratchPad_e + 2) immData.arg2 = memReadOnly + 1;
+    if (regPC + 1 = memScratchPad_e + 1) immData_1 = memReadOnly;
+    if (regPC + 2 = memScratchPad_e + 1) immData_2 = memReadOnly;
+    if (regPC + 2 = memScratchPad_e + 2) immData_2 = memReadOnly + 1;
 
     // immData.arg1 should never be farther away from the end of memory than memScratchPad_e + 1
 }
 
 /**
  * Compare the passed opcode with the instruction set list and do that command
- * 
- * @param opcode, additional 'immediate' data if required
+ * Uses global regPC, immData_1, and immData_2 variables!
  */
-void processOpcode(uint8_t opcode, struct immData_t immData)
+void processOpcode(void)
 {
+    // update global variables for the next iteration
+    update_immData();
+    
     // initialize temporary variables
     uint8_t regA_temp8;
     uint16_t regA_temp16;
     uint8_t carriedBit;
 
-    // update combined struct variables and pointers
-    regMX_toPointer();
-    immData_toPointer(immData);
-    
-    switch (opcode)
+    // decode opcode and execute the associated command
+    switch (virtualMemory[regPC])
     {
     	/* Processor and flag control */
     
@@ -263,11 +265,11 @@ void processOpcode(uint8_t opcode, struct immData_t immData)
             break;
             
         case STC:					// set CF
-            regFbits.CF = 1;
+            setFbits(CF, 1);
             break;
             
         case CLC:					// clear CF
-            regFbits.CF = 0;
+            setFbits(CF, 0);
             break;
             
             
@@ -278,8 +280,7 @@ void processOpcode(uint8_t opcode, struct immData_t immData)
             break;
         	
         case INI:					// A = port [imm8]
-            regA = getPortData(immData.arg1);
-
+            regA = getPortData(immData_1);
             regPC++;
             break;
         	
@@ -288,14 +289,12 @@ void processOpcode(uint8_t opcode, struct immData_t immData)
             break;
         	
         case OUTAI:					// port [imm8] = A
-            setPortData(immData.arg1, regA);
-
+            setPortData(immData_1, regA);
             regPC++;
             break;
         	
         case OUTII:					// port [imm8] = [imm8]
-            setPortData(immData.arg1, immData.arg2);
-
+            setPortData(immData_1, immData_2);
             regPC += 2;
             break;
             
@@ -303,25 +302,15 @@ void processOpcode(uint8_t opcode, struct immData_t immData)
         /* Data movement instructions */
             
         case MOVAMX:                                    // mov a, [mx]
-            regMX_toPointer();
-
-            // does MX point to stack region?
-            if (regMX < 256) regA = memoryMap.stack[regMX];
-        	
-            // does MX point to ROM region?
-            if (regMX > 255 && regMX < 512) regA = memoryMap.readOnly[regMX - 256];
-            
-            // does MX point to scratchPad region?
-            if (regMX > 511) regA = memoryMap.scratchPad[regMX - 512];
-            
+            regA = virtualMemory[regMX];
             break;
             
         case MOVAMH:                                    // mov a, mh
-            regA = regMXbits.MH;
+            regA = getMXbits(MH);
             break;
             
         case MOVAML:                                    // mov a, ml
-            regA = regMXbits.ML;
+            regA = getMXbits(ML);
             break;
             
         case MOVASP:                                    // mov a, sp
@@ -337,25 +326,25 @@ void processOpcode(uint8_t opcode, struct immData_t immData)
             break;
             
         case MOVMXA:                                    // mov [mx], a
-            regMX_toPointer();
-
             // does MX point to stack region?
-            if (regMX < 256) memoryMap.stack[regMX] = regA;
+            //if (regMX < 256) memoryMap.stack[regMX] = regA;
 
             // does MX point to ROM region?
-            if (regMX > 255 && regMX < 512) memoryMap.readOnly[regMX - 256] = regA;
+            //if (regMX > 255 && regMX < 512) memoryMap.readOnly[regMX - 256] = regA;
             
             // does MX point to scratchPad region?
-            if (regMX > 511) memoryMap.scratchPad[regMX - 512] = regA;
+            //if (regMX > 511) memoryMap.scratchPad[regMX - 512] = regA;
+
+            virtualMemory[regMX] = regA;
 
             break;
             
         case MOVMHA:                                    // mov mh, a
-            regMXbits.MH = regA;
+            setMXbits(MH, regA);
             break;
             
         case MOVMLA:                                    // mov ml, a
-            regMXbits.ML = regA;
+            setMXbits(ML, regA);
             break;
             
         case MOVSPA:                                    // mov sp, a
@@ -367,7 +356,7 @@ void processOpcode(uint8_t opcode, struct immData_t immData)
             break;
             
         case MOVI:					// mov a, imm8
-            regA = immData.arg1;
+            regA = immData_1;
 
             regPC++;
             break;
@@ -419,8 +408,8 @@ void processOpcode(uint8_t opcode, struct immData_t immData)
             // determine if a bit will fall off the end
             regA_temp8 = regA;
             regA_temp8 >> 7;
-            if (regA_temp8 == 1) regFbits.CF = 1;	// ...set CF if so
-            else regFbits.CF = 0;
+            if (regA_temp8 == 1) setFbits(CF, 1);	// ...set CF if so
+            else setFbits(CF, 0);
         	
             // shift bits to the left
             regA << 1;
@@ -431,15 +420,15 @@ void processOpcode(uint8_t opcode, struct immData_t immData)
             regA_temp8 = regA;
             regA_temp8 << 7;
             regA_temp8 >> 7;
-            if (regA_temp8 == 1) regFbits.CF = 1;	// ...set CF if so
-            else regFbits.CF = 0;
+            if (regA_temp8 == 1) setFbits(CF, 1);	// ...set CF if so
+            else setFbits(CF, 0);
         	
             // shift A register right 1
             regA >> 1;
             break;
         	
         case ROL:					// rol a, 1
-        // preserve leftmost byte
+            // preserve leftmost byte
             carriedBit = regA;
             carriedBit >> 7;
 
@@ -464,16 +453,16 @@ void processOpcode(uint8_t opcode, struct immData_t immData)
         	
         case CMP:					// cmp a, b
             // equal?
-            if (regA == regB) regFbits.ZF = 1;
-            else regFbits.ZF = 0;
+            if (regA == regB) setFbits(ZF, 1);
+            else setFbits(ZF, 0);
         	
             // less than?
-            if (regA < regB) regFbits.LF = 1;
-            else regFbits.LF = 0;
+            if (regA < regB) setFbits(LF, 1);
+            else setFbits(LF, 0);
 
             // greater than?
-            if (regA > regB) regFbits.GF = 1;
-            else regFbits.GF = 0;
+            if (regA > regB) setFbits(GF, 1);
+            else setFbits(GF, 0);
 
             break;
         	
@@ -485,153 +474,164 @@ void processOpcode(uint8_t opcode, struct immData_t immData)
             break;
         	
         case JMPI:					// jump to imm16
-            regPC = immData_16;
+            regPC = immData_toPointer();
 
             regPC += 2;
             break;
         	
         case JEMX:					// jump to MX if equal
-            if (regFbits.ZF == 1) regPC = regMX;
+            if (getFbits(ZF) == 1) regPC = regMX;
             break;
         	
         case JEI:					// jump to imm16 if equal
-            if (regFbits.ZF == 1) regPC = immData_16;
+            if (getFbits(ZF) == 1) regPC = immData_toPointer()
 
             regPC += 2;
             break;
         	
         case JNEMX:					// jump to MX if not equal
-            if (regFbits.ZF == 0) regPC = regMX;
+            if (getFbits(ZF) == 0) regPC = regMX;
             break;
         	
         case JNEI:					// jump to imm16 if not equal
-            if (regFbits.ZF == 0) regPC = immData_16;
+            if (getFbits(ZF) == 0) regPC = immData_toPointer()
 
             regPC += 2;
             break;
         	
         case JGMX:					// jump to MX if greater than
-            if (regFbits.GF == 1) regPC = regMX;
+            if (getFbits(GF) == 1) regPC = regMX;
             break;
 
         case JGI:					// jump to imm16 if greater than
-            if (regFbits.GF == 1) regPC = immData_16;
-
+            if (getFbits(GF) == 1) regPC = immData_toPointer();
             regPC += 2;
             break;
         	
         case JLMX:					// jump to MX if less than
-            if (regFbits.LF == 1) regPC = regMX;
+            if (getFbits.LF == 1) regPC = regMX;
             break;
         	
         case JLI:					// jump to imm16 if less than
-            if (regFbits.LF == 1) regPC = immData_16;
-
+            if (getFbits.LF == 1) regPC = immData_toPointer();
             regPC += 2;
             break;
         	
         case JCMX:					// jump to MX if CF set
-            if (regFbits.CF == 1) regPC = regMX;
+            if (getFbits.CF == 1) regPC = regMX;
             break;
         	
         case JCI:					// jump to imm16 if CF set
-            if (regFbits.CF == 1) regPC = immData_16;
-
+            if (getFbits.CF == 1) regPC = immData_toPointer();
             regPC += 2;
             break;
         	
         case JNCMX:					// jump to MX if CF not set
-            if (regFbits.CF == 0) regPC = regMX;
+            if (getFbits(CF) == 0) regPC = regMX;
             break;
         	
         case JNCI:					// jump to imm16 if CF not set
-            if (regFbits.CF == 0) regPC = immData_16;
+            if (getFbits(CF) == 0) regPC = immData_toPointer();
 
             regPC += 2;
             break;
         	
         case CALLMX:                                    // push PC to stack and jump to MX
-            memoryMap.stack[regSP] = regPC;
+            //memoryMap.stack[regSP] = regPC;
+            virtualMemory[regSP] = regPC;
             regSP += 2;
             regPC = regMX;
             break;
         	
         case CALLI:					// push PC to stack and jump to imm16
-            memoryMap.stack[regSP] = regPC;
+            //memoryMap.stack[regSP] = regPC;
+            virtualMemory[regSP] = regPC;
             regSP += 2;
-            regPC = immData_16;
+            regPC = immData_toPointer;
 
             regPC += 2;
             break;
         	
         case RET:					// pop PC from stack and return
             regSP -= 2;
-            regPC = memoryMap.stack[regSP];
+            //regPC = memoryMap.stack[regSP];
+            regPC = virtualMemory[regSP];
             break;
         	
         	
         /* Stack operations */
         	
         case PUSHA:					// push a
-            memoryMap.stack[regSP] = regA;
+            //memoryMap.stack[regSP] = regA;
+            virtualMemory[regSP] = regA;
             regSP++;
             break;
         	
         case PUSHB:					// push b
-            memoryMap.stack[regSP] = regB;
+            //memoryMap.stack[regSP] = regB;
+            virtualMemory[regSP] = regB;
             regSP++;
             break;
         	
         case PUSHMX:                                    // push mx
-            memoryMap.stack[regSP] = regMX;
+            //memoryMap.stack[regSP] = regMX;
+            virtualMemory[regSP] = regMX;
             regSP += 2;
             break;
         	
         case PUSHMH:                                    // push mh
-            memoryMap.stack[regSP] = regMXbits.MH;
+            //memoryMap.stack[regSP] = regMXbits.MH;
+            virtualMemory[regSP] = getMXbits(MH);
             regSP++;
             break;
         	
         case PUSHML:                                    // push ml
-            memoryMap.stack[regSP] = regMXbits.ML;
+            //memoryMap.stack[regSP] = regMXbits.ML;
+            virtualMemory[regSP] = getMXbits(ML);
             regSP++;
             break;
         	
         case PUSHF:					// push f
-            memoryMap.stack[regSP] = regF;
+            //memoryMap.stack[regSP] = regF;
+            virtualMemory[regSP] = regF;
             regSP++;
             break;
         	
         case PUSHI:					// push imm8
-            memoryMap.stack[regSP] = immData.arg1;
+            //memoryMap.stack[regSP] = immData.arg1;
+            virtualMemory[regSP] = immData_1;
             regSP++;
-
             regPC++;
             break;
         	
         case POPA:					// pop a
             regSP--;
-            regA = memoryMap.stack[regSP];
+            //regA = memoryMap.stack[regSP];
+            regA = virtualMemory[regSP];
             break;
         	
         case POPB:					// pop b
             regSP--;
-            regB = memoryMap.stack[regSP];
+            //regB = memoryMap.stack[regSP];
+            regB = virtualMemory[regSP];
             break;
         	
         case POPMX:					// pop mx
             regSP -= 2;
-            regMX = memoryMap.stack[regSP];
+            //regMX = memoryMap.stack[regSP];
+            regMX = virtualMemory[regSP];
             break;
         	
         case POPMH:					// pop mh
             regSP--;
-            regMXbits.MH = memoryMap.stack[regSP];
+            //regMXbits.MH = memoryMap.stack[regSP];
+            setMXbits(MH, virtualMemory[regSP]);
             break;
         	
         case POPML:					// pop ml
             regSP--;
-            regMXbits.ML = memoryMap.stack[regSP];
+            //regMXbits.ML = memoryMap.stack[regSP];
+            setMXbits(ML, virtualMemory[regSP]);
             break;
         	
         	
@@ -640,19 +640,19 @@ void processOpcode(uint8_t opcode, struct immData_t immData)
         case ADDA:                                      // a = a + b
             // check for potential overflow and set corresponding flag
             regA_temp16 += regB;
-            if (regA_temp16 > 255) regFbits.OF = 1;
-            else regFbits.OF = 0;
+            if (regA_temp16 > 255) setFbits(OF, 1);
+            else setFbits(OF, 0);
 
             regA += regB;
             break;
         	
         case ADDI:					// a = a + imm8
            // check for potential overflow and set corresponding flag
-           regA_temp16 += immData.arg1;
-           if (regA_temp16 > 255) regFbits.OF = 1;
-           else regFbits.OF = 0;
+           regA_temp16 += immData_1;
+           if (regA_temp16 > 255) setFbits(OF, 1);
+           else setFbits(OF, 0);
 
-            regA += immData.arg1;
+            regA += immData_1;
 
             regPC++;
             break;
@@ -663,8 +663,8 @@ void processOpcode(uint8_t opcode, struct immData_t immData)
             regA_temp16 << 8;
             regA_temp16 += 255;
             regA_temp16 -= regB;
-            if (regA_temp16 < 255) regFbits.OF = 1;
-            else regFbits.OF = 0;
+            if (regA_temp16 < 255) setFbits(OF, 1);
+            else setFbits(OF, 0);
 
             regA -= regB;
             break;
@@ -674,11 +674,11 @@ void processOpcode(uint8_t opcode, struct immData_t immData)
             regA_temp16 = regA;
             regA_temp16 << 8;
             regA_temp16 += 255;
-            regA_temp16 -= immData.arg1;
-            if (regA_temp16 < 255) regFbits.OF = 1;
-            else regFbits.OF = 0;
+            regA_temp16 -= immData_1;
+            if (regA_temp16 < 255) setFbits(OF, 1);
+            else setFbits(OF, 0);
 
-            regA -= immData.arg1;
+            regA -= immData_1;
 
             regPC++;
             break;
@@ -686,8 +686,8 @@ void processOpcode(uint8_t opcode, struct immData_t immData)
         case INC:					// inc a
             // check for potential overflow and set corresponding flag
             regA_temp16 = regA + 1;
-            if (regA_temp16 > 255) regFbits.OF = 1;
-            else regFbits.OF = 0;
+            if (regA_temp16 > 255) setFbits(OF, 1);
+            else setFbits(OF, 0);
 
             regA++;
             break;
@@ -695,12 +695,13 @@ void processOpcode(uint8_t opcode, struct immData_t immData)
         case DEC:					// dec a
             // check for potential overflow and set corresponding flag
             regA_temp8 = regA - 1;
-            if (regA_temp8 == 255) regFbits.OF = 1;
-            else regFbits.OF = 0;
+            if (regA_temp8 == 255) setFbits(OF, 1);
+            else setFbits(OF, 0);
 
             regA--;
             break;
     }
 
-    regPC++;                                            // increment regPC to point to next opcode; opcodes that need additional data increment PC accordingly
+    // increment regPC to point to next opcode; opcodes that need additional data increment PC accordingly
+    regPC++; 
 }

@@ -1,4 +1,42 @@
 Version 3.2 HI-TECH Software Intermediate Code
+[s S1050 :2 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
+[n S1050 . SCS HFIOFS OSTS IRCF IDLEN ]
+[s S1051 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1051 . SCS0 SCS1 IOFS . IRCF0 IRCF1 IRCF2 ]
+[u S1049 `S1050 1 `S1051 1 ]
+[n S1049 . . . ]
+"16800 C:\Program Files (x86)\Microchip\xc8\v1.30\include\pic18f46k22.h
+[v _OSCCONbits `VS1049 ~T0 @X0 0 e@4051 ]
+[s S1048 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S1048 . LFIOFS MFIOFS PRISD SOSCGO MFIOSEL . SOSCRUN PLLRDY ]
+[u S1047 `S1048 1 ]
+[n S1047 . . ]
+"16738
+[v _OSCCON2bits `VS1047 ~T0 @X0 0 e@4050 ]
+"8401
+[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
+"8843
+[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
+"9285
+[v _TRISE `Vuc ~T0 @X0 0 e@3990 ]
+"187
+[v _ANSELD `Vuc ~T0 @X0 0 e@3899 ]
+[s S537 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S537 . TRISD0 TRISD1 TRISD2 TRISD3 TRISD4 TRISD5 TRISD6 TRISD7 ]
+[s S538 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S538 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
+[u S536 `S537 1 `S538 1 ]
+[n S536 . . . ]
+"9096
+[v _TRISDbits `VS536 ~T0 @X0 0 e@3989 ]
+"7771
+[v _LATA `Vuc ~T0 @X0 0 e@3977 ]
+"8035
+[v _LATC `Vuc ~T0 @X0 0 e@3979 ]
+"8167
+[v _LATD `Vuc ~T0 @X0 0 e@3980 ]
+"8299
+[v _LATE `Vuc ~T0 @X0 0 e@3981 ]
 [; ;htc.h: 22: extern void __builtin_software_breakpoint(void);
 [; ;pic18f46k22.h: 44: extern volatile unsigned char ANSELA @ 0xF38;
 "46 C:\Program Files (x86)\Microchip\xc8\v1.30\include\pic18f46k22.h
@@ -8191,79 +8229,322 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 147: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 149: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 151: extern __nonreentrant void _delay3(unsigned char);
-"12 source/configuration_bits.c
-[p x FOSC=INTIO67 ]
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+"9 source/system.c
+[v _initOscillator `(v ~T0 @X0 1 ef ]
+"10
+{
+[; ;system.c: 9: void initOscillator(void)
+[; ;system.c: 10: {
+[e :U _initOscillator ]
+[f ]
+[; ;system.c: 11: OSCCONbits.IDLEN = 0;
+"11
+[e = . . _OSCCONbits 0 4 -> -> 0 `i `uc ]
+[; ;system.c: 12: OSCCONbits.IRCF = 0b111;
+"12
+[e = . . _OSCCONbits 0 3 -> -> 7 `i `uc ]
+[; ;system.c: 13: OSCCONbits.SCS = 0b10;
 "13
-[p x PLLCFG=OFF ]
+[e = . . _OSCCONbits 0 0 -> -> 2 `i `uc ]
+[; ;system.c: 14: OSCCON2bits.MFIOSEL = 0;
 "14
-[p x PRICLKEN=OFF ]
+[e = . . _OSCCON2bits 0 4 -> -> 0 `i `uc ]
+[; ;system.c: 15: OSCCON2bits.SOSCGO = 0;
 "15
-[p x FCMEN=OFF ]
+[e = . . _OSCCON2bits 0 3 -> -> 0 `i `uc ]
+[; ;system.c: 16: OSCCON2bits.PRISD = 0;
 "16
-[p x IESO=OFF ]
+[e = . . _OSCCON2bits 0 2 -> -> 0 `i `uc ]
+[; ;system.c: 19: while (OSCCONbits.HFIOFS == 0) continue;
 "19
-[p x PWRTEN=OFF ]
+[e $U 1182  ]
+[e :U 1183 ]
+[e $U 1182  ]
+[e :U 1182 ]
+[e $ == -> . . _OSCCONbits 0 1 `i -> 0 `i 1183  ]
+[e :U 1184 ]
+[; ;system.c: 20: }
 "20
-[p x BOREN=OFF ]
-"21
-[p x BORV=190 ]
-"24
-[p x WDTEN=OFF ]
-"25
-[p x WDTPS=32768 ]
+[e :UE 1181 ]
+}
+"26
+[v _initPorts `(v ~T0 @X0 1 ef ]
+"27
+{
+[; ;system.c: 26: void initPorts(void)
+[; ;system.c: 27: {
+[e :U _initPorts ]
+[f ]
+[; ;system.c: 28: TRISA = 0;
 "28
-[p x CCP2MX=PORTC1 ]
+[e = _TRISA -> -> 0 `i `uc ]
+[; ;system.c: 29: TRISC = 0;
 "29
-[p x PBADEN=OFF ]
+[e = _TRISC -> -> 0 `i `uc ]
+[; ;system.c: 30: TRISE = 0;
 "30
-[p x CCP3MX=PORTB5 ]
-"31
-[p x HFOFST=ON ]
+[e = _TRISE -> -> 0 `i `uc ]
+[; ;system.c: 32: ANSELD = 0;
 "32
-[p x T3CMX=PORTC0 ]
+[e = _ANSELD -> -> 0 `i `uc ]
+[; ;system.c: 33: TRISDbits.RD3 = 0;
 "33
-[p x P2BMX=PORTD2 ]
+[e = . . _TRISDbits 1 3 -> -> 0 `i `uc ]
+[; ;system.c: 34: TRISDbits.RD4 = 1;
 "34
-[p x MCLRE=EXTMCLR ]
+[e = . . _TRISDbits 1 4 -> -> 1 `i `uc ]
+[; ;system.c: 35: TRISDbits.RD5 = 0;
+"35
+[e = . . _TRISDbits 1 5 -> -> 0 `i `uc ]
+[; ;system.c: 36: TRISDbits.RD7 = 1;
+"36
+[e = . . _TRISDbits 1 7 -> -> 1 `i `uc ]
+[; ;system.c: 37: TRISDbits.RD6 = 0;
 "37
-[p x STVREN=ON ]
-"38
-[p x LVP=OFF ]
+[e = . . _TRISDbits 1 6 -> -> 0 `i `uc ]
+[; ;system.c: 39: LATA = 0;
 "39
-[p x XINST=OFF ]
+[e = _LATA -> -> 0 `i `uc ]
+[; ;system.c: 40: LATC = 0;
+"40
+[e = _LATC -> -> 0 `i `uc ]
+[; ;system.c: 41: LATD = 0;
+"41
+[e = _LATD -> -> 0 `i `uc ]
+[; ;system.c: 42: LATE = 0;
 "42
-[p x CP0=OFF ]
+[e = _LATE -> -> 0 `i `uc ]
+[; ;system.c: 43: }
 "43
-[p x CP1=OFF ]
-"44
-[p x CP2=OFF ]
-"45
-[p x CP3=OFF ]
-"48
-[p x CPB=OFF ]
-"49
-[p x CPD=OFF ]
+[e :UE 1185 ]
+}
+"50
+[v _wait_ms `(v ~T0 @X0 1 ef1`ui ]
+"51
+{
+[; ;system.c: 50: void wait_ms(uint16_t time)
+[; ;system.c: 51: {
+[e :U _wait_ms ]
+"50
+[v _time `ui ~T0 @X0 1 r1 ]
+"51
+[f ]
 "52
-[p x WRT0=OFF ]
+[v F8855 `l ~T0 @X0 1 s timel ]
+[i F8855
+-> -> 0 `i `l
+]
+[; ;system.c: 52: static long timel = 0;
+[; ;system.c: 53: timel = time * 10;
 "53
-[p x WRT1=OFF ]
+[e = F8855 -> * _time -> -> 10 `i `ui `l ]
+[; ;system.c: 54: for (; timel; timel--);
 "54
-[p x WRT2=OFF ]
+{
+[e $U 1190  ]
+[e :U 1187 ]
+[e -- F8855 -> -> 1 `i `l ]
+[e :U 1190 ]
+[e $ != F8855 -> -> 0 `i `l 1187  ]
+[e :U 1188 ]
+}
+[; ;system.c: 55: }
 "55
-[p x WRT3=OFF ]
-"58
-[p x WRTC=OFF ]
-"59
-[p x WRTB=OFF ]
-"60
-[p x WRTD=OFF ]
+[e :UE 1186 ]
+}
 "63
-[p x EBTR0=OFF ]
+[v _hexToChar `(uc ~T0 @X0 1 ef1`uc ]
 "64
-[p x EBTR1=OFF ]
+{
+[; ;system.c: 63: uint8_t hexToChar(uint8_t number)
+[; ;system.c: 64: {
+[e :U _hexToChar ]
+"63
+[v _number `uc ~T0 @X0 1 r1 ]
+"64
+[f ]
+[; ;system.c: 65: number = number << 4;
 "65
-[p x EBTR2=OFF ]
+[e = _number -> << -> _number `i -> 4 `i `uc ]
+[; ;system.c: 66: number = number >> 4;
 "66
-[p x EBTR3=OFF ]
+[e = _number -> >> -> _number `i -> 4 `i `uc ]
+[; ;system.c: 67: switch (number)
+"67
+[e $U 1193  ]
+[; ;system.c: 68: {
+"68
+{
+[; ;system.c: 69: case 0:
 "69
-[p x EBTRB=OFF ]
+[e :U 1194 ]
+[; ;system.c: 70: return '0';
+"70
+[e ) -> -> 48 `ui `uc ]
+[e $UE 1191  ]
+[; ;system.c: 71: case 1:
+"71
+[e :U 1195 ]
+[; ;system.c: 72: return '1';
+"72
+[e ) -> -> 49 `ui `uc ]
+[e $UE 1191  ]
+[; ;system.c: 73: case 2:
+"73
+[e :U 1196 ]
+[; ;system.c: 74: return '2';
+"74
+[e ) -> -> 50 `ui `uc ]
+[e $UE 1191  ]
+[; ;system.c: 75: case 3:
+"75
+[e :U 1197 ]
+[; ;system.c: 76: return '3';
+"76
+[e ) -> -> 51 `ui `uc ]
+[e $UE 1191  ]
+[; ;system.c: 77: case 4:
+"77
+[e :U 1198 ]
+[; ;system.c: 78: return '4';
+"78
+[e ) -> -> 52 `ui `uc ]
+[e $UE 1191  ]
+[; ;system.c: 79: case 5:
+"79
+[e :U 1199 ]
+[; ;system.c: 80: return '5';
+"80
+[e ) -> -> 53 `ui `uc ]
+[e $UE 1191  ]
+[; ;system.c: 81: case 6:
+"81
+[e :U 1200 ]
+[; ;system.c: 82: return '6';
+"82
+[e ) -> -> 54 `ui `uc ]
+[e $UE 1191  ]
+[; ;system.c: 83: case 7:
+"83
+[e :U 1201 ]
+[; ;system.c: 84: return '7';
+"84
+[e ) -> -> 55 `ui `uc ]
+[e $UE 1191  ]
+[; ;system.c: 85: case 8:
+"85
+[e :U 1202 ]
+[; ;system.c: 86: return '8';
+"86
+[e ) -> -> 56 `ui `uc ]
+[e $UE 1191  ]
+[; ;system.c: 87: case 9:
+"87
+[e :U 1203 ]
+[; ;system.c: 88: return '9';
+"88
+[e ) -> -> 57 `ui `uc ]
+[e $UE 1191  ]
+[; ;system.c: 89: case 0xA:
+"89
+[e :U 1204 ]
+[; ;system.c: 90: return 'A';
+"90
+[e ) -> -> 65 `ui `uc ]
+[e $UE 1191  ]
+[; ;system.c: 91: case 0xB:
+"91
+[e :U 1205 ]
+[; ;system.c: 92: return 'B';
+"92
+[e ) -> -> 66 `ui `uc ]
+[e $UE 1191  ]
+[; ;system.c: 93: case 0xC:
+"93
+[e :U 1206 ]
+[; ;system.c: 94: return 'C';
+"94
+[e ) -> -> 67 `ui `uc ]
+[e $UE 1191  ]
+[; ;system.c: 95: case 0xD:
+"95
+[e :U 1207 ]
+[; ;system.c: 96: return 'D';
+"96
+[e ) -> -> 68 `ui `uc ]
+[e $UE 1191  ]
+[; ;system.c: 97: case 0xE:
+"97
+[e :U 1208 ]
+[; ;system.c: 98: return 'E';
+"98
+[e ) -> -> 69 `ui `uc ]
+[e $UE 1191  ]
+[; ;system.c: 99: case 0xF:
+"99
+[e :U 1209 ]
+[; ;system.c: 100: return 'F';
+"100
+[e ) -> -> 70 `ui `uc ]
+[e $UE 1191  ]
+"101
+}
+[; ;system.c: 101: }
+[e $U 1192  ]
+"67
+[e :U 1193 ]
+[e [\ _number , $ -> -> 0 `i `uc 1194
+ , $ -> -> 1 `i `uc 1195
+ , $ -> -> 2 `i `uc 1196
+ , $ -> -> 3 `i `uc 1197
+ , $ -> -> 4 `i `uc 1198
+ , $ -> -> 5 `i `uc 1199
+ , $ -> -> 6 `i `uc 1200
+ , $ -> -> 7 `i `uc 1201
+ , $ -> -> 8 `i `uc 1202
+ , $ -> -> 9 `i `uc 1203
+ , $ -> -> 10 `i `uc 1204
+ , $ -> -> 11 `i `uc 1205
+ , $ -> -> 12 `i `uc 1206
+ , $ -> -> 13 `i `uc 1207
+ , $ -> -> 14 `i `uc 1208
+ , $ -> -> 15 `i `uc 1209
+ 1192 ]
+"101
+[e :U 1192 ]
+[; ;system.c: 102: return 0;
+"102
+[e ) -> -> 0 `i `uc ]
+[e $UE 1191  ]
+[; ;system.c: 103: }
+"103
+[e :UE 1191 ]
+}

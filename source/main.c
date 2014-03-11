@@ -25,15 +25,15 @@ void main(void)
 
     while (1)
     {
-        decode_immData(immData);               // determine where the immediate data is and load that data into temporary vars
-
         if (regPC < memReadOnly || regPC > memScratchPad_e)
         {
             regPC = memReadOnly;               // soft reset if PC overflows into stack or out of virtual memory boundaries
             continue;
         }
 
-        if (regPC > memStack_e && regPC < memScratchPad) processOpcode(virtualMemory[regPC], immData);
-        if (regPC > memReadOnly_e) processOpcode(virtualMemory[regPC], immData);
+        //if (regPC > memStack_e && regPC < memScratchPad) processOpcode(virtualMemory[regPC], immData);
+        //if (regPC > memReadOnly_e) processOpcode(virtualMemory[regPC], immData);
+
+        processOpcode();
     }
 }

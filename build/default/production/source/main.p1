@@ -1,4 +1,15 @@
 Version 3.2 HI-TECH Software Intermediate Code
+[p mainexit ]
+"3 source/system.h
+[v _initOscillator `(v ~T0 @X0 0 ef ]
+"4
+[v _initPorts `(v ~T0 @X0 0 ef ]
+"3 source/segment.h
+[v _dispSeg `(v ~T0 @X0 0 ef2`uc`uc ]
+"17 source/emulator.h
+[v _initializeRegisters `(v ~T0 @X0 0 ef ]
+"19
+[v _processOpcode `(v ~T0 @X0 0 ef ]
 [; ;htc.h: 22: extern void __builtin_software_breakpoint(void);
 [; ;pic18f46k22.h: 44: extern volatile unsigned char ANSELA @ 0xF38;
 "46 C:\Program Files (x86)\Microchip\xc8\v1.30\include\pic18f46k22.h
@@ -8191,6 +8202,35 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 147: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 149: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 151: extern __nonreentrant void _delay3(unsigned char);
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
+[; ;stdbool.h: 12: typedef unsigned char bool;
 "12 source/configuration_bits.c
 [p x FOSC=INTIO67 ]
 "13
@@ -8267,3 +8307,104 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x EBTR3=OFF ]
 "69
 [p x EBTRB=OFF ]
+[; ;system.h: 3: void initOscillator(void);
+[; ;system.h: 4: void initPorts(void);
+[; ;system.h: 5: void wait_ms(uint16_t);
+[; ;system.h: 6: uint8_t hexToChar(uint8_t);
+[; ;segment.h: 3: void dispSeg(uint8_t, uint8_t);
+[; ;segment.h: 4: void cycleSegDisplays(uint16_t);
+[; ;serial.h: 3: void enableSerial(uint16_t);
+[; ;emulator.h: 7: uint8_t getMXbits(uint8_t);
+[; ;emulator.h: 8: void setMXbits(uint8_t, uint8_t);
+[; ;emulator.h: 9: uint8_t getFbits(uint8_t);
+[; ;emulator.h: 10: void setFbits(uint8_t, uint8_t);
+[; ;emulator.h: 12: uint16_t immData_toPointer(void);
+[; ;emulator.h: 14: uint8_t getPortData(uint8_t);
+[; ;emulator.h: 15: void setPortData(uint8_t, uint8_t);
+[; ;emulator.h: 17: void initializeRegisters(void);
+[; ;emulator.h: 18: void update_immData(void);
+[; ;emulator.h: 19: void processOpcode(void);
+"4 source/registers.h
+[v _regA `uc ~T0 @X0 1 e ]
+[; ;registers.h: 4: uint8_t regA;
+"5
+[v _regB `uc ~T0 @X0 1 e ]
+[; ;registers.h: 5: uint8_t regB;
+"13
+[v _regMX `ui ~T0 @X0 1 e ]
+[; ;registers.h: 13: uint16_t regMX;
+"17
+[v _regPC `ui ~T0 @X0 1 e ]
+[; ;registers.h: 17: uint16_t regPC;
+"19
+[v _regSP `uc ~T0 @X0 1 e ]
+[; ;registers.h: 19: uint8_t regSP;
+"21
+[v _regF `uc ~T0 @X0 1 e ]
+[; ;registers.h: 21: uint8_t regF;
+"44
+[v _immData_1 `uc ~T0 @X0 1 e ]
+[; ;registers.h: 44: uint8_t immData_1;
+"45
+[v _immData_2 `uc ~T0 @X0 1 e ]
+[; ;registers.h: 45: uint8_t immData_2;
+"47
+[v _virtualMemory `uc ~T0 @X0 -> 2048 `i e ]
+[; ;registers.h: 47: uint8_t virtualMemory[2048];
+"18 source/main.c
+[v _main `(v ~T0 @X0 1 ef ]
+"19
+{
+[; ;main.c: 18: void main(void)
+[; ;main.c: 19: {
+[e :U _main ]
+[f ]
+[; ;main.c: 20: initOscillator();
+"20
+[e ( _initOscillator ..  ]
+[; ;main.c: 21: initPorts();
+"21
+[e ( _initPorts ..  ]
+[; ;main.c: 22: dispSeg(1, '-'); dispSeg(2, '-');
+"22
+[e ( _dispSeg (2 , -> -> 1 `i `uc -> -> 45 `ui `uc ]
+[e ( _dispSeg (2 , -> -> 2 `i `uc -> -> 45 `ui `uc ]
+[; ;main.c: 24: initializeRegisters();
+"24
+[e ( _initializeRegisters ..  ]
+[; ;main.c: 26: while (1)
+"26
+[e :U 1183 ]
+[; ;main.c: 27: {
+"27
+{
+[; ;main.c: 28: if (regPC < 256 || regPC > 2047)
+"28
+[e $ ! || < _regPC -> -> 256 `i `ui > _regPC -> -> 2047 `i `ui 1185  ]
+[; ;main.c: 29: {
+"29
+{
+[; ;main.c: 30: regPC = 256;
+"30
+[e = _regPC -> -> 256 `i `ui ]
+[; ;main.c: 31: continue;
+"31
+[e $U 1182  ]
+"32
+}
+[e :U 1185 ]
+[; ;main.c: 32: }
+[; ;main.c: 37: processOpcode();
+"37
+[e ( _processOpcode ..  ]
+"38
+}
+[e :U 1182 ]
+"26
+[e $U 1183  ]
+[e :U 1184 ]
+[; ;main.c: 38: }
+[; ;main.c: 39: }
+"39
+[e :UE 1181 ]
+}
