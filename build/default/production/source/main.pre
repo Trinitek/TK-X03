@@ -10577,7 +10577,6 @@ void processOpcode(void);
 uint8_t regA;
 uint8_t regB;
 
-# 13
 uint16_t regMX;
 
 
@@ -10588,11 +10587,9 @@ uint8_t regSP;
 
 uint8_t regF;
 
-# 44
+# 24
 uint8_t immData_1;
 uint8_t immData_2;
-
-uint8_t virtualMemory[2048];
 
 # 18 "source/main.c"
 void main(void)

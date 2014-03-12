@@ -2,10 +2,11 @@
 
 #include <xc.h>                     // XC8 General Include File
 #include <stdint.h>                 // For uint8_t definition
-#include "registers.h"              // For register, opcode, and memory definitions
+#include "registers.h"              // For register and opcode definitions
 #include "ports.c"                  // For virtual port number definitions
 #include "serial.h"                 // For UART port and register definitions
 #include "segment.h"                // For segment display handling
+#include "virtualMemory.h"          // For memory definition
 
 /*uint16_t regMX_toPointer()
 {
@@ -176,10 +177,14 @@ void initializeRegisters(void)
 {
 	regA = 0;
 	regB = 0;
-        pointerTo_regMX(0);
+        //pointerTo_regMX(0);
         regPC = 256;					// points to reset vector, bottom of ROM
 	regSP = 0;					// points to bottom of stack
-	regFbits.CF = regFbits.GF = regFbits.LF = regFbits.OF = regFbits.ZF = 0;
+	setFbits(CF, 0);
+        setFbits(GF, 0);
+        setFbits(LF, 0);
+        setFbits(OF, 0);
+        setFbits(ZF, 0);
 }
 
 /**
@@ -235,9 +240,9 @@ void setPortData(uint8_t portNumber, uint8_t outputData)
 void update_immData(void)
 {
     // loop immData around to readOnly section if arg1 and/or arg2 points outside array boundaries
-    if (regPC + 1 = memScratchPad_e + 1) immData_1 = memReadOnly;
-    if (regPC + 2 = memScratchPad_e + 1) immData_2 = memReadOnly;
-    if (regPC + 2 = memScratchPad_e + 2) immData_2 = memReadOnly + 1;
+    if (regPC + 1 == memScratchPad_e + 1) immData_1 = memReadOnly;
+    if (regPC + 2 == memScratchPad_e + 1) immData_2 = memReadOnly;
+    if (regPC + 2 == memScratchPad_e + 2) immData_2 = memReadOnly + 1;
 
     // immData.arg1 should never be farther away from the end of memory than memScratchPad_e + 1
 }
@@ -252,8 +257,8 @@ void processOpcode(void)
     update_immData();
     
     // initialize temporary variables
-    uint8_t regA_temp8;
-    uint16_t regA_temp16;
+    uint8_t regA_temp8 = regA;
+    uint16_t regA_temp16 = (uint16_t) regA;
     uint8_t carriedBit;
 
     // decode opcode and execute the associated command
@@ -475,7 +480,6 @@ void processOpcode(void)
         	
         case JMPI:					// jump to imm16
             regPC = immData_toPointer();
-
             regPC += 2;
             break;
         	
@@ -484,8 +488,7 @@ void processOpcode(void)
             break;
         	
         case JEI:					// jump to imm16 if equal
-            if (getFbits(ZF) == 1) regPC = immData_toPointer()
-
+            if (getFbits(ZF) == 1) regPC = immData_toPointer();
             regPC += 2;
             break;
         	
@@ -494,8 +497,7 @@ void processOpcode(void)
             break;
         	
         case JNEI:					// jump to imm16 if not equal
-            if (getFbits(ZF) == 0) regPC = immData_toPointer()
-
+            if (getFbits(ZF) == 0) regPC = immData_toPointer();
             regPC += 2;
             break;
         	
@@ -509,20 +511,20 @@ void processOpcode(void)
             break;
         	
         case JLMX:					// jump to MX if less than
-            if (getFbits.LF == 1) regPC = regMX;
+            if (getFbits(LF) == 1) regPC = regMX;
             break;
         	
         case JLI:					// jump to imm16 if less than
-            if (getFbits.LF == 1) regPC = immData_toPointer();
+            if (getFbits(LF) == 1) regPC = immData_toPointer();
             regPC += 2;
             break;
         	
         case JCMX:					// jump to MX if CF set
-            if (getFbits.CF == 1) regPC = regMX;
+            if (getFbits(CF) == 1) regPC = regMX;
             break;
         	
         case JCI:					// jump to imm16 if CF set
-            if (getFbits.CF == 1) regPC = immData_toPointer();
+            if (getFbits(CF) == 1) regPC = immData_toPointer();
             regPC += 2;
             break;
         	
@@ -532,7 +534,6 @@ void processOpcode(void)
         	
         case JNCI:					// jump to imm16 if CF not set
             if (getFbits(CF) == 0) regPC = immData_toPointer();
-
             regPC += 2;
             break;
         	
@@ -547,7 +548,7 @@ void processOpcode(void)
             //memoryMap.stack[regSP] = regPC;
             virtualMemory[regSP] = regPC;
             regSP += 2;
-            regPC = immData_toPointer;
+            regPC = immData_toPointer();
 
             regPC += 2;
             break;
@@ -639,67 +640,61 @@ void processOpcode(void)
         	
         case ADDA:                                      // a = a + b
             // check for potential overflow and set corresponding flag
-            regA_temp16 += regB;
+            regA_temp16 += (uint16_t) regB;
             if (regA_temp16 > 255) setFbits(OF, 1);
             else setFbits(OF, 0);
-
             regA += regB;
             break;
         	
         case ADDI:					// a = a + imm8
            // check for potential overflow and set corresponding flag
-           regA_temp16 += immData_1;
+           regA_temp16 += (uint16_t) immData_1;
            if (regA_temp16 > 255) setFbits(OF, 1);
            else setFbits(OF, 0);
 
-            regA += immData_1;
+           regA += immData_1;
 
-            regPC++;
-            break;
+           regPC++;
+           break;
         	
         case SUBA:					// a = a - b
-            // check for potential overflow and set corresponding flag
-            regA_temp16 = regA;
-            regA_temp16 << 8;
-            regA_temp16 += 255;
-            regA_temp16 -= regB;
-            if (regA_temp16 < 255) setFbits(OF, 1);
-            else setFbits(OF, 0);
-
-            regA -= regB;
-            break;
+           // check for potential overflow and set corresponding flag
+           regA_temp16 = regA;
+           regA_temp16 << 8;
+           regA_temp16 += 255;
+           regA_temp16 -= regB;
+           if (regA_temp16 < 255) setFbits(OF, 1);
+           else setFbits(OF, 0);
+           regA -= regB;
+           break;
         	
         case SUBI:					// a = a - imm8
-            // check for potential overflow and set corresponding flag
-            regA_temp16 = regA;
-            regA_temp16 << 8;
-            regA_temp16 += 255;
-            regA_temp16 -= immData_1;
-            if (regA_temp16 < 255) setFbits(OF, 1);
-            else setFbits(OF, 0);
-
-            regA -= immData_1;
-
-            regPC++;
-            break;
+           // check for potential overflow and set corresponding flag
+           regA_temp16 = regA;
+           regA_temp16 << 8;
+           regA_temp16 += 255;
+           regA_temp16 -= immData_1;
+           if (regA_temp16 < 255) setFbits(OF, 1);
+           else setFbits(OF, 0);
+           regA -= immData_1;
+           regPC++;
+           break;
         	
         case INC:					// inc a
-            // check for potential overflow and set corresponding flag
-            regA_temp16 = regA + 1;
-            if (regA_temp16 > 255) setFbits(OF, 1);
-            else setFbits(OF, 0);
-
-            regA++;
-            break;
+           // check for potential overflow and set corresponding flag
+           regA_temp16 = regA + 1;
+           if (regA_temp16 > 255) setFbits(OF, 1);
+           else setFbits(OF, 0);
+           regA++;
+           break;
         	
         case DEC:					// dec a
-            // check for potential overflow and set corresponding flag
-            regA_temp8 = regA - 1;
-            if (regA_temp8 == 255) setFbits(OF, 1);
-            else setFbits(OF, 0);
-
-            regA--;
-            break;
+           // check for potential overflow and set corresponding flag
+           regA_temp8 = regA - 1;
+           if (regA_temp8 == 255) setFbits(OF, 1);
+           else setFbits(OF, 0);
+           regA--;
+           break;
     }
 
     // increment regPC to point to next opcode; opcodes that need additional data increment PC accordingly

@@ -1,0 +1,560 @@
+[p LITE_MODE AUTOSTATIC LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F46K22 ]
+[d frameptr 4065 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\abdiv.c
+[v ___abdiv __abdiv `(c  1 e 1 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\abmod.c
+[v ___abmod __abmod `(c  1 e 1 0 ]
+"31 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\abtofl.c
+[v ___abtofl __abtofl `(d  1 e 3 0 ]
+"33 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\abtoft.c
+[v ___abtoft __abtoft `(f  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"36 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\altofl.c
+[v ___altofl __altofl `(d  1 e 3 0 ]
+"42 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\altoft.c
+[v ___altoft __altoft `(f  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\atdiv.c
+[v ___atdiv __atdiv `(m  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\atmod.c
+[v ___atmod __atmod `(m  1 e 3 0 ]
+"37 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\attofl.c
+[v ___attofl __attofl `(d  1 e 3 0 ]
+"37 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\attoft.c
+[v ___attoft __attoft `(f  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"31 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\awtofl.c
+[v ___awtofl __awtofl `(d  1 e 3 0 ]
+"32 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\awtoft.c
+[v ___awtoft __awtoft `(f  1 e 3 0 ]
+"2 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\bmul.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
+"63 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\double.c
+[v ___flpack __flpack `(d  1 e 3 0 ]
+"88 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\fladd.c
+[v ___fladd __fladd `(d  1 e 3 0 ]
+"49 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\fldiv.c
+[v ___fldiv __fldiv `(d  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"50 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\flmul.c
+[v ___flmul __flmul `(d  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\flneg.c
+[v ___flneg __flneg `(d  1 e 3 0 ]
+"62 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\float.c
+[v ___ftpack __ftpack `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\flsub.c
+[v ___flsub __flsub `(d  1 e 3 0 ]
+"43 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"86 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 3 0 ]
+"49 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\ftge.c
+[v ___ftge __ftge `(b  1 e 0 0 ]
+"51 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 3 0 ]
+"15 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\ftneg.c
+[v ___ftneg __ftneg `(f  1 e 3 0 ]
+"20 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 3 0 ]
+"44 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\fttol.c
+[v ___fttol __fttol `(l  1 e 4 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lbdiv.c
+[v ___lbdiv __lbdiv `(uc  1 e 1 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lbmod.c
+[v ___lbmod __lbmod `(uc  1 e 1 0 ]
+"27 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lbtofl.c
+[v ___lbtofl __lbtofl `(d  1 e 3 0 ]
+"27 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lbtoft.c
+[v ___lbtoft __lbtoft `(f  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"30 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lltofl.c
+[v ___lltofl __lltofl `(d  1 e 3 0 ]
+"35 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lltoft.c
+[v ___lltoft __lltoft `(f  1 e 3 0 ]
+"2 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lmul.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\ltdiv.c
+[v ___ltdiv __ltdiv `(um  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\ltmod.c
+[v ___ltmod __ltmod `(um  1 e 3 0 ]
+"30 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lttofl.c
+[v ___lttofl __lttofl `(d  1 e 3 0 ]
+"30 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lttoft.c
+[v ___lttoft __lttoft `(f  1 e 3 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"28 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwtofl.c
+[v ___lwtofl __lwtofl `(d  1 e 3 0 ]
+"28 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\lwtoft.c
+[v ___lwtoft __lwtoft `(f  1 e 3 0 ]
+"2 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\tmul.c
+[v ___tmul __tmul `(um  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\wmul.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\asfladd.c
+[v ___asfladd __asfladd `(d  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\asfldiv.c
+[v ___asfldiv __asfldiv `(d  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\asflmul.c
+[v ___asflmul __asflmul `(d  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\asflsub.c
+[v ___asflsub __asflsub `(d  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\asftadd.c
+[v ___asftadd __asftadd `(f  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\asftdiv.c
+[v ___asftdiv __asftdiv `(f  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\asftmul.c
+[v ___asftmul __asftmul `(f  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\asftsub.c
+[v ___asftsub __asftsub `(f  1 e 3 0 ]
+"4 C:\Program Files (x86)\Microchip\xc8\v1.30\sources\pic18\aslmul.c
+[v ___aslmul __aslmul `(ul  1 e 4 0 ]
+"38 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c
+[v _getMXbits getMXbits `(uc  1 e 1 0 ]
+"55
+[v _setMXbits setMXbits `(v  1 e 0 0 ]
+"83
+[v _getFbits getFbits `(uc  1 e 1 0 ]
+"123
+[v _setFbits setFbits `(v  1 e 0 0 ]
+"168
+[v _immData_toPointer immData_toPointer `(ui  1 e 2 0 ]
+"176
+[v _initializeRegisters initializeRegisters `(v  1 e 0 0 ]
+"196
+[v _getPortData getPortData `(uc  1 e 1 0 ]
+"212
+[v _setPortData setPortData `(v  1 e 0 0 ]
+"240
+[v _update_immData update_immData `(v  1 e 0 0 ]
+"254
+[v _processOpcode processOpcode `(v  1 e 0 0 ]
+"18 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c
+[v _main main `(v  1 e 0 0 ]
+"13 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c
+[v _dispSeg dispSeg `(v  1 e 0 0 ]
+"180
+[v _cycleSegDisplays cycleSegDisplays `(v  1 e 0 0 ]
+"21 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c
+[v _enableSerial enableSerial `(v  1 e 0 0 ]
+"9 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c
+[v _initOscillator initOscillator `(v  1 e 0 0 ]
+"26
+[v _initPorts initPorts `(v  1 e 0 0 ]
+"50
+[v _wait_ms wait_ms `(v  1 e 0 0 ]
+"63
+[v _hexToChar hexToChar `(uc  1 e 1 0 ]
+"187 C:\Program Files (x86)\Microchip\xc8\v1.30\include\pic18f46k22.h
+[v _ANSELD ANSELD `VEuc  1 e 1 @3899 ]
+[s S608 . 1 `uc 1 ABDEN 1 0 :1:0 
+`uc 1 WUE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BRG16 1 0 :1:3 
+`uc 1 CKTXP 1 0 :1:4 
+`uc 1 DTRXP 1 0 :1:5 
+`uc 1 RCIDL 1 0 :1:6 
+`uc 1 ABDOVF 1 0 :1:7 
+]
+"4397
+[s S617 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 SCKP 1 0 :1:4 
+]
+[s S620 . 1 `uc 1 ABDEN2 1 0 :1:0 
+]
+[s S622 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 ABDOVF2 1 0 :1:7 
+]
+[s S625 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 BRG162 1 0 :1:3 
+]
+[s S628 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 DTRXP2 1 0 :1:5 
+]
+[s S631 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RCIDL2 1 0 :1:6 
+]
+[s S634 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RCMT2 1 0 :1:6 
+]
+[s S637 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 RXDTP2 1 0 :1:5 
+]
+[s S640 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 SCKP2 1 0 :1:4 
+]
+[s S643 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TXCKP2 1 0 :1:4 
+]
+[s S646 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 WUE2 1 0 :1:1 
+]
+[u S649 . 1 `S608 1 . 1 0 `S617 1 . 1 0 `S620 1 . 1 0 `S622 1 . 1 0 `S625 1 . 1 0 `S628 1 . 1 0 `S631 1 . 1 0 `S634 1 . 1 0 `S637 1 . 1 0 `S640 1 . 1 0 `S643 1 . 1 0 `S646 1 . 1 0 ]
+[v _BAUDCON2bits BAUDCON2bits `VES649  1 e 1 @3952 ]
+[s S704 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"4686
+[s S713 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ADEN 1 0 :1:3 
+]
+[s S716 . 1 `uc 1 RX9D2 1 0 :1:0 
+`uc 1 OERR2 1 0 :1:1 
+`uc 1 FERR2 1 0 :1:2 
+`uc 1 ADDEN2 1 0 :1:3 
+`uc 1 CREN2 1 0 :1:4 
+`uc 1 SREN2 1 0 :1:5 
+`uc 1 RX92 1 0 :1:6 
+`uc 1 SPEN2 1 0 :1:7 
+]
+[s S725 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC8_92 1 0 :1:6 
+]
+[s S728 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 RC92 1 0 :1:6 
+]
+[s S731 . 1 `uc 1 RCD82 1 0 :1:0 
+]
+[u S733 . 1 `S704 1 . 1 0 `S713 1 . 1 0 `S716 1 . 1 0 `S725 1 . 1 0 `S728 1 . 1 0 `S731 1 . 1 0 ]
+[v _RCSTA2bits RCSTA2bits `VES733  1 e 1 @3953 ]
+[s S556 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"4969
+[s S565 . 1 `uc 1 TX9D2 1 0 :1:0 
+`uc 1 TRMT2 1 0 :1:1 
+`uc 1 BRGH2 1 0 :1:2 
+`uc 1 SENDB2 1 0 :1:3 
+`uc 1 SYNC2 1 0 :1:4 
+`uc 1 TXEN2 1 0 :1:5 
+`uc 1 TX92 1 0 :1:6 
+`uc 1 CSRC2 1 0 :1:7 
+]
+[s S574 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 TX8_92 1 0 :1:6 
+]
+[s S577 . 1 `uc 1 TXD82 1 0 :1:0 
+]
+[u S579 . 1 `S556 1 . 1 0 `S565 1 . 1 0 `S574 1 . 1 0 `S577 1 . 1 0 ]
+[v _TXSTA2bits TXSTA2bits `VES579  1 e 1 @3954 ]
+"5185
+[v _TXREG2 TXREG2 `VEuc  1 e 1 @3955 ]
+"5222
+[v _RCREG2 RCREG2 `VEuc  1 e 1 @3956 ]
+"5259
+[v _SPBRG2 SPBRG2 `VEuc  1 e 1 @3957 ]
+"5296
+[v _SPBRGH2 SPBRGH2 `VEuc  1 e 1 @3958 ]
+"7771
+[v _LATA LATA `VEuc  1 e 1 @3977 ]
+[s S52 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 LATA3 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+`uc 1 LATA6 1 0 :1:6 
+`uc 1 LATA7 1 0 :1:7 
+]
+"7819
+[s S61 . 1 `uc 1 LA0 1 0 :1:0 
+]
+[s S63 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 LA1 1 0 :1:1 
+]
+[s S66 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LA2 1 0 :1:2 
+]
+[s S69 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 LA3 1 0 :1:3 
+]
+[s S72 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 LA4 1 0 :1:4 
+]
+[s S75 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LA5 1 0 :1:5 
+]
+[s S78 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 LA6 1 0 :1:6 
+]
+[s S81 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 LA7 1 0 :1:7 
+]
+[u S84 . 1 `S52 1 . 1 0 `S61 1 . 1 0 `S63 1 . 1 0 `S66 1 . 1 0 `S69 1 . 1 0 `S72 1 . 1 0 `S75 1 . 1 0 `S78 1 . 1 0 `S81 1 . 1 0 ]
+[v _LATAbits LATAbits `VES84  1 e 1 @3977 ]
+"8035
+[v _LATC LATC `VEuc  1 e 1 @3979 ]
+"8083
+[v _LATCbits LATCbits `VES84  1 e 1 @3979 ]
+"8167
+[v _LATD LATD `VEuc  1 e 1 @3980 ]
+"8215
+[v _LATDbits LATDbits `VES84  1 e 1 @3980 ]
+"8299
+[v _LATE LATE `VEuc  1 e 1 @3981 ]
+[s S127 . 1 `uc 1 LATE0 1 0 :1:0 
+`uc 1 LATE1 1 0 :1:1 
+`uc 1 LATE2 1 0 :1:2 
+]
+"8342
+[s S131 . 1 `uc 1 LE0 1 0 :1:0 
+]
+[s S133 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 LE1 1 0 :1:1 
+]
+[s S136 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 LE2 1 0 :1:2 
+]
+[s S139 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 LE3 1 0 :1:3 
+]
+[s S142 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 LE4 1 0 :1:4 
+]
+[s S145 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 LE5 1 0 :1:5 
+]
+[s S148 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 LE6 1 0 :1:6 
+]
+[s S151 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 LE7 1 0 :1:7 
+]
+[u S154 . 1 `S127 1 . 1 0 `S131 1 . 1 0 `S133 1 . 1 0 `S136 1 . 1 0 `S139 1 . 1 0 `S142 1 . 1 0 `S145 1 . 1 0 `S148 1 . 1 0 `S151 1 . 1 0 ]
+[v _LATEbits LATEbits `VES154  1 e 1 @3981 ]
+"8401
+[v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"8843
+[v _TRISC TRISC `VEuc  1 e 1 @3988 ]
+[s S359 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"9096
+[s S368 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+[u S377 . 1 `S359 1 . 1 0 `S368 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES377  1 e 1 @3989 ]
+"9285
+[v _TRISE TRISE `VEuc  1 e 1 @3990 ]
+[s S334 . 1 `uc 1 LFIOFS 1 0 :1:0 
+`uc 1 MFIOFS 1 0 :1:1 
+`uc 1 PRISD 1 0 :1:2 
+`uc 1 SOSCGO 1 0 :1:3 
+`uc 1 MFIOSEL 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 SOSCRUN 1 0 :1:6 
+`uc 1 PLLRDY 1 0 :1:7 
+]
+"16738
+[u S343 . 1 `S334 1 . 1 0 ]
+[v _OSCCON2bits OSCCON2bits `VES343  1 e 1 @4050 ]
+[s S302 . 1 `uc 1 SCS 1 0 :2:0 
+`uc 1 HFIOFS 1 0 :1:2 
+`uc 1 OSTS 1 0 :1:3 
+`uc 1 IRCF 1 0 :3:4 
+`uc 1 IDLEN 1 0 :1:7 
+]
+"16800
+[s S308 . 1 `uc 1 SCS0 1 0 :1:0 
+`uc 1 SCS1 1 0 :1:1 
+`uc 1 IOFS 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 IRCF0 1 0 :1:4 
+`uc 1 IRCF1 1 0 :1:5 
+`uc 1 IRCF2 1 0 :1:6 
+]
+[u S316 . 1 `S302 1 . 1 0 `S308 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES316  1 e 1 @4051 ]
+"4 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/registers.h
+[v _regA regA `uc  1 e 1 0 ]
+"5
+[v _regB regB `uc  1 e 1 0 ]
+"7
+[v _regMX regMX `ui  1 e 2 0 ]
+"11
+[v _regPC regPC `ui  1 e 2 0 ]
+"13
+[v _regSP regSP `uc  1 e 1 0 ]
+"15
+[v _regF regF `uc  1 e 1 0 ]
+"24
+[v _immData_1 immData_1 `uc  1 e 1 0 ]
+"25
+[v _immData_2 immData_2 `uc  1 e 1 0 ]
+"5 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/virtualMemory.h
+[v _virtualMemory_size virtualMemory_size `Cl  1 e 4 0 ]
+"6
+[v _virtualMemory virtualMemory `[2048]uc  1 e 2048 0 ]
+"18 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c
+[v _main main `(v  1 e 0 0 ]
+{
+"39
+} 0
+"254 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c
+[v _processOpcode processOpcode `(v  1 e 0 0 ]
+{
+"261
+[v processOpcode@regA_temp16 regA_temp16 `ui  1 a 2 11 ]
+"260
+[v processOpcode@regA_temp8 regA_temp8 `uc  1 a 1 10 ]
+"262
+[v processOpcode@carriedBit carriedBit `uc  1 a 1 9 ]
+"702
+} 0
+"240
+[v _update_immData update_immData `(v  1 e 0 0 ]
+{
+"248
+} 0
+"212
+[v _setPortData setPortData `(v  1 e 0 0 ]
+{
+[v setPortData@portNumber portNumber `uc  1 a 1 wreg ]
+"214
+[v setPortData@outputData_temp16 outputData_temp16 `ui  1 a 2 6 ]
+"212
+[v setPortData@portNumber portNumber `uc  1 a 1 wreg ]
+[v setPortData@outputData outputData `uc  1 p 1 4 ]
+[v setPortData@portNumber portNumber `uc  1 a 1 5 ]
+"238
+} 0
+"21 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c
+[v _enableSerial enableSerial `(v  1 e 0 0 ]
+{
+[v enableSerial@baudRate baudRate `ui  1 p 2 0 ]
+"60
+} 0
+"13 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c
+[v _dispSeg dispSeg `(v  1 e 0 0 ]
+{
+[v dispSeg@segment segment `uc  1 a 1 wreg ]
+[v dispSeg@segment segment `uc  1 a 1 wreg ]
+[v dispSeg@letter letter `uc  1 p 1 0 ]
+[v dispSeg@segment segment `uc  1 a 1 1 ]
+"173
+} 0
+"55 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c
+[v _setMXbits setMXbits `(v  1 e 0 0 ]
+{
+[v setMXbits@subRegister subRegister `uc  1 a 1 wreg ]
+"58
+[v setMXbits@regMX_temp regMX_temp `ui  1 a 2 3 ]
+"57
+[v setMXbits@value_temp value_temp `ui  1 a 2 1 ]
+"55
+[v setMXbits@subRegister subRegister `uc  1 a 1 wreg ]
+[v setMXbits@value value `uc  1 p 1 0 ]
+"57
+[v setMXbits@subRegister subRegister `uc  1 a 1 5 ]
+"75
+} 0
+"168
+[v _immData_toPointer immData_toPointer `(ui  1 e 2 0 ]
+{
+"170
+[v immData_toPointer@pointer pointer `ui  1 a 2 2 ]
+"174
+} 0
+"196
+[v _getPortData getPortData `(uc  1 e 1 0 ]
+{
+[v getPortData@portNumber portNumber `uc  1 a 1 wreg ]
+[v getPortData@portNumber portNumber `uc  1 a 1 wreg ]
+[v getPortData@portNumber portNumber `uc  1 a 1 0 ]
+"205
+} 0
+"38
+[v _getMXbits getMXbits `(uc  1 e 1 0 ]
+{
+[v getMXbits@subRegister subRegister `uc  1 a 1 wreg ]
+"40
+[v getMXbits@regMX_temp regMX_temp `ui  1 a 2 0 ]
+"38
+[v getMXbits@subRegister subRegister `uc  1 a 1 wreg ]
+"40
+[v getMXbits@subRegister subRegister `uc  1 a 1 2 ]
+"48
+} 0
+"83
+[v _getFbits getFbits `(uc  1 e 1 0 ]
+{
+[v getFbits@subRegister subRegister `uc  1 a 1 wreg ]
+"85
+[v getFbits@regF_temp regF_temp `uc  1 a 1 1 ]
+"83
+[v getFbits@subRegister subRegister `uc  1 a 1 wreg ]
+"85
+[v getFbits@subRegister subRegister `uc  1 a 1 0 ]
+"116
+} 0
+"176
+[v _initializeRegisters initializeRegisters `(v  1 e 0 0 ]
+{
+"188
+} 0
+"123
+[v _setFbits setFbits `(v  1 e 0 0 ]
+{
+[v setFbits@subRegister subRegister `uc  1 a 1 wreg ]
+"126
+[v setFbits@regF_temp2 regF_temp2 `uc  1 a 1 4 ]
+"125
+[v setFbits@regF_temp1 regF_temp1 `uc  1 a 1 3 ]
+"123
+[v setFbits@subRegister subRegister `uc  1 a 1 wreg ]
+[v setFbits@value value `uc  1 p 1 0 ]
+"125
+[v setFbits@subRegister subRegister `uc  1 a 1 2 ]
+"166
+} 0
+"26 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c
+[v _initPorts initPorts `(v  1 e 0 0 ]
+{
+"43
+} 0
+"9
+[v _initOscillator initOscillator `(v  1 e 0 0 ]
+{
+"20
+} 0

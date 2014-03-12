@@ -1,15 +1,114 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[p mainexit ]
-"3 source/system.h
-[v _initOscillator `(v ~T0 @X0 0 ef ]
-"4
-[v _initPorts `(v ~T0 @X0 0 ef ]
-"3 source/segment.h
-[v _dispSeg `(v ~T0 @X0 0 ef2`uc`uc ]
-"17 source/emulator.h
-[v _initializeRegisters `(v ~T0 @X0 0 ef ]
-"19
-[v _processOpcode `(v ~T0 @X0 0 ef ]
+[s S499 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S499 . LATD0 LATD1 LATD2 LATD3 LATD4 LATD5 LATD6 LATD7 ]
+[s S500 :1 `uc 1 ]
+[n S500 . LD0 ]
+[s S501 :1 `uc 1 :1 `uc 1 ]
+[n S501 . . LD1 ]
+[s S502 :2 `uc 1 :1 `uc 1 ]
+[n S502 . . LD2 ]
+[s S503 :3 `uc 1 :1 `uc 1 ]
+[n S503 . . LD3 ]
+[s S504 :4 `uc 1 :1 `uc 1 ]
+[n S504 . . LD4 ]
+[s S505 :5 `uc 1 :1 `uc 1 ]
+[n S505 . . LD5 ]
+[s S506 :6 `uc 1 :1 `uc 1 ]
+[n S506 . . LD6 ]
+[s S507 :7 `uc 1 :1 `uc 1 ]
+[n S507 . . LD7 ]
+[u S498 `S499 1 `S500 1 `S501 1 `S502 1 `S503 1 `S504 1 `S505 1 `S506 1 `S507 1 ]
+[n S498 . . . . . . . . . . ]
+"8215 C:\Program Files (x86)\Microchip\xc8\v1.30\include\pic18f46k22.h
+[v _LATDbits `VS498 ~T0 @X0 0 e@3980 ]
+"5259
+[v _SPBRG2 `Vuc ~T0 @X0 0 e@3957 ]
+"5296
+[v _SPBRGH2 `Vuc ~T0 @X0 0 e@3958 ]
+[s S296 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S296 . TX9D TRMT BRGH SENDB SYNC TXEN TX9 CSRC ]
+[s S297 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S297 . TX9D2 TRMT2 BRGH2 SENDB2 SYNC2 TXEN2 TX92 CSRC2 ]
+[s S298 :6 `uc 1 :1 `uc 1 ]
+[n S298 . . TX8_92 ]
+[s S299 :1 `uc 1 ]
+[n S299 . TXD82 ]
+[u S295 `S296 1 `S297 1 `S298 1 `S299 1 ]
+[n S295 . . . . . ]
+"4969
+[v _TXSTA2bits `VS295 ~T0 @X0 0 e@3954 ]
+[s S256 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S256 . ABDEN WUE . BRG16 CKTXP DTRXP RCIDL ABDOVF ]
+[s S257 :4 `uc 1 :1 `uc 1 ]
+[n S257 . . SCKP ]
+[s S258 :1 `uc 1 ]
+[n S258 . ABDEN2 ]
+[s S259 :7 `uc 1 :1 `uc 1 ]
+[n S259 . . ABDOVF2 ]
+[s S260 :3 `uc 1 :1 `uc 1 ]
+[n S260 . . BRG162 ]
+[s S261 :5 `uc 1 :1 `uc 1 ]
+[n S261 . . DTRXP2 ]
+[s S262 :6 `uc 1 :1 `uc 1 ]
+[n S262 . . RCIDL2 ]
+[s S263 :6 `uc 1 :1 `uc 1 ]
+[n S263 . . RCMT2 ]
+[s S264 :5 `uc 1 :1 `uc 1 ]
+[n S264 . . RXDTP2 ]
+[s S265 :4 `uc 1 :1 `uc 1 ]
+[n S265 . . SCKP2 ]
+[s S266 :4 `uc 1 :1 `uc 1 ]
+[n S266 . . TXCKP2 ]
+[s S267 :1 `uc 1 :1 `uc 1 ]
+[n S267 . . WUE2 ]
+[u S255 `S256 1 `S257 1 `S258 1 `S259 1 `S260 1 `S261 1 `S262 1 `S263 1 `S264 1 `S265 1 `S266 1 `S267 1 ]
+[n S255 . . . . . . . . . . . . . ]
+"4397
+[v _BAUDCON2bits `VS255 ~T0 @X0 0 e@3952 ]
+[s S282 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S282 . RX9D OERR FERR ADDEN CREN SREN RX9 SPEN ]
+[s S283 :3 `uc 1 :1 `uc 1 ]
+[n S283 . . ADEN ]
+[s S284 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S284 . RX9D2 OERR2 FERR2 ADDEN2 CREN2 SREN2 RX92 SPEN2 ]
+[s S285 :6 `uc 1 :1 `uc 1 ]
+[n S285 . . RC8_92 ]
+[s S286 :6 `uc 1 :1 `uc 1 ]
+[n S286 . . RC92 ]
+[s S287 :1 `uc 1 ]
+[n S287 . RCD82 ]
+[u S281 `S282 1 `S283 1 `S284 1 `S285 1 `S286 1 `S287 1 ]
+[n S281 . . . . . . . ]
+"4686
+[v _RCSTA2bits `VS281 ~T0 @X0 0 e@3953 ]
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;htc.h: 22: extern void __builtin_software_breakpoint(void);
 [; ;pic18f46k22.h: 44: extern volatile unsigned char ANSELA @ 0xF38;
 "46 C:\Program Files (x86)\Microchip\xc8\v1.30\include\pic18f46k22.h
@@ -8202,35 +8301,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 147: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 149: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 151: extern __nonreentrant void _delay3(unsigned char);
-[; ;stdint.h: 13: typedef signed char int8_t;
-[; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef signed short long int int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 43: typedef unsigned char uint8_t;
-[; ;stdint.h: 49: typedef unsigned int uint16_t;
-[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
-[; ;stdint.h: 63: typedef unsigned long int uint32_t;
-[; ;stdint.h: 71: typedef signed char int_least8_t;
-[; ;stdint.h: 78: typedef signed int int_least16_t;
-[; ;stdint.h: 90: typedef signed short long int int_least24_t;
-[; ;stdint.h: 98: typedef signed long int int_least32_t;
-[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
-[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 137: typedef signed char int_fast8_t;
-[; ;stdint.h: 144: typedef signed int int_fast16_t;
-[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
-[; ;stdint.h: 164: typedef signed long int int_fast32_t;
-[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
-[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 200: typedef int32_t intmax_t;
-[; ;stdint.h: 205: typedef uint32_t uintmax_t;
-[; ;stdint.h: 210: typedef int16_t intptr_t;
-[; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;stdbool.h: 12: typedef unsigned char bool;
 "12 source/configuration_bits.c
 [p x FOSC=INTIO67 ]
 "13
@@ -8307,101 +8377,121 @@ Version 3.2 HI-TECH Software Intermediate Code
 [p x EBTR3=OFF ]
 "69
 [p x EBTRB=OFF ]
-[; ;system.h: 3: void initOscillator(void);
-[; ;system.h: 4: void initPorts(void);
-[; ;system.h: 5: void wait_ms(uint16_t);
-[; ;system.h: 6: uint8_t hexToChar(uint8_t);
-[; ;segment.h: 3: void dispSeg(uint8_t, uint8_t);
-[; ;segment.h: 4: void cycleSegDisplays(uint16_t);
 [; ;serial.h: 3: void enableSerial(uint16_t);
-[; ;emulator.h: 7: uint8_t getMXbits(uint8_t);
-[; ;emulator.h: 8: void setMXbits(uint8_t, uint8_t);
-[; ;emulator.h: 9: uint8_t getFbits(uint8_t);
-[; ;emulator.h: 10: void setFbits(uint8_t, uint8_t);
-[; ;emulator.h: 12: uint16_t immData_toPointer(void);
-[; ;emulator.h: 14: uint8_t getPortData(uint8_t);
-[; ;emulator.h: 15: void setPortData(uint8_t, uint8_t);
-[; ;emulator.h: 17: void initializeRegisters(void);
-[; ;emulator.h: 18: void update_immData(void);
-[; ;emulator.h: 19: void processOpcode(void);
-"4 source/registers.h
-[v _regA `uc ~T0 @X0 1 e ]
-[; ;registers.h: 4: uint8_t regA;
-"5
-[v _regB `uc ~T0 @X0 1 e ]
-[; ;registers.h: 5: uint8_t regB;
-"7
-[v _regMX `ui ~T0 @X0 1 e ]
-[; ;registers.h: 7: uint16_t regMX;
-"11
-[v _regPC `ui ~T0 @X0 1 e ]
-[; ;registers.h: 11: uint16_t regPC;
-"13
-[v _regSP `uc ~T0 @X0 1 e ]
-[; ;registers.h: 13: uint8_t regSP;
-"15
-[v _regF `uc ~T0 @X0 1 e ]
-[; ;registers.h: 15: uint8_t regF;
-"24
-[v _immData_1 `uc ~T0 @X0 1 e ]
-[; ;registers.h: 24: uint8_t immData_1;
-"25
-[v _immData_2 `uc ~T0 @X0 1 e ]
-[; ;registers.h: 25: uint8_t immData_2;
-"18 source/main.c
-[v _main `(v ~T0 @X0 1 ef ]
-"19
-{
-[; ;main.c: 18: void main(void)
-[; ;main.c: 19: {
-[e :U _main ]
-[f ]
-[; ;main.c: 20: initOscillator();
-"20
-[e ( _initOscillator ..  ]
-[; ;main.c: 21: initPorts();
-"21
-[e ( _initPorts ..  ]
-[; ;main.c: 22: dispSeg(1, '-'); dispSeg(2, '-');
+"21 source/serial.c
+[v _enableSerial `(v ~T0 @X0 1 ef1`ui ]
 "22
-[e ( _dispSeg (2 , -> -> 1 `i `uc -> -> 45 `ui `uc ]
-[e ( _dispSeg (2 , -> -> 2 `i `uc -> -> 45 `ui `uc ]
-[; ;main.c: 24: initializeRegisters();
-"24
-[e ( _initializeRegisters ..  ]
-[; ;main.c: 26: while (1)
-"26
-[e :U 1183 ]
-[; ;main.c: 27: {
-"27
 {
-[; ;main.c: 28: if (regPC < 256 || regPC > 2047)
-"28
-[e $ ! || < _regPC -> -> 256 `i `ui > _regPC -> -> 2047 `i `ui 1185  ]
-[; ;main.c: 29: {
-"29
-{
-[; ;main.c: 30: regPC = 256;
-"30
-[e = _regPC -> -> 256 `i `ui ]
-[; ;main.c: 31: continue;
-"31
-[e $U 1182  ]
-"32
-}
-[e :U 1185 ]
-[; ;main.c: 32: }
-[; ;main.c: 37: processOpcode();
-"37
-[e ( _processOpcode ..  ]
-"38
-}
-[e :U 1182 ]
+[; ;serial.c: 21: void enableSerial(uint16_t baudRate)
+[; ;serial.c: 22: {
+[e :U _enableSerial ]
+"21
+[v _baudRate `ui ~T0 @X0 1 r1 ]
+"22
+[f ]
+[; ;serial.c: 23: LATDbits.LD3 = 1;
+"23
+[e = . . _LATDbits 4 1 -> -> 1 `i `uc ]
+[; ;serial.c: 26: switch (baudRate) {
 "26
 [e $U 1183  ]
+{
+[; ;serial.c: 27: case 1200:
+"27
 [e :U 1184 ]
-[; ;main.c: 38: }
-[; ;main.c: 39: }
+[; ;serial.c: 28: SPBRG2 = 207;
+"28
+[e = _SPBRG2 -> -> 207 `i `uc ]
+[; ;serial.c: 29: break;
+"29
+[e $U 1182  ]
+[; ;serial.c: 30: case 2400:
+"30
+[e :U 1185 ]
+[; ;serial.c: 31: SPBRG2 = 103;
+"31
+[e = _SPBRG2 -> -> 103 `i `uc ]
+[; ;serial.c: 32: break;
+"32
+[e $U 1182  ]
+[; ;serial.c: 33: case 9600:
+"33
+[e :U 1186 ]
+[; ;serial.c: 34: SPBRG2 = 25;
+"34
+[e = _SPBRG2 -> -> 25 `i `uc ]
+[; ;serial.c: 35: break;
+"35
+[e $U 1182  ]
+[; ;serial.c: 36: case 10417:
+"36
+[e :U 1187 ]
+[; ;serial.c: 37: SPBRG2 = 23;
+"37
+[e = _SPBRG2 -> -> 23 `i `uc ]
+[; ;serial.c: 38: break;
+"38
+[e $U 1182  ]
+[; ;serial.c: 39: case 19200:
 "39
+[e :U 1188 ]
+[; ;serial.c: 40: SPBRG2 = 12;
+"40
+[e = _SPBRG2 -> -> 12 `i `uc ]
+[; ;serial.c: 41: break;
+"41
+[e $U 1182  ]
+[; ;serial.c: 42: default:
+"42
+[e :U 1189 ]
+[; ;serial.c: 43: SPBRG2 = 207;
+"43
+[e = _SPBRG2 -> -> 207 `i `uc ]
+"44
+}
+[; ;serial.c: 44: }
+[e $U 1182  ]
+"26
+[e :U 1183 ]
+[e [\ _baudRate , $ -> -> 1200 `i `ui 1184
+ , $ -> -> 2400 `i `ui 1185
+ , $ -> -> 9600 `i `ui 1186
+ , $ -> -> 10417 `i `ui 1187
+ , $ -> -> 19200 `i `ui 1188
+ 1189 ]
+"44
+[e :U 1182 ]
+[; ;serial.c: 46: SPBRGH2 = 0;
+"46
+[e = _SPBRGH2 -> -> 0 `i `uc ]
+[; ;serial.c: 47: TXSTA2bits.BRGH = 0;
+"47
+[e = . . _TXSTA2bits 0 2 -> -> 0 `i `uc ]
+[; ;serial.c: 48: BAUDCON2bits.BRG16 = 0;
+"48
+[e = . . _BAUDCON2bits 0 3 -> -> 0 `i `uc ]
+[; ;serial.c: 50: TXSTA2bits.TX9 = 0;
+"50
+[e = . . _TXSTA2bits 0 6 -> -> 0 `i `uc ]
+[; ;serial.c: 51: RCSTA2bits.RX9 = 0;
+"51
+[e = . . _RCSTA2bits 0 6 -> -> 0 `i `uc ]
+[; ;serial.c: 53: TXSTA2bits.SYNC = 0;
+"53
+[e = . . _TXSTA2bits 0 4 -> -> 0 `i `uc ]
+[; ;serial.c: 54: BAUDCON2bits.DTRXP = 0;
+"54
+[e = . . _BAUDCON2bits 0 5 -> -> 0 `i `uc ]
+[; ;serial.c: 56: TXSTA2bits.TXEN = 1;
+"56
+[e = . . _TXSTA2bits 0 5 -> -> 1 `i `uc ]
+[; ;serial.c: 57: RCSTA2bits.CREN = 1;
+"57
+[e = . . _RCSTA2bits 0 4 -> -> 1 `i `uc ]
+[; ;serial.c: 59: RCSTA2bits.SPEN = 1;
+"59
+[e = . . _RCSTA2bits 0 7 -> -> 1 `i `uc ]
+[; ;serial.c: 60: }
+"60
 [e :UE 1181 ]
 }

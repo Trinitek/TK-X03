@@ -4,12 +4,6 @@
 uint8_t regA;                               // 8-bit primary accumulator
 uint8_t regB;                               // 8-bit secondary accumulator
 
-
-/*struct {                                    // 16-bit general use pointer
-        uint8_t MH;
-        uint8_t ML;
-} extern regMXbits; extern uint16_t regMX;/**/
-
 uint16_t regMX;                             // 16-bit general use pointer
 #define MH              0                   // ...high byte
 #define ML              1                   // ...low byte
@@ -25,26 +19,12 @@ uint8_t regF;                               // 8-bit flag register
 #define ZF              3                   // ...zero/unequal
 #define OF              4                   // ...overflow
 
-/*extern struct {
-        uint8_t CF    :1;                   // carry flag
-        uint8_t GF    :1;                   // greater than
-        uint8_t LF    :1;                   // less than
-        uint8_t ZF    :1;                   // zero/equal flag
-        uint8_t OF    :1;                   // overflow flag
-        uint8_t       :3;                   // unimplemented, set to 0
-} regFbits; extern uint8_t regF;/**/
-
 /* Temporary data and memory map */
-
-/*extern struct immData_t {                          // temp storage of the imm# data required by some opcodes
-	uint8_t arg1;
-	uint8_t arg2;
-}; uint16_t extern immData_16;/**/
 
 uint8_t immData_1;                          // temp storage of the imm# data required by some instructions
 uint8_t immData_2;
 
-uint8_t virtualMemory[2048];
+//uint8_t virtualMemory[2048];
 #define memStack        0                   // stack space 0-255 (256 bytes)
 #define memStack_e      255
 #define memReadOnly     256                 // read only memory 256-511 (256 bytes) - reset vector at base
@@ -152,8 +132,8 @@ uint8_t virtualMemory[2048];
 
 /* Mathematical operations */
 
-#define ADDA   		0x50 0b01010000     // A = A + B
-#define ADDI   		0x51 0b01010001     // A = A + imm8
+#define ADDA   		0x50                // A = A + B
+#define ADDI   		0x51                // A = A + imm8
 #define SUBA   		0x52                // A = A - B
 #define SUBI   		0x53                // A = A - imm8
 #define INC		0x54                // A++
