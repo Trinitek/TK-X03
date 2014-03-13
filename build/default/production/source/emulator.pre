@@ -10499,6 +10499,9 @@ uint8_t regF;
 uint8_t immData_1;
 uint8_t immData_2;
 
+# 34
+uint8_t stack[256];
+
 # 3 "source/serial.h"
 void enableSerial(uint16_t);
 
@@ -10839,6 +10842,7 @@ update_immData();
 
 uint8_t regA_temp8 = regA;
 uint16_t regA_temp16 = (uint16_t) regA;
+uint16_t regPC_temp = regPC;
 uint8_t carriedBit;
 
 
@@ -10912,7 +10916,7 @@ break;
 
 case 0x16:
 
-# 343
+# 344
 virtualMemory[regMX] = regA;
 
 break;
@@ -11112,14 +11116,14 @@ break;
 
 case 0x3E:
 
-virtualMemory[regSP] = regPC;
+stack[regSP] = regPC;
 regSP += 2;
 regPC = regMX;
 break;
 
 case 0x3F:
 
-virtualMemory[regSP] = regPC;
+stack[regSP] = regPC;
 regSP += 2;
 regPC = immData_toPointer();
 
@@ -11129,7 +11133,9 @@ break;
 case 0x40:
 regSP -= 2;
 
-regPC = virtualMemory[regSP];
+regPC_temp = (uint16_t) stack[regSP];
+regPC_temp << 8;
+regPC += regPC_temp + (uint16_t) stack[regSP];
 break;
 
 
@@ -11137,43 +11143,43 @@ break;
 
 case 0x41:
 
-virtualMemory[regSP] = regA;
+stack[regSP] = regA;
 regSP++;
 break;
 
 case 0x42:
 
-virtualMemory[regSP] = regB;
+stack[regSP] = regB;
 regSP++;
 break;
 
 case 0x43:
 
-virtualMemory[regSP] = regMX;
+stack[regSP] = regMX;
 regSP += 2;
 break;
 
 case 0x44:
 
-virtualMemory[regSP] = getMXbits(0);
+stack[regSP] = getMXbits(0);
 regSP++;
 break;
 
 case 0x45:
 
-virtualMemory[regSP] = getMXbits(1);
+stack[regSP] = getMXbits(1);
 regSP++;
 break;
 
 case 0x46:
 
-virtualMemory[regSP] = regF;
+stack[regSP] = regF;
 regSP++;
 break;
 
 case 0x47:
 
-virtualMemory[regSP] = immData_1;
+stack[regSP] = immData_1;
 regSP++;
 regPC++;
 break;
@@ -11181,31 +11187,31 @@ break;
 case 0x48:
 regSP--;
 
-regA = virtualMemory[regSP];
+regA = stack[regSP];
 break;
 
 case 0x49:
 regSP--;
 
-regB = virtualMemory[regSP];
+regB = stack[regSP];
 break;
 
 case 0x4A:
 regSP -= 2;
 
-regMX = virtualMemory[regSP];
+regMX = stack[regSP];
 break;
 
 case 0x4B:
 regSP--;
 
-setMXbits(0, virtualMemory[regSP]);
+setMXbits(0, stack[regSP]);
 break;
 
 case 0x4C:
 regSP--;
 
-setMXbits(1, virtualMemory[regSP]);
+setMXbits(1, stack[regSP]);
 break;
 
 

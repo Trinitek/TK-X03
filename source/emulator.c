@@ -8,6 +8,8 @@
 #include "segment.h"                // For segment display handling
 #include "virtualMemory.h"          // For memory definition
 
+uint8_t haltFlag = 0;
+
 /*uint16_t regMX_toPointer()
 {
     uint16_t pointer = (uint16_t) regMXbits.MH;
@@ -259,6 +261,7 @@ void processOpcode(void)
     // initialize temporary variables
     uint8_t regA_temp8 = regA;
     uint16_t regA_temp16 = (uint16_t) regA;
+    uint16_t regPC_temp = regPC;
     uint8_t carriedBit;
 
     // decode opcode and execute the associated command
@@ -275,6 +278,10 @@ void processOpcode(void)
             
         case CLC:					// clear CF
             setFbits(CF, 0);
+            break;
+
+        case HLT:
+            haltFlag = 1;                               // set internal halt flag to true
             break;
             
             
@@ -539,14 +546,14 @@ void processOpcode(void)
         	
         case CALLMX:                                    // push PC to stack and jump to MX
             //memoryMap.stack[regSP] = regPC;
-            virtualMemory[regSP] = regPC;
+            stack[regSP] = regPC;
             regSP += 2;
             regPC = regMX;
             break;
         	
         case CALLI:					// push PC to stack and jump to imm16
             //memoryMap.stack[regSP] = regPC;
-            virtualMemory[regSP] = regPC;
+            stack[regSP] = regPC;
             regSP += 2;
             regPC = immData_toPointer();
 
@@ -556,7 +563,9 @@ void processOpcode(void)
         case RET:					// pop PC from stack and return
             regSP -= 2;
             //regPC = memoryMap.stack[regSP];
-            regPC = virtualMemory[regSP];
+            regPC_temp = (uint16_t) stack[regSP];
+            regPC_temp << 8;
+            regPC += regPC_temp + (uint16_t) stack[regSP];
             break;
         	
         	
@@ -564,43 +573,43 @@ void processOpcode(void)
         	
         case PUSHA:					// push a
             //memoryMap.stack[regSP] = regA;
-            virtualMemory[regSP] = regA;
+            stack[regSP] = regA;
             regSP++;
             break;
         	
         case PUSHB:					// push b
             //memoryMap.stack[regSP] = regB;
-            virtualMemory[regSP] = regB;
+            stack[regSP] = regB;
             regSP++;
             break;
         	
         case PUSHMX:                                    // push mx
             //memoryMap.stack[regSP] = regMX;
-            virtualMemory[regSP] = regMX;
+            stack[regSP] = regMX;
             regSP += 2;
             break;
         	
         case PUSHMH:                                    // push mh
             //memoryMap.stack[regSP] = regMXbits.MH;
-            virtualMemory[regSP] = getMXbits(MH);
+            stack[regSP] = getMXbits(MH);
             regSP++;
             break;
         	
         case PUSHML:                                    // push ml
             //memoryMap.stack[regSP] = regMXbits.ML;
-            virtualMemory[regSP] = getMXbits(ML);
+            stack[regSP] = getMXbits(ML);
             regSP++;
             break;
         	
         case PUSHF:					// push f
             //memoryMap.stack[regSP] = regF;
-            virtualMemory[regSP] = regF;
+            stack[regSP] = regF;
             regSP++;
             break;
         	
         case PUSHI:					// push imm8
             //memoryMap.stack[regSP] = immData.arg1;
-            virtualMemory[regSP] = immData_1;
+            stack[regSP] = immData_1;
             regSP++;
             regPC++;
             break;
@@ -608,31 +617,31 @@ void processOpcode(void)
         case POPA:					// pop a
             regSP--;
             //regA = memoryMap.stack[regSP];
-            regA = virtualMemory[regSP];
+            regA = stack[regSP];
             break;
         	
         case POPB:					// pop b
             regSP--;
             //regB = memoryMap.stack[regSP];
-            regB = virtualMemory[regSP];
+            regB = stack[regSP];
             break;
         	
         case POPMX:					// pop mx
             regSP -= 2;
             //regMX = memoryMap.stack[regSP];
-            regMX = virtualMemory[regSP];
+            regMX = stack[regSP];
             break;
         	
         case POPMH:					// pop mh
             regSP--;
             //regMXbits.MH = memoryMap.stack[regSP];
-            setMXbits(MH, virtualMemory[regSP]);
+            setMXbits(MH, stack[regSP]);
             break;
         	
         case POPML:					// pop ml
             regSP--;
             //regMXbits.ML = memoryMap.stack[regSP];
-            setMXbits(ML, virtualMemory[regSP]);
+            setMXbits(ML, stack[regSP]);
             break;
         	
         	

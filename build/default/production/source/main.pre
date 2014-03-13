@@ -10591,6 +10591,9 @@ uint8_t regF;
 uint8_t immData_1;
 uint8_t immData_2;
 
+# 34
+uint8_t stack[256];
+
 # 18 "source/main.c"
 void main(void)
 {

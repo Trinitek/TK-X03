@@ -24,7 +24,6 @@ uint8_t regF;                               // 8-bit flag register
 uint8_t immData_1;                          // temp storage of the imm# data required by some instructions
 uint8_t immData_2;
 
-//uint8_t virtualMemory[2048];
 #define memStack        0                   // stack space 0-255 (256 bytes)
 #define memStack_e      255
 #define memReadOnly     256                 // read only memory 256-511 (256 bytes) - reset vector at base
@@ -32,6 +31,7 @@ uint8_t immData_2;
 #define memScratchPad   512                 // scratchpad space 512-2047 (1536 bytes) - usable by program
 #define memScratchPad_e 2047
 
+uint8_t stack[256];                         // stack space that is separate from the memory space
 
 /* // INSTRUCTION SET // */
 

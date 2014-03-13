@@ -8348,6 +8348,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "25
 [v _immData_2 `uc ~T0 @X0 1 e ]
 [; ;registers.h: 25: uint8_t immData_2;
+"34
+[v _stack `uc ~T0 @X0 -> 256 `i e ]
+[; ;registers.h: 34: uint8_t stack[256];
 "18 source/main.c
 [v _main `(v ~T0 @X0 1 ef ]
 "19
