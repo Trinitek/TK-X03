@@ -1,18 +1,19 @@
-_getMXbits: CODE, 9822 0 16
-_getFbits: CODE, 9710 0 38
-_setMXbits: CODE, 9670 0 40
-_processOpcode: CODE, 6150 0 1972
-_setFbits: CODE, 9562 0 60
-_main: CODE, 9408 0 80
-_getPortData: CODE, 9800 0 22
-_initPorts: CODE, 9622 0 48
-_initializeRegisters: CODE, 9210 0 104
-_setPortData: CODE, 8920 0 152
-__initialization: CODE, 9488 0 68
-_enableSerial: CODE, 9072 0 138
-_initOscillator: CODE, 9748 0 28
-_update_immData: CODE, 9314 0 94
-_immData_toPointer: CODE, 9776 0 24
-_dispSeg: CODE, 8122 0 798
+_getMXbits: CODE, 10108 0 16
+_getFbits: CODE, 10000 0 38
+_setMXbits: CODE, 9960 0 40
+_processOpcode: CODE, 6150 0 1988
+_setFbits: CODE, 9852 0 60
+_main: CODE, 9680 0 98
+_getPortData: CODE, 10086 0 22
+_initPorts: CODE, 9912 0 48
+_hexToChar: CODE, 8936 0 184
+_initializeRegisters: CODE, 9568 0 112
+_setPortData: CODE, 9120 0 160
+__initialization: CODE, 9778 0 68
+_enableSerial: CODE, 9430 0 138
+_initOscillator: CODE, 10062 0 24
+_update_immData: CODE, 9280 0 150
+_immData_toPointer: CODE, 10038 0 24
+_dispSeg: CODE, 8138 0 798
 _virtualMemory_size: SMALLCONST, 4097 0 4
-Total: 3686
+Total: 3972

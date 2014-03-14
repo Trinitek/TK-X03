@@ -1,6 +1,9 @@
 /* Register definitions for the TK3081 processor emulator */
 #include <stdint.h>
 
+// global variable -- should be redefined only once elsewhere without "extern"
+extern uint8_t haltFlag;
+
 uint8_t regA;                               // 8-bit primary accumulator
 uint8_t regB;                               // 8-bit secondary accumulator
 
@@ -24,12 +27,7 @@ uint8_t regF;                               // 8-bit flag register
 uint8_t immData_1;                          // temp storage of the imm# data required by some instructions
 uint8_t immData_2;
 
-#define memStack        0                   // stack space 0-255 (256 bytes)
-#define memStack_e      255
-#define memReadOnly     256                 // read only memory 256-511 (256 bytes) - reset vector at base
-#define memReadOnly_e   511
-#define memScratchPad   512                 // scratchpad space 512-2047 (1536 bytes) - usable by program
-#define memScratchPad_e 2047
+#define memScratchPad_e 2047                // last byte offset in memory, available memory is 2048 bytes
 
 uint8_t stack[256];                         // stack space that is separate from the memory space
 

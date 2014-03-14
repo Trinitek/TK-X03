@@ -14,20 +14,22 @@
 #include "registers.h"              // For TK3081 register and
 
 //struct immData_t immData;           // immediate data to be passed to instruction decoder
+//uint8_t haltFlag = 0;
 
 void main(void)
 {
+    //uint8_t haltFlag = 0;
     initOscillator();                   // initialize oscillator configuration
     initPorts();                        // initialize pin direction and function
     dispSeg(1, '-'); dispSeg(2, '-');
 
     initializeRegisters();              // initialize virtual processor registers
 
-    while (1)
+    while (haltFlag == 0)
     {
-        if (regPC < memReadOnly || regPC > memScratchPad_e)
+        if (regPC > memScratchPad_e)
         {
-            regPC = memReadOnly;               // soft reset if PC overflows into stack or out of virtual memory boundaries
+            regPC = 0;               // soft reset if PC overflows into stack or out of virtual memory boundaries
             continue;
         }
 
@@ -35,5 +37,11 @@ void main(void)
         //if (regPC > memReadOnly_e) processOpcode(virtualMemory[regPC], immData);
 
         processOpcode();
+    }
+
+    if (haltFlag == 1)
+    {
+        dispSeg(2, '0');
+        while (1) continue;
     }
 }

@@ -2,6 +2,7 @@
 
 #include <xc.h>                     // XC8 General Include File
 #include <stdint.h>                 // For uint8_t definition
+#include "system.h"                 // For hexToChar and timing facilities
 #include "registers.h"              // For register and opcode definitions
 #include "ports.c"                  // For virtual port number definitions
 #include "serial.h"                 // For UART port and register definitions
@@ -9,27 +10,6 @@
 #include "virtualMemory.h"          // For memory definition
 
 uint8_t haltFlag = 0;
-
-/*uint16_t regMX_toPointer()
-{
-    uint16_t pointer = (uint16_t) regMXbits.MH;
-    pointer << 8;
-    pointer += regMXbits.ML;
-    regMX = pointer;
-    return pointer;
-}/**/
-
-
-/*void pointerTo_regMX(uint16_t pointer)
-{
-    uint16_t pointer_lowByte = pointer;
-    pointer_lowByte << 8;
-    pointer_lowByte >> 8;
-    setMXbits(ML, (uint8_t) pointer_lowByte);
-    
-    pointer >> 8;
-    setMXbits(MH, (uint8_t) pointer);
-}*/
 
 /**
  * Get the value of the subregister specified
@@ -177,10 +157,11 @@ uint16_t immData_toPointer(void)
 
 void initializeRegisters(void)
 {
+        haltFlag = 0;
 	regA = 0;
 	regB = 0;
         //pointerTo_regMX(0);
-        regPC = 256;					// points to reset vector, bottom of ROM
+        regPC = 0;					// points to reset vector, bottom of ROM
 	regSP = 0;					// points to bottom of stack
 	setFbits(CF, 0);
         setFbits(GF, 0);
@@ -230,11 +211,11 @@ void setPortData(uint8_t portNumber, uint8_t outputData)
             break;
 
         case SEG_A:
-            dispSeg(1, outputData);
+            dispSeg(1, hexToChar(outputData));
             break;
 
         case SEG_B:
-            dispSeg(2, outputData);
+            dispSeg(2, hexToChar(outputData));
             break;
     }
 }
@@ -242,11 +223,14 @@ void setPortData(uint8_t portNumber, uint8_t outputData)
 void update_immData(void)
 {
     // loop immData around to readOnly section if arg1 and/or arg2 points outside array boundaries
-    if (regPC + 1 == memScratchPad_e + 1) immData_1 = memReadOnly;
-    if (regPC + 2 == memScratchPad_e + 1) immData_2 = memReadOnly;
-    if (regPC + 2 == memScratchPad_e + 2) immData_2 = memReadOnly + 1;
+    if (regPC + 1 == memScratchPad_e + 1) immData_1 = 0;
+    if (regPC + 2 == memScratchPad_e + 1) immData_2 = 0;
+    if (regPC + 2 == memScratchPad_e + 2) immData_2 = 1;
 
     // immData.arg1 should never be farther away from the end of memory than memScratchPad_e + 1
+
+    immData_1 = virtualMemory[regPC + 1];
+    immData_2 = virtualMemory[regPC + 2];
 }
 
 /**
@@ -255,7 +239,7 @@ void update_immData(void)
  */
 void processOpcode(void)
 {
-    // update global variables for the next iteration
+    // update immdediate data variables for the next iteration
     update_immData();
     
     // initialize temporary variables

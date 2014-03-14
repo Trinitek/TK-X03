@@ -1,5 +1,95 @@
 
-# 1 "source/main.c"
+# 1 "source/serial.c"
+
+# 13 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\stdint.h"
+typedef signed char int8_t;
+
+# 20
+typedef signed int int16_t;
+
+# 28
+typedef signed short long int int24_t;
+
+# 36
+typedef signed long int int32_t;
+
+# 43
+typedef unsigned char uint8_t;
+
+# 49
+typedef unsigned int uint16_t;
+
+# 56
+typedef unsigned short long int uint24_t;
+
+# 63
+typedef unsigned long int uint32_t;
+
+# 71
+typedef signed char int_least8_t;
+
+# 78
+typedef signed int int_least16_t;
+
+# 90
+typedef signed short long int int_least24_t;
+
+# 98
+typedef signed long int int_least32_t;
+
+# 105
+typedef unsigned char uint_least8_t;
+
+# 111
+typedef unsigned int uint_least16_t;
+
+# 121
+typedef unsigned short long int uint_least24_t;
+
+# 128
+typedef unsigned long int uint_least32_t;
+
+# 137
+typedef signed char int_fast8_t;
+
+# 144
+typedef signed int int_fast16_t;
+
+# 156
+typedef signed short long int int_fast24_t;
+
+# 164
+typedef signed long int int_fast32_t;
+
+# 171
+typedef unsigned char uint_fast8_t;
+
+# 177
+typedef unsigned int uint_fast16_t;
+
+# 187
+typedef unsigned short long int uint_fast24_t;
+
+# 194
+typedef unsigned long int uint_fast32_t;
+
+# 200
+typedef int32_t intmax_t;
+
+
+
+
+typedef uint32_t uintmax_t;
+
+
+
+
+typedef int16_t intptr_t;
+
+
+
+
+typedef uint16_t uintptr_t;
 
 
 # 21 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\htc.h"
@@ -10391,99 +10481,6 @@ extern __nonreentrant void _delaywdt(unsigned long);
 #pragma intrinsic(_delay3)
 extern __nonreentrant void _delay3(unsigned char);
 
-# 13 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\stdint.h"
-typedef signed char int8_t;
-
-# 20
-typedef signed int int16_t;
-
-# 28
-typedef signed short long int int24_t;
-
-# 36
-typedef signed long int int32_t;
-
-# 43
-typedef unsigned char uint8_t;
-
-# 49
-typedef unsigned int uint16_t;
-
-# 56
-typedef unsigned short long int uint24_t;
-
-# 63
-typedef unsigned long int uint32_t;
-
-# 71
-typedef signed char int_least8_t;
-
-# 78
-typedef signed int int_least16_t;
-
-# 90
-typedef signed short long int int_least24_t;
-
-# 98
-typedef signed long int int_least32_t;
-
-# 105
-typedef unsigned char uint_least8_t;
-
-# 111
-typedef unsigned int uint_least16_t;
-
-# 121
-typedef unsigned short long int uint_least24_t;
-
-# 128
-typedef unsigned long int uint_least32_t;
-
-# 137
-typedef signed char int_fast8_t;
-
-# 144
-typedef signed int int_fast16_t;
-
-# 156
-typedef signed short long int int_fast24_t;
-
-# 164
-typedef signed long int int_fast32_t;
-
-# 171
-typedef unsigned char uint_fast8_t;
-
-# 177
-typedef unsigned int uint_fast16_t;
-
-# 187
-typedef unsigned short long int uint_fast24_t;
-
-# 194
-typedef unsigned long int uint_fast32_t;
-
-# 200
-typedef int32_t intmax_t;
-
-
-
-
-typedef uint32_t uintmax_t;
-
-
-
-
-typedef int16_t intptr_t;
-
-
-
-
-typedef uint16_t uintptr_t;
-
-# 12 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\stdbool.h"
-typedef unsigned char bool;
-
 
 # 12 "source/configuration_bits.c"
 #pragma config FOSC = INTIO67
@@ -10545,85 +10542,47 @@ typedef unsigned char bool;
 
 #pragma config EBTRB = OFF
 
-# 3 "source/system.h"
-void initOscillator(void);
-void initPorts(void);
-void wait_ms(uint16_t);
-uint8_t hexToChar(uint8_t);
-
-# 3 "source/segment.h"
-void dispSeg(uint8_t, uint8_t);
-void cycleSegDisplays(uint16_t);
-
 # 3 "source/serial.h"
 void enableSerial(uint16_t);
 
-# 4 "source/emulator.h"
-uint8_t getMXbits(uint8_t);
-void setMXbits(uint8_t, uint8_t);
-uint8_t getFbits(uint8_t);
-void setFbits(uint8_t, uint8_t);
-
-uint16_t immData_toPointer(void);
-
-uint8_t getPortData(uint8_t);
-void setPortData(uint8_t, uint8_t);
-
-void initializeRegisters(void);
-void update_immData(void);
-void processOpcode(void);
-
-# 5 "source/registers.h"
-extern uint8_t haltFlag;
-
-uint8_t regA;
-uint8_t regB;
-
-uint16_t regMX;
-
-
-
-uint16_t regPC;
-
-uint8_t regSP;
-
-uint8_t regF;
-
-# 27
-uint8_t immData_1;
-uint8_t immData_2;
-
-
-
-uint8_t stack[256];
-
-# 19 "source/main.c"
-void main(void)
+# 21 "source/serial.c"
+void enableSerial(uint16_t baudRate)
 {
+LATDbits.LD3 = 1;
 
-initOscillator();
-initPorts();
-dispSeg(1, '-'); dispSeg(2, '-');
 
-initializeRegisters();
-
-while (haltFlag == 0)
-{
-if (regPC > 2047)
-{
-regPC = 0;
-continue;
+switch (baudRate) {
+case 1200:
+SPBRG2 = 207;
+break;
+case 2400:
+SPBRG2 = 103;
+break;
+case 9600:
+SPBRG2 = 25;
+break;
+case 10417:
+SPBRG2 = 23;
+break;
+case 19200:
+SPBRG2 = 12;
+break;
+default:
+SPBRG2 = 207;
 }
 
+SPBRGH2 = 0;
+TXSTA2bits.BRGH = 0;
+BAUDCON2bits.BRG16 = 0;
 
+TXSTA2bits.TX9 = 0;
+RCSTA2bits.RX9 = 0;
 
+TXSTA2bits.SYNC = 0;
+BAUDCON2bits.DTRXP = 0;
 
-processOpcode();
-}
+TXSTA2bits.TXEN = 1;
+RCSTA2bits.CREN = 1;
 
-if (haltFlag == 1)
-{
-dispSeg(2, '0');
-while (1) continue;
-}
+RCSTA2bits.SPEN = 1;
 }

@@ -1,5 +1,5 @@
- build/default/production/source/emulator.d  \
- build/default/production/source/emulator.p1:  \
+ build/default/debug/source/emulator.d  \
+ build/default/debug/source/emulator.p1:  \
  source/emulator.c  \
 source/system.h  \
 source/serial.h  \

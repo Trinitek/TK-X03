@@ -16,7 +16,7 @@ void initOscillator(void)
     OSCCON2bits.PRISD = 0;      // oscillator power circuit off
 
     // hang until frequency is stable
-    while (OSCCONbits.HFIOFS == 0) continue;
+    //while (OSCCONbits.HFIOFS == 0) continue;
 }
 
 /**

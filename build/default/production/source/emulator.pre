@@ -10481,7 +10481,15 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 4 "source/registers.h"
+# 3 "source/system.h"
+void initOscillator(void);
+void initPorts(void);
+void wait_ms(uint16_t);
+uint8_t hexToChar(uint8_t);
+
+# 5 "source/registers.h"
+extern uint8_t haltFlag;
+
 uint8_t regA;
 uint8_t regB;
 
@@ -10495,11 +10503,12 @@ uint8_t regSP;
 
 uint8_t regF;
 
-# 24
+# 27
 uint8_t immData_1;
 uint8_t immData_2;
 
-# 34
+
+
 uint8_t stack[256];
 
 # 3 "source/serial.h"
@@ -10509,9 +10518,10 @@ void enableSerial(uint16_t);
 void dispSeg(uint8_t, uint8_t);
 void cycleSegDisplays(uint16_t);
 
-# 5 "source/virtualMemory.h"
+# 4 "source/virtualMemory.h"
 const long int virtualMemory_size = 2048;
 uint8_t virtualMemory[2048] = {
+0x07, 0x03, 0x0F, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -10528,7 +10538,6 @@ uint8_t virtualMemory[2048] = {
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-0x1B, 0x38, 0x06, 0x03, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -10642,7 +10651,10 @@ uint8_t virtualMemory[2048] = {
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
 };
 
-# 38 "source/emulator.c"
+# 12 "source/emulator.c"
+uint8_t haltFlag = 0;
+
+# 20
 uint8_t getMXbits(uint8_t subRegister)
 {
 uint16_t regMX_temp = regMX;
@@ -10655,7 +10667,7 @@ regMX_temp >> 8;
 return (uint8_t) regMX_temp;
 }
 
-# 55
+# 37
 void setMXbits(uint8_t subRegister, uint8_t value)
 {
 uint16_t value_temp = (uint16_t) value;
@@ -10678,7 +10690,7 @@ break;
 regMX = regMX_temp + value_temp;
 }
 
-# 83
+# 65
 uint8_t getFbits(uint8_t subRegister)
 {
 uint8_t regF_temp = regF;
@@ -10714,7 +10726,7 @@ break;
 return regF_temp;
 }
 
-# 123
+# 105
 void setFbits(uint8_t subRegister, uint8_t value)
 {
 uint8_t regF_temp1 = regF;
@@ -10770,10 +10782,11 @@ return pointer;
 
 void initializeRegisters(void)
 {
+haltFlag = 0;
 regA = 0;
 regB = 0;
 
-regPC = 256;
+regPC = 0;
 regSP = 0;
 setFbits(0, 0);
 setFbits(1, 0);
@@ -10782,25 +10795,25 @@ setFbits(4, 0);
 setFbits(3, 0);
 }
 
-# 196
+# 179
 uint8_t getPortData(uint8_t portNumber)
 {
 switch (portNumber)
 {
-case 0b00000010:
+case 0x02:
 return RCREG2;
 }
 
 return 0;
 }
 
-# 212
+# 195
 void setPortData(uint8_t portNumber, uint8_t outputData)
 {
 uint16_t outputData_temp16;
 switch (portNumber)
 {
-case 0b00000000:
+case 0x00:
 if (outputData == 0) outputData_temp16 = 1200;
 if (outputData == 1) outputData_temp16 = 2400;
 if (outputData == 2) outputData_temp16 = 9600;
@@ -10809,16 +10822,16 @@ if (outputData == 4) outputData_temp16 = 19200;
 enableSerial(outputData_temp16);
 break;
 
-case 0b00000001:
+case 0x01:
 TXREG2 = outputData;
 break;
 
-case 0b00000011:
-dispSeg(1, outputData);
+case 0x03:
+dispSeg(1, hexToChar(outputData));
 break;
 
-case 0b00000100:
-dispSeg(2, outputData);
+case 0x04:
+dispSeg(2, hexToChar(outputData));
 break;
 }
 }
@@ -10826,14 +10839,17 @@ break;
 void update_immData(void)
 {
 
-if (regPC + 1 == 2047 + 1) immData_1 = 256;
-if (regPC + 2 == 2047 + 1) immData_2 = 256;
-if (regPC + 2 == 2047 + 2) immData_2 = 256 + 1;
+if (regPC + 1 == 2047 + 1) immData_1 = 0;
+if (regPC + 2 == 2047 + 1) immData_2 = 0;
+if (regPC + 2 == 2047 + 2) immData_2 = 1;
 
 
+
+immData_1 = regPC + 1;
+immData_2 = regPC + 2;
 }
 
-# 254
+# 240
 void processOpcode(void)
 {
 
@@ -10859,6 +10875,10 @@ break;
 
 case 0x02:
 setFbits(0, 0);
+break;
+
+case 0x08:
+haltFlag = 1;
 break;
 
 
@@ -10916,7 +10936,7 @@ break;
 
 case 0x16:
 
-# 344
+# 334
 virtualMemory[regMX] = regA;
 
 break;
