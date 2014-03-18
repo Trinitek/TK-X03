@@ -8283,6 +8283,14 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;system.c: 16: OSCCON2bits.PRISD = 0;
 "16
 [e = . . _OSCCON2bits 0 2 -> -> 0 `i `uc ]
+[; ;system.c: 19: while (OSCCONbits.HFIOFS == 0) continue;
+"19
+[e $U 1182  ]
+[e :U 1183 ]
+[e $U 1182  ]
+[e :U 1182 ]
+[e $ == -> . . _OSCCONbits 0 1 `i -> 0 `i 1183  ]
+[e :U 1184 ]
 [; ;system.c: 20: }
 "20
 [e :UE 1181 ]
@@ -8336,7 +8344,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _LATE -> -> 0 `i `uc ]
 [; ;system.c: 43: }
 "43
-[e :UE 1182 ]
+[e :UE 1185 ]
 }
 "50
 [v _wait_ms `(v ~T0 @X0 1 ef1`ui ]
@@ -8361,16 +8369,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;system.c: 54: for (; timel; timel--);
 "54
 {
-[e $U 1187  ]
-[e :U 1184 ]
-[e -- F8855 -> -> 1 `i `l ]
+[e $U 1190  ]
 [e :U 1187 ]
-[e $ != F8855 -> -> 0 `i `l 1184  ]
-[e :U 1185 ]
+[e -- F8855 -> -> 1 `i `l ]
+[e :U 1190 ]
+[e $ != F8855 -> -> 0 `i `l 1187  ]
+[e :U 1188 ]
 }
 [; ;system.c: 55: }
 "55
-[e :UE 1183 ]
+[e :UE 1186 ]
 }
 "63
 [v _hexToChar `(uc ~T0 @X0 1 ef1`uc ]
@@ -8391,152 +8399,152 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _number -> >> -> _number `i -> 4 `i `uc ]
 [; ;system.c: 67: switch (number)
 "67
-[e $U 1190  ]
+[e $U 1193  ]
 [; ;system.c: 68: {
 "68
 {
 [; ;system.c: 69: case 0:
 "69
-[e :U 1191 ]
+[e :U 1194 ]
 [; ;system.c: 70: return '0';
 "70
 [e ) -> -> 48 `ui `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 [; ;system.c: 71: case 1:
 "71
-[e :U 1192 ]
+[e :U 1195 ]
 [; ;system.c: 72: return '1';
 "72
 [e ) -> -> 49 `ui `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 [; ;system.c: 73: case 2:
 "73
-[e :U 1193 ]
+[e :U 1196 ]
 [; ;system.c: 74: return '2';
 "74
 [e ) -> -> 50 `ui `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 [; ;system.c: 75: case 3:
 "75
-[e :U 1194 ]
+[e :U 1197 ]
 [; ;system.c: 76: return '3';
 "76
 [e ) -> -> 51 `ui `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 [; ;system.c: 77: case 4:
 "77
-[e :U 1195 ]
+[e :U 1198 ]
 [; ;system.c: 78: return '4';
 "78
 [e ) -> -> 52 `ui `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 [; ;system.c: 79: case 5:
 "79
-[e :U 1196 ]
+[e :U 1199 ]
 [; ;system.c: 80: return '5';
 "80
 [e ) -> -> 53 `ui `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 [; ;system.c: 81: case 6:
 "81
-[e :U 1197 ]
+[e :U 1200 ]
 [; ;system.c: 82: return '6';
 "82
 [e ) -> -> 54 `ui `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 [; ;system.c: 83: case 7:
 "83
-[e :U 1198 ]
+[e :U 1201 ]
 [; ;system.c: 84: return '7';
 "84
 [e ) -> -> 55 `ui `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 [; ;system.c: 85: case 8:
 "85
-[e :U 1199 ]
+[e :U 1202 ]
 [; ;system.c: 86: return '8';
 "86
 [e ) -> -> 56 `ui `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 [; ;system.c: 87: case 9:
 "87
-[e :U 1200 ]
+[e :U 1203 ]
 [; ;system.c: 88: return '9';
 "88
 [e ) -> -> 57 `ui `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 [; ;system.c: 89: case 0xA:
 "89
-[e :U 1201 ]
+[e :U 1204 ]
 [; ;system.c: 90: return 'A';
 "90
 [e ) -> -> 65 `ui `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 [; ;system.c: 91: case 0xB:
 "91
-[e :U 1202 ]
+[e :U 1205 ]
 [; ;system.c: 92: return 'B';
 "92
 [e ) -> -> 66 `ui `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 [; ;system.c: 93: case 0xC:
 "93
-[e :U 1203 ]
+[e :U 1206 ]
 [; ;system.c: 94: return 'C';
 "94
 [e ) -> -> 67 `ui `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 [; ;system.c: 95: case 0xD:
 "95
-[e :U 1204 ]
+[e :U 1207 ]
 [; ;system.c: 96: return 'D';
 "96
 [e ) -> -> 68 `ui `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 [; ;system.c: 97: case 0xE:
 "97
-[e :U 1205 ]
+[e :U 1208 ]
 [; ;system.c: 98: return 'E';
 "98
 [e ) -> -> 69 `ui `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 [; ;system.c: 99: case 0xF:
 "99
-[e :U 1206 ]
+[e :U 1209 ]
 [; ;system.c: 100: return 'F';
 "100
 [e ) -> -> 70 `ui `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 "101
 }
 [; ;system.c: 101: }
-[e $U 1189  ]
+[e $U 1192  ]
 "67
-[e :U 1190 ]
-[e [\ _number , $ -> -> 0 `i `uc 1191
- , $ -> -> 1 `i `uc 1192
- , $ -> -> 2 `i `uc 1193
- , $ -> -> 3 `i `uc 1194
- , $ -> -> 4 `i `uc 1195
- , $ -> -> 5 `i `uc 1196
- , $ -> -> 6 `i `uc 1197
- , $ -> -> 7 `i `uc 1198
- , $ -> -> 8 `i `uc 1199
- , $ -> -> 9 `i `uc 1200
- , $ -> -> 10 `i `uc 1201
- , $ -> -> 11 `i `uc 1202
- , $ -> -> 12 `i `uc 1203
- , $ -> -> 13 `i `uc 1204
- , $ -> -> 14 `i `uc 1205
- , $ -> -> 15 `i `uc 1206
- 1189 ]
+[e :U 1193 ]
+[e [\ _number , $ -> -> 0 `i `uc 1194
+ , $ -> -> 1 `i `uc 1195
+ , $ -> -> 2 `i `uc 1196
+ , $ -> -> 3 `i `uc 1197
+ , $ -> -> 4 `i `uc 1198
+ , $ -> -> 5 `i `uc 1199
+ , $ -> -> 6 `i `uc 1200
+ , $ -> -> 7 `i `uc 1201
+ , $ -> -> 8 `i `uc 1202
+ , $ -> -> 9 `i `uc 1203
+ , $ -> -> 10 `i `uc 1204
+ , $ -> -> 11 `i `uc 1205
+ , $ -> -> 12 `i `uc 1206
+ , $ -> -> 13 `i `uc 1207
+ , $ -> -> 14 `i `uc 1208
+ , $ -> -> 15 `i `uc 1209
+ 1192 ]
 "101
-[e :U 1189 ]
+[e :U 1192 ]
 [; ;system.c: 102: return 0;
 "102
 [e ) -> -> 0 `i `uc ]
-[e $UE 1188  ]
+[e $UE 1191  ]
 [; ;system.c: 103: }
 "103
-[e :UE 1188 ]
+[e :UE 1191 ]
 }

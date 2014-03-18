@@ -13,9 +13,11 @@
 void dispSeg(uint8_t segment, uint8_t letter)
 {
     switch (letter) {
-        case 'x' | 'X' | 0:     // turn off display
+        case 'x':
+        case 'X':     // turn off display
             if (segment == 1) {
                 seg1a = seg1b = seg1c = seg1d = seg1e = seg1f = seg1g = 0;
+                return;
             }
             seg2a = seg2b = seg2c = seg2d = seg2e = seg2f = seg2g = 0;
             break;
@@ -23,6 +25,7 @@ void dispSeg(uint8_t segment, uint8_t letter)
             if (segment == 1) {
                 seg1g = 1;
                 seg1a = seg1b = seg1c = seg1d = seg1e = seg1f = 0;
+                return;
             }
             seg2g = 1;
             seg2a = seg2b = seg2c = seg2d = seg2e = seg2f = 0;
@@ -115,7 +118,8 @@ void dispSeg(uint8_t segment, uint8_t letter)
             seg2a = seg2b = seg2c = seg2d = seg2f = seg2g = 1;
             seg2e = 0;
             break;
-        case 'a' | 'A':         // display A
+        case 'a':
+        case 'A':               // display A
             if (segment == 1) {
                 seg1a = seg1b = seg1c = seg1e = seg1f = seg1g = 1;
                 seg1d = 0;
@@ -124,7 +128,8 @@ void dispSeg(uint8_t segment, uint8_t letter)
             seg2a = seg2b = seg2c = seg2e = seg2f = seg2g = 1;
             seg2d = 0;
             break;
-        case 'b' | 'B':         // display B
+        case 'b':
+        case 'B':               // display B
             if (segment == 1) {
                 seg1c = seg1d = seg1e = seg1f = seg1g = 1;
                 seg1a = seg1b = 0;
@@ -133,7 +138,8 @@ void dispSeg(uint8_t segment, uint8_t letter)
             seg2c = seg2d = seg2e = seg2f = seg2g = 1;
             seg2a = seg2b = 0;
             break;
-        case 'c' | 'C':         // display C
+        case 'c':
+        case 'C':               // display C
             if (segment == 1) {
                 seg1a = seg1d = seg1e = seg1f = 1;
                 seg1b = seg1c = seg1g = 0;
@@ -142,7 +148,8 @@ void dispSeg(uint8_t segment, uint8_t letter)
             seg2a = seg2d = seg2e = seg2f = 1;
             seg2b = seg2c = seg2g = 0;
             break;
-        case 'd' | 'D':         // display D
+        case 'd':
+        case 'D':               // display D
             if (segment == 1) {
                 seg1b = seg1c = seg1d = seg1e = seg1g = 1;
                 seg1a = seg1f = 0;
@@ -151,7 +158,8 @@ void dispSeg(uint8_t segment, uint8_t letter)
             seg2b = seg2c = seg2d = seg2e = seg2g = 1;
             seg2a = seg2f = 0;
             break;
-        case 'e' | 'E':         // display E
+        case 'e':
+        case 'E':               // display E
             if (segment == 1) {
                 seg1a = seg1d = seg1e = seg1f = seg1g = 1;
                 seg1b = seg1c = 0;
@@ -160,7 +168,8 @@ void dispSeg(uint8_t segment, uint8_t letter)
             seg2a = seg2d = seg2e = seg2f = seg2g = 1;
             seg2b = seg2c = 0;
             break;
-        case 'f' | 'F':         // display F
+        case 'f':
+        case 'F':               // display F
             if (segment == 1) {
                 seg1a = seg1e = seg1f = seg1g = 1;
                 seg1b = seg1c = seg1d = 0;

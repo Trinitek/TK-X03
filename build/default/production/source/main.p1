@@ -8317,12 +8317,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;segment.h: 4: void cycleSegDisplays(uint16_t);
 [; ;serial.h: 3: void enableSerial(uint16_t);
 [; ;emulator.h: 4: uint8_t getMXbits(uint8_t);
-[; ;emulator.h: 5: void setMXbits(uint8_t, uint8_t);
+[; ;emulator.h: 5: void setMXbits(uint8_t subRegister, uint8_t value);
 [; ;emulator.h: 6: uint8_t getFbits(uint8_t);
-[; ;emulator.h: 7: void setFbits(uint8_t, uint8_t);
+[; ;emulator.h: 7: void setFbits(uint8_t subRegister, uint8_t value);
 [; ;emulator.h: 9: uint16_t immData_toPointer(void);
 [; ;emulator.h: 11: uint8_t getPortData(uint8_t);
-[; ;emulator.h: 12: void setPortData(uint8_t, uint8_t);
+[; ;emulator.h: 12: void setPortData(uint8_t portNumber, uint8_t outputData);
 [; ;emulator.h: 14: void initializeRegisters(void);
 [; ;emulator.h: 15: void update_immData(void);
 [; ;emulator.h: 16: void processOpcode(void);

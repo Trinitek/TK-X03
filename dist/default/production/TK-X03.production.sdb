@@ -137,19 +137,19 @@
 [v _immData_toPointer immData_toPointer `(ui  1 e 2 0 ]
 "158
 [v _initializeRegisters initializeRegisters `(v  1 e 0 0 ]
-"179
+"174
 [v _getPortData getPortData `(uc  1 e 1 0 ]
-"195
+"190
 [v _setPortData setPortData `(v  1 e 0 0 ]
-"223
+"222
 [v _update_immData update_immData `(v  1 e 0 0 ]
-"240
+"239
 [v _processOpcode processOpcode `(v  1 e 0 0 ]
 "19 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c
 [v _main main `(v  1 e 0 0 ]
 "13 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c
 [v _dispSeg dispSeg `(v  1 e 0 0 ]
-"180
+"189
 [v _cycleSegDisplays cycleSegDisplays `(v  1 e 0 0 ]
 "21 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c
 [v _enableSerial enableSerial `(v  1 e 0 0 ]
@@ -163,7 +163,7 @@
 [v _hexToChar hexToChar `(uc  1 e 1 0 ]
 "187 C:\Program Files (x86)\Microchip\xc8\v1.30\include\pic18f46k22.h
 [v _ANSELD ANSELD `VEuc  1 e 1 @3899 ]
-[s S614 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S615 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -173,41 +173,41 @@
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "4397
-[s S623 . 1 `uc 1 . 1 0 :4:0 
+[s S624 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SCKP 1 0 :1:4 
 ]
-[s S626 . 1 `uc 1 ABDEN2 1 0 :1:0 
+[s S627 . 1 `uc 1 ABDEN2 1 0 :1:0 
 ]
-[s S628 . 1 `uc 1 . 1 0 :7:0 
+[s S629 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 ABDOVF2 1 0 :1:7 
 ]
-[s S631 . 1 `uc 1 . 1 0 :3:0 
+[s S632 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 BRG162 1 0 :1:3 
 ]
-[s S634 . 1 `uc 1 . 1 0 :5:0 
+[s S635 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 DTRXP2 1 0 :1:5 
 ]
-[s S637 . 1 `uc 1 . 1 0 :6:0 
+[s S638 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RCIDL2 1 0 :1:6 
 ]
-[s S640 . 1 `uc 1 . 1 0 :6:0 
+[s S641 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RCMT2 1 0 :1:6 
 ]
-[s S643 . 1 `uc 1 . 1 0 :5:0 
+[s S644 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RXDTP2 1 0 :1:5 
 ]
-[s S646 . 1 `uc 1 . 1 0 :4:0 
+[s S647 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SCKP2 1 0 :1:4 
 ]
-[s S649 . 1 `uc 1 . 1 0 :4:0 
+[s S650 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXCKP2 1 0 :1:4 
 ]
-[s S652 . 1 `uc 1 . 1 0 :1:0 
+[s S653 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 WUE2 1 0 :1:1 
 ]
-[u S655 . 1 `S614 1 . 1 0 `S623 1 . 1 0 `S626 1 . 1 0 `S628 1 . 1 0 `S631 1 . 1 0 `S634 1 . 1 0 `S637 1 . 1 0 `S640 1 . 1 0 `S643 1 . 1 0 `S646 1 . 1 0 `S649 1 . 1 0 `S652 1 . 1 0 ]
-[v _BAUDCON2bits BAUDCON2bits `VES655  1 e 1 @3952 ]
-[s S710 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S656 . 1 `S615 1 . 1 0 `S624 1 . 1 0 `S627 1 . 1 0 `S629 1 . 1 0 `S632 1 . 1 0 `S635 1 . 1 0 `S638 1 . 1 0 `S641 1 . 1 0 `S644 1 . 1 0 `S647 1 . 1 0 `S650 1 . 1 0 `S653 1 . 1 0 ]
+[v _BAUDCON2bits BAUDCON2bits `VES656  1 e 1 @3952 ]
+[s S711 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -217,10 +217,10 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "4686
-[s S719 . 1 `uc 1 . 1 0 :3:0 
+[s S720 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 ADEN 1 0 :1:3 
 ]
-[s S722 . 1 `uc 1 RX9D2 1 0 :1:0 
+[s S723 . 1 `uc 1 RX9D2 1 0 :1:0 
 `uc 1 OERR2 1 0 :1:1 
 `uc 1 FERR2 1 0 :1:2 
 `uc 1 ADDEN2 1 0 :1:3 
@@ -229,17 +229,17 @@
 `uc 1 RX92 1 0 :1:6 
 `uc 1 SPEN2 1 0 :1:7 
 ]
-[s S731 . 1 `uc 1 . 1 0 :6:0 
+[s S732 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_92 1 0 :1:6 
 ]
-[s S734 . 1 `uc 1 . 1 0 :6:0 
+[s S735 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC92 1 0 :1:6 
 ]
-[s S737 . 1 `uc 1 RCD82 1 0 :1:0 
+[s S738 . 1 `uc 1 RCD82 1 0 :1:0 
 ]
-[u S739 . 1 `S710 1 . 1 0 `S719 1 . 1 0 `S722 1 . 1 0 `S731 1 . 1 0 `S734 1 . 1 0 `S737 1 . 1 0 ]
-[v _RCSTA2bits RCSTA2bits `VES739  1 e 1 @3953 ]
-[s S562 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S740 . 1 `S711 1 . 1 0 `S720 1 . 1 0 `S723 1 . 1 0 `S732 1 . 1 0 `S735 1 . 1 0 `S738 1 . 1 0 ]
+[v _RCSTA2bits RCSTA2bits `VES740  1 e 1 @3953 ]
+[s S563 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -249,7 +249,7 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "4969
-[s S571 . 1 `uc 1 TX9D2 1 0 :1:0 
+[s S572 . 1 `uc 1 TX9D2 1 0 :1:0 
 `uc 1 TRMT2 1 0 :1:1 
 `uc 1 BRGH2 1 0 :1:2 
 `uc 1 SENDB2 1 0 :1:3 
@@ -258,13 +258,13 @@
 `uc 1 TX92 1 0 :1:6 
 `uc 1 CSRC2 1 0 :1:7 
 ]
-[s S580 . 1 `uc 1 . 1 0 :6:0 
+[s S581 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_92 1 0 :1:6 
 ]
-[s S583 . 1 `uc 1 TXD82 1 0 :1:0 
+[s S584 . 1 `uc 1 TXD82 1 0 :1:0 
 ]
-[u S585 . 1 `S562 1 . 1 0 `S571 1 . 1 0 `S580 1 . 1 0 `S583 1 . 1 0 ]
-[v _TXSTA2bits TXSTA2bits `VES585  1 e 1 @3954 ]
+[u S586 . 1 `S563 1 . 1 0 `S572 1 . 1 0 `S581 1 . 1 0 `S584 1 . 1 0 ]
+[v _TXSTA2bits TXSTA2bits `VES586  1 e 1 @3954 ]
 "5185
 [v _TXREG2 TXREG2 `VEuc  1 e 1 @3955 ]
 "5222
@@ -435,35 +435,37 @@
 {
 "47
 } 0
-"240 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c
+"239 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c
 [v _processOpcode processOpcode `(v  1 e 0 0 ]
 {
-"247
-[v processOpcode@regA_temp16 regA_temp16 `ui  1 a 2 15 ]
-"248
-[v processOpcode@regPC_temp regPC_temp `ui  1 a 2 11 ]
 "246
-[v processOpcode@regA_temp8 regA_temp8 `uc  1 a 1 14 ]
-"249
-[v processOpcode@carriedBit carriedBit `uc  1 a 1 13 ]
-"695
+[v processOpcode@regA_temp16 regA_temp16 `ui  1 a 2 17 ]
+"247
+[v processOpcode@regPC_temp regPC_temp `ui  1 a 2 13 ]
+"245
+[v processOpcode@regA_temp8 regA_temp8 `uc  1 a 1 16 ]
+"248
+[v processOpcode@carriedBit carriedBit `uc  1 a 1 15 ]
+"694
 } 0
-"223
+"222
 [v _update_immData update_immData `(v  1 e 0 0 ]
 {
-"234
+"233
 } 0
-"195
+"190
 [v _setPortData setPortData `(v  1 e 0 0 ]
 {
 [v setPortData@portNumber portNumber `uc  1 a 1 wreg ]
-"197
-[v setPortData@outputData_temp16 outputData_temp16 `ui  1 a 2 6 ]
-"195
+"192
+[v setPortData@outputData_temp16 outputData_temp16 `ui  1 a 2 7 ]
+"193
+[v setPortData@outputData_temp8 outputData_temp8 `uc  1 a 1 9 ]
+"190
 [v setPortData@portNumber portNumber `uc  1 a 1 wreg ]
 [v setPortData@outputData outputData `uc  1 p 1 4 ]
-[v setPortData@portNumber portNumber `uc  1 a 1 5 ]
-"221
+[v setPortData@portNumber portNumber `uc  1 a 1 6 ]
+"220
 } 0
 "63 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c
 [v _hexToChar hexToChar `(uc  1 e 1 0 ]
@@ -485,9 +487,9 @@
 {
 [v dispSeg@segment segment `uc  1 a 1 wreg ]
 [v dispSeg@segment segment `uc  1 a 1 wreg ]
-[v dispSeg@letter letter `uc  1 p 1 1 ]
-[v dispSeg@segment segment `uc  1 a 1 2 ]
-"173
+[v dispSeg@letter letter `uc  1 p 1 0 ]
+[v dispSeg@segment segment `uc  1 a 1 1 ]
+"182
 } 0
 "37 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c
 [v _setMXbits setMXbits `(v  1 e 0 0 ]
@@ -504,6 +506,21 @@
 [v setMXbits@subRegister subRegister `uc  1 a 1 5 ]
 "57
 } 0
+"105
+[v _setFbits setFbits `(v  1 e 0 0 ]
+{
+[v setFbits@subRegister subRegister `uc  1 a 1 wreg ]
+"108
+[v setFbits@regF_temp2 regF_temp2 `uc  1 a 1 4 ]
+"107
+[v setFbits@regF_temp1 regF_temp1 `uc  1 a 1 3 ]
+"105
+[v setFbits@subRegister subRegister `uc  1 a 1 wreg ]
+[v setFbits@value value `uc  1 p 1 0 ]
+"107
+[v setFbits@subRegister subRegister `uc  1 a 1 2 ]
+"148
+} 0
 "150
 [v _immData_toPointer immData_toPointer `(ui  1 e 2 0 ]
 {
@@ -511,13 +528,13 @@
 [v immData_toPointer@pointer pointer `ui  1 a 2 2 ]
 "156
 } 0
-"179
+"174
 [v _getPortData getPortData `(uc  1 e 1 0 ]
 {
 [v getPortData@portNumber portNumber `uc  1 a 1 wreg ]
 [v getPortData@portNumber portNumber `uc  1 a 1 wreg ]
 [v getPortData@portNumber portNumber `uc  1 a 1 0 ]
-"188
+"183
 } 0
 "20
 [v _getMXbits getMXbits `(uc  1 e 1 0 ]
@@ -546,22 +563,7 @@
 "158
 [v _initializeRegisters initializeRegisters `(v  1 e 0 0 ]
 {
-"171
-} 0
-"105
-[v _setFbits setFbits `(v  1 e 0 0 ]
-{
-[v setFbits@subRegister subRegister `uc  1 a 1 wreg ]
-"108
-[v setFbits@regF_temp2 regF_temp2 `uc  1 a 1 4 ]
-"107
-[v setFbits@regF_temp1 regF_temp1 `uc  1 a 1 3 ]
-"105
-[v setFbits@subRegister subRegister `uc  1 a 1 wreg ]
-[v setFbits@value value `uc  1 p 1 0 ]
-"107
-[v setFbits@subRegister subRegister `uc  1 a 1 2 ]
-"148
+"166
 } 0
 "26 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c
 [v _initPorts initPorts `(v  1 e 0 0 ]

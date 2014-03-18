@@ -9,6 +9,7 @@
       <itemPath>source/emulator.h</itemPath>
       <itemPath>source/serial.h</itemPath>
       <itemPath>source/registers.h</itemPath>
+      <itemPath>source/ports.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -19,7 +20,6 @@
                    projectFiles="true">
       <itemPath>source/configuration_bits.c</itemPath>
       <itemPath>source/main.c</itemPath>
-      <itemPath>source/ports.c</itemPath>
       <itemPath>source/segment.c</itemPath>
       <itemPath>source/system.c</itemPath>
       <itemPath>source/emulator.c</itemPath>

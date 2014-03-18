@@ -10552,9 +10552,11 @@ uint8_t hexToChar(uint8_t);
 void dispSeg(uint8_t segment, uint8_t letter)
 {
 switch (letter) {
-case 'x' | 'X' | 0:
+case 'x':
+case 'X':
 if (segment == 1) {
 LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 0;
+return;
 }
 LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 = 0;
 break;
@@ -10562,6 +10564,7 @@ case '-':
 if (segment == 1) {
 LATAbits.LA1 = 1;
 LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = 0;
+return;
 }
 LATEbits.LE2 = 1;
 LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = 0;
@@ -10654,7 +10657,8 @@ return;
 LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATEbits.LE1 = LATEbits.LE2 = 1;
 LATCbits.LC1 = 0;
 break;
-case 'a' | 'A':
+case 'a':
+case 'A':
 if (segment == 1) {
 LATAbits.LA2 = LATAbits.LA3 = LATAbits.LA4 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 1;
 LATAbits.LA5 = 0;
@@ -10663,7 +10667,8 @@ return;
 LATAbits.LA7 = LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 = 1;
 LATCbits.LC0 = 0;
 break;
-case 'b' | 'B':
+case 'b':
+case 'B':
 if (segment == 1) {
 LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 1;
 LATAbits.LA2 = LATAbits.LA3 = 0;
@@ -10672,7 +10677,8 @@ return;
 LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 = 1;
 LATAbits.LA7 = LATAbits.LA6 = 0;
 break;
-case 'c' | 'C':
+case 'c':
+case 'C':
 if (segment == 1) {
 LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = 1;
 LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA1 = 0;
@@ -10681,7 +10687,8 @@ return;
 LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = 1;
 LATAbits.LA6 = LATCbits.LC2 = LATEbits.LE2 = 0;
 break;
-case 'd' | 'D':
+case 'd':
+case 'D':
 if (segment == 1) {
 LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA1 = 1;
 LATAbits.LA2 = LATAbits.LA0 = 0;
@@ -10690,7 +10697,8 @@ return;
 LATAbits.LA6 = LATCbits.LC2 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE2 = 1;
 LATAbits.LA7 = LATEbits.LE1 = 0;
 break;
-case 'e' | 'E':
+case 'e':
+case 'E':
 if (segment == 1) {
 LATAbits.LA2 = LATAbits.LA5 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 1;
 LATAbits.LA3 = LATAbits.LA4 = 0;
@@ -10699,7 +10707,8 @@ return;
 LATAbits.LA7 = LATCbits.LC0 = LATCbits.LC1 = LATEbits.LE1 = LATEbits.LE2 = 1;
 LATAbits.LA6 = LATCbits.LC2 = 0;
 break;
-case 'f' | 'F':
+case 'f':
+case 'F':
 if (segment == 1) {
 LATAbits.LA2 = LATEbits.LE0 = LATAbits.LA0 = LATAbits.LA1 = 1;
 LATAbits.LA3 = LATAbits.LA4 = LATAbits.LA5 = 0;
@@ -10711,7 +10720,7 @@ break;
 }
 }
 
-# 180
+# 189
 void cycleSegDisplays(uint16_t time)
 {
 dispSeg(1, 0); dispSeg(2, 0);

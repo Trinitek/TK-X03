@@ -4,7 +4,7 @@
 #include <stdint.h>                 // For uint8_t definition
 #include "system.h"                 // For hexToChar and timing facilities
 #include "registers.h"              // For register and opcode definitions
-#include "ports.c"                  // For virtual port number definitions
+#include "ports.h"                  // For virtual port number definitions
 #include "serial.h"                 // For UART port and register definitions
 #include "segment.h"                // For segment display handling
 #include "virtualMemory.h"          // For memory definition
@@ -160,14 +160,9 @@ void initializeRegisters(void)
         haltFlag = 0;
 	regA = 0;
 	regB = 0;
-        //pointerTo_regMX(0);
         regPC = 0;					// points to reset vector, bottom of ROM
 	regSP = 0;					// points to bottom of stack
-	setFbits(CF, 0);
-        setFbits(GF, 0);
-        setFbits(LF, 0);
-        setFbits(OF, 0);
-        setFbits(ZF, 0);
+        regF = 0;
 }
 
 /**
@@ -195,6 +190,7 @@ uint8_t getPortData(uint8_t portNumber)
 void setPortData(uint8_t portNumber, uint8_t outputData)
 {
     uint16_t outputData_temp16;
+    uint8_t outputData_temp8;
     switch (portNumber)
     {
         case UART_BAUD:
@@ -211,11 +207,14 @@ void setPortData(uint8_t portNumber, uint8_t outputData)
             break;
 
         case SEG_A:
-            dispSeg(1, hexToChar(outputData));
+            outputData_temp8 = hexToChar(outputData);
+            dispSeg(1, outputData_temp8);
+            dispSeg(1, 'F');
             break;
 
         case SEG_B:
-            dispSeg(2, hexToChar(outputData));
+            outputData_temp8 = hexToChar(outputData);
+            dispSeg(2, outputData_temp8);
             break;
     }
 }

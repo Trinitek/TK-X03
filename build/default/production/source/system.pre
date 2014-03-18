@@ -10492,7 +10492,7 @@ OSCCON2bits.SOSCGO = 0;
 OSCCON2bits.PRISD = 0;
 
 
-
+while (OSCCONbits.HFIOFS == 0) continue;
 }
 
 # 26
