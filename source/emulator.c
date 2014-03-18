@@ -209,7 +209,6 @@ void setPortData(uint8_t portNumber, uint8_t outputData)
         case SEG_A:
             outputData_temp8 = hexToChar(outputData);
             dispSeg(1, outputData_temp8);
-            dispSeg(1, 'F');
             break;
 
         case SEG_B:
