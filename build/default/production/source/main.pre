@@ -10600,7 +10600,6 @@ uint8_t stack[256];
 # 19 "source/main.c"
 void main(void)
 {
-
 initOscillator();
 initPorts();
 dispSeg(1, '-'); dispSeg(2, '-');
@@ -10615,15 +10614,11 @@ regPC = 0;
 continue;
 }
 
-
-
-
+wait_ms(1000);
 processOpcode();
 }
 
-if (haltFlag == 1)
-{
-dispSeg(2, '0');
+
+dispSeg(1, '-'); dispSeg(2, '-');
 while (1) continue;
-}
 }

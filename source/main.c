@@ -18,7 +18,6 @@
 
 void main(void)
 {
-    //uint8_t haltFlag = 0;
     initOscillator();                   // initialize oscillator configuration
     initPorts();                        // initialize pin direction and function
     dispSeg(1, '-'); dispSeg(2, '-');
@@ -33,15 +32,11 @@ void main(void)
             continue;
         }
 
-        //if (regPC > memStack_e && regPC < memScratchPad) processOpcode(virtualMemory[regPC], immData);
-        //if (regPC > memReadOnly_e) processOpcode(virtualMemory[regPC], immData);
-
+        wait_ms(1000);          // delay before executing the next instruction
         processOpcode();
     }
 
-    if (haltFlag == 1)
-    {
-        dispSeg(2, '0');
-        while (1) continue;
-    }
+    // if CPU is halted, clear the segment displays and hang
+    dispSeg(1, '-'); dispSeg(2, '-');
+    while (1) continue;
 }

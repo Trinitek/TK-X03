@@ -8,7 +8,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _dispSeg `(v ~T0 @X0 0 ef2`uc`uc ]
 "14 source/emulator.h
 [v _initializeRegisters `(v ~T0 @X0 0 ef ]
-"16
+"5 source/system.h
+[v _wait_ms `(v ~T0 @X0 0 ef1`ui ]
+"16 source/emulator.h
 [v _processOpcode `(v ~T0 @X0 0 ef ]
 "5 source/registers.h
 [v _haltFlag `uc ~T0 @X0 0 e ]
@@ -8362,73 +8364,67 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 20: {
 [e :U _main ]
 [f ]
-[; ;main.c: 22: initOscillator();
-"22
+[; ;main.c: 21: initOscillator();
+"21
 [e ( _initOscillator ..  ]
-[; ;main.c: 23: initPorts();
-"23
+[; ;main.c: 22: initPorts();
+"22
 [e ( _initPorts ..  ]
-[; ;main.c: 24: dispSeg(1, '-'); dispSeg(2, '-');
-"24
+[; ;main.c: 23: dispSeg(1, '-'); dispSeg(2, '-');
+"23
 [e ( _dispSeg (2 , -> -> 1 `i `uc -> -> 45 `ui `uc ]
 [e ( _dispSeg (2 , -> -> 2 `i `uc -> -> 45 `ui `uc ]
-[; ;main.c: 26: initializeRegisters();
-"26
+[; ;main.c: 25: initializeRegisters();
+"25
 [e ( _initializeRegisters ..  ]
-[; ;main.c: 28: while (haltFlag == 0)
-"28
+[; ;main.c: 27: while (haltFlag == 0)
+"27
 [e $U 1182  ]
 [e :U 1183 ]
-[; ;main.c: 29: {
+[; ;main.c: 28: {
+"28
+{
+[; ;main.c: 29: if (regPC > 2047)
 "29
-{
-[; ;main.c: 30: if (regPC > 2047)
-"30
 [e $ ! > _regPC -> -> 2047 `i `ui 1185  ]
-[; ;main.c: 31: {
-"31
+[; ;main.c: 30: {
+"30
 {
-[; ;main.c: 32: regPC = 0;
-"32
+[; ;main.c: 31: regPC = 0;
+"31
 [e = _regPC -> -> 0 `i `ui ]
-[; ;main.c: 33: continue;
-"33
+[; ;main.c: 32: continue;
+"32
 [e $U 1182  ]
-"34
+"33
 }
 [e :U 1185 ]
-[; ;main.c: 34: }
-[; ;main.c: 39: processOpcode();
-"39
+[; ;main.c: 33: }
+[; ;main.c: 35: wait_ms(1000);
+"35
+[e ( _wait_ms (1 -> -> 1000 `i `ui ]
+[; ;main.c: 36: processOpcode();
+"36
 [e ( _processOpcode ..  ]
-"40
+"37
 }
 [e :U 1182 ]
-"28
+"27
 [e $ == -> _haltFlag `i -> 0 `i 1183  ]
 [e :U 1184 ]
-[; ;main.c: 40: }
-[; ;main.c: 42: if (haltFlag == 1)
-"42
-[e $ ! == -> _haltFlag `i -> 1 `i 1186  ]
-[; ;main.c: 43: {
-"43
-{
-[; ;main.c: 44: dispSeg(2, '0');
-"44
-[e ( _dispSeg (2 , -> -> 2 `i `uc -> -> 48 `ui `uc ]
-[; ;main.c: 45: while (1) continue;
-"45
-[e :U 1188 ]
-[e $U 1187  ]
+[; ;main.c: 37: }
+[; ;main.c: 40: dispSeg(1, '-'); dispSeg(2, '-');
+"40
+[e ( _dispSeg (2 , -> -> 1 `i `uc -> -> 45 `ui `uc ]
+[e ( _dispSeg (2 , -> -> 2 `i `uc -> -> 45 `ui `uc ]
+[; ;main.c: 41: while (1) continue;
+"41
 [e :U 1187 ]
-[e $U 1188  ]
-[e :U 1189 ]
-"46
-}
+[e $U 1186  ]
 [e :U 1186 ]
-[; ;main.c: 46: }
-[; ;main.c: 47: }
-"47
+[e $U 1187  ]
+[e :U 1188 ]
+[; ;main.c: 42: }
+"42
 [e :UE 1181 ]
 }
