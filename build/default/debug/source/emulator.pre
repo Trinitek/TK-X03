@@ -10534,7 +10534,7 @@ uint16_t regMX_temp = regMX;
 
 if (subRegister == 0)
 {
-regMX_temp >>= 8;
+regMX_temp >> 8;
 }
 
 return (uint8_t) regMX_temp;
@@ -10549,14 +10549,14 @@ uint16_t regMX_temp = regMX;
 switch(subRegister)
 {
 case 0:
-regMX_temp <<= 8;
-regMX_temp >>= 8;
-value_temp <<= 8;
+regMX_temp << 8;
+regMX_temp >> 8;
+value_temp << 8;
 break;
 
 case 1:
-regMX_temp >>= 8;
-regMX_temp <<= 8;
+regMX_temp >> 8;
+regMX_temp << 8;
 break;
 }
 
@@ -10571,28 +10571,28 @@ uint8_t regF_temp = regF;
 switch(subRegister)
 {
 case 0:
-regF_temp <<= 7;
-regF_temp >>= 7;
+regF_temp << 7;
+regF_temp >> 7;
 break;
 
 case 1:
-regF_temp <<= 6;
-regF_temp >>= 7;
+regF_temp << 6;
+regF_temp >> 7;
 break;
 
 case 2:
-regF_temp <<= 5;
-regF_temp >>= 7;
+regF_temp << 5;
+regF_temp >> 7;
 break;
 
 case 3:
-regF_temp <<= 4;
-regF_temp >>= 7;
+regF_temp << 4;
+regF_temp >> 7;
 break;
 
 case 4:
-regF_temp <<= 3;
-regF_temp >>= 7;
+regF_temp << 3;
+regF_temp >> 7;
 break;
 }
 
@@ -10608,37 +10608,37 @@ uint8_t regF_temp2 = regF;
 switch(subRegister)
 {
 case 0:
-regF_temp1 >>= 1;
-regF_temp1 <<= 1;
+regF_temp1 >> 1;
+regF_temp1 << 1;
 regF_temp2 = 0;
 break;
 
 case 1:
-regF_temp1 >>= 2;
-regF_temp1 <<= 2;
-regF_temp2 <<= 6;
-regF_temp2 >>= 6;
+regF_temp1 >> 2;
+regF_temp1 << 2;
+regF_temp2 << 6;
+regF_temp2 >> 6;
 break;
 
 case 2:
-regF_temp1 >>= 3;
-regF_temp1 <<= 3;
-regF_temp2 <<= 5;
-regF_temp2 >>= 5;
+regF_temp1 >> 3;
+regF_temp1 << 3;
+regF_temp2 << 5;
+regF_temp2 >> 5;
 break;
 
 case 3:
-regF_temp1 >>= 4;
-regF_temp1 <<= 4;
-regF_temp2 <<= 4;
-regF_temp2 >>= 4;
+regF_temp1 >> 4;
+regF_temp1 << 4;
+regF_temp2 << 4;
+regF_temp2 >> 4;
 break;
 
 case 4:
-regF_temp1 >>= 5;
-regF_temp1 <<= 5;
-regF_temp2 <<= 3;
-regF_temp2 >>= 3;
+regF_temp1 >> 5;
+regF_temp1 << 5;
+regF_temp2 << 3;
+regF_temp2 >> 3;
 break;
 }
 
@@ -10648,7 +10648,7 @@ regF = regF_temp1 + regF_temp2 + value;
 uint16_t immData_toPointer(void)
 {
 uint16_t pointer = (uint16_t) immData_1;
-pointer <<= 8;
+pointer << 8;
 pointer += immData_2;
 return pointer;
 }
@@ -10880,33 +10880,33 @@ break;
 case 0x26:
 
 regA_temp8 = regA;
-regA_temp8 >>= 7;
+regA_temp8 >> 7;
 if (regA_temp8 == 1) setFbits(0, 1);
 else setFbits(0, 0);
 
 
-regA <<= 1;
+regA << 1;
 break;
 
 case 0x27:
 
 regA_temp8 = regA;
-regA_temp8 <<= 7;
-regA_temp8 >>= 7;
+regA_temp8 << 7;
+regA_temp8 >> 7;
 if (regA_temp8 == 1) setFbits(0, 1);
 else setFbits(0, 0);
 
 
-regA >>= 1;
+regA >> 1;
 break;
 
 case 0x28:
 
 carriedBit = regA;
-carriedBit >>= 7;
+carriedBit >> 7;
 
 
-regA <<= 1;
+regA << 1;
 
 
 regA = regA + carriedBit;
@@ -10915,10 +10915,10 @@ break;
 case 0x29:
 
 carriedBit = regA;
-carriedBit <<= 7;
+carriedBit << 7;
 
 
-regA >>= 1;
+regA >> 1;
 
 
 regA += carriedBit;
@@ -11029,7 +11029,7 @@ case 0x3E:
 
 regPC++;
 regPC_temp = regPC;
-regPC_temp >>= 8;
+regPC_temp >> 8;
 stack[regSP] = (uint8_t) regPC_temp;
 regSP++;
 stack[regSP] = (uint8_t) regPC;
@@ -11043,7 +11043,7 @@ case 0x3F:
 
 regPC += 3;
 regPC_temp = regPC;
-regPC_temp >>= 8;
+regPC_temp >> 8;
 stack[regSP] = (uint8_t) regPC_temp;
 regSP++;
 stack[regSP] = (uint8_t) regPC;
@@ -11058,7 +11058,7 @@ regSP--;
 regPC = (uint16_t) stack[regSP];
 regSP--;
 regPC_temp = (uint16_t) stack[regSP];
-regPC_temp <<= 8;
+regPC_temp << 8;
 regPC += regPC_temp;
 
 regPC--;
@@ -11153,7 +11153,7 @@ break;
 case 0x52:
 
 regA_temp16 = regA;
-regA_temp16 <<= 8;
+regA_temp16 << 8;
 regA_temp16 += 255;
 regA_temp16 -= regB;
 if (regA_temp16 < 255) setFbits(4, 1);
@@ -11164,7 +11164,7 @@ break;
 case 0x53:
 
 regA_temp16 = regA;
-regA_temp16 <<= 8;
+regA_temp16 << 8;
 regA_temp16 += 255;
 regA_temp16 -= immData_1;
 if (regA_temp16 < 255) setFbits(4, 1);

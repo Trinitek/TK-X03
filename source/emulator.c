@@ -23,7 +23,7 @@ uint8_t getMXbits(uint8_t subRegister)
 
     if (subRegister == MH)
     {
-        regMX_temp >> 8;
+        regMX_temp >>= 8;
     }
 
     return (uint8_t) regMX_temp;
@@ -42,14 +42,14 @@ void setMXbits(uint8_t subRegister, uint8_t value)
     switch(subRegister)
     {
         case MH:
-            regMX_temp << 8;
-            regMX_temp >> 8;
-            value_temp << 8;
+            regMX_temp <<= 8;
+            regMX_temp >>= 8;
+            value_temp <<= 8;
             break;
         
         case ML:
-            regMX_temp >> 8;
-            regMX_temp << 8;
+            regMX_temp >>= 8;
+            regMX_temp <<= 8;
             break;
     }
     
@@ -69,28 +69,28 @@ uint8_t getFbits(uint8_t subRegister)
     switch(subRegister)
     {
         case CF:
-            regF_temp << 7;
-            regF_temp >> 7;
+            regF_temp <<= 7;
+            regF_temp >>= 7;
             break;
             
         case GF:
-            regF_temp << 6;
-            regF_temp >> 7;
+            regF_temp <<= 6;
+            regF_temp >>= 7;
             break;
             
         case LF:
-            regF_temp << 5;
-            regF_temp >> 7;
+            regF_temp <<= 5;
+            regF_temp >>= 7;
             break;
             
         case ZF:
-            regF_temp << 4;
-            regF_temp >> 7;
+            regF_temp <<= 4;
+            regF_temp >>= 7;
             break;
             
         case OF:
-            regF_temp << 3;
-            regF_temp >> 7;
+            regF_temp <<= 3;
+            regF_temp >>= 7;
             break;
     }
     
@@ -110,37 +110,37 @@ void setFbits(uint8_t subRegister, uint8_t value)
     switch(subRegister)
     {
         case CF:
-            regF_temp1 >> 1;
-            regF_temp1 << 1;
+            regF_temp1 >>= 1;
+            regF_temp1 <<= 1;
             regF_temp2 = 0;
             break;
             
         case GF:
-            regF_temp1 >> 2;
-            regF_temp1 << 2;
-            regF_temp2 << 6;
-            regF_temp2 >> 6;
+            regF_temp1 >>= 2;
+            regF_temp1 <<= 2;
+            regF_temp2 <<= 6;
+            regF_temp2 >>= 6;
             break;
             
         case LF:
-            regF_temp1 >> 3;
-            regF_temp1 << 3;
-            regF_temp2 << 5;
-            regF_temp2 >> 5;
+            regF_temp1 >>= 3;
+            regF_temp1 <<= 3;
+            regF_temp2 <<= 5;
+            regF_temp2 >>= 5;
             break;
             
         case ZF:
-            regF_temp1 >> 4;
-            regF_temp1 << 4;
-            regF_temp2 << 4;
-            regF_temp2 >> 4;
+            regF_temp1 >>= 4;
+            regF_temp1 <<= 4;
+            regF_temp2 <<= 4;
+            regF_temp2 >>= 4;
             break;
             
         case OF:
-            regF_temp1 >> 5;
-            regF_temp1 << 5;
-            regF_temp2 << 3;
-            regF_temp2 >> 3;
+            regF_temp1 >>= 5;
+            regF_temp1 <<= 5;
+            regF_temp2 <<= 3;
+            regF_temp2 >>= 3;
             break;
     }
     
@@ -150,7 +150,7 @@ void setFbits(uint8_t subRegister, uint8_t value)
 uint16_t immData_toPointer(void)
 {
     uint16_t pointer = (uint16_t) immData_1;
-    pointer << 8;
+    pointer <<= 8;
     pointer += immData_2;
     return pointer;
 }
@@ -401,33 +401,33 @@ void processOpcode(void)
         case SHL:					// shl a, 1
             // determine if a bit will fall off the end
             regA_temp8 = regA;
-            regA_temp8 >> 7;
+            regA_temp8 >>= 7;
             if (regA_temp8 == 1) setFbits(CF, 1);	// ...set CF if so
             else setFbits(CF, 0);
         	
             // shift bits to the left
-            regA << 1;
+            regA <<= 1;
             break;
         	
         case SHR:					// shr a, 1
             // determine if a bit will fall off the end
             regA_temp8 = regA;
-            regA_temp8 << 7;
-            regA_temp8 >> 7;
+            regA_temp8 <<= 7;
+            regA_temp8 >>= 7;
             if (regA_temp8 == 1) setFbits(CF, 1);	// ...set CF if so
             else setFbits(CF, 0);
         	
             // shift A register right 1
-            regA >> 1;
+            regA >>= 1;
             break;
         	
         case ROL:					// rol a, 1
             // preserve leftmost byte
             carriedBit = regA;
-            carriedBit >> 7;
+            carriedBit >>= 7;
 
             // shift A register left 1
-            regA << 1;
+            regA <<= 1;
         	
             // add carried bit to the end
             regA = regA + carriedBit;
@@ -436,10 +436,10 @@ void processOpcode(void)
         case ROR:					// ror a, 1
             // preserve rightmost byte
             carriedBit = regA;
-            carriedBit << 7;
+            carriedBit <<= 7;
         	
             // shift A register right 1
-            regA >> 1;
+            regA >>= 1;
         	
             // add carried bit to the end
             regA += carriedBit;
@@ -465,42 +465,56 @@ void processOpcode(void)
         	
         case JMPMX:					// jump to MX
             regPC = regMX;
+            // offset regPC++ at the end of the switch/case
+            regPC--;
             break;
         	
         case JMPI:					// jump to imm16
             regPC = immData_toPointer();
-            regPC += 2;
+            // offset regPC++ at the end of the switch/case
+            regPC--;
             break;
         	
         case JEMX:					// jump to MX if equal
             if (getFbits(ZF) == 1) regPC = regMX;
+            // offset regPC++ at the end of the switch/case
+            regPC--;
             break;
         	
         case JEI:					// jump to imm16 if equal
             if (getFbits(ZF) == 1) regPC = immData_toPointer();
-            regPC += 2;
+            // offset regPC++ at the end of the switch/case
+            regPC--;
             break;
         	
         case JNEMX:					// jump to MX if not equal
             if (getFbits(ZF) == 0) regPC = regMX;
+            // offset regPC++ at the end of the switch/case
+            regPC--;
             break;
         	
         case JNEI:					// jump to imm16 if not equal
             if (getFbits(ZF) == 0) regPC = immData_toPointer();
-            regPC += 2;
+            // offset regPC++ at the end of the switch/case
+            regPC--;
             break;
         	
         case JGMX:					// jump to MX if greater than
             if (getFbits(GF) == 1) regPC = regMX;
+            // offset regPC++ at the end of the switch/case
+            regPC--;
             break;
 
         case JGI:					// jump to imm16 if greater than
             if (getFbits(GF) == 1) regPC = immData_toPointer();
-            regPC += 2;
+            // offset regPC++ at the end of the switch/case
+            regPC--;
             break;
         	
         case JLMX:					// jump to MX if less than
             if (getFbits(LF) == 1) regPC = regMX;
+            // offset regPC++ at the end of the switch/case
+            regPC--;
             break;
         	
         case JLI:					// jump to imm16 if less than
@@ -510,87 +524,101 @@ void processOpcode(void)
         	
         case JCMX:					// jump to MX if CF set
             if (getFbits(CF) == 1) regPC = regMX;
+            // offset regPC++ at the end of the switch/case
+            regPC--;
             break;
         	
         case JCI:					// jump to imm16 if CF set
             if (getFbits(CF) == 1) regPC = immData_toPointer();
-            regPC += 2;
+            // offset regPC++ at the end of the switch/case
+            regPC--;
             break;
         	
         case JNCMX:					// jump to MX if CF not set
             if (getFbits(CF) == 0) regPC = regMX;
+            // offset regPC++ at the end of the switch/case
+            regPC--;
             break;
         	
         case JNCI:					// jump to imm16 if CF not set
             if (getFbits(CF) == 0) regPC = immData_toPointer();
-            regPC += 2;
+            // offset regPC++ at the end of the switch/case
+            regPC--;
             break;
         	
         case CALLMX:                                    // push PC to stack and jump to MX
-            //memoryMap.stack[regSP] = regPC;
-            stack[regSP] = regPC;
-            regSP += 2;
+            // point to next instruction before storing regPC
+            regPC++;
+            regPC_temp = regPC;
+            regPC_temp >>= 8;
+            stack[regSP] = (uint8_t) regPC_temp;
+            regSP++;
+            stack[regSP] = (uint8_t) regPC;
+            regSP++;
             regPC = regMX;
+            // offset regPC++ at the end of the switch/case
+            regPC--;
             break;
         	
         case CALLI:					// push PC to stack and jump to imm16
-            //memoryMap.stack[regSP] = regPC;
-            stack[regSP] = regPC;
-            regSP += 2;
+            // point to next instruction before storing regPC
+            regPC += 3;
+            regPC_temp = regPC;
+            regPC_temp >>= 8;
+            stack[regSP] = (uint8_t) regPC_temp;
+            regSP++;
+            stack[regSP] = (uint8_t) regPC;
+            regSP++;
             regPC = immData_toPointer();
-
-            regPC += 2;
+            // offset regPC++ at the end of the switch/case
+            regPC--;
             break;
         	
         case RET:					// pop PC from stack and return
-            regSP -= 2;
-            //regPC = memoryMap.stack[regSP];
+            regSP--;
+            regPC = (uint16_t) stack[regSP];
+            regSP--;
             regPC_temp = (uint16_t) stack[regSP];
-            regPC_temp << 8;
-            regPC += regPC_temp + (uint16_t) stack[regSP];
+            regPC_temp <<= 8;
+            regPC += regPC_temp;
+            // offset regPC++ at the end of the switch/case
+            regPC--;
             break;
         	
         	
         /* Stack operations */
         	
         case PUSHA:					// push a
-            //memoryMap.stack[regSP] = regA;
             stack[regSP] = regA;
             regSP++;
             break;
         	
         case PUSHB:					// push b
-            //memoryMap.stack[regSP] = regB;
             stack[regSP] = regB;
             regSP++;
             break;
         	
         case PUSHMX:                                    // push mx
-            //memoryMap.stack[regSP] = regMX;
             stack[regSP] = regMX;
             regSP += 2;
             break;
         	
         case PUSHMH:                                    // push mh
-            //memoryMap.stack[regSP] = regMXbits.MH;
             stack[regSP] = getMXbits(MH);
             regSP++;
             break;
         	
         case PUSHML:                                    // push ml
-            //memoryMap.stack[regSP] = regMXbits.ML;
             stack[regSP] = getMXbits(ML);
             regSP++;
             break;
         	
         case PUSHF:					// push f
-            //memoryMap.stack[regSP] = regF;
             stack[regSP] = regF;
             regSP++;
             break;
         	
         case PUSHI:					// push imm8
-            //memoryMap.stack[regSP] = immData.arg1;
             stack[regSP] = immData_1;
             regSP++;
             regPC++;
@@ -598,31 +626,26 @@ void processOpcode(void)
         	
         case POPA:					// pop a
             regSP--;
-            //regA = memoryMap.stack[regSP];
             regA = stack[regSP];
             break;
         	
         case POPB:					// pop b
             regSP--;
-            //regB = memoryMap.stack[regSP];
             regB = stack[regSP];
             break;
         	
         case POPMX:					// pop mx
             regSP -= 2;
-            //regMX = memoryMap.stack[regSP];
             regMX = stack[regSP];
             break;
         	
         case POPMH:					// pop mh
             regSP--;
-            //regMXbits.MH = memoryMap.stack[regSP];
             setMXbits(MH, stack[regSP]);
             break;
         	
         case POPML:					// pop ml
             regSP--;
-            //regMXbits.ML = memoryMap.stack[regSP];
             setMXbits(ML, stack[regSP]);
             break;
         	
@@ -651,7 +674,7 @@ void processOpcode(void)
         case SUBA:					// a = a - b
            // check for potential overflow and set corresponding flag
            regA_temp16 = regA;
-           regA_temp16 << 8;
+           regA_temp16 <<= 8;
            regA_temp16 += 255;
            regA_temp16 -= regB;
            if (regA_temp16 < 255) setFbits(OF, 1);
@@ -662,7 +685,7 @@ void processOpcode(void)
         case SUBI:					// a = a - imm8
            // check for potential overflow and set corresponding flag
            regA_temp16 = regA;
-           regA_temp16 << 8;
+           regA_temp16 <<= 8;
            regA_temp16 += 255;
            regA_temp16 -= immData_1;
            if (regA_temp16 < 255) setFbits(OF, 1);

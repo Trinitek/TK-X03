@@ -8321,9 +8321,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 25: {
 "25
 {
-[; ;emulator.c: 26: regMX_temp >>= 8;
+[; ;emulator.c: 26: regMX_temp >> 8;
 "26
-[e =>> _regMX_temp -> 8 `i ]
+[e >> _regMX_temp -> 8 `i ]
 "27
 }
 [e :U 1182 ]
@@ -8365,27 +8365,27 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 44: case 0:
 "44
 [e :U 1186 ]
-[; ;emulator.c: 45: regMX_temp <<= 8;
+[; ;emulator.c: 45: regMX_temp << 8;
 "45
-[e =<< _regMX_temp -> 8 `i ]
-[; ;emulator.c: 46: regMX_temp >>= 8;
+[e << _regMX_temp -> 8 `i ]
+[; ;emulator.c: 46: regMX_temp >> 8;
 "46
-[e =>> _regMX_temp -> 8 `i ]
-[; ;emulator.c: 47: value_temp <<= 8;
+[e >> _regMX_temp -> 8 `i ]
+[; ;emulator.c: 47: value_temp << 8;
 "47
-[e =<< _value_temp -> 8 `i ]
+[e << _value_temp -> 8 `i ]
 [; ;emulator.c: 48: break;
 "48
 [e $U 1184  ]
 [; ;emulator.c: 50: case 1:
 "50
 [e :U 1187 ]
-[; ;emulator.c: 51: regMX_temp >>= 8;
+[; ;emulator.c: 51: regMX_temp >> 8;
 "51
-[e =>> _regMX_temp -> 8 `i ]
-[; ;emulator.c: 52: regMX_temp <<= 8;
+[e >> _regMX_temp -> 8 `i ]
+[; ;emulator.c: 52: regMX_temp << 8;
 "52
-[e =<< _regMX_temp -> 8 `i ]
+[e << _regMX_temp -> 8 `i ]
 [; ;emulator.c: 53: break;
 "53
 [e $U 1184  ]
@@ -8431,60 +8431,60 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 71: case 0:
 "71
 [e :U 1191 ]
-[; ;emulator.c: 72: regF_temp <<= 7;
+[; ;emulator.c: 72: regF_temp << 7;
 "72
-[e =<< _regF_temp -> 7 `i ]
-[; ;emulator.c: 73: regF_temp >>= 7;
+[e << -> _regF_temp `i -> 7 `i ]
+[; ;emulator.c: 73: regF_temp >> 7;
 "73
-[e =>> _regF_temp -> 7 `i ]
+[e >> -> _regF_temp `i -> 7 `i ]
 [; ;emulator.c: 74: break;
 "74
 [e $U 1189  ]
 [; ;emulator.c: 76: case 1:
 "76
 [e :U 1192 ]
-[; ;emulator.c: 77: regF_temp <<= 6;
+[; ;emulator.c: 77: regF_temp << 6;
 "77
-[e =<< _regF_temp -> 6 `i ]
-[; ;emulator.c: 78: regF_temp >>= 7;
+[e << -> _regF_temp `i -> 6 `i ]
+[; ;emulator.c: 78: regF_temp >> 7;
 "78
-[e =>> _regF_temp -> 7 `i ]
+[e >> -> _regF_temp `i -> 7 `i ]
 [; ;emulator.c: 79: break;
 "79
 [e $U 1189  ]
 [; ;emulator.c: 81: case 2:
 "81
 [e :U 1193 ]
-[; ;emulator.c: 82: regF_temp <<= 5;
+[; ;emulator.c: 82: regF_temp << 5;
 "82
-[e =<< _regF_temp -> 5 `i ]
-[; ;emulator.c: 83: regF_temp >>= 7;
+[e << -> _regF_temp `i -> 5 `i ]
+[; ;emulator.c: 83: regF_temp >> 7;
 "83
-[e =>> _regF_temp -> 7 `i ]
+[e >> -> _regF_temp `i -> 7 `i ]
 [; ;emulator.c: 84: break;
 "84
 [e $U 1189  ]
 [; ;emulator.c: 86: case 3:
 "86
 [e :U 1194 ]
-[; ;emulator.c: 87: regF_temp <<= 4;
+[; ;emulator.c: 87: regF_temp << 4;
 "87
-[e =<< _regF_temp -> 4 `i ]
-[; ;emulator.c: 88: regF_temp >>= 7;
+[e << -> _regF_temp `i -> 4 `i ]
+[; ;emulator.c: 88: regF_temp >> 7;
 "88
-[e =>> _regF_temp -> 7 `i ]
+[e >> -> _regF_temp `i -> 7 `i ]
 [; ;emulator.c: 89: break;
 "89
 [e $U 1189  ]
 [; ;emulator.c: 91: case 4:
 "91
 [e :U 1195 ]
-[; ;emulator.c: 92: regF_temp <<= 3;
+[; ;emulator.c: 92: regF_temp << 3;
 "92
-[e =<< _regF_temp -> 3 `i ]
-[; ;emulator.c: 93: regF_temp >>= 7;
+[e << -> _regF_temp `i -> 3 `i ]
+[; ;emulator.c: 93: regF_temp >> 7;
 "93
-[e =>> _regF_temp -> 7 `i ]
+[e >> -> _regF_temp `i -> 7 `i ]
 [; ;emulator.c: 94: break;
 "94
 [e $U 1189  ]
@@ -8539,12 +8539,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 112: case 0:
 "112
 [e :U 1199 ]
-[; ;emulator.c: 113: regF_temp1 >>= 1;
+[; ;emulator.c: 113: regF_temp1 >> 1;
 "113
-[e =>> _regF_temp1 -> 1 `i ]
-[; ;emulator.c: 114: regF_temp1 <<= 1;
+[e >> -> _regF_temp1 `i -> 1 `i ]
+[; ;emulator.c: 114: regF_temp1 << 1;
 "114
-[e =<< _regF_temp1 -> 1 `i ]
+[e << -> _regF_temp1 `i -> 1 `i ]
 [; ;emulator.c: 115: regF_temp2 = 0;
 "115
 [e = _regF_temp2 -> -> 0 `i `uc ]
@@ -8554,72 +8554,72 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 118: case 1:
 "118
 [e :U 1200 ]
-[; ;emulator.c: 119: regF_temp1 >>= 2;
+[; ;emulator.c: 119: regF_temp1 >> 2;
 "119
-[e =>> _regF_temp1 -> 2 `i ]
-[; ;emulator.c: 120: regF_temp1 <<= 2;
+[e >> -> _regF_temp1 `i -> 2 `i ]
+[; ;emulator.c: 120: regF_temp1 << 2;
 "120
-[e =<< _regF_temp1 -> 2 `i ]
-[; ;emulator.c: 121: regF_temp2 <<= 6;
+[e << -> _regF_temp1 `i -> 2 `i ]
+[; ;emulator.c: 121: regF_temp2 << 6;
 "121
-[e =<< _regF_temp2 -> 6 `i ]
-[; ;emulator.c: 122: regF_temp2 >>= 6;
+[e << -> _regF_temp2 `i -> 6 `i ]
+[; ;emulator.c: 122: regF_temp2 >> 6;
 "122
-[e =>> _regF_temp2 -> 6 `i ]
+[e >> -> _regF_temp2 `i -> 6 `i ]
 [; ;emulator.c: 123: break;
 "123
 [e $U 1197  ]
 [; ;emulator.c: 125: case 2:
 "125
 [e :U 1201 ]
-[; ;emulator.c: 126: regF_temp1 >>= 3;
+[; ;emulator.c: 126: regF_temp1 >> 3;
 "126
-[e =>> _regF_temp1 -> 3 `i ]
-[; ;emulator.c: 127: regF_temp1 <<= 3;
+[e >> -> _regF_temp1 `i -> 3 `i ]
+[; ;emulator.c: 127: regF_temp1 << 3;
 "127
-[e =<< _regF_temp1 -> 3 `i ]
-[; ;emulator.c: 128: regF_temp2 <<= 5;
+[e << -> _regF_temp1 `i -> 3 `i ]
+[; ;emulator.c: 128: regF_temp2 << 5;
 "128
-[e =<< _regF_temp2 -> 5 `i ]
-[; ;emulator.c: 129: regF_temp2 >>= 5;
+[e << -> _regF_temp2 `i -> 5 `i ]
+[; ;emulator.c: 129: regF_temp2 >> 5;
 "129
-[e =>> _regF_temp2 -> 5 `i ]
+[e >> -> _regF_temp2 `i -> 5 `i ]
 [; ;emulator.c: 130: break;
 "130
 [e $U 1197  ]
 [; ;emulator.c: 132: case 3:
 "132
 [e :U 1202 ]
-[; ;emulator.c: 133: regF_temp1 >>= 4;
+[; ;emulator.c: 133: regF_temp1 >> 4;
 "133
-[e =>> _regF_temp1 -> 4 `i ]
-[; ;emulator.c: 134: regF_temp1 <<= 4;
+[e >> -> _regF_temp1 `i -> 4 `i ]
+[; ;emulator.c: 134: regF_temp1 << 4;
 "134
-[e =<< _regF_temp1 -> 4 `i ]
-[; ;emulator.c: 135: regF_temp2 <<= 4;
+[e << -> _regF_temp1 `i -> 4 `i ]
+[; ;emulator.c: 135: regF_temp2 << 4;
 "135
-[e =<< _regF_temp2 -> 4 `i ]
-[; ;emulator.c: 136: regF_temp2 >>= 4;
+[e << -> _regF_temp2 `i -> 4 `i ]
+[; ;emulator.c: 136: regF_temp2 >> 4;
 "136
-[e =>> _regF_temp2 -> 4 `i ]
+[e >> -> _regF_temp2 `i -> 4 `i ]
 [; ;emulator.c: 137: break;
 "137
 [e $U 1197  ]
 [; ;emulator.c: 139: case 4:
 "139
 [e :U 1203 ]
-[; ;emulator.c: 140: regF_temp1 >>= 5;
+[; ;emulator.c: 140: regF_temp1 >> 5;
 "140
-[e =>> _regF_temp1 -> 5 `i ]
-[; ;emulator.c: 141: regF_temp1 <<= 5;
+[e >> -> _regF_temp1 `i -> 5 `i ]
+[; ;emulator.c: 141: regF_temp1 << 5;
 "141
-[e =<< _regF_temp1 -> 5 `i ]
-[; ;emulator.c: 142: regF_temp2 <<= 3;
+[e << -> _regF_temp1 `i -> 5 `i ]
+[; ;emulator.c: 142: regF_temp2 << 3;
 "142
-[e =<< _regF_temp2 -> 3 `i ]
-[; ;emulator.c: 143: regF_temp2 >>= 3;
+[e << -> _regF_temp2 `i -> 3 `i ]
+[; ;emulator.c: 143: regF_temp2 >> 3;
 "143
-[e =>> _regF_temp2 -> 3 `i ]
+[e >> -> _regF_temp2 `i -> 3 `i ]
 [; ;emulator.c: 144: break;
 "144
 [e $U 1197  ]
@@ -8656,9 +8656,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _pointer `ui ~T0 @X0 1 a ]
 [; ;emulator.c: 152: uint16_t pointer = (uint16_t) immData_1;
 [e = _pointer -> _immData_1 `ui ]
-[; ;emulator.c: 153: pointer <<= 8;
+[; ;emulator.c: 153: pointer << 8;
 "153
-[e =<< _pointer -> 8 `i ]
+[e << _pointer -> 8 `i ]
 [; ;emulator.c: 154: pointer += immData_2;
 "154
 [e =+ _pointer -> _immData_2 `ui ]
@@ -9206,9 +9206,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 403: regA_temp8 = regA;
 "403
 [e = _regA_temp8 _regA ]
-[; ;emulator.c: 404: regA_temp8 >>= 7;
+[; ;emulator.c: 404: regA_temp8 >> 7;
 "404
-[e =>> _regA_temp8 -> 7 `i ]
+[e >> -> _regA_temp8 `i -> 7 `i ]
 [; ;emulator.c: 405: if (regA_temp8 == 1) setFbits(0, 1);
 "405
 [e $ ! == -> _regA_temp8 `i -> 1 `i 1259  ]
@@ -9219,9 +9219,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 406: else setFbits(0, 0);
 [e ( _setFbits (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
 [e :U 1260 ]
-[; ;emulator.c: 409: regA <<= 1;
+[; ;emulator.c: 409: regA << 1;
 "409
-[e =<< _regA -> 1 `i ]
+[e << -> _regA `i -> 1 `i ]
 [; ;emulator.c: 410: break;
 "410
 [e $U 1227  ]
@@ -9231,12 +9231,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 414: regA_temp8 = regA;
 "414
 [e = _regA_temp8 _regA ]
-[; ;emulator.c: 415: regA_temp8 <<= 7;
+[; ;emulator.c: 415: regA_temp8 << 7;
 "415
-[e =<< _regA_temp8 -> 7 `i ]
-[; ;emulator.c: 416: regA_temp8 >>= 7;
+[e << -> _regA_temp8 `i -> 7 `i ]
+[; ;emulator.c: 416: regA_temp8 >> 7;
 "416
-[e =>> _regA_temp8 -> 7 `i ]
+[e >> -> _regA_temp8 `i -> 7 `i ]
 [; ;emulator.c: 417: if (regA_temp8 == 1) setFbits(0, 1);
 "417
 [e $ ! == -> _regA_temp8 `i -> 1 `i 1262  ]
@@ -9247,9 +9247,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 418: else setFbits(0, 0);
 [e ( _setFbits (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
 [e :U 1263 ]
-[; ;emulator.c: 421: regA >>= 1;
+[; ;emulator.c: 421: regA >> 1;
 "421
-[e =>> _regA -> 1 `i ]
+[e >> -> _regA `i -> 1 `i ]
 [; ;emulator.c: 422: break;
 "422
 [e $U 1227  ]
@@ -9259,12 +9259,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 426: carriedBit = regA;
 "426
 [e = _carriedBit _regA ]
-[; ;emulator.c: 427: carriedBit >>= 7;
+[; ;emulator.c: 427: carriedBit >> 7;
 "427
-[e =>> _carriedBit -> 7 `i ]
-[; ;emulator.c: 430: regA <<= 1;
+[e >> -> _carriedBit `i -> 7 `i ]
+[; ;emulator.c: 430: regA << 1;
 "430
-[e =<< _regA -> 1 `i ]
+[e << -> _regA `i -> 1 `i ]
 [; ;emulator.c: 433: regA = regA + carriedBit;
 "433
 [e = _regA -> + -> _regA `i -> _carriedBit `i `uc ]
@@ -9277,12 +9277,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 438: carriedBit = regA;
 "438
 [e = _carriedBit _regA ]
-[; ;emulator.c: 439: carriedBit <<= 7;
+[; ;emulator.c: 439: carriedBit << 7;
 "439
-[e =<< _carriedBit -> 7 `i ]
-[; ;emulator.c: 442: regA >>= 1;
+[e << -> _carriedBit `i -> 7 `i ]
+[; ;emulator.c: 442: regA >> 1;
 "442
-[e =>> _regA -> 1 `i ]
+[e >> -> _regA `i -> 1 `i ]
 [; ;emulator.c: 445: regA += carriedBit;
 "445
 [e =+ _regA _carriedBit ]
@@ -9526,9 +9526,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 552: regPC_temp = regPC;
 "552
 [e = _regPC_temp _regPC ]
-[; ;emulator.c: 553: regPC_temp >>= 8;
+[; ;emulator.c: 553: regPC_temp >> 8;
 "553
-[e =>> _regPC_temp -> 8 `i ]
+[e >> _regPC_temp -> 8 `i ]
 [; ;emulator.c: 554: stack[regSP] = (uint8_t) regPC_temp;
 "554
 [e = *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux -> _regPC_temp `uc ]
@@ -9559,9 +9559,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 566: regPC_temp = regPC;
 "566
 [e = _regPC_temp _regPC ]
-[; ;emulator.c: 567: regPC_temp >>= 8;
+[; ;emulator.c: 567: regPC_temp >> 8;
 "567
-[e =>> _regPC_temp -> 8 `i ]
+[e >> _regPC_temp -> 8 `i ]
 [; ;emulator.c: 568: stack[regSP] = (uint8_t) regPC_temp;
 "568
 [e = *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux -> _regPC_temp `uc ]
@@ -9598,9 +9598,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 581: regPC_temp = (uint16_t) stack[regSP];
 "581
 [e = _regPC_temp -> *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux `ui ]
-[; ;emulator.c: 582: regPC_temp <<= 8;
+[; ;emulator.c: 582: regPC_temp << 8;
 "582
-[e =<< _regPC_temp -> 8 `i ]
+[e << _regPC_temp -> 8 `i ]
 [; ;emulator.c: 583: regPC += regPC_temp;
 "583
 [e =+ _regPC _regPC_temp ]
@@ -9810,9 +9810,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 676: regA_temp16 = regA;
 "676
 [e = _regA_temp16 -> _regA `ui ]
-[; ;emulator.c: 677: regA_temp16 <<= 8;
+[; ;emulator.c: 677: regA_temp16 << 8;
 "677
-[e =<< _regA_temp16 -> 8 `i ]
+[e << _regA_temp16 -> 8 `i ]
 [; ;emulator.c: 678: regA_temp16 += 255;
 "678
 [e =+ _regA_temp16 -> -> 255 `i `ui ]
@@ -9841,9 +9841,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 687: regA_temp16 = regA;
 "687
 [e = _regA_temp16 -> _regA `ui ]
-[; ;emulator.c: 688: regA_temp16 <<= 8;
+[; ;emulator.c: 688: regA_temp16 << 8;
 "688
-[e =<< _regA_temp16 -> 8 `i ]
+[e << _regA_temp16 -> 8 `i ]
 [; ;emulator.c: 689: regA_temp16 += 255;
 "689
 [e =+ _regA_temp16 -> -> 255 `i `ui ]

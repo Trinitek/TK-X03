@@ -1,5 +1,5 @@
 
-# 1 "source/emulator.c"
+# 1 "source/system.c"
 
 
 # 21 "C:\Program Files (x86)\Microchip\xc8\v1.30\include\htc.h"
@@ -10481,715 +10481,87 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 3 "source/system.h"
-void initOscillator(void);
-void initPorts(void);
-void wait_ms(uint16_t);
-uint8_t hexToChar(uint8_t);
-
-# 5 "source/registers.h"
-extern uint8_t haltFlag;
-
-uint8_t regA;
-uint8_t regB;
-
-uint16_t regMX;
-
-
-
-uint16_t regPC;
-
-uint8_t regSP;
-
-uint8_t regF;
-
-# 27
-uint8_t immData_1;
-uint8_t immData_2;
-
-
-
-uint8_t stack[256];
-
-# 3 "source/serial.h"
-void enableSerial(uint16_t);
-
-# 3 "source/segment.h"
-void dispSeg(uint8_t, uint8_t);
-void cycleSegDisplays(uint16_t);
-
-# 4 "source/virtualMemory.h"
-const long int virtualMemory_size = 2048;
-uint8_t virtualMemory[2048] = {
-0x07, 0x03, 0x00, 0x54, 0x3F, 0x00, 0x0A, 0x31, 0x00, 0x03, 0x06, 0x04, 0x40
-};
-
-# 12 "source/emulator.c"
-uint8_t haltFlag = 0;
-
-# 20
-uint8_t getMXbits(uint8_t subRegister)
+# 9 "source/system.c"
+void initOscillator(void)
 {
-uint16_t regMX_temp = regMX;
+OSCCONbits.IDLEN = 0;
+OSCCONbits.IRCF = 0b111;
+OSCCONbits.SCS = 0b10;
+OSCCON2bits.MFIOSEL = 0;
+OSCCON2bits.SOSCGO = 0;
+OSCCON2bits.PRISD = 0;
 
-if (subRegister == 0)
-{
-regMX_temp >>= 8;
+
+while (OSCCONbits.HFIOFS == 0) continue;
 }
 
-return (uint8_t) regMX_temp;
+# 26
+void initPorts(void)
+{
+TRISA = 0;
+TRISC = 0;
+TRISE = 0;
+
+ANSELD = 0;
+TRISDbits.RD3 = 0;
+TRISDbits.RD4 = 1;
+TRISDbits.RD5 = 0;
+TRISDbits.RD7 = 1;
+TRISDbits.RD6 = 0;
+
+LATA = 0;
+LATC = 0;
+LATD = 0;
+LATE = 0;
 }
 
-# 37
-void setMXbits(uint8_t subRegister, uint8_t value)
+# 50
+void wait_ms(uint16_t time)
 {
-uint16_t value_temp = (uint16_t) value;
-uint16_t regMX_temp = regMX;
+static long timel = 0;
+timel = time * 10;
+for (; timel; timel--);
+}
 
-switch(subRegister)
+# 63
+uint8_t hexToChar(uint8_t number)
+{
+number = number << 4;
+number = number >> 4;
+switch (number)
 {
 case 0:
-regMX_temp <<= 8;
-regMX_temp >>= 8;
-value_temp <<= 8;
-break;
-
+return '0';
 case 1:
-regMX_temp >>= 8;
-regMX_temp <<= 8;
-break;
-}
-
-regMX = regMX_temp + value_temp;
-}
-
-# 65
-uint8_t getFbits(uint8_t subRegister)
-{
-uint8_t regF_temp = regF;
-
-switch(subRegister)
-{
-case 0:
-regF_temp <<= 7;
-regF_temp >>= 7;
-break;
-
-case 1:
-regF_temp <<= 6;
-regF_temp >>= 7;
-break;
-
+return '1';
 case 2:
-regF_temp <<= 5;
-regF_temp >>= 7;
-break;
-
+return '2';
 case 3:
-regF_temp <<= 4;
-regF_temp >>= 7;
-break;
-
+return '3';
 case 4:
-regF_temp <<= 3;
-regF_temp >>= 7;
-break;
+return '4';
+case 5:
+return '5';
+case 6:
+return '6';
+case 7:
+return '7';
+case 8:
+return '8';
+case 9:
+return '9';
+case 0xA:
+return 'A';
+case 0xB:
+return 'B';
+case 0xC:
+return 'C';
+case 0xD:
+return 'D';
+case 0xE:
+return 'E';
+case 0xF:
+return 'F';
 }
-
-return regF_temp;
-}
-
-# 105
-void setFbits(uint8_t subRegister, uint8_t value)
-{
-uint8_t regF_temp1 = regF;
-uint8_t regF_temp2 = regF;
-
-switch(subRegister)
-{
-case 0:
-regF_temp1 >>= 1;
-regF_temp1 <<= 1;
-regF_temp2 = 0;
-break;
-
-case 1:
-regF_temp1 >>= 2;
-regF_temp1 <<= 2;
-regF_temp2 <<= 6;
-regF_temp2 >>= 6;
-break;
-
-case 2:
-regF_temp1 >>= 3;
-regF_temp1 <<= 3;
-regF_temp2 <<= 5;
-regF_temp2 >>= 5;
-break;
-
-case 3:
-regF_temp1 >>= 4;
-regF_temp1 <<= 4;
-regF_temp2 <<= 4;
-regF_temp2 >>= 4;
-break;
-
-case 4:
-regF_temp1 >>= 5;
-regF_temp1 <<= 5;
-regF_temp2 <<= 3;
-regF_temp2 >>= 3;
-break;
-}
-
-regF = regF_temp1 + regF_temp2 + value;
-}
-
-uint16_t immData_toPointer(void)
-{
-uint16_t pointer = (uint16_t) immData_1;
-pointer <<= 8;
-pointer += immData_2;
-return pointer;
-}
-
-void initializeRegisters(void)
-{
-haltFlag = 0;
-regA = 0;
-regB = 0;
-regPC = 0;
-regSP = 0;
-regF = 0;
-}
-
-# 174
-uint8_t getPortData(uint8_t portNumber)
-{
-switch (portNumber)
-{
-case 0x02:
-return RCREG2;
-}
-
 return 0;
-}
-
-# 190
-void setPortData(uint8_t portNumber, uint8_t outputData)
-{
-uint16_t outputData_temp16;
-uint8_t outputData_temp8;
-switch (portNumber)
-{
-case 0x00:
-if (outputData == 0) outputData_temp16 = 1200;
-if (outputData == 1) outputData_temp16 = 2400;
-if (outputData == 2) outputData_temp16 = 9600;
-if (outputData == 3) outputData_temp16 = 10417;
-if (outputData == 4) outputData_temp16 = 19200;
-enableSerial(outputData_temp16);
-break;
-
-case 0x01:
-TXREG2 = outputData;
-break;
-
-case 0x03:
-outputData_temp8 = hexToChar(outputData);
-dispSeg(1, outputData_temp8);
-break;
-
-case 0x04:
-outputData_temp8 = hexToChar(outputData);
-dispSeg(2, outputData_temp8);
-break;
-}
-}
-
-void update_immData(void)
-{
-
-if (regPC + 1 == 2047 + 1) immData_1 = 0;
-if (regPC + 2 == 2047 + 1) immData_2 = 0;
-if (regPC + 2 == 2047 + 2) immData_2 = 1;
-
-
-
-immData_1 = virtualMemory[regPC + 1];
-immData_2 = virtualMemory[regPC + 2];
-}
-
-# 238
-void processOpcode(void)
-{
-
-update_immData();
-
-
-uint8_t regA_temp8 = regA;
-uint16_t regA_temp16 = (uint16_t) regA;
-uint16_t regPC_temp = regPC;
-uint8_t carriedBit;
-
-
-switch (virtualMemory[regPC])
-{
-
-
-default:
-break;
-
-case 0x01:
-setFbits(0, 1);
-break;
-
-case 0x02:
-setFbits(0, 0);
-break;
-
-case 0x08:
-haltFlag = 1;
-break;
-
-
-
-
-case 0x03:
-regA = getPortData(regB);
-break;
-
-case 0x04:
-regA = getPortData(immData_1);
-regPC++;
-break;
-
-case 0x05:
-setPortData(regB, regA);
-break;
-
-case 0x06:
-setPortData(immData_1, regA);
-regPC++;
-break;
-
-case 0x07:
-setPortData(immData_1, immData_2);
-regPC += 2;
-break;
-
-
-
-
-case 0x10:
-regA = virtualMemory[regMX];
-break;
-
-case 0x11:
-regA = getMXbits(0);
-break;
-
-case 0x12:
-regA = getMXbits(1);
-break;
-
-case 0x13:
-regA = regSP;
-break;
-
-case 0x14:
-regA = regF;
-break;
-
-case 0x15:
-regA = regB;
-break;
-
-case 0x16:
-
-# 332
-virtualMemory[regMX] = regA;
-
-break;
-
-case 0x17:
-setMXbits(0, regA);
-break;
-
-case 0x18:
-setMXbits(1, regA);
-break;
-
-case 0x19:
-regSP = regA;
-break;
-
-case 0x1A:
-regB = regA;
-break;
-
-case 0x1B:
-regA = immData_1;
-
-regPC++;
-break;
-
-case 0x1C:
-regA_temp8 = regA;
-regA = regB;
-regB = regA_temp8;
-break;
-
-
-
-
-case 0x20:
-regA &= regB;
-break;
-
-case 0x21:
-
-regA = regA & regB;
-regA =~ regA;
-break;
-
-case 0x22:
-regA |= regB;
-break;
-
-case 0x23:
-
-regA = regA | regB;
-regA =~ regA;
-break;
-
-case 0x2B:
-regA ^= regB;
-break;
-
-case 0x24:
-
-regA = regA ^ regB;
-regA =~ regA;
-break;
-
-case 0x25:
-regA =~ regA;
-break;
-
-case 0x26:
-
-regA_temp8 = regA;
-regA_temp8 >>= 7;
-if (regA_temp8 == 1) setFbits(0, 1);
-else setFbits(0, 0);
-
-
-regA <<= 1;
-break;
-
-case 0x27:
-
-regA_temp8 = regA;
-regA_temp8 <<= 7;
-regA_temp8 >>= 7;
-if (regA_temp8 == 1) setFbits(0, 1);
-else setFbits(0, 0);
-
-
-regA >>= 1;
-break;
-
-case 0x28:
-
-carriedBit = regA;
-carriedBit >>= 7;
-
-
-regA <<= 1;
-
-
-regA = regA + carriedBit;
-break;
-
-case 0x29:
-
-carriedBit = regA;
-carriedBit <<= 7;
-
-
-regA >>= 1;
-
-
-regA += carriedBit;
-break;
-
-case 0x2A:
-
-if (regA == regB) setFbits(3, 1);
-else setFbits(3, 0);
-
-
-if (regA < regB) setFbits(2, 1);
-else setFbits(2, 0);
-
-
-if (regA > regB) setFbits(1, 1);
-else setFbits(1, 0);
-
-break;
-
-
-
-
-case 0x30:
-regPC = regMX;
-
-regPC--;
-break;
-
-case 0x31:
-regPC = immData_toPointer();
-
-regPC--;
-break;
-
-case 0x32:
-if (getFbits(3) == 1) regPC = regMX;
-
-regPC--;
-break;
-
-case 0x33:
-if (getFbits(3) == 1) regPC = immData_toPointer();
-
-regPC--;
-break;
-
-case 0x34:
-if (getFbits(3) == 0) regPC = regMX;
-
-regPC--;
-break;
-
-case 0x35:
-if (getFbits(3) == 0) regPC = immData_toPointer();
-
-regPC--;
-break;
-
-case 0x36:
-if (getFbits(1) == 1) regPC = regMX;
-
-regPC--;
-break;
-
-case 0x37:
-if (getFbits(1) == 1) regPC = immData_toPointer();
-
-regPC--;
-break;
-
-case 0x38:
-if (getFbits(2) == 1) regPC = regMX;
-
-regPC--;
-break;
-
-case 0x39:
-if (getFbits(2) == 1) regPC = immData_toPointer();
-regPC += 2;
-break;
-
-case 0x3A:
-if (getFbits(0) == 1) regPC = regMX;
-
-regPC--;
-break;
-
-case 0x3B:
-if (getFbits(0) == 1) regPC = immData_toPointer();
-
-regPC--;
-break;
-
-case 0x3C:
-if (getFbits(0) == 0) regPC = regMX;
-
-regPC--;
-break;
-
-case 0x3D:
-if (getFbits(0) == 0) regPC = immData_toPointer();
-
-regPC--;
-break;
-
-case 0x3E:
-
-regPC++;
-regPC_temp = regPC;
-regPC_temp >>= 8;
-stack[regSP] = (uint8_t) regPC_temp;
-regSP++;
-stack[regSP] = (uint8_t) regPC;
-regSP++;
-regPC = regMX;
-
-regPC--;
-break;
-
-case 0x3F:
-
-regPC += 3;
-regPC_temp = regPC;
-regPC_temp >>= 8;
-stack[regSP] = (uint8_t) regPC_temp;
-regSP++;
-stack[regSP] = (uint8_t) regPC;
-regSP++;
-regPC = immData_toPointer();
-
-regPC--;
-break;
-
-case 0x40:
-regSP--;
-regPC = (uint16_t) stack[regSP];
-regSP--;
-regPC_temp = (uint16_t) stack[regSP];
-regPC_temp <<= 8;
-regPC += regPC_temp;
-
-regPC--;
-break;
-
-
-
-
-case 0x41:
-stack[regSP] = regA;
-regSP++;
-break;
-
-case 0x42:
-stack[regSP] = regB;
-regSP++;
-break;
-
-case 0x43:
-stack[regSP] = regMX;
-regSP += 2;
-break;
-
-case 0x44:
-stack[regSP] = getMXbits(0);
-regSP++;
-break;
-
-case 0x45:
-stack[regSP] = getMXbits(1);
-regSP++;
-break;
-
-case 0x46:
-stack[regSP] = regF;
-regSP++;
-break;
-
-case 0x47:
-stack[regSP] = immData_1;
-regSP++;
-regPC++;
-break;
-
-case 0x48:
-regSP--;
-regA = stack[regSP];
-break;
-
-case 0x49:
-regSP--;
-regB = stack[regSP];
-break;
-
-case 0x4A:
-regSP -= 2;
-regMX = stack[regSP];
-break;
-
-case 0x4B:
-regSP--;
-setMXbits(0, stack[regSP]);
-break;
-
-case 0x4C:
-regSP--;
-setMXbits(1, stack[regSP]);
-break;
-
-
-
-
-case 0x50:
-
-regA_temp16 += (uint16_t) regB;
-if (regA_temp16 > 255) setFbits(4, 1);
-else setFbits(4, 0);
-regA += regB;
-break;
-
-case 0x51:
-
-regA_temp16 += (uint16_t) immData_1;
-if (regA_temp16 > 255) setFbits(4, 1);
-else setFbits(4, 0);
-
-regA += immData_1;
-
-regPC++;
-break;
-
-case 0x52:
-
-regA_temp16 = regA;
-regA_temp16 <<= 8;
-regA_temp16 += 255;
-regA_temp16 -= regB;
-if (regA_temp16 < 255) setFbits(4, 1);
-else setFbits(4, 0);
-regA -= regB;
-break;
-
-case 0x53:
-
-regA_temp16 = regA;
-regA_temp16 <<= 8;
-regA_temp16 += 255;
-regA_temp16 -= immData_1;
-if (regA_temp16 < 255) setFbits(4, 1);
-else setFbits(4, 0);
-regA -= immData_1;
-regPC++;
-break;
-
-case 0x54:
-
-regA_temp16 = regA + 1;
-if (regA_temp16 > 255) setFbits(4, 1);
-else setFbits(4, 0);
-regA++;
-break;
-
-case 0x55:
-
-regA_temp8 = regA - 1;
-if (regA_temp8 == 255) setFbits(4, 1);
-else setFbits(4, 0);
-regA--;
-break;
-}
-
-
-regPC++;
 }

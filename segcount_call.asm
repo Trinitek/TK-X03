@@ -1,9 +1,9 @@
-; SEGCOUNT_STACK.ASM
+; SEGCOUNT_CALL.ASM
 ; Blake Burgess
 ; 19 March 2014
 ;
 ; Continuously increments A and sends the result to the second segment display,
-; and uses CALL instructions to do so.
+; and uses the CALL instruction to do so.
 
 	outii	03 00	; display 0 on first display (port 3)
 	
