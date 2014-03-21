@@ -20,7 +20,6 @@ uint8_t regF;                               // 8-bit flag register
 #define GF              1                   // ...greater than
 #define LF              2                   // ...less than
 #define ZF              3                   // ...zero/unequal
-#define OF              4                   // ...overflow
 
 /* Temporary data and memory map */
 

@@ -8252,15 +8252,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 "18
 [v _regF `uc ~T0 @X0 1 e ]
 [; ;registers.h: 18: uint8_t regF;
-"27
+"26
 [v _immData_1 `uc ~T0 @X0 1 e ]
-[; ;registers.h: 27: uint8_t immData_1;
-"28
+[; ;registers.h: 26: uint8_t immData_1;
+"27
 [v _immData_2 `uc ~T0 @X0 1 e ]
-[; ;registers.h: 28: uint8_t immData_2;
-"32
+[; ;registers.h: 27: uint8_t immData_2;
+"31
 [v _stack `uc ~T0 @X0 -> 256 `i e ]
-[; ;registers.h: 32: uint8_t stack[256];
+[; ;registers.h: 31: uint8_t stack[256];
 [; ;serial.h: 3: void enableSerial(uint16_t);
 [; ;segment.h: 3: void dispSeg(uint8_t, uint8_t);
 [; ;segment.h: 4: void cycleSegDisplays(uint16_t);
@@ -8278,22 +8278,30 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 7 `i `uc
 -> -> 3 `i `uc
 -> -> 0 `i `uc
--> -> 84 `i `uc
--> -> 63 `i `uc
--> -> 0 `i `uc
--> -> 10 `i `uc
--> -> 49 `i `uc
--> -> 0 `i `uc
+-> -> 41 `i `uc
+-> -> 41 `i `uc
+-> -> 41 `i `uc
+-> -> 41 `i `uc
+-> -> 6 `i `uc
 -> -> 3 `i `uc
+-> -> 40 `i `uc
+-> -> 40 `i `uc
+-> -> 40 `i `uc
+-> -> 40 `i `uc
 -> -> 6 `i `uc
 -> -> 4 `i `uc
+-> -> 84 `i `uc
 "7
--> -> 64 `i `uc
+-> -> 49 `i `uc
+-> -> 0 `i `uc
+"8
+-> -> 3 `i `uc
 ..
 ]
 [; ;virtualMemory.h: 5: uint8_t virtualMemory[2048] = {
-[; ;virtualMemory.h: 6: 0x07, 0x03, 0x00, 0x54, 0x3F, 0x00, 0x0A, 0x31, 0x00, 0x03, 0x06, 0x04, 0x40
-[; ;virtualMemory.h: 7: };
+[; ;virtualMemory.h: 6: 0x07, 0x03, 0x00, 0x29, 0x29, 0x29, 0x29, 0x06, 0x03, 0x28, 0x28, 0x28, 0x28, 0x06, 0x04, 0x54,
+[; ;virtualMemory.h: 7: 0x31, 0x00, 0x03
+[; ;virtualMemory.h: 8: };
 "12 source/emulator.c
 [v _haltFlag `uc ~T0 @X0 1 e ]
 [i _haltFlag
@@ -8476,21 +8484,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;emulator.c: 89: break;
 "89
 [e $U 1189  ]
-[; ;emulator.c: 91: case 4:
-"91
-[e :U 1195 ]
-[; ;emulator.c: 92: regF_temp <<= 3;
-"92
-[e =<< _regF_temp -> 3 `i ]
-[; ;emulator.c: 93: regF_temp >>= 7;
-"93
-[e =>> _regF_temp -> 7 `i ]
-[; ;emulator.c: 94: break;
-"94
-[e $U 1189  ]
-"95
+"90
 }
-[; ;emulator.c: 95: }
+[; ;emulator.c: 90: }
 [e $U 1189  ]
 "69
 [e :U 1190 ]
@@ -8498,1502 +8494,1482 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 1 `i `uc 1192
  , $ -> -> 2 `i `uc 1193
  , $ -> -> 3 `i `uc 1194
- , $ -> -> 4 `i `uc 1195
  1189 ]
-"95
+"90
 [e :U 1189 ]
-[; ;emulator.c: 97: return regF_temp;
-"97
+[; ;emulator.c: 92: return regF_temp;
+"92
 [e ) _regF_temp ]
 [e $UE 1188  ]
-[; ;emulator.c: 98: }
-"98
+[; ;emulator.c: 93: }
+"93
 [e :UE 1188 ]
 }
-"105
+"100
 [v _setFbits `(v ~T0 @X0 1 ef2`uc`uc ]
-"106
+"101
 {
-[; ;emulator.c: 105: void setFbits(uint8_t subRegister, uint8_t value)
-[; ;emulator.c: 106: {
+[; ;emulator.c: 100: void setFbits(uint8_t subRegister, uint8_t value)
+[; ;emulator.c: 101: {
 [e :U _setFbits ]
-"105
+"100
 [v _subRegister `uc ~T0 @X0 1 r1 ]
 [v _value `uc ~T0 @X0 1 r2 ]
-"106
+"101
 [f ]
-"107
+"102
 [v _regF_temp1 `uc ~T0 @X0 1 a ]
-[; ;emulator.c: 107: uint8_t regF_temp1 = regF;
+[; ;emulator.c: 102: uint8_t regF_temp1 = regF;
 [e = _regF_temp1 _regF ]
-"108
+"103
 [v _regF_temp2 `uc ~T0 @X0 1 a ]
-[; ;emulator.c: 108: uint8_t regF_temp2 = regF;
+[; ;emulator.c: 103: uint8_t regF_temp2 = regF;
 [e = _regF_temp2 _regF ]
-[; ;emulator.c: 110: switch(subRegister)
-"110
-[e $U 1198  ]
-[; ;emulator.c: 111: {
-"111
+[; ;emulator.c: 105: switch(subRegister)
+"105
+[e $U 1197  ]
+[; ;emulator.c: 106: {
+"106
 {
-[; ;emulator.c: 112: case 0:
-"112
-[e :U 1199 ]
-[; ;emulator.c: 113: regF_temp1 >>= 1;
-"113
-[e =>> _regF_temp1 -> 1 `i ]
-[; ;emulator.c: 114: regF_temp1 <<= 1;
-"114
-[e =<< _regF_temp1 -> 1 `i ]
-[; ;emulator.c: 115: regF_temp2 = 0;
-"115
-[e = _regF_temp2 -> -> 0 `i `uc ]
-[; ;emulator.c: 116: break;
-"116
-[e $U 1197  ]
-[; ;emulator.c: 118: case 1:
-"118
-[e :U 1200 ]
-[; ;emulator.c: 119: regF_temp1 >>= 2;
-"119
-[e =>> _regF_temp1 -> 2 `i ]
-[; ;emulator.c: 120: regF_temp1 <<= 2;
-"120
-[e =<< _regF_temp1 -> 2 `i ]
-[; ;emulator.c: 121: regF_temp2 <<= 6;
-"121
-[e =<< _regF_temp2 -> 6 `i ]
-[; ;emulator.c: 122: regF_temp2 >>= 6;
-"122
-[e =>> _regF_temp2 -> 6 `i ]
-[; ;emulator.c: 123: break;
-"123
-[e $U 1197  ]
-[; ;emulator.c: 125: case 2:
-"125
-[e :U 1201 ]
-[; ;emulator.c: 126: regF_temp1 >>= 3;
-"126
-[e =>> _regF_temp1 -> 3 `i ]
-[; ;emulator.c: 127: regF_temp1 <<= 3;
-"127
-[e =<< _regF_temp1 -> 3 `i ]
-[; ;emulator.c: 128: regF_temp2 <<= 5;
-"128
-[e =<< _regF_temp2 -> 5 `i ]
-[; ;emulator.c: 129: regF_temp2 >>= 5;
-"129
-[e =>> _regF_temp2 -> 5 `i ]
-[; ;emulator.c: 130: break;
-"130
-[e $U 1197  ]
-[; ;emulator.c: 132: case 3:
-"132
-[e :U 1202 ]
-[; ;emulator.c: 133: regF_temp1 >>= 4;
-"133
-[e =>> _regF_temp1 -> 4 `i ]
-[; ;emulator.c: 134: regF_temp1 <<= 4;
-"134
-[e =<< _regF_temp1 -> 4 `i ]
-[; ;emulator.c: 135: regF_temp2 <<= 4;
-"135
-[e =<< _regF_temp2 -> 4 `i ]
-[; ;emulator.c: 136: regF_temp2 >>= 4;
-"136
-[e =>> _regF_temp2 -> 4 `i ]
-[; ;emulator.c: 137: break;
-"137
-[e $U 1197  ]
-[; ;emulator.c: 139: case 4:
-"139
-[e :U 1203 ]
-[; ;emulator.c: 140: regF_temp1 >>= 5;
-"140
-[e =>> _regF_temp1 -> 5 `i ]
-[; ;emulator.c: 141: regF_temp1 <<= 5;
-"141
-[e =<< _regF_temp1 -> 5 `i ]
-[; ;emulator.c: 142: regF_temp2 <<= 3;
-"142
-[e =<< _regF_temp2 -> 3 `i ]
-[; ;emulator.c: 143: regF_temp2 >>= 3;
-"143
-[e =>> _regF_temp2 -> 3 `i ]
-[; ;emulator.c: 144: break;
-"144
-[e $U 1197  ]
-"145
-}
-[; ;emulator.c: 145: }
-[e $U 1197  ]
-"110
+[; ;emulator.c: 107: case 0:
+"107
 [e :U 1198 ]
-[e [\ _subRegister , $ -> -> 0 `i `uc 1199
- , $ -> -> 1 `i `uc 1200
- , $ -> -> 2 `i `uc 1201
- , $ -> -> 3 `i `uc 1202
- , $ -> -> 4 `i `uc 1203
- 1197 ]
-"145
-[e :U 1197 ]
-[; ;emulator.c: 147: regF = regF_temp1 + regF_temp2 + value;
-"147
-[e = _regF -> + + -> _regF_temp1 `i -> _regF_temp2 `i -> _value `i `uc ]
-[; ;emulator.c: 148: }
-"148
-[e :UE 1196 ]
+[; ;emulator.c: 108: regF_temp1 >>= 1;
+"108
+[e =>> _regF_temp1 -> 1 `i ]
+[; ;emulator.c: 109: regF_temp1 <<= 1;
+"109
+[e =<< _regF_temp1 -> 1 `i ]
+[; ;emulator.c: 110: regF_temp2 = 0;
+"110
+[e = _regF_temp2 -> -> 0 `i `uc ]
+[; ;emulator.c: 111: break;
+"111
+[e $U 1196  ]
+[; ;emulator.c: 113: case 1:
+"113
+[e :U 1199 ]
+[; ;emulator.c: 114: regF_temp1 >>= 2;
+"114
+[e =>> _regF_temp1 -> 2 `i ]
+[; ;emulator.c: 115: regF_temp1 <<= 2;
+"115
+[e =<< _regF_temp1 -> 2 `i ]
+[; ;emulator.c: 116: regF_temp2 <<= 6;
+"116
+[e =<< _regF_temp2 -> 6 `i ]
+[; ;emulator.c: 117: regF_temp2 >>= 6;
+"117
+[e =>> _regF_temp2 -> 6 `i ]
+[; ;emulator.c: 118: break;
+"118
+[e $U 1196  ]
+[; ;emulator.c: 120: case 2:
+"120
+[e :U 1200 ]
+[; ;emulator.c: 121: regF_temp1 >>= 3;
+"121
+[e =>> _regF_temp1 -> 3 `i ]
+[; ;emulator.c: 122: regF_temp1 <<= 3;
+"122
+[e =<< _regF_temp1 -> 3 `i ]
+[; ;emulator.c: 123: regF_temp2 <<= 5;
+"123
+[e =<< _regF_temp2 -> 5 `i ]
+[; ;emulator.c: 124: regF_temp2 >>= 5;
+"124
+[e =>> _regF_temp2 -> 5 `i ]
+[; ;emulator.c: 125: break;
+"125
+[e $U 1196  ]
+[; ;emulator.c: 127: case 3:
+"127
+[e :U 1201 ]
+[; ;emulator.c: 128: regF_temp1 >>= 4;
+"128
+[e =>> _regF_temp1 -> 4 `i ]
+[; ;emulator.c: 129: regF_temp1 <<= 4;
+"129
+[e =<< _regF_temp1 -> 4 `i ]
+[; ;emulator.c: 130: regF_temp2 <<= 4;
+"130
+[e =<< _regF_temp2 -> 4 `i ]
+[; ;emulator.c: 131: regF_temp2 >>= 4;
+"131
+[e =>> _regF_temp2 -> 4 `i ]
+[; ;emulator.c: 132: break;
+"132
+[e $U 1196  ]
+"133
 }
-"150
+[; ;emulator.c: 133: }
+[e $U 1196  ]
+"105
+[e :U 1197 ]
+[e [\ _subRegister , $ -> -> 0 `i `uc 1198
+ , $ -> -> 1 `i `uc 1199
+ , $ -> -> 2 `i `uc 1200
+ , $ -> -> 3 `i `uc 1201
+ 1196 ]
+"133
+[e :U 1196 ]
+[; ;emulator.c: 135: regF = regF_temp1 + regF_temp2 + value;
+"135
+[e = _regF -> + + -> _regF_temp1 `i -> _regF_temp2 `i -> _value `i `uc ]
+[; ;emulator.c: 136: }
+"136
+[e :UE 1195 ]
+}
+"138
 [v _immData_toPointer `(ui ~T0 @X0 1 ef ]
-"151
+"139
 {
-[; ;emulator.c: 150: uint16_t immData_toPointer(void)
-[; ;emulator.c: 151: {
+[; ;emulator.c: 138: uint16_t immData_toPointer(void)
+[; ;emulator.c: 139: {
 [e :U _immData_toPointer ]
 [f ]
-"152
+"140
 [v _pointer `ui ~T0 @X0 1 a ]
-[; ;emulator.c: 152: uint16_t pointer = (uint16_t) immData_1;
+[; ;emulator.c: 140: uint16_t pointer = (uint16_t) immData_1;
 [e = _pointer -> _immData_1 `ui ]
-[; ;emulator.c: 153: pointer <<= 8;
-"153
+[; ;emulator.c: 141: pointer <<= 8;
+"141
 [e =<< _pointer -> 8 `i ]
-[; ;emulator.c: 154: pointer += immData_2;
-"154
+[; ;emulator.c: 142: pointer += immData_2;
+"142
 [e =+ _pointer -> _immData_2 `ui ]
-[; ;emulator.c: 155: return pointer;
-"155
+[; ;emulator.c: 143: return pointer;
+"143
 [e ) _pointer ]
-[e $UE 1204  ]
-[; ;emulator.c: 156: }
-"156
-[e :UE 1204 ]
+[e $UE 1202  ]
+[; ;emulator.c: 144: }
+"144
+[e :UE 1202 ]
 }
-"158
+"146
 [v _initializeRegisters `(v ~T0 @X0 1 ef ]
-"159
+"147
 {
-[; ;emulator.c: 158: void initializeRegisters(void)
-[; ;emulator.c: 159: {
+[; ;emulator.c: 146: void initializeRegisters(void)
+[; ;emulator.c: 147: {
 [e :U _initializeRegisters ]
 [f ]
-[; ;emulator.c: 160: haltFlag = 0;
-"160
+[; ;emulator.c: 148: haltFlag = 0;
+"148
 [e = _haltFlag -> -> 0 `i `uc ]
-[; ;emulator.c: 161: regA = 0;
-"161
+[; ;emulator.c: 149: regA = 0;
+"149
 [e = _regA -> -> 0 `i `uc ]
-[; ;emulator.c: 162: regB = 0;
-"162
+[; ;emulator.c: 150: regB = 0;
+"150
 [e = _regB -> -> 0 `i `uc ]
-[; ;emulator.c: 163: regPC = 0;
-"163
+[; ;emulator.c: 151: regPC = 0;
+"151
 [e = _regPC -> -> 0 `i `ui ]
-[; ;emulator.c: 164: regSP = 0;
-"164
+[; ;emulator.c: 152: regSP = 0;
+"152
 [e = _regSP -> -> 0 `i `uc ]
-[; ;emulator.c: 165: regF = 0;
-"165
+[; ;emulator.c: 153: regF = 0;
+"153
 [e = _regF -> -> 0 `i `uc ]
-[; ;emulator.c: 166: }
-"166
-[e :UE 1205 ]
+[; ;emulator.c: 154: }
+"154
+[e :UE 1203 ]
 }
-"174
+"162
 [v _getPortData `(uc ~T0 @X0 1 ef1`uc ]
-"175
+"163
 {
-[; ;emulator.c: 174: uint8_t getPortData(uint8_t portNumber)
-[; ;emulator.c: 175: {
+[; ;emulator.c: 162: uint8_t getPortData(uint8_t portNumber)
+[; ;emulator.c: 163: {
 [e :U _getPortData ]
-"174
+"162
 [v _portNumber `uc ~T0 @X0 1 r1 ]
-"175
+"163
 [f ]
-[; ;emulator.c: 176: switch (portNumber)
-"176
-[e $U 1208  ]
-[; ;emulator.c: 177: {
-"177
+[; ;emulator.c: 164: switch (portNumber)
+"164
+[e $U 1206  ]
+[; ;emulator.c: 165: {
+"165
 {
-[; ;emulator.c: 178: case 0x02:
-"178
-[e :U 1209 ]
-[; ;emulator.c: 179: return RCREG2;
-"179
-[e ) _RCREG2 ]
-[e $UE 1206  ]
-"180
-}
-[; ;emulator.c: 180: }
-[e $U 1207  ]
-"176
-[e :U 1208 ]
-[e [\ _portNumber , $ -> -> 2 `i `uc 1209
- 1207 ]
-"180
+[; ;emulator.c: 166: case 0x02:
+"166
 [e :U 1207 ]
-[; ;emulator.c: 182: return 0;
-"182
-[e ) -> -> 0 `i `uc ]
-[e $UE 1206  ]
-[; ;emulator.c: 183: }
-"183
-[e :UE 1206 ]
+[; ;emulator.c: 167: return RCREG2;
+"167
+[e ) _RCREG2 ]
+[e $UE 1204  ]
+"168
 }
-"190
+[; ;emulator.c: 168: }
+[e $U 1205  ]
+"164
+[e :U 1206 ]
+[e [\ _portNumber , $ -> -> 2 `i `uc 1207
+ 1205 ]
+"168
+[e :U 1205 ]
+[; ;emulator.c: 170: return 0;
+"170
+[e ) -> -> 0 `i `uc ]
+[e $UE 1204  ]
+[; ;emulator.c: 171: }
+"171
+[e :UE 1204 ]
+}
+"178
 [v _setPortData `(v ~T0 @X0 1 ef2`uc`uc ]
-"191
+"179
 {
-[; ;emulator.c: 190: void setPortData(uint8_t portNumber, uint8_t outputData)
-[; ;emulator.c: 191: {
+[; ;emulator.c: 178: void setPortData(uint8_t portNumber, uint8_t outputData)
+[; ;emulator.c: 179: {
 [e :U _setPortData ]
-"190
+"178
 [v _portNumber `uc ~T0 @X0 1 r1 ]
 [v _outputData `uc ~T0 @X0 1 r2 ]
-"191
+"179
 [f ]
-"192
+"180
 [v _outputData_temp16 `ui ~T0 @X0 1 a ]
-"193
+"181
 [v _outputData_temp8 `uc ~T0 @X0 1 a ]
-[; ;emulator.c: 192: uint16_t outputData_temp16;
-[; ;emulator.c: 193: uint8_t outputData_temp8;
-[; ;emulator.c: 194: switch (portNumber)
-"194
-[e $U 1212  ]
-[; ;emulator.c: 195: {
-"195
+[; ;emulator.c: 180: uint16_t outputData_temp16;
+[; ;emulator.c: 181: uint8_t outputData_temp8;
+[; ;emulator.c: 182: switch (portNumber)
+"182
+[e $U 1210  ]
+[; ;emulator.c: 183: {
+"183
 {
-[; ;emulator.c: 196: case 0x00:
-"196
-[e :U 1213 ]
-[; ;emulator.c: 197: if (outputData == 0) outputData_temp16 = 1200;
-"197
-[e $ ! == -> _outputData `i -> 0 `i 1214  ]
-[e = _outputData_temp16 -> -> 1200 `i `ui ]
-[e :U 1214 ]
-[; ;emulator.c: 198: if (outputData == 1) outputData_temp16 = 2400;
-"198
-[e $ ! == -> _outputData `i -> 1 `i 1215  ]
-[e = _outputData_temp16 -> -> 2400 `i `ui ]
-[e :U 1215 ]
-[; ;emulator.c: 199: if (outputData == 2) outputData_temp16 = 9600;
-"199
-[e $ ! == -> _outputData `i -> 2 `i 1216  ]
-[e = _outputData_temp16 -> -> 9600 `i `ui ]
-[e :U 1216 ]
-[; ;emulator.c: 200: if (outputData == 3) outputData_temp16 = 10417;
-"200
-[e $ ! == -> _outputData `i -> 3 `i 1217  ]
-[e = _outputData_temp16 -> -> 10417 `i `ui ]
-[e :U 1217 ]
-[; ;emulator.c: 201: if (outputData == 4) outputData_temp16 = 19200;
-"201
-[e $ ! == -> _outputData `i -> 4 `i 1218  ]
-[e = _outputData_temp16 -> -> 19200 `i `ui ]
-[e :U 1218 ]
-[; ;emulator.c: 202: enableSerial(outputData_temp16);
-"202
-[e ( _enableSerial (1 _outputData_temp16 ]
-[; ;emulator.c: 203: break;
-"203
-[e $U 1211  ]
-[; ;emulator.c: 205: case 0x01:
-"205
-[e :U 1219 ]
-[; ;emulator.c: 206: TXREG2 = outputData;
-"206
-[e = _TXREG2 _outputData ]
-[; ;emulator.c: 207: break;
-"207
-[e $U 1211  ]
-[; ;emulator.c: 209: case 0x03:
-"209
-[e :U 1220 ]
-[; ;emulator.c: 210: outputData_temp8 = hexToChar(outputData);
-"210
-[e = _outputData_temp8 ( _hexToChar (1 _outputData ]
-[; ;emulator.c: 211: dispSeg(1, outputData_temp8);
-"211
-[e ( _dispSeg (2 , -> -> 1 `i `uc _outputData_temp8 ]
-[; ;emulator.c: 212: break;
-"212
-[e $U 1211  ]
-[; ;emulator.c: 214: case 0x04:
-"214
-[e :U 1221 ]
-[; ;emulator.c: 215: outputData_temp8 = hexToChar(outputData);
-"215
-[e = _outputData_temp8 ( _hexToChar (1 _outputData ]
-[; ;emulator.c: 216: dispSeg(2, outputData_temp8);
-"216
-[e ( _dispSeg (2 , -> -> 2 `i `uc _outputData_temp8 ]
-[; ;emulator.c: 217: break;
-"217
-[e $U 1211  ]
-"218
-}
-[; ;emulator.c: 218: }
-[e $U 1211  ]
-"194
-[e :U 1212 ]
-[e [\ _portNumber , $ -> -> 0 `i `uc 1213
- , $ -> -> 1 `i `uc 1219
- , $ -> -> 3 `i `uc 1220
- , $ -> -> 4 `i `uc 1221
- 1211 ]
-"218
+[; ;emulator.c: 184: case 0x00:
+"184
 [e :U 1211 ]
-[; ;emulator.c: 219: }
-"219
-[e :UE 1210 ]
+[; ;emulator.c: 185: if (outputData == 0) outputData_temp16 = 1200;
+"185
+[e $ ! == -> _outputData `i -> 0 `i 1212  ]
+[e = _outputData_temp16 -> -> 1200 `i `ui ]
+[e :U 1212 ]
+[; ;emulator.c: 186: if (outputData == 1) outputData_temp16 = 2400;
+"186
+[e $ ! == -> _outputData `i -> 1 `i 1213  ]
+[e = _outputData_temp16 -> -> 2400 `i `ui ]
+[e :U 1213 ]
+[; ;emulator.c: 187: if (outputData == 2) outputData_temp16 = 9600;
+"187
+[e $ ! == -> _outputData `i -> 2 `i 1214  ]
+[e = _outputData_temp16 -> -> 9600 `i `ui ]
+[e :U 1214 ]
+[; ;emulator.c: 188: if (outputData == 3) outputData_temp16 = 10417;
+"188
+[e $ ! == -> _outputData `i -> 3 `i 1215  ]
+[e = _outputData_temp16 -> -> 10417 `i `ui ]
+[e :U 1215 ]
+[; ;emulator.c: 189: if (outputData == 4) outputData_temp16 = 19200;
+"189
+[e $ ! == -> _outputData `i -> 4 `i 1216  ]
+[e = _outputData_temp16 -> -> 19200 `i `ui ]
+[e :U 1216 ]
+[; ;emulator.c: 190: enableSerial(outputData_temp16);
+"190
+[e ( _enableSerial (1 _outputData_temp16 ]
+[; ;emulator.c: 191: break;
+"191
+[e $U 1209  ]
+[; ;emulator.c: 193: case 0x01:
+"193
+[e :U 1217 ]
+[; ;emulator.c: 194: TXREG2 = outputData;
+"194
+[e = _TXREG2 _outputData ]
+[; ;emulator.c: 195: break;
+"195
+[e $U 1209  ]
+[; ;emulator.c: 197: case 0x03:
+"197
+[e :U 1218 ]
+[; ;emulator.c: 198: outputData_temp8 = hexToChar(outputData);
+"198
+[e = _outputData_temp8 ( _hexToChar (1 _outputData ]
+[; ;emulator.c: 199: dispSeg(1, outputData_temp8);
+"199
+[e ( _dispSeg (2 , -> -> 1 `i `uc _outputData_temp8 ]
+[; ;emulator.c: 200: break;
+"200
+[e $U 1209  ]
+[; ;emulator.c: 202: case 0x04:
+"202
+[e :U 1219 ]
+[; ;emulator.c: 203: outputData_temp8 = hexToChar(outputData);
+"203
+[e = _outputData_temp8 ( _hexToChar (1 _outputData ]
+[; ;emulator.c: 204: dispSeg(2, outputData_temp8);
+"204
+[e ( _dispSeg (2 , -> -> 2 `i `uc _outputData_temp8 ]
+[; ;emulator.c: 205: break;
+"205
+[e $U 1209  ]
+"206
 }
-"221
+[; ;emulator.c: 206: }
+[e $U 1209  ]
+"182
+[e :U 1210 ]
+[e [\ _portNumber , $ -> -> 0 `i `uc 1211
+ , $ -> -> 1 `i `uc 1217
+ , $ -> -> 3 `i `uc 1218
+ , $ -> -> 4 `i `uc 1219
+ 1209 ]
+"206
+[e :U 1209 ]
+[; ;emulator.c: 207: }
+"207
+[e :UE 1208 ]
+}
+"209
 [v _update_immData `(v ~T0 @X0 1 ef ]
-"222
+"210
 {
-[; ;emulator.c: 221: void update_immData(void)
-[; ;emulator.c: 222: {
+[; ;emulator.c: 209: void update_immData(void)
+[; ;emulator.c: 210: {
 [e :U _update_immData ]
 [f ]
-[; ;emulator.c: 224: if (regPC + 1 == 2047 + 1) immData_1 = 0;
-"224
-[e $ ! == + _regPC -> -> 1 `i `ui -> + -> 2047 `i -> 1 `i `ui 1223  ]
+[; ;emulator.c: 212: if (regPC + 1 == 2047 + 1) immData_1 = 0;
+"212
+[e $ ! == + _regPC -> -> 1 `i `ui -> + -> 2047 `i -> 1 `i `ui 1221  ]
 [e = _immData_1 -> -> 0 `i `uc ]
-[e :U 1223 ]
-[; ;emulator.c: 225: if (regPC + 2 == 2047 + 1) immData_2 = 0;
-"225
-[e $ ! == + _regPC -> -> 2 `i `ui -> + -> 2047 `i -> 1 `i `ui 1224  ]
+[e :U 1221 ]
+[; ;emulator.c: 213: if (regPC + 2 == 2047 + 1) immData_2 = 0;
+"213
+[e $ ! == + _regPC -> -> 2 `i `ui -> + -> 2047 `i -> 1 `i `ui 1222  ]
 [e = _immData_2 -> -> 0 `i `uc ]
-[e :U 1224 ]
-[; ;emulator.c: 226: if (regPC + 2 == 2047 + 2) immData_2 = 1;
-"226
-[e $ ! == + _regPC -> -> 2 `i `ui -> + -> 2047 `i -> 2 `i `ui 1225  ]
+[e :U 1222 ]
+[; ;emulator.c: 214: if (regPC + 2 == 2047 + 2) immData_2 = 1;
+"214
+[e $ ! == + _regPC -> -> 2 `i `ui -> + -> 2047 `i -> 2 `i `ui 1223  ]
 [e = _immData_2 -> -> 1 `i `uc ]
-[e :U 1225 ]
-[; ;emulator.c: 230: immData_1 = virtualMemory[regPC + 1];
-"230
+[e :U 1223 ]
+[; ;emulator.c: 218: immData_1 = virtualMemory[regPC + 1];
+"218
 [e = _immData_1 *U + &U _virtualMemory * -> + _regPC -> -> 1 `i `ui `ux -> -> # *U &U _virtualMemory `ui `ux ]
-[; ;emulator.c: 231: immData_2 = virtualMemory[regPC + 2];
-"231
+[; ;emulator.c: 219: immData_2 = virtualMemory[regPC + 2];
+"219
 [e = _immData_2 *U + &U _virtualMemory * -> + _regPC -> -> 2 `i `ui `ux -> -> # *U &U _virtualMemory `ui `ux ]
-[; ;emulator.c: 232: }
-"232
-[e :UE 1222 ]
+[; ;emulator.c: 220: }
+"220
+[e :UE 1220 ]
 }
-"238
+"226
 [v _processOpcode `(v ~T0 @X0 1 ef ]
-"239
+"227
 {
-[; ;emulator.c: 238: void processOpcode(void)
-[; ;emulator.c: 239: {
+[; ;emulator.c: 226: void processOpcode(void)
+[; ;emulator.c: 227: {
 [e :U _processOpcode ]
 [f ]
-[; ;emulator.c: 241: update_immData();
-"241
+[; ;emulator.c: 229: update_immData();
+"229
 [e ( _update_immData ..  ]
-"244
+"232
 [v _regA_temp8 `uc ~T0 @X0 1 a ]
-[; ;emulator.c: 244: uint8_t regA_temp8 = regA;
+[; ;emulator.c: 232: uint8_t regA_temp8 = regA;
 [e = _regA_temp8 _regA ]
-"245
+"233
 [v _regA_temp16 `ui ~T0 @X0 1 a ]
-[; ;emulator.c: 245: uint16_t regA_temp16 = (uint16_t) regA;
+[; ;emulator.c: 233: uint16_t regA_temp16 = (uint16_t) regA;
 [e = _regA_temp16 -> _regA `ui ]
-"246
+"234
 [v _regPC_temp `ui ~T0 @X0 1 a ]
-[; ;emulator.c: 246: uint16_t regPC_temp = regPC;
+[; ;emulator.c: 234: uint16_t regPC_temp = regPC;
 [e = _regPC_temp _regPC ]
-"247
+"235
 [v _carriedBit `uc ~T0 @X0 1 a ]
-[; ;emulator.c: 247: uint8_t carriedBit;
-[; ;emulator.c: 250: switch (virtualMemory[regPC])
-"250
-[e $U 1228  ]
-[; ;emulator.c: 251: {
-"251
+[; ;emulator.c: 235: uint8_t carriedBit;
+[; ;emulator.c: 238: switch (virtualMemory[regPC])
+"238
+[e $U 1226  ]
+[; ;emulator.c: 239: {
+"239
 {
-[; ;emulator.c: 254: default:
-"254
+[; ;emulator.c: 242: default:
+"242
+[e :U 1227 ]
+[; ;emulator.c: 243: break;
+"243
+[e $U 1225  ]
+[; ;emulator.c: 245: case 0x01:
+"245
+[e :U 1228 ]
+[; ;emulator.c: 246: setFbits(0, 1);
+"246
+[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[; ;emulator.c: 247: break;
+"247
+[e $U 1225  ]
+[; ;emulator.c: 249: case 0x02:
+"249
 [e :U 1229 ]
+[; ;emulator.c: 250: setFbits(0, 0);
+"250
+[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;emulator.c: 251: break;
+"251
+[e $U 1225  ]
+[; ;emulator.c: 253: case 0x08:
+"253
+[e :U 1230 ]
+[; ;emulator.c: 254: haltFlag = 1;
+"254
+[e = _haltFlag -> -> 1 `i `uc ]
 [; ;emulator.c: 255: break;
 "255
-[e $U 1227  ]
-[; ;emulator.c: 257: case 0x01:
-"257
-[e :U 1230 ]
-[; ;emulator.c: 258: setFbits(0, 1);
-"258
-[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-[; ;emulator.c: 259: break;
-"259
-[e $U 1227  ]
-[; ;emulator.c: 261: case 0x02:
-"261
+[e $U 1225  ]
+[; ;emulator.c: 260: case 0x03:
+"260
 [e :U 1231 ]
-[; ;emulator.c: 262: setFbits(0, 0);
+[; ;emulator.c: 261: regA = getPortData(regB);
+"261
+[e = _regA ( _getPortData (1 _regB ]
+[; ;emulator.c: 262: break;
 "262
-[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-[; ;emulator.c: 263: break;
-"263
-[e $U 1227  ]
-[; ;emulator.c: 265: case 0x08:
-"265
+[e $U 1225  ]
+[; ;emulator.c: 264: case 0x04:
+"264
 [e :U 1232 ]
-[; ;emulator.c: 266: haltFlag = 1;
+[; ;emulator.c: 265: regA = getPortData(immData_1);
+"265
+[e = _regA ( _getPortData (1 _immData_1 ]
+[; ;emulator.c: 266: regPC++;
 "266
-[e = _haltFlag -> -> 1 `i `uc ]
+[e ++ _regPC -> -> 1 `i `ui ]
 [; ;emulator.c: 267: break;
 "267
-[e $U 1227  ]
-[; ;emulator.c: 272: case 0x03:
-"272
+[e $U 1225  ]
+[; ;emulator.c: 269: case 0x05:
+"269
 [e :U 1233 ]
-[; ;emulator.c: 273: regA = getPortData(regB);
-"273
-[e = _regA ( _getPortData (1 _regB ]
-[; ;emulator.c: 274: break;
-"274
-[e $U 1227  ]
-[; ;emulator.c: 276: case 0x04:
-"276
-[e :U 1234 ]
-[; ;emulator.c: 277: regA = getPortData(immData_1);
-"277
-[e = _regA ( _getPortData (1 _immData_1 ]
-[; ;emulator.c: 278: regPC++;
-"278
-[e ++ _regPC -> -> 1 `i `ui ]
-[; ;emulator.c: 279: break;
-"279
-[e $U 1227  ]
-[; ;emulator.c: 281: case 0x05:
-"281
-[e :U 1235 ]
-[; ;emulator.c: 282: setPortData(regB, regA);
-"282
+[; ;emulator.c: 270: setPortData(regB, regA);
+"270
 [e ( _setPortData (2 , _regB _regA ]
-[; ;emulator.c: 283: break;
-"283
-[e $U 1227  ]
-[; ;emulator.c: 285: case 0x06:
-"285
-[e :U 1236 ]
-[; ;emulator.c: 286: setPortData(immData_1, regA);
-"286
+[; ;emulator.c: 271: break;
+"271
+[e $U 1225  ]
+[; ;emulator.c: 273: case 0x06:
+"273
+[e :U 1234 ]
+[; ;emulator.c: 274: setPortData(immData_1, regA);
+"274
 [e ( _setPortData (2 , _immData_1 _regA ]
-[; ;emulator.c: 287: regPC++;
-"287
+[; ;emulator.c: 275: regPC++;
+"275
 [e ++ _regPC -> -> 1 `i `ui ]
+[; ;emulator.c: 276: break;
+"276
+[e $U 1225  ]
+[; ;emulator.c: 278: case 0x07:
+"278
+[e :U 1235 ]
+[; ;emulator.c: 279: setPortData(immData_1, immData_2);
+"279
+[e ( _setPortData (2 , _immData_1 _immData_2 ]
+[; ;emulator.c: 280: regPC += 2;
+"280
+[e =+ _regPC -> -> 2 `i `ui ]
+[; ;emulator.c: 281: break;
+"281
+[e $U 1225  ]
+[; ;emulator.c: 286: case 0x10:
+"286
+[e :U 1236 ]
+[; ;emulator.c: 287: regA = virtualMemory[regMX];
+"287
+[e = _regA *U + &U _virtualMemory * -> _regMX `ux -> -> # *U &U _virtualMemory `ui `ux ]
 [; ;emulator.c: 288: break;
 "288
-[e $U 1227  ]
-[; ;emulator.c: 290: case 0x07:
+[e $U 1225  ]
+[; ;emulator.c: 290: case 0x11:
 "290
 [e :U 1237 ]
-[; ;emulator.c: 291: setPortData(immData_1, immData_2);
+[; ;emulator.c: 291: regA = getMXbits(0);
 "291
-[e ( _setPortData (2 , _immData_1 _immData_2 ]
-[; ;emulator.c: 292: regPC += 2;
+[e = _regA ( _getMXbits (1 -> -> 0 `i `uc ]
+[; ;emulator.c: 292: break;
 "292
-[e =+ _regPC -> -> 2 `i `ui ]
-[; ;emulator.c: 293: break;
-"293
-[e $U 1227  ]
-[; ;emulator.c: 298: case 0x10:
-"298
+[e $U 1225  ]
+[; ;emulator.c: 294: case 0x12:
+"294
 [e :U 1238 ]
-[; ;emulator.c: 299: regA = virtualMemory[regMX];
+[; ;emulator.c: 295: regA = getMXbits(1);
+"295
+[e = _regA ( _getMXbits (1 -> -> 1 `i `uc ]
+[; ;emulator.c: 296: break;
+"296
+[e $U 1225  ]
+[; ;emulator.c: 298: case 0x13:
+"298
+[e :U 1239 ]
+[; ;emulator.c: 299: regA = regSP;
 "299
-[e = _regA *U + &U _virtualMemory * -> _regMX `ux -> -> # *U &U _virtualMemory `ui `ux ]
+[e = _regA _regSP ]
 [; ;emulator.c: 300: break;
 "300
-[e $U 1227  ]
-[; ;emulator.c: 302: case 0x11:
+[e $U 1225  ]
+[; ;emulator.c: 302: case 0x14:
 "302
-[e :U 1239 ]
-[; ;emulator.c: 303: regA = getMXbits(0);
+[e :U 1240 ]
+[; ;emulator.c: 303: regA = regF;
 "303
-[e = _regA ( _getMXbits (1 -> -> 0 `i `uc ]
+[e = _regA _regF ]
 [; ;emulator.c: 304: break;
 "304
-[e $U 1227  ]
-[; ;emulator.c: 306: case 0x12:
+[e $U 1225  ]
+[; ;emulator.c: 306: case 0x15:
 "306
-[e :U 1240 ]
-[; ;emulator.c: 307: regA = getMXbits(1);
+[e :U 1241 ]
+[; ;emulator.c: 307: regA = regB;
 "307
-[e = _regA ( _getMXbits (1 -> -> 1 `i `uc ]
+[e = _regA _regB ]
 [; ;emulator.c: 308: break;
 "308
-[e $U 1227  ]
-[; ;emulator.c: 310: case 0x13:
+[e $U 1225  ]
+[; ;emulator.c: 310: case 0x16:
 "310
-[e :U 1241 ]
-[; ;emulator.c: 311: regA = regSP;
-"311
-[e = _regA _regSP ]
-[; ;emulator.c: 312: break;
-"312
-[e $U 1227  ]
-[; ;emulator.c: 314: case 0x14:
-"314
 [e :U 1242 ]
-[; ;emulator.c: 315: regA = regF;
-"315
-[e = _regA _regF ]
-[; ;emulator.c: 316: break;
-"316
-[e $U 1227  ]
-[; ;emulator.c: 318: case 0x15:
-"318
-[e :U 1243 ]
-[; ;emulator.c: 319: regA = regB;
-"319
-[e = _regA _regB ]
-[; ;emulator.c: 320: break;
+[; ;emulator.c: 320: virtualMemory[regMX] = regA;
 "320
-[e $U 1227  ]
-[; ;emulator.c: 322: case 0x16:
-"322
-[e :U 1244 ]
-[; ;emulator.c: 332: virtualMemory[regMX] = regA;
-"332
 [e = *U + &U _virtualMemory * -> _regMX `ux -> -> # *U &U _virtualMemory `ui `ux _regA ]
+[; ;emulator.c: 322: break;
+"322
+[e $U 1225  ]
+[; ;emulator.c: 324: case 0x17:
+"324
+[e :U 1243 ]
+[; ;emulator.c: 325: setMXbits(0, regA);
+"325
+[e ( _setMXbits (2 , -> -> 0 `i `uc _regA ]
+[; ;emulator.c: 326: break;
+"326
+[e $U 1225  ]
+[; ;emulator.c: 328: case 0x18:
+"328
+[e :U 1244 ]
+[; ;emulator.c: 329: setMXbits(1, regA);
+"329
+[e ( _setMXbits (2 , -> -> 1 `i `uc _regA ]
+[; ;emulator.c: 330: break;
+"330
+[e $U 1225  ]
+[; ;emulator.c: 332: case 0x19:
+"332
+[e :U 1245 ]
+[; ;emulator.c: 333: regSP = regA;
+"333
+[e = _regSP _regA ]
 [; ;emulator.c: 334: break;
 "334
-[e $U 1227  ]
-[; ;emulator.c: 336: case 0x17:
+[e $U 1225  ]
+[; ;emulator.c: 336: case 0x1A:
 "336
-[e :U 1245 ]
-[; ;emulator.c: 337: setMXbits(0, regA);
+[e :U 1246 ]
+[; ;emulator.c: 337: regB = regA;
 "337
-[e ( _setMXbits (2 , -> -> 0 `i `uc _regA ]
+[e = _regB _regA ]
 [; ;emulator.c: 338: break;
 "338
-[e $U 1227  ]
-[; ;emulator.c: 340: case 0x18:
+[e $U 1225  ]
+[; ;emulator.c: 340: case 0x1B:
 "340
-[e :U 1246 ]
-[; ;emulator.c: 341: setMXbits(1, regA);
-"341
-[e ( _setMXbits (2 , -> -> 1 `i `uc _regA ]
-[; ;emulator.c: 342: break;
-"342
-[e $U 1227  ]
-[; ;emulator.c: 344: case 0x19:
-"344
 [e :U 1247 ]
-[; ;emulator.c: 345: regSP = regA;
-"345
-[e = _regSP _regA ]
-[; ;emulator.c: 346: break;
+[; ;emulator.c: 341: regA = immData_1;
+"341
+[e = _regA _immData_1 ]
+[; ;emulator.c: 343: regPC++;
+"343
+[e ++ _regPC -> -> 1 `i `ui ]
+[; ;emulator.c: 344: break;
+"344
+[e $U 1225  ]
+[; ;emulator.c: 346: case 0x1C:
 "346
-[e $U 1227  ]
-[; ;emulator.c: 348: case 0x1A:
-"348
 [e :U 1248 ]
-[; ;emulator.c: 349: regB = regA;
+[; ;emulator.c: 347: regA_temp8 = regA;
+"347
+[e = _regA_temp8 _regA ]
+[; ;emulator.c: 348: regA = regB;
+"348
+[e = _regA _regB ]
+[; ;emulator.c: 349: regB = regA_temp8;
 "349
-[e = _regB _regA ]
+[e = _regB _regA_temp8 ]
 [; ;emulator.c: 350: break;
 "350
-[e $U 1227  ]
-[; ;emulator.c: 352: case 0x1B:
-"352
-[e :U 1249 ]
-[; ;emulator.c: 353: regA = immData_1;
-"353
-[e = _regA _immData_1 ]
-[; ;emulator.c: 355: regPC++;
+[e $U 1225  ]
+[; ;emulator.c: 355: case 0x20:
 "355
-[e ++ _regPC -> -> 1 `i `ui ]
-[; ;emulator.c: 356: break;
+[e :U 1249 ]
+[; ;emulator.c: 356: regA &= regB;
 "356
-[e $U 1227  ]
-[; ;emulator.c: 358: case 0x1C:
-"358
-[e :U 1250 ]
-[; ;emulator.c: 359: regA_temp8 = regA;
-"359
-[e = _regA_temp8 _regA ]
-[; ;emulator.c: 360: regA = regB;
-"360
-[e = _regA _regB ]
-[; ;emulator.c: 361: regB = regA_temp8;
-"361
-[e = _regB _regA_temp8 ]
-[; ;emulator.c: 362: break;
-"362
-[e $U 1227  ]
-[; ;emulator.c: 367: case 0x20:
-"367
-[e :U 1251 ]
-[; ;emulator.c: 368: regA &= regB;
-"368
 [e =& _regA _regB ]
-[; ;emulator.c: 369: break;
-"369
-[e $U 1227  ]
-[; ;emulator.c: 371: case 0x21:
-"371
-[e :U 1252 ]
-[; ;emulator.c: 373: regA = regA & regB;
-"373
+[; ;emulator.c: 357: break;
+"357
+[e $U 1225  ]
+[; ;emulator.c: 359: case 0x21:
+"359
+[e :U 1250 ]
+[; ;emulator.c: 361: regA = regA & regB;
+"361
 [e = _regA -> & -> _regA `i -> _regB `i `uc ]
-[; ;emulator.c: 374: regA =~ regA;
-"374
+[; ;emulator.c: 362: regA =~ regA;
+"362
 [e = _regA -> ~ -> _regA `i `uc ]
-[; ;emulator.c: 375: break;
-"375
-[e $U 1227  ]
-[; ;emulator.c: 377: case 0x22:
-"377
-[e :U 1253 ]
-[; ;emulator.c: 378: regA |= regB;
-"378
+[; ;emulator.c: 363: break;
+"363
+[e $U 1225  ]
+[; ;emulator.c: 365: case 0x22:
+"365
+[e :U 1251 ]
+[; ;emulator.c: 366: regA |= regB;
+"366
 [e =| _regA _regB ]
-[; ;emulator.c: 379: break;
-"379
-[e $U 1227  ]
-[; ;emulator.c: 381: case 0x23:
-"381
-[e :U 1254 ]
-[; ;emulator.c: 383: regA = regA | regB;
-"383
+[; ;emulator.c: 367: break;
+"367
+[e $U 1225  ]
+[; ;emulator.c: 369: case 0x23:
+"369
+[e :U 1252 ]
+[; ;emulator.c: 371: regA = regA | regB;
+"371
 [e = _regA -> | -> _regA `i -> _regB `i `uc ]
-[; ;emulator.c: 384: regA =~ regA;
-"384
+[; ;emulator.c: 372: regA =~ regA;
+"372
 [e = _regA -> ~ -> _regA `i `uc ]
-[; ;emulator.c: 385: break;
-"385
-[e $U 1227  ]
-[; ;emulator.c: 387: case 0x2B:
-"387
-[e :U 1255 ]
-[; ;emulator.c: 388: regA ^= regB;
-"388
+[; ;emulator.c: 373: break;
+"373
+[e $U 1225  ]
+[; ;emulator.c: 375: case 0x2B:
+"375
+[e :U 1253 ]
+[; ;emulator.c: 376: regA ^= regB;
+"376
 [e =^ _regA _regB ]
-[; ;emulator.c: 389: break;
-"389
-[e $U 1227  ]
-[; ;emulator.c: 391: case 0x24:
-"391
-[e :U 1256 ]
-[; ;emulator.c: 393: regA = regA ^ regB;
-"393
+[; ;emulator.c: 377: break;
+"377
+[e $U 1225  ]
+[; ;emulator.c: 379: case 0x24:
+"379
+[e :U 1254 ]
+[; ;emulator.c: 381: regA = regA ^ regB;
+"381
 [e = _regA -> ^ -> _regA `i -> _regB `i `uc ]
-[; ;emulator.c: 394: regA =~ regA;
-"394
+[; ;emulator.c: 382: regA =~ regA;
+"382
 [e = _regA -> ~ -> _regA `i `uc ]
-[; ;emulator.c: 395: break;
-"395
-[e $U 1227  ]
-[; ;emulator.c: 397: case 0x25:
-"397
-[e :U 1257 ]
-[; ;emulator.c: 398: regA =~ regA;
-"398
+[; ;emulator.c: 383: break;
+"383
+[e $U 1225  ]
+[; ;emulator.c: 385: case 0x25:
+"385
+[e :U 1255 ]
+[; ;emulator.c: 386: regA =~ regA;
+"386
 [e = _regA -> ~ -> _regA `i `uc ]
-[; ;emulator.c: 399: break;
-"399
-[e $U 1227  ]
-[; ;emulator.c: 401: case 0x26:
-"401
-[e :U 1258 ]
-[; ;emulator.c: 403: regA_temp8 = regA;
-"403
+[; ;emulator.c: 387: break;
+"387
+[e $U 1225  ]
+[; ;emulator.c: 389: case 0x26:
+"389
+[e :U 1256 ]
+[; ;emulator.c: 391: regA_temp8 = regA;
+"391
 [e = _regA_temp8 _regA ]
+[; ;emulator.c: 392: regA_temp8 >>= 7;
+"392
+[e =>> _regA_temp8 -> 7 `i ]
+[; ;emulator.c: 393: if (regA_temp8 == 1) setFbits(0, 1);
+"393
+[e $ ! == -> _regA_temp8 `i -> 1 `i 1257  ]
+[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[e $U 1258  ]
+"394
+[e :U 1257 ]
+[; ;emulator.c: 394: else setFbits(0, 0);
+[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[e :U 1258 ]
+[; ;emulator.c: 397: regA <<= 1;
+"397
+[e =<< _regA -> 1 `i ]
+[; ;emulator.c: 398: break;
+"398
+[e $U 1225  ]
+[; ;emulator.c: 400: case 0x27:
+"400
+[e :U 1259 ]
+[; ;emulator.c: 402: regA_temp8 = regA;
+"402
+[e = _regA_temp8 _regA ]
+[; ;emulator.c: 403: regA_temp8 <<= 7;
+"403
+[e =<< _regA_temp8 -> 7 `i ]
 [; ;emulator.c: 404: regA_temp8 >>= 7;
 "404
 [e =>> _regA_temp8 -> 7 `i ]
 [; ;emulator.c: 405: if (regA_temp8 == 1) setFbits(0, 1);
 "405
-[e $ ! == -> _regA_temp8 `i -> 1 `i 1259  ]
+[e $ ! == -> _regA_temp8 `i -> 1 `i 1260  ]
 [e ( _setFbits (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-[e $U 1260  ]
+[e $U 1261  ]
 "406
-[e :U 1259 ]
+[e :U 1260 ]
 [; ;emulator.c: 406: else setFbits(0, 0);
 [e ( _setFbits (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-[e :U 1260 ]
-[; ;emulator.c: 409: regA <<= 1;
+[e :U 1261 ]
+[; ;emulator.c: 409: regA >>= 1;
 "409
-[e =<< _regA -> 1 `i ]
+[e =>> _regA -> 1 `i ]
 [; ;emulator.c: 410: break;
 "410
-[e $U 1227  ]
-[; ;emulator.c: 412: case 0x27:
+[e $U 1225  ]
+[; ;emulator.c: 412: case 0x28:
 "412
-[e :U 1261 ]
-[; ;emulator.c: 414: regA_temp8 = regA;
-"414
-[e = _regA_temp8 _regA ]
-[; ;emulator.c: 415: regA_temp8 <<= 7;
-"415
-[e =<< _regA_temp8 -> 7 `i ]
-[; ;emulator.c: 416: regA_temp8 >>= 7;
-"416
-[e =>> _regA_temp8 -> 7 `i ]
-[; ;emulator.c: 417: if (regA_temp8 == 1) setFbits(0, 1);
-"417
-[e $ ! == -> _regA_temp8 `i -> 1 `i 1262  ]
-[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-[e $U 1263  ]
-"418
 [e :U 1262 ]
-[; ;emulator.c: 418: else setFbits(0, 0);
-[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-[e :U 1263 ]
-[; ;emulator.c: 421: regA >>= 1;
+[; ;emulator.c: 414: carriedBit = regA;
+"414
+[e = _carriedBit _regA ]
+[; ;emulator.c: 415: carriedBit >>= 7;
+"415
+[e =>> _carriedBit -> 7 `i ]
+[; ;emulator.c: 418: regA <<= 1;
+"418
+[e =<< _regA -> 1 `i ]
+[; ;emulator.c: 421: regA = regA + carriedBit;
 "421
-[e =>> _regA -> 1 `i ]
+[e = _regA -> + -> _regA `i -> _carriedBit `i `uc ]
 [; ;emulator.c: 422: break;
 "422
-[e $U 1227  ]
-[; ;emulator.c: 424: case 0x28:
+[e $U 1225  ]
+[; ;emulator.c: 424: case 0x29:
 "424
-[e :U 1264 ]
+[e :U 1263 ]
 [; ;emulator.c: 426: carriedBit = regA;
 "426
 [e = _carriedBit _regA ]
-[; ;emulator.c: 427: carriedBit >>= 7;
+[; ;emulator.c: 427: carriedBit <<= 7;
 "427
-[e =>> _carriedBit -> 7 `i ]
-[; ;emulator.c: 430: regA <<= 1;
+[e =<< _carriedBit -> 7 `i ]
+[; ;emulator.c: 430: regA >>= 1;
 "430
-[e =<< _regA -> 1 `i ]
-[; ;emulator.c: 433: regA = regA + carriedBit;
+[e =>> _regA -> 1 `i ]
+[; ;emulator.c: 433: regA += carriedBit;
 "433
-[e = _regA -> + -> _regA `i -> _carriedBit `i `uc ]
+[e =+ _regA _carriedBit ]
 [; ;emulator.c: 434: break;
 "434
-[e $U 1227  ]
-[; ;emulator.c: 436: case 0x29:
+[e $U 1225  ]
+[; ;emulator.c: 436: case 0x2A:
 "436
-[e :U 1265 ]
-[; ;emulator.c: 438: carriedBit = regA;
+[e :U 1264 ]
+[; ;emulator.c: 438: if (regA == regB) setFbits(3, 1);
 "438
-[e = _carriedBit _regA ]
-[; ;emulator.c: 439: carriedBit <<= 7;
-"439
-[e =<< _carriedBit -> 7 `i ]
-[; ;emulator.c: 442: regA >>= 1;
-"442
-[e =>> _regA -> 1 `i ]
-[; ;emulator.c: 445: regA += carriedBit;
-"445
-[e =+ _regA _carriedBit ]
-[; ;emulator.c: 446: break;
-"446
-[e $U 1227  ]
-[; ;emulator.c: 448: case 0x2A:
-"448
-[e :U 1266 ]
-[; ;emulator.c: 450: if (regA == regB) setFbits(3, 1);
-"450
-[e $ ! == -> _regA `i -> _regB `i 1267  ]
+[e $ ! == -> _regA `i -> _regB `i 1265  ]
 [e ( _setFbits (2 , -> -> 3 `i `uc -> -> 1 `i `uc ]
-[e $U 1268  ]
-"451
-[e :U 1267 ]
-[; ;emulator.c: 451: else setFbits(3, 0);
+[e $U 1266  ]
+"439
+[e :U 1265 ]
+[; ;emulator.c: 439: else setFbits(3, 0);
 [e ( _setFbits (2 , -> -> 3 `i `uc -> -> 0 `i `uc ]
-[e :U 1268 ]
-[; ;emulator.c: 454: if (regA < regB) setFbits(2, 1);
-"454
-[e $ ! < -> _regA `i -> _regB `i 1269  ]
+[e :U 1266 ]
+[; ;emulator.c: 442: if (regA < regB) setFbits(2, 1);
+"442
+[e $ ! < -> _regA `i -> _regB `i 1267  ]
 [e ( _setFbits (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-[e $U 1270  ]
-"455
-[e :U 1269 ]
-[; ;emulator.c: 455: else setFbits(2, 0);
+[e $U 1268  ]
+"443
+[e :U 1267 ]
+[; ;emulator.c: 443: else setFbits(2, 0);
 [e ( _setFbits (2 , -> -> 2 `i `uc -> -> 0 `i `uc ]
-[e :U 1270 ]
-[; ;emulator.c: 458: if (regA > regB) setFbits(1, 1);
-"458
-[e $ ! > -> _regA `i -> _regB `i 1271  ]
+[e :U 1268 ]
+[; ;emulator.c: 446: if (regA > regB) setFbits(1, 1);
+"446
+[e $ ! > -> _regA `i -> _regB `i 1269  ]
 [e ( _setFbits (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-[e $U 1272  ]
-"459
-[e :U 1271 ]
-[; ;emulator.c: 459: else setFbits(1, 0);
+[e $U 1270  ]
+"447
+[e :U 1269 ]
+[; ;emulator.c: 447: else setFbits(1, 0);
 [e ( _setFbits (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+[e :U 1270 ]
+[; ;emulator.c: 449: break;
+"449
+[e $U 1225  ]
+[; ;emulator.c: 454: case 0x30:
+"454
+[e :U 1271 ]
+[; ;emulator.c: 455: regPC = regMX;
+"455
+[e = _regPC _regMX ]
+[; ;emulator.c: 457: regPC--;
+"457
+[e -- _regPC -> -> 1 `i `ui ]
+[; ;emulator.c: 458: break;
+"458
+[e $U 1225  ]
+[; ;emulator.c: 460: case 0x31:
+"460
 [e :U 1272 ]
-[; ;emulator.c: 461: break;
+[; ;emulator.c: 461: regPC = immData_toPointer();
 "461
-[e $U 1227  ]
-[; ;emulator.c: 466: case 0x30:
+[e = _regPC ( _immData_toPointer ..  ]
+[; ;emulator.c: 463: regPC--;
+"463
+[e -- _regPC -> -> 1 `i `ui ]
+[; ;emulator.c: 464: break;
+"464
+[e $U 1225  ]
+[; ;emulator.c: 466: case 0x32:
 "466
 [e :U 1273 ]
-[; ;emulator.c: 467: regPC = regMX;
+[; ;emulator.c: 467: if (getFbits(3) == 1) regPC = regMX;
 "467
+[e $ ! == -> ( _getFbits (1 -> -> 3 `i `uc `i -> 1 `i 1274  ]
 [e = _regPC _regMX ]
+[e :U 1274 ]
 [; ;emulator.c: 469: regPC--;
 "469
 [e -- _regPC -> -> 1 `i `ui ]
 [; ;emulator.c: 470: break;
 "470
-[e $U 1227  ]
-[; ;emulator.c: 472: case 0x31:
+[e $U 1225  ]
+[; ;emulator.c: 472: case 0x33:
 "472
-[e :U 1274 ]
-[; ;emulator.c: 473: regPC = immData_toPointer();
+[e :U 1275 ]
+[; ;emulator.c: 473: if (getFbits(3) == 1) regPC = immData_toPointer();
 "473
+[e $ ! == -> ( _getFbits (1 -> -> 3 `i `uc `i -> 1 `i 1276  ]
 [e = _regPC ( _immData_toPointer ..  ]
+[e :U 1276 ]
 [; ;emulator.c: 475: regPC--;
 "475
 [e -- _regPC -> -> 1 `i `ui ]
 [; ;emulator.c: 476: break;
 "476
-[e $U 1227  ]
-[; ;emulator.c: 478: case 0x32:
+[e $U 1225  ]
+[; ;emulator.c: 478: case 0x34:
 "478
-[e :U 1275 ]
-[; ;emulator.c: 479: if (getFbits(3) == 1) regPC = regMX;
+[e :U 1277 ]
+[; ;emulator.c: 479: if (getFbits(3) == 0) regPC = regMX;
 "479
-[e $ ! == -> ( _getFbits (1 -> -> 3 `i `uc `i -> 1 `i 1276  ]
+[e $ ! == -> ( _getFbits (1 -> -> 3 `i `uc `i -> 0 `i 1278  ]
 [e = _regPC _regMX ]
-[e :U 1276 ]
+[e :U 1278 ]
 [; ;emulator.c: 481: regPC--;
 "481
 [e -- _regPC -> -> 1 `i `ui ]
 [; ;emulator.c: 482: break;
 "482
-[e $U 1227  ]
-[; ;emulator.c: 484: case 0x33:
+[e $U 1225  ]
+[; ;emulator.c: 484: case 0x35:
 "484
-[e :U 1277 ]
-[; ;emulator.c: 485: if (getFbits(3) == 1) regPC = immData_toPointer();
+[e :U 1279 ]
+[; ;emulator.c: 485: if (getFbits(3) == 0) regPC = immData_toPointer();
 "485
-[e $ ! == -> ( _getFbits (1 -> -> 3 `i `uc `i -> 1 `i 1278  ]
+[e $ ! == -> ( _getFbits (1 -> -> 3 `i `uc `i -> 0 `i 1280  ]
 [e = _regPC ( _immData_toPointer ..  ]
-[e :U 1278 ]
+[e :U 1280 ]
 [; ;emulator.c: 487: regPC--;
 "487
 [e -- _regPC -> -> 1 `i `ui ]
 [; ;emulator.c: 488: break;
 "488
-[e $U 1227  ]
-[; ;emulator.c: 490: case 0x34:
+[e $U 1225  ]
+[; ;emulator.c: 490: case 0x36:
 "490
-[e :U 1279 ]
-[; ;emulator.c: 491: if (getFbits(3) == 0) regPC = regMX;
+[e :U 1281 ]
+[; ;emulator.c: 491: if (getFbits(1) == 1) regPC = regMX;
 "491
-[e $ ! == -> ( _getFbits (1 -> -> 3 `i `uc `i -> 0 `i 1280  ]
+[e $ ! == -> ( _getFbits (1 -> -> 1 `i `uc `i -> 1 `i 1282  ]
 [e = _regPC _regMX ]
-[e :U 1280 ]
+[e :U 1282 ]
 [; ;emulator.c: 493: regPC--;
 "493
 [e -- _regPC -> -> 1 `i `ui ]
 [; ;emulator.c: 494: break;
 "494
-[e $U 1227  ]
-[; ;emulator.c: 496: case 0x35:
+[e $U 1225  ]
+[; ;emulator.c: 496: case 0x37:
 "496
-[e :U 1281 ]
-[; ;emulator.c: 497: if (getFbits(3) == 0) regPC = immData_toPointer();
+[e :U 1283 ]
+[; ;emulator.c: 497: if (getFbits(1) == 1) regPC = immData_toPointer();
 "497
-[e $ ! == -> ( _getFbits (1 -> -> 3 `i `uc `i -> 0 `i 1282  ]
+[e $ ! == -> ( _getFbits (1 -> -> 1 `i `uc `i -> 1 `i 1284  ]
 [e = _regPC ( _immData_toPointer ..  ]
-[e :U 1282 ]
+[e :U 1284 ]
 [; ;emulator.c: 499: regPC--;
 "499
 [e -- _regPC -> -> 1 `i `ui ]
 [; ;emulator.c: 500: break;
 "500
-[e $U 1227  ]
-[; ;emulator.c: 502: case 0x36:
+[e $U 1225  ]
+[; ;emulator.c: 502: case 0x38:
 "502
-[e :U 1283 ]
-[; ;emulator.c: 503: if (getFbits(1) == 1) regPC = regMX;
+[e :U 1285 ]
+[; ;emulator.c: 503: if (getFbits(2) == 1) regPC = regMX;
 "503
-[e $ ! == -> ( _getFbits (1 -> -> 1 `i `uc `i -> 1 `i 1284  ]
+[e $ ! == -> ( _getFbits (1 -> -> 2 `i `uc `i -> 1 `i 1286  ]
 [e = _regPC _regMX ]
-[e :U 1284 ]
+[e :U 1286 ]
 [; ;emulator.c: 505: regPC--;
 "505
 [e -- _regPC -> -> 1 `i `ui ]
 [; ;emulator.c: 506: break;
 "506
-[e $U 1227  ]
-[; ;emulator.c: 508: case 0x37:
+[e $U 1225  ]
+[; ;emulator.c: 508: case 0x39:
 "508
-[e :U 1285 ]
-[; ;emulator.c: 509: if (getFbits(1) == 1) regPC = immData_toPointer();
-"509
-[e $ ! == -> ( _getFbits (1 -> -> 1 `i `uc `i -> 1 `i 1286  ]
-[e = _regPC ( _immData_toPointer ..  ]
-[e :U 1286 ]
-[; ;emulator.c: 511: regPC--;
-"511
-[e -- _regPC -> -> 1 `i `ui ]
-[; ;emulator.c: 512: break;
-"512
-[e $U 1227  ]
-[; ;emulator.c: 514: case 0x38:
-"514
 [e :U 1287 ]
-[; ;emulator.c: 515: if (getFbits(2) == 1) regPC = regMX;
-"515
+[; ;emulator.c: 509: if (getFbits(2) == 1) regPC = immData_toPointer();
+"509
 [e $ ! == -> ( _getFbits (1 -> -> 2 `i `uc `i -> 1 `i 1288  ]
-[e = _regPC _regMX ]
-[e :U 1288 ]
-[; ;emulator.c: 517: regPC--;
-"517
-[e -- _regPC -> -> 1 `i `ui ]
-[; ;emulator.c: 518: break;
-"518
-[e $U 1227  ]
-[; ;emulator.c: 520: case 0x39:
-"520
-[e :U 1289 ]
-[; ;emulator.c: 521: if (getFbits(2) == 1) regPC = immData_toPointer();
-"521
-[e $ ! == -> ( _getFbits (1 -> -> 2 `i `uc `i -> 1 `i 1290  ]
 [e = _regPC ( _immData_toPointer ..  ]
-[e :U 1290 ]
-[; ;emulator.c: 522: regPC += 2;
-"522
+[e :U 1288 ]
+[; ;emulator.c: 510: regPC += 2;
+"510
 [e =+ _regPC -> -> 2 `i `ui ]
+[; ;emulator.c: 511: break;
+"511
+[e $U 1225  ]
+[; ;emulator.c: 513: case 0x3A:
+"513
+[e :U 1289 ]
+[; ;emulator.c: 514: if (getFbits(0) == 1) regPC = regMX;
+"514
+[e $ ! == -> ( _getFbits (1 -> -> 0 `i `uc `i -> 1 `i 1290  ]
+[e = _regPC _regMX ]
+[e :U 1290 ]
+[; ;emulator.c: 516: regPC--;
+"516
+[e -- _regPC -> -> 1 `i `ui ]
+[; ;emulator.c: 517: break;
+"517
+[e $U 1225  ]
+[; ;emulator.c: 519: case 0x3B:
+"519
+[e :U 1291 ]
+[; ;emulator.c: 520: if (getFbits(0) == 1) regPC = immData_toPointer();
+"520
+[e $ ! == -> ( _getFbits (1 -> -> 0 `i `uc `i -> 1 `i 1292  ]
+[e = _regPC ( _immData_toPointer ..  ]
+[e :U 1292 ]
+[; ;emulator.c: 522: regPC--;
+"522
+[e -- _regPC -> -> 1 `i `ui ]
 [; ;emulator.c: 523: break;
 "523
-[e $U 1227  ]
-[; ;emulator.c: 525: case 0x3A:
+[e $U 1225  ]
+[; ;emulator.c: 525: case 0x3C:
 "525
-[e :U 1291 ]
-[; ;emulator.c: 526: if (getFbits(0) == 1) regPC = regMX;
+[e :U 1293 ]
+[; ;emulator.c: 526: if (getFbits(0) == 0) regPC = regMX;
 "526
-[e $ ! == -> ( _getFbits (1 -> -> 0 `i `uc `i -> 1 `i 1292  ]
+[e $ ! == -> ( _getFbits (1 -> -> 0 `i `uc `i -> 0 `i 1294  ]
 [e = _regPC _regMX ]
-[e :U 1292 ]
+[e :U 1294 ]
 [; ;emulator.c: 528: regPC--;
 "528
 [e -- _regPC -> -> 1 `i `ui ]
 [; ;emulator.c: 529: break;
 "529
-[e $U 1227  ]
-[; ;emulator.c: 531: case 0x3B:
+[e $U 1225  ]
+[; ;emulator.c: 531: case 0x3D:
 "531
-[e :U 1293 ]
-[; ;emulator.c: 532: if (getFbits(0) == 1) regPC = immData_toPointer();
+[e :U 1295 ]
+[; ;emulator.c: 532: if (getFbits(0) == 0) regPC = immData_toPointer();
 "532
-[e $ ! == -> ( _getFbits (1 -> -> 0 `i `uc `i -> 1 `i 1294  ]
+[e $ ! == -> ( _getFbits (1 -> -> 0 `i `uc `i -> 0 `i 1296  ]
 [e = _regPC ( _immData_toPointer ..  ]
-[e :U 1294 ]
+[e :U 1296 ]
 [; ;emulator.c: 534: regPC--;
 "534
 [e -- _regPC -> -> 1 `i `ui ]
 [; ;emulator.c: 535: break;
 "535
-[e $U 1227  ]
-[; ;emulator.c: 537: case 0x3C:
+[e $U 1225  ]
+[; ;emulator.c: 537: case 0x3E:
 "537
-[e :U 1295 ]
-[; ;emulator.c: 538: if (getFbits(0) == 0) regPC = regMX;
-"538
-[e $ ! == -> ( _getFbits (1 -> -> 0 `i `uc `i -> 0 `i 1296  ]
-[e = _regPC _regMX ]
-[e :U 1296 ]
-[; ;emulator.c: 540: regPC--;
-"540
-[e -- _regPC -> -> 1 `i `ui ]
-[; ;emulator.c: 541: break;
-"541
-[e $U 1227  ]
-[; ;emulator.c: 543: case 0x3D:
-"543
 [e :U 1297 ]
-[; ;emulator.c: 544: if (getFbits(0) == 0) regPC = immData_toPointer();
-"544
-[e $ ! == -> ( _getFbits (1 -> -> 0 `i `uc `i -> 0 `i 1298  ]
-[e = _regPC ( _immData_toPointer ..  ]
-[e :U 1298 ]
-[; ;emulator.c: 546: regPC--;
-"546
-[e -- _regPC -> -> 1 `i `ui ]
-[; ;emulator.c: 547: break;
-"547
-[e $U 1227  ]
-[; ;emulator.c: 549: case 0x3E:
-"549
-[e :U 1299 ]
-[; ;emulator.c: 551: regPC++;
-"551
+[; ;emulator.c: 539: regPC++;
+"539
 [e ++ _regPC -> -> 1 `i `ui ]
-[; ;emulator.c: 552: regPC_temp = regPC;
-"552
+[; ;emulator.c: 540: regPC_temp = regPC;
+"540
 [e = _regPC_temp _regPC ]
-[; ;emulator.c: 553: regPC_temp >>= 8;
-"553
+[; ;emulator.c: 541: regPC_temp >>= 8;
+"541
 [e =>> _regPC_temp -> 8 `i ]
-[; ;emulator.c: 554: stack[regSP] = (uint8_t) regPC_temp;
-"554
+[; ;emulator.c: 542: stack[regSP] = (uint8_t) regPC_temp;
+"542
 [e = *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux -> _regPC_temp `uc ]
-[; ;emulator.c: 555: regSP++;
-"555
+[; ;emulator.c: 543: regSP++;
+"543
 [e ++ _regSP -> -> 1 `i `uc ]
-[; ;emulator.c: 556: stack[regSP] = (uint8_t) regPC;
-"556
+[; ;emulator.c: 544: stack[regSP] = (uint8_t) regPC;
+"544
 [e = *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux -> _regPC `uc ]
+[; ;emulator.c: 545: regSP++;
+"545
+[e ++ _regSP -> -> 1 `i `uc ]
+[; ;emulator.c: 546: regPC = regMX;
+"546
+[e = _regPC _regMX ]
+[; ;emulator.c: 548: regPC--;
+"548
+[e -- _regPC -> -> 1 `i `ui ]
+[; ;emulator.c: 549: break;
+"549
+[e $U 1225  ]
+[; ;emulator.c: 551: case 0x3F:
+"551
+[e :U 1298 ]
+[; ;emulator.c: 553: regPC += 3;
+"553
+[e =+ _regPC -> -> 3 `i `ui ]
+[; ;emulator.c: 554: regPC_temp = regPC;
+"554
+[e = _regPC_temp _regPC ]
+[; ;emulator.c: 555: regPC_temp >>= 8;
+"555
+[e =>> _regPC_temp -> 8 `i ]
+[; ;emulator.c: 556: stack[regSP] = (uint8_t) regPC_temp;
+"556
+[e = *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux -> _regPC_temp `uc ]
 [; ;emulator.c: 557: regSP++;
 "557
 [e ++ _regSP -> -> 1 `i `uc ]
-[; ;emulator.c: 558: regPC = regMX;
+[; ;emulator.c: 558: stack[regSP] = (uint8_t) regPC;
 "558
-[e = _regPC _regMX ]
-[; ;emulator.c: 560: regPC--;
-"560
-[e -- _regPC -> -> 1 `i `ui ]
-[; ;emulator.c: 561: break;
-"561
-[e $U 1227  ]
-[; ;emulator.c: 563: case 0x3F:
-"563
-[e :U 1300 ]
-[; ;emulator.c: 565: regPC += 3;
-"565
-[e =+ _regPC -> -> 3 `i `ui ]
-[; ;emulator.c: 566: regPC_temp = regPC;
-"566
-[e = _regPC_temp _regPC ]
-[; ;emulator.c: 567: regPC_temp >>= 8;
-"567
-[e =>> _regPC_temp -> 8 `i ]
-[; ;emulator.c: 568: stack[regSP] = (uint8_t) regPC_temp;
-"568
-[e = *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux -> _regPC_temp `uc ]
-[; ;emulator.c: 569: regSP++;
-"569
-[e ++ _regSP -> -> 1 `i `uc ]
-[; ;emulator.c: 570: stack[regSP] = (uint8_t) regPC;
-"570
 [e = *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux -> _regPC `uc ]
-[; ;emulator.c: 571: regSP++;
-"571
+[; ;emulator.c: 559: regSP++;
+"559
 [e ++ _regSP -> -> 1 `i `uc ]
-[; ;emulator.c: 572: regPC = immData_toPointer();
-"572
+[; ;emulator.c: 560: regPC = immData_toPointer();
+"560
 [e = _regPC ( _immData_toPointer ..  ]
-[; ;emulator.c: 574: regPC--;
-"574
+[; ;emulator.c: 562: regPC--;
+"562
 [e -- _regPC -> -> 1 `i `ui ]
-[; ;emulator.c: 575: break;
-"575
-[e $U 1227  ]
-[; ;emulator.c: 577: case 0x40:
-"577
-[e :U 1301 ]
-[; ;emulator.c: 578: regSP--;
-"578
+[; ;emulator.c: 563: break;
+"563
+[e $U 1225  ]
+[; ;emulator.c: 565: case 0x40:
+"565
+[e :U 1299 ]
+[; ;emulator.c: 566: regSP--;
+"566
 [e -- _regSP -> -> 1 `i `uc ]
-[; ;emulator.c: 579: regPC = (uint16_t) stack[regSP];
-"579
+[; ;emulator.c: 567: regPC = (uint16_t) stack[regSP];
+"567
 [e = _regPC -> *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux `ui ]
-[; ;emulator.c: 580: regSP--;
-"580
+[; ;emulator.c: 568: regSP--;
+"568
 [e -- _regSP -> -> 1 `i `uc ]
-[; ;emulator.c: 581: regPC_temp = (uint16_t) stack[regSP];
-"581
+[; ;emulator.c: 569: regPC_temp = (uint16_t) stack[regSP];
+"569
 [e = _regPC_temp -> *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux `ui ]
-[; ;emulator.c: 582: regPC_temp <<= 8;
-"582
+[; ;emulator.c: 570: regPC_temp <<= 8;
+"570
 [e =<< _regPC_temp -> 8 `i ]
-[; ;emulator.c: 583: regPC += regPC_temp;
-"583
+[; ;emulator.c: 571: regPC += regPC_temp;
+"571
 [e =+ _regPC _regPC_temp ]
-[; ;emulator.c: 585: regPC--;
-"585
+[; ;emulator.c: 573: regPC--;
+"573
 [e -- _regPC -> -> 1 `i `ui ]
-[; ;emulator.c: 586: break;
-"586
-[e $U 1227  ]
-[; ;emulator.c: 591: case 0x41:
-"591
-[e :U 1302 ]
-[; ;emulator.c: 592: stack[regSP] = regA;
-"592
+[; ;emulator.c: 574: break;
+"574
+[e $U 1225  ]
+[; ;emulator.c: 579: case 0x41:
+"579
+[e :U 1300 ]
+[; ;emulator.c: 580: stack[regSP] = regA;
+"580
 [e = *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux _regA ]
-[; ;emulator.c: 593: regSP++;
-"593
+[; ;emulator.c: 581: regSP++;
+"581
 [e ++ _regSP -> -> 1 `i `uc ]
-[; ;emulator.c: 594: break;
-"594
-[e $U 1227  ]
-[; ;emulator.c: 596: case 0x42:
-"596
-[e :U 1303 ]
-[; ;emulator.c: 597: stack[regSP] = regB;
-"597
+[; ;emulator.c: 582: break;
+"582
+[e $U 1225  ]
+[; ;emulator.c: 584: case 0x42:
+"584
+[e :U 1301 ]
+[; ;emulator.c: 585: stack[regSP] = regB;
+"585
 [e = *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux _regB ]
-[; ;emulator.c: 598: regSP++;
-"598
+[; ;emulator.c: 586: regSP++;
+"586
 [e ++ _regSP -> -> 1 `i `uc ]
-[; ;emulator.c: 599: break;
-"599
-[e $U 1227  ]
-[; ;emulator.c: 601: case 0x43:
-"601
-[e :U 1304 ]
-[; ;emulator.c: 602: stack[regSP] = regMX;
-"602
+[; ;emulator.c: 587: break;
+"587
+[e $U 1225  ]
+[; ;emulator.c: 589: case 0x43:
+"589
+[e :U 1302 ]
+[; ;emulator.c: 590: stack[regSP] = regMX;
+"590
 [e = *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux -> _regMX `uc ]
-[; ;emulator.c: 603: regSP += 2;
-"603
+[; ;emulator.c: 591: regSP += 2;
+"591
 [e =+ _regSP -> -> 2 `i `uc ]
-[; ;emulator.c: 604: break;
-"604
-[e $U 1227  ]
-[; ;emulator.c: 606: case 0x44:
-"606
-[e :U 1305 ]
-[; ;emulator.c: 607: stack[regSP] = getMXbits(0);
-"607
+[; ;emulator.c: 592: break;
+"592
+[e $U 1225  ]
+[; ;emulator.c: 594: case 0x44:
+"594
+[e :U 1303 ]
+[; ;emulator.c: 595: stack[regSP] = getMXbits(0);
+"595
 [e = *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux ( _getMXbits (1 -> -> 0 `i `uc ]
-[; ;emulator.c: 608: regSP++;
-"608
+[; ;emulator.c: 596: regSP++;
+"596
 [e ++ _regSP -> -> 1 `i `uc ]
-[; ;emulator.c: 609: break;
-"609
-[e $U 1227  ]
-[; ;emulator.c: 611: case 0x45:
-"611
-[e :U 1306 ]
-[; ;emulator.c: 612: stack[regSP] = getMXbits(1);
-"612
+[; ;emulator.c: 597: break;
+"597
+[e $U 1225  ]
+[; ;emulator.c: 599: case 0x45:
+"599
+[e :U 1304 ]
+[; ;emulator.c: 600: stack[regSP] = getMXbits(1);
+"600
 [e = *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux ( _getMXbits (1 -> -> 1 `i `uc ]
-[; ;emulator.c: 613: regSP++;
-"613
+[; ;emulator.c: 601: regSP++;
+"601
 [e ++ _regSP -> -> 1 `i `uc ]
-[; ;emulator.c: 614: break;
-"614
-[e $U 1227  ]
-[; ;emulator.c: 616: case 0x46:
-"616
-[e :U 1307 ]
-[; ;emulator.c: 617: stack[regSP] = regF;
-"617
+[; ;emulator.c: 602: break;
+"602
+[e $U 1225  ]
+[; ;emulator.c: 604: case 0x46:
+"604
+[e :U 1305 ]
+[; ;emulator.c: 605: stack[regSP] = regF;
+"605
 [e = *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux _regF ]
-[; ;emulator.c: 618: regSP++;
-"618
+[; ;emulator.c: 606: regSP++;
+"606
 [e ++ _regSP -> -> 1 `i `uc ]
-[; ;emulator.c: 619: break;
-"619
-[e $U 1227  ]
-[; ;emulator.c: 621: case 0x47:
-"621
-[e :U 1308 ]
-[; ;emulator.c: 622: stack[regSP] = immData_1;
-"622
+[; ;emulator.c: 607: break;
+"607
+[e $U 1225  ]
+[; ;emulator.c: 609: case 0x47:
+"609
+[e :U 1306 ]
+[; ;emulator.c: 610: stack[regSP] = immData_1;
+"610
 [e = *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux _immData_1 ]
-[; ;emulator.c: 623: regSP++;
-"623
+[; ;emulator.c: 611: regSP++;
+"611
 [e ++ _regSP -> -> 1 `i `uc ]
-[; ;emulator.c: 624: regPC++;
-"624
+[; ;emulator.c: 612: regPC++;
+"612
 [e ++ _regPC -> -> 1 `i `ui ]
-[; ;emulator.c: 625: break;
-"625
-[e $U 1227  ]
-[; ;emulator.c: 627: case 0x48:
-"627
-[e :U 1309 ]
-[; ;emulator.c: 628: regSP--;
-"628
+[; ;emulator.c: 613: break;
+"613
+[e $U 1225  ]
+[; ;emulator.c: 615: case 0x48:
+"615
+[e :U 1307 ]
+[; ;emulator.c: 616: regSP--;
+"616
 [e -- _regSP -> -> 1 `i `uc ]
-[; ;emulator.c: 629: regA = stack[regSP];
-"629
+[; ;emulator.c: 617: regA = stack[regSP];
+"617
 [e = _regA *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux ]
-[; ;emulator.c: 630: break;
-"630
-[e $U 1227  ]
-[; ;emulator.c: 632: case 0x49:
-"632
-[e :U 1310 ]
-[; ;emulator.c: 633: regSP--;
-"633
+[; ;emulator.c: 618: break;
+"618
+[e $U 1225  ]
+[; ;emulator.c: 620: case 0x49:
+"620
+[e :U 1308 ]
+[; ;emulator.c: 621: regSP--;
+"621
 [e -- _regSP -> -> 1 `i `uc ]
-[; ;emulator.c: 634: regB = stack[regSP];
-"634
+[; ;emulator.c: 622: regB = stack[regSP];
+"622
 [e = _regB *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux ]
-[; ;emulator.c: 635: break;
-"635
-[e $U 1227  ]
-[; ;emulator.c: 637: case 0x4A:
-"637
-[e :U 1311 ]
-[; ;emulator.c: 638: regSP -= 2;
-"638
+[; ;emulator.c: 623: break;
+"623
+[e $U 1225  ]
+[; ;emulator.c: 625: case 0x4A:
+"625
+[e :U 1309 ]
+[; ;emulator.c: 626: regSP -= 2;
+"626
 [e =- _regSP -> -> 2 `i `uc ]
-[; ;emulator.c: 639: regMX = stack[regSP];
-"639
+[; ;emulator.c: 627: regMX = stack[regSP];
+"627
 [e = _regMX -> *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux `ui ]
-[; ;emulator.c: 640: break;
-"640
-[e $U 1227  ]
-[; ;emulator.c: 642: case 0x4B:
-"642
-[e :U 1312 ]
-[; ;emulator.c: 643: regSP--;
-"643
+[; ;emulator.c: 628: break;
+"628
+[e $U 1225  ]
+[; ;emulator.c: 630: case 0x4B:
+"630
+[e :U 1310 ]
+[; ;emulator.c: 631: regSP--;
+"631
 [e -- _regSP -> -> 1 `i `uc ]
-[; ;emulator.c: 644: setMXbits(0, stack[regSP]);
-"644
+[; ;emulator.c: 632: setMXbits(0, stack[regSP]);
+"632
 [e ( _setMXbits (2 , -> -> 0 `i `uc *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux ]
-[; ;emulator.c: 645: break;
+[; ;emulator.c: 633: break;
+"633
+[e $U 1225  ]
+[; ;emulator.c: 635: case 0x4C:
+"635
+[e :U 1311 ]
+[; ;emulator.c: 636: regSP--;
+"636
+[e -- _regSP -> -> 1 `i `uc ]
+[; ;emulator.c: 637: setMXbits(1, stack[regSP]);
+"637
+[e ( _setMXbits (2 , -> -> 1 `i `uc *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux ]
+[; ;emulator.c: 638: break;
+"638
+[e $U 1225  ]
+[; ;emulator.c: 643: case 0x50:
+"643
+[e :U 1312 ]
+[; ;emulator.c: 645: regA_temp16 += (uint16_t) regB;
 "645
-[e $U 1227  ]
-[; ;emulator.c: 647: case 0x4C:
+[e =+ _regA_temp16 -> _regB `ui ]
+[; ;emulator.c: 646: if (regA_temp16 > 255) setFbits(0, 1);
+"646
+[e $ ! > _regA_temp16 -> -> 255 `i `ui 1313  ]
+[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[e $U 1314  ]
 "647
 [e :U 1313 ]
-[; ;emulator.c: 648: regSP--;
-"648
-[e -- _regSP -> -> 1 `i `uc ]
-[; ;emulator.c: 649: setMXbits(1, stack[regSP]);
-"649
-[e ( _setMXbits (2 , -> -> 1 `i `uc *U + &U _stack * -> _regSP `ux -> -> # *U &U _stack `ui `ux ]
-[; ;emulator.c: 650: break;
-"650
-[e $U 1227  ]
-[; ;emulator.c: 655: case 0x50:
-"655
+[; ;emulator.c: 647: else setFbits(0, 0);
+[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
 [e :U 1314 ]
-[; ;emulator.c: 657: regA_temp16 += (uint16_t) regB;
-"657
-[e =+ _regA_temp16 -> _regB `ui ]
-[; ;emulator.c: 658: if (regA_temp16 > 255) setFbits(4, 1);
-"658
-[e $ ! > _regA_temp16 -> -> 255 `i `ui 1315  ]
-[e ( _setFbits (2 , -> -> 4 `i `uc -> -> 1 `i `uc ]
-[e $U 1316  ]
-"659
-[e :U 1315 ]
-[; ;emulator.c: 659: else setFbits(4, 0);
-[e ( _setFbits (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
-[e :U 1316 ]
-[; ;emulator.c: 660: regA += regB;
-"660
+[; ;emulator.c: 648: regA += regB;
+"648
 [e =+ _regA _regB ]
-[; ;emulator.c: 661: break;
-"661
-[e $U 1227  ]
-[; ;emulator.c: 663: case 0x51:
-"663
-[e :U 1317 ]
-[; ;emulator.c: 665: regA_temp16 += (uint16_t) immData_1;
-"665
+[; ;emulator.c: 649: break;
+"649
+[e $U 1225  ]
+[; ;emulator.c: 651: case 0x51:
+"651
+[e :U 1315 ]
+[; ;emulator.c: 653: regA_temp16 += (uint16_t) immData_1;
+"653
 [e =+ _regA_temp16 -> _immData_1 `ui ]
-[; ;emulator.c: 666: if (regA_temp16 > 255) setFbits(4, 1);
-"666
-[e $ ! > _regA_temp16 -> -> 255 `i `ui 1318  ]
-[e ( _setFbits (2 , -> -> 4 `i `uc -> -> 1 `i `uc ]
-[e $U 1319  ]
-"667
-[e :U 1318 ]
-[; ;emulator.c: 667: else setFbits(4, 0);
-[e ( _setFbits (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
-[e :U 1319 ]
-[; ;emulator.c: 669: regA += immData_1;
-"669
+[; ;emulator.c: 654: if (regA_temp16 > 255) setFbits(0, 1);
+"654
+[e $ ! > _regA_temp16 -> -> 255 `i `ui 1316  ]
+[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[e $U 1317  ]
+"655
+[e :U 1316 ]
+[; ;emulator.c: 655: else setFbits(0, 0);
+[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[e :U 1317 ]
+[; ;emulator.c: 657: regA += immData_1;
+"657
 [e =+ _regA _immData_1 ]
-[; ;emulator.c: 671: regPC++;
-"671
+[; ;emulator.c: 659: regPC++;
+"659
 [e ++ _regPC -> -> 1 `i `ui ]
-[; ;emulator.c: 672: break;
-"672
-[e $U 1227  ]
-[; ;emulator.c: 674: case 0x52:
-"674
-[e :U 1320 ]
-[; ;emulator.c: 676: regA_temp16 = regA;
-"676
+[; ;emulator.c: 660: break;
+"660
+[e $U 1225  ]
+[; ;emulator.c: 662: case 0x52:
+"662
+[e :U 1318 ]
+[; ;emulator.c: 664: regA_temp16 = regA;
+"664
 [e = _regA_temp16 -> _regA `ui ]
-[; ;emulator.c: 677: regA_temp16 <<= 8;
-"677
+[; ;emulator.c: 665: regA_temp16 <<= 8;
+"665
 [e =<< _regA_temp16 -> 8 `i ]
-[; ;emulator.c: 678: regA_temp16 += 255;
-"678
+[; ;emulator.c: 666: regA_temp16 += 255;
+"666
 [e =+ _regA_temp16 -> -> 255 `i `ui ]
-[; ;emulator.c: 679: regA_temp16 -= regB;
-"679
+[; ;emulator.c: 667: regA_temp16 -= regB;
+"667
 [e =- _regA_temp16 -> _regB `ui ]
-[; ;emulator.c: 680: if (regA_temp16 < 255) setFbits(4, 1);
-"680
-[e $ ! < _regA_temp16 -> -> 255 `i `ui 1321  ]
-[e ( _setFbits (2 , -> -> 4 `i `uc -> -> 1 `i `uc ]
-[e $U 1322  ]
-"681
-[e :U 1321 ]
-[; ;emulator.c: 681: else setFbits(4, 0);
-[e ( _setFbits (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
-[e :U 1322 ]
-[; ;emulator.c: 682: regA -= regB;
-"682
+[; ;emulator.c: 668: if (regA_temp16 < 255) setFbits(0, 1);
+"668
+[e $ ! < _regA_temp16 -> -> 255 `i `ui 1319  ]
+[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[e $U 1320  ]
+"669
+[e :U 1319 ]
+[; ;emulator.c: 669: else setFbits(0, 0);
+[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[e :U 1320 ]
+[; ;emulator.c: 670: regA -= regB;
+"670
 [e =- _regA _regB ]
+[; ;emulator.c: 671: break;
+"671
+[e $U 1225  ]
+[; ;emulator.c: 673: case 0x53:
+"673
+[e :U 1321 ]
+[; ;emulator.c: 675: regA_temp16 = regA;
+"675
+[e = _regA_temp16 -> _regA `ui ]
+[; ;emulator.c: 676: regA_temp16 <<= 8;
+"676
+[e =<< _regA_temp16 -> 8 `i ]
+[; ;emulator.c: 677: regA_temp16 += 255;
+"677
+[e =+ _regA_temp16 -> -> 255 `i `ui ]
+[; ;emulator.c: 678: regA_temp16 -= immData_1;
+"678
+[e =- _regA_temp16 -> _immData_1 `ui ]
+[; ;emulator.c: 679: if (regA_temp16 < 255) setFbits(0, 1);
+"679
+[e $ ! < _regA_temp16 -> -> 255 `i `ui 1322  ]
+[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[e $U 1323  ]
+"680
+[e :U 1322 ]
+[; ;emulator.c: 680: else setFbits(0, 0);
+[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[e :U 1323 ]
+[; ;emulator.c: 681: regA -= immData_1;
+"681
+[e =- _regA _immData_1 ]
+[; ;emulator.c: 682: regPC++;
+"682
+[e ++ _regPC -> -> 1 `i `ui ]
 [; ;emulator.c: 683: break;
 "683
-[e $U 1227  ]
-[; ;emulator.c: 685: case 0x53:
+[e $U 1225  ]
+[; ;emulator.c: 685: case 0x54:
 "685
-[e :U 1323 ]
-[; ;emulator.c: 687: regA_temp16 = regA;
-"687
-[e = _regA_temp16 -> _regA `ui ]
-[; ;emulator.c: 688: regA_temp16 <<= 8;
-"688
-[e =<< _regA_temp16 -> 8 `i ]
-[; ;emulator.c: 689: regA_temp16 += 255;
-"689
-[e =+ _regA_temp16 -> -> 255 `i `ui ]
-[; ;emulator.c: 690: regA_temp16 -= immData_1;
-"690
-[e =- _regA_temp16 -> _immData_1 `ui ]
-[; ;emulator.c: 691: if (regA_temp16 < 255) setFbits(4, 1);
-"691
-[e $ ! < _regA_temp16 -> -> 255 `i `ui 1324  ]
-[e ( _setFbits (2 , -> -> 4 `i `uc -> -> 1 `i `uc ]
-[e $U 1325  ]
-"692
 [e :U 1324 ]
-[; ;emulator.c: 692: else setFbits(4, 0);
-[e ( _setFbits (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
-[e :U 1325 ]
-[; ;emulator.c: 693: regA -= immData_1;
-"693
-[e =- _regA _immData_1 ]
-[; ;emulator.c: 694: regPC++;
-"694
-[e ++ _regPC -> -> 1 `i `ui ]
-[; ;emulator.c: 695: break;
-"695
-[e $U 1227  ]
-[; ;emulator.c: 697: case 0x54:
-"697
-[e :U 1326 ]
-[; ;emulator.c: 699: regA_temp16 = regA + 1;
-"699
+[; ;emulator.c: 687: regA_temp16 = regA + 1;
+"687
 [e = _regA_temp16 -> + -> _regA `i -> 1 `i `ui ]
-[; ;emulator.c: 700: if (regA_temp16 > 255) setFbits(4, 1);
-"700
-[e $ ! > _regA_temp16 -> -> 255 `i `ui 1327  ]
-[e ( _setFbits (2 , -> -> 4 `i `uc -> -> 1 `i `uc ]
-[e $U 1328  ]
-"701
-[e :U 1327 ]
-[; ;emulator.c: 701: else setFbits(4, 0);
-[e ( _setFbits (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
-[e :U 1328 ]
-[; ;emulator.c: 702: regA++;
-"702
+[; ;emulator.c: 688: if (regA_temp16 > 255) setFbits(0, 1);
+"688
+[e $ ! > _regA_temp16 -> -> 255 `i `ui 1325  ]
+[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[e $U 1326  ]
+"689
+[e :U 1325 ]
+[; ;emulator.c: 689: else setFbits(0, 0);
+[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[e :U 1326 ]
+[; ;emulator.c: 690: regA++;
+"690
 [e ++ _regA -> -> 1 `i `uc ]
-[; ;emulator.c: 703: break;
-"703
-[e $U 1227  ]
-[; ;emulator.c: 705: case 0x55:
-"705
-[e :U 1329 ]
-[; ;emulator.c: 707: regA_temp8 = regA - 1;
-"707
+[; ;emulator.c: 691: break;
+"691
+[e $U 1225  ]
+[; ;emulator.c: 693: case 0x55:
+"693
+[e :U 1327 ]
+[; ;emulator.c: 695: regA_temp8 = regA - 1;
+"695
 [e = _regA_temp8 -> - -> _regA `i -> 1 `i `uc ]
-[; ;emulator.c: 708: if (regA_temp8 == 255) setFbits(4, 1);
-"708
-[e $ ! == -> _regA_temp8 `i -> 255 `i 1330  ]
-[e ( _setFbits (2 , -> -> 4 `i `uc -> -> 1 `i `uc ]
-[e $U 1331  ]
-"709
-[e :U 1330 ]
-[; ;emulator.c: 709: else setFbits(4, 0);
-[e ( _setFbits (2 , -> -> 4 `i `uc -> -> 0 `i `uc ]
-[e :U 1331 ]
-[; ;emulator.c: 710: regA--;
-"710
+[; ;emulator.c: 696: if (regA_temp8 == 255) setFbits(0, 1);
+"696
+[e $ ! == -> _regA_temp8 `i -> 255 `i 1328  ]
+[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
+[e $U 1329  ]
+"697
+[e :U 1328 ]
+[; ;emulator.c: 697: else setFbits(0, 0);
+[e ( _setFbits (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+[e :U 1329 ]
+[; ;emulator.c: 698: regA--;
+"698
 [e -- _regA -> -> 1 `i `uc ]
-[; ;emulator.c: 711: break;
-"711
-[e $U 1227  ]
-"712
+[; ;emulator.c: 699: break;
+"699
+[e $U 1225  ]
+"700
 }
-[; ;emulator.c: 712: }
-[e $U 1227  ]
-"250
-[e :U 1228 ]
-[e [\ *U + &U _virtualMemory * -> _regPC `ux -> -> # *U &U _virtualMemory `ui `ux , $ -> -> 1 `i `uc 1230
- , $ -> -> 2 `i `uc 1231
- , $ -> -> 8 `i `uc 1232
- , $ -> -> 3 `i `uc 1233
- , $ -> -> 4 `i `uc 1234
- , $ -> -> 5 `i `uc 1235
- , $ -> -> 6 `i `uc 1236
- , $ -> -> 7 `i `uc 1237
- , $ -> -> 16 `i `uc 1238
- , $ -> -> 17 `i `uc 1239
- , $ -> -> 18 `i `uc 1240
- , $ -> -> 19 `i `uc 1241
- , $ -> -> 20 `i `uc 1242
- , $ -> -> 21 `i `uc 1243
- , $ -> -> 22 `i `uc 1244
- , $ -> -> 23 `i `uc 1245
- , $ -> -> 24 `i `uc 1246
- , $ -> -> 25 `i `uc 1247
- , $ -> -> 26 `i `uc 1248
- , $ -> -> 27 `i `uc 1249
- , $ -> -> 28 `i `uc 1250
- , $ -> -> 32 `i `uc 1251
- , $ -> -> 33 `i `uc 1252
- , $ -> -> 34 `i `uc 1253
- , $ -> -> 35 `i `uc 1254
- , $ -> -> 43 `i `uc 1255
- , $ -> -> 36 `i `uc 1256
- , $ -> -> 37 `i `uc 1257
- , $ -> -> 38 `i `uc 1258
- , $ -> -> 39 `i `uc 1261
- , $ -> -> 40 `i `uc 1264
- , $ -> -> 41 `i `uc 1265
- , $ -> -> 42 `i `uc 1266
- , $ -> -> 48 `i `uc 1273
- , $ -> -> 49 `i `uc 1274
- , $ -> -> 50 `i `uc 1275
- , $ -> -> 51 `i `uc 1277
- , $ -> -> 52 `i `uc 1279
- , $ -> -> 53 `i `uc 1281
- , $ -> -> 54 `i `uc 1283
- , $ -> -> 55 `i `uc 1285
- , $ -> -> 56 `i `uc 1287
- , $ -> -> 57 `i `uc 1289
- , $ -> -> 58 `i `uc 1291
- , $ -> -> 59 `i `uc 1293
- , $ -> -> 60 `i `uc 1295
- , $ -> -> 61 `i `uc 1297
- , $ -> -> 62 `i `uc 1299
- , $ -> -> 63 `i `uc 1300
- , $ -> -> 64 `i `uc 1301
- , $ -> -> 65 `i `uc 1302
- , $ -> -> 66 `i `uc 1303
- , $ -> -> 67 `i `uc 1304
- , $ -> -> 68 `i `uc 1305
- , $ -> -> 69 `i `uc 1306
- , $ -> -> 70 `i `uc 1307
- , $ -> -> 71 `i `uc 1308
- , $ -> -> 72 `i `uc 1309
- , $ -> -> 73 `i `uc 1310
- , $ -> -> 74 `i `uc 1311
- , $ -> -> 75 `i `uc 1312
- , $ -> -> 76 `i `uc 1313
- , $ -> -> 80 `i `uc 1314
- , $ -> -> 81 `i `uc 1317
- , $ -> -> 82 `i `uc 1320
- , $ -> -> 83 `i `uc 1323
- , $ -> -> 84 `i `uc 1326
- , $ -> -> 85 `i `uc 1329
- 1229 ]
-"712
-[e :U 1227 ]
-[; ;emulator.c: 715: regPC++;
-"715
+[; ;emulator.c: 700: }
+[e $U 1225  ]
+"238
+[e :U 1226 ]
+[e [\ *U + &U _virtualMemory * -> _regPC `ux -> -> # *U &U _virtualMemory `ui `ux , $ -> -> 1 `i `uc 1228
+ , $ -> -> 2 `i `uc 1229
+ , $ -> -> 8 `i `uc 1230
+ , $ -> -> 3 `i `uc 1231
+ , $ -> -> 4 `i `uc 1232
+ , $ -> -> 5 `i `uc 1233
+ , $ -> -> 6 `i `uc 1234
+ , $ -> -> 7 `i `uc 1235
+ , $ -> -> 16 `i `uc 1236
+ , $ -> -> 17 `i `uc 1237
+ , $ -> -> 18 `i `uc 1238
+ , $ -> -> 19 `i `uc 1239
+ , $ -> -> 20 `i `uc 1240
+ , $ -> -> 21 `i `uc 1241
+ , $ -> -> 22 `i `uc 1242
+ , $ -> -> 23 `i `uc 1243
+ , $ -> -> 24 `i `uc 1244
+ , $ -> -> 25 `i `uc 1245
+ , $ -> -> 26 `i `uc 1246
+ , $ -> -> 27 `i `uc 1247
+ , $ -> -> 28 `i `uc 1248
+ , $ -> -> 32 `i `uc 1249
+ , $ -> -> 33 `i `uc 1250
+ , $ -> -> 34 `i `uc 1251
+ , $ -> -> 35 `i `uc 1252
+ , $ -> -> 43 `i `uc 1253
+ , $ -> -> 36 `i `uc 1254
+ , $ -> -> 37 `i `uc 1255
+ , $ -> -> 38 `i `uc 1256
+ , $ -> -> 39 `i `uc 1259
+ , $ -> -> 40 `i `uc 1262
+ , $ -> -> 41 `i `uc 1263
+ , $ -> -> 42 `i `uc 1264
+ , $ -> -> 48 `i `uc 1271
+ , $ -> -> 49 `i `uc 1272
+ , $ -> -> 50 `i `uc 1273
+ , $ -> -> 51 `i `uc 1275
+ , $ -> -> 52 `i `uc 1277
+ , $ -> -> 53 `i `uc 1279
+ , $ -> -> 54 `i `uc 1281
+ , $ -> -> 55 `i `uc 1283
+ , $ -> -> 56 `i `uc 1285
+ , $ -> -> 57 `i `uc 1287
+ , $ -> -> 58 `i `uc 1289
+ , $ -> -> 59 `i `uc 1291
+ , $ -> -> 60 `i `uc 1293
+ , $ -> -> 61 `i `uc 1295
+ , $ -> -> 62 `i `uc 1297
+ , $ -> -> 63 `i `uc 1298
+ , $ -> -> 64 `i `uc 1299
+ , $ -> -> 65 `i `uc 1300
+ , $ -> -> 66 `i `uc 1301
+ , $ -> -> 67 `i `uc 1302
+ , $ -> -> 68 `i `uc 1303
+ , $ -> -> 69 `i `uc 1304
+ , $ -> -> 70 `i `uc 1305
+ , $ -> -> 71 `i `uc 1306
+ , $ -> -> 72 `i `uc 1307
+ , $ -> -> 73 `i `uc 1308
+ , $ -> -> 74 `i `uc 1309
+ , $ -> -> 75 `i `uc 1310
+ , $ -> -> 76 `i `uc 1311
+ , $ -> -> 80 `i `uc 1312
+ , $ -> -> 81 `i `uc 1315
+ , $ -> -> 82 `i `uc 1318
+ , $ -> -> 83 `i `uc 1321
+ , $ -> -> 84 `i `uc 1324
+ , $ -> -> 85 `i `uc 1327
+ 1227 ]
+"700
+[e :U 1225 ]
+[; ;emulator.c: 703: regPC++;
+"703
 [e ++ _regPC -> -> 1 `i `ui ]
-[; ;emulator.c: 716: }
-"716
-[e :UE 1226 ]
+[; ;emulator.c: 704: }
+"704
+[e :UE 1224 ]
 }

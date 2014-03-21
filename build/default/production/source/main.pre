@@ -10589,7 +10589,7 @@ uint8_t regSP;
 
 uint8_t regF;
 
-# 27
+# 26
 uint8_t immData_1;
 uint8_t immData_2;
 

@@ -131,19 +131,19 @@
 [v _setMXbits setMXbits `(v  1 e 0 0 ]
 "65
 [v _getFbits getFbits `(uc  1 e 1 0 ]
-"105
+"100
 [v _setFbits setFbits `(v  1 e 0 0 ]
-"150
+"138
 [v _immData_toPointer immData_toPointer `(ui  1 e 2 0 ]
-"158
+"146
 [v _initializeRegisters initializeRegisters `(v  1 e 0 0 ]
-"174
+"162
 [v _getPortData getPortData `(uc  1 e 1 0 ]
-"190
+"178
 [v _setPortData setPortData `(v  1 e 0 0 ]
-"221
+"209
 [v _update_immData update_immData `(v  1 e 0 0 ]
-"238
+"226
 [v _processOpcode processOpcode `(v  1 e 0 0 ]
 "19 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c
 [v _main main `(v  1 e 0 0 ]
@@ -420,11 +420,11 @@
 [v _regSP regSP `uc  1 e 1 0 ]
 "18
 [v _regF regF `uc  1 e 1 0 ]
-"27
+"26
 [v _immData_1 immData_1 `uc  1 e 1 0 ]
-"28
+"27
 [v _immData_2 immData_2 `uc  1 e 1 0 ]
-"32
+"31
 [v _stack stack `[256]uc  1 e 256 0 ]
 "4 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/virtualMemory.h
 [v _virtualMemory_size virtualMemory_size `Cl  1 e 4 0 ]
@@ -453,37 +453,37 @@
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "31
 } 0
-"238 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c
+"226 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c
 [v _processOpcode processOpcode `(v  1 e 0 0 ]
 {
-"245
+"233
 [v processOpcode@regA_temp16 regA_temp16 `ui  1 a 2 14 ]
-"246
+"234
 [v processOpcode@regPC_temp regPC_temp `ui  1 a 2 11 ]
-"244
+"232
 [v processOpcode@regA_temp8 regA_temp8 `uc  1 a 1 13 ]
-"247
+"235
 [v processOpcode@carriedBit carriedBit `uc  1 a 1 10 ]
-"716
+"704
 } 0
-"221
+"209
 [v _update_immData update_immData `(v  1 e 0 0 ]
 {
-"232
+"220
 } 0
-"190
+"178
 [v _setPortData setPortData `(v  1 e 0 0 ]
 {
 [v setPortData@portNumber portNumber `uc  1 a 1 wreg ]
-"192
+"180
 [v setPortData@outputData_temp16 outputData_temp16 `ui  1 a 2 6 ]
-"193
+"181
 [v setPortData@outputData_temp8 outputData_temp8 `uc  1 a 1 8 ]
-"190
+"178
 [v setPortData@portNumber portNumber `uc  1 a 1 wreg ]
 [v setPortData@outputData outputData `uc  1 p 1 4 ]
 [v setPortData@portNumber portNumber `uc  1 a 1 5 ]
-"219
+"207
 } 0
 "63 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c
 [v _hexToChar hexToChar `(uc  1 e 1 0 ]
@@ -524,35 +524,35 @@
 [v setMXbits@subRegister subRegister `uc  1 a 1 3 ]
 "57
 } 0
-"105
+"100
 [v _setFbits setFbits `(v  1 e 0 0 ]
 {
 [v setFbits@subRegister subRegister `uc  1 a 1 wreg ]
-"107
+"102
 [v setFbits@regF_temp1 regF_temp1 `uc  1 a 1 4 ]
-"108
+"103
 [v setFbits@regF_temp2 regF_temp2 `uc  1 a 1 3 ]
-"105
+"100
 [v setFbits@subRegister subRegister `uc  1 a 1 wreg ]
 [v setFbits@value value `uc  1 p 1 0 ]
-"107
+"102
 [v setFbits@subRegister subRegister `uc  1 a 1 2 ]
-"148
+"136
 } 0
-"150
+"138
 [v _immData_toPointer immData_toPointer `(ui  1 e 2 0 ]
 {
-"152
+"140
 [v immData_toPointer@pointer pointer `ui  1 a 2 2 ]
-"156
+"144
 } 0
-"174
+"162
 [v _getPortData getPortData `(uc  1 e 1 0 ]
 {
 [v getPortData@portNumber portNumber `uc  1 a 1 wreg ]
 [v getPortData@portNumber portNumber `uc  1 a 1 wreg ]
 [v getPortData@portNumber portNumber `uc  1 a 1 0 ]
-"183
+"171
 } 0
 "20
 [v _getMXbits getMXbits `(uc  1 e 1 0 ]
@@ -576,12 +576,12 @@
 [v getFbits@subRegister subRegister `uc  1 a 1 wreg ]
 "67
 [v getFbits@subRegister subRegister `uc  1 a 1 0 ]
-"98
+"93
 } 0
-"158
+"146
 [v _initializeRegisters initializeRegisters `(v  1 e 0 0 ]
 {
-"166
+"154
 } 0
 "26 C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c
 [v _initPorts initPorts `(v  1 e 0 0 ]

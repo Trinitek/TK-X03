@@ -87,11 +87,6 @@ uint8_t getFbits(uint8_t subRegister)
             regF_temp <<= 4;
             regF_temp >>= 7;
             break;
-            
-        case OF:
-            regF_temp <<= 3;
-            regF_temp >>= 7;
-            break;
     }
     
     return regF_temp;
@@ -134,13 +129,6 @@ void setFbits(uint8_t subRegister, uint8_t value)
             regF_temp1 <<= 4;
             regF_temp2 <<= 4;
             regF_temp2 >>= 4;
-            break;
-            
-        case OF:
-            regF_temp1 >>= 5;
-            regF_temp1 <<= 5;
-            regF_temp2 <<= 3;
-            regF_temp2 >>= 3;
             break;
     }
     
@@ -655,16 +643,16 @@ void processOpcode(void)
         case ADDA:                                      // a = a + b
             // check for potential overflow and set corresponding flag
             regA_temp16 += (uint16_t) regB;
-            if (regA_temp16 > 255) setFbits(OF, 1);
-            else setFbits(OF, 0);
+            if (regA_temp16 > 255) setFbits(CF, 1);
+            else setFbits(CF, 0);
             regA += regB;
             break;
         	
         case ADDI:					// a = a + imm8
            // check for potential overflow and set corresponding flag
            regA_temp16 += (uint16_t) immData_1;
-           if (regA_temp16 > 255) setFbits(OF, 1);
-           else setFbits(OF, 0);
+           if (regA_temp16 > 255) setFbits(CF, 1);
+           else setFbits(CF, 0);
 
            regA += immData_1;
 
@@ -677,8 +665,8 @@ void processOpcode(void)
            regA_temp16 <<= 8;
            regA_temp16 += 255;
            regA_temp16 -= regB;
-           if (regA_temp16 < 255) setFbits(OF, 1);
-           else setFbits(OF, 0);
+           if (regA_temp16 < 255) setFbits(CF, 1);
+           else setFbits(CF, 0);
            regA -= regB;
            break;
         	
@@ -688,8 +676,8 @@ void processOpcode(void)
            regA_temp16 <<= 8;
            regA_temp16 += 255;
            regA_temp16 -= immData_1;
-           if (regA_temp16 < 255) setFbits(OF, 1);
-           else setFbits(OF, 0);
+           if (regA_temp16 < 255) setFbits(CF, 1);
+           else setFbits(CF, 0);
            regA -= immData_1;
            regPC++;
            break;
@@ -697,16 +685,16 @@ void processOpcode(void)
         case INC:					// inc a
            // check for potential overflow and set corresponding flag
            regA_temp16 = regA + 1;
-           if (regA_temp16 > 255) setFbits(OF, 1);
-           else setFbits(OF, 0);
+           if (regA_temp16 > 255) setFbits(CF, 1);
+           else setFbits(CF, 0);
            regA++;
            break;
         	
         case DEC:					// dec a
            // check for potential overflow and set corresponding flag
            regA_temp8 = regA - 1;
-           if (regA_temp8 == 255) setFbits(OF, 1);
-           else setFbits(OF, 0);
+           if (regA_temp8 == 255) setFbits(CF, 1);
+           else setFbits(CF, 0);
            regA--;
            break;
     }

@@ -11,36 +11,36 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Blake\AppData\Local\Temp\s2hk.obj
+$C:\Users\Blake\AppData\Local\Temp\s4fk.obj
 end_init CODE 0 0 0 4 1
 idloc IDLOC 0 200000 200000 8 1
 config CONFIG 0 300000 300000 E 1
 $dist/default/production\TK-X03.production.obj
 smallconst SMALLCONST 0 1000 1000 6 1
-text17 CODE 0 218C 218C 1C 1
-text16 CODE 0 213E 213E 30 1
-text15 CODE 0 210C 210C 32 1
-text14 CODE 0 1F90 1F90 66 1
-text13 CODE 0 21A8 21A8 1A 1
-text12 CODE 0 21C2 21C2 16 1
-text11 CODE 0 216E 216E 1E 1
-text10 CODE 0 1BC2 1BC2 DA 1
-text9 CODE 0 1FF6 1FF6 52 1
+text17 CODE 0 2148 2148 1C 1
+text16 CODE 0 20FA 20FA 30 1
+text15 CODE 0 20C8 20C8 32 1
+text14 CODE 0 1FB2 1FB2 52 1
+text13 CODE 0 2164 2164 1A 1
+text12 CODE 0 217E 217E 16 1
+text11 CODE 0 212A 212A 1E 1
+text10 CODE 0 1C7A 1C7A AA 1
+text9 CODE 0 1F60 1F60 52 1
 text8 CODE 0 1876 1876 34C 1
-text7 CODE 0 1E92 1E92 8A 1
-text6 CODE 0 1C9C 1C9C B8 1
-text5 CODE 0 1D54 1D54 A8 1
-text4 CODE 0 1DFC 1DFC 96 1
+text7 CODE 0 1E62 1E62 8A 1
+text6 CODE 0 1BC2 1BC2 B8 1
+text5 CODE 0 1D24 1D24 A8 1
+text4 CODE 0 1DCC 1DCC 96 1
 text3 CODE 0 1006 1006 870 1
-text2 CODE 0 20D2 20D2 3A 1
-text1 CODE 0 2092 2092 40 1
-text0 CODE 0 1F1C 1F1C 74 1
+text2 CODE 0 208E 208E 3A 1
+text1 CODE 0 204E 204E 40 1
+text0 CODE 0 1EEC 1EEC 74 1
 cstackCOMRAM COMRAM 1 1 1 11 1
 dataBIGRAM BIGRAM 1 200 200 800 1
 bssBANK1 BANK1 1 100 100 100 1
 bssCOMRAM COMRAM 1 12 12 F 1
-cinit CODE 0 2048 2048 4A 1
-idataBIGRAM CODE 0 21D8 21D8 D 1
+cinit CODE 0 2004 2004 4A 1
+idataBIGRAM CODE 0 2194 2194 13 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -57,16 +57,16 @@ BANK15 000F00-000F37 1
 BIGRAM 000021-0000FF 1
 BIGRAM 000A00-000F37 1
 CODE 000004-000FFF 1
-CODE 0021E5-00FFFF 1
+CODE 0021A7-00FFFF 1
 COMRAM 000021-00005F 1
 CONST 000004-000FFF 1
-CONST 0021E5-00FFFF 1
+CONST 0021A7-00FFFF 1
 EEDATA F00000-F003FF 1
-MEDIUMCONST 0021E5-00FFFF 1
+MEDIUMCONST 0021A7-00FFFF 1
 RAM 000060-0000FF 1
 RAM 000A00-000F37 1
 SFR 000F38-000FFF 1
-SMALLCONST 0021E5-00FFFF 1
+SMALLCONST 0021A7-00FFFF 1
 STACK 000A00-000F37 1
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -82,205 +82,205 @@ STACK 000A00-000F37 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\TK-X03.production.obj
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":238 1006 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":241 1006 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":244 100A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":245 100E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":246 1014 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":250 101C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":258 101E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":259 102C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":262 1030 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":263 103E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":266 1042 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":267 104A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":273 104E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":277 1056 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":282 1060 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":283 106A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":286 106E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":291 107A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":299 1086 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":303 1092 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":307 109A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":310 10A2 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":311 10A2 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":312 10A6 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":314 10A8 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":315 10A8 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":316 10AC text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":318 10AE text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":319 10AE text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":320 10B2 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":332 10B4 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":334 10C4 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":337 10C6 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":338 10D0 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":341 10D2 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":342 10DC text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":344 10DE text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":345 10DE text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":346 10E2 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":348 10E4 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":349 10E4 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":350 10E8 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":352 10EA text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":353 10EA text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":358 10F0 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":359 10F0 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":360 10F4 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":361 10F8 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":362 10FC text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":368 10FE text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":369 1102 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":373 1104 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":378 110A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":379 110E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":383 1110 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":388 1116 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":389 111A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":393 111C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":398 1122 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":399 1124 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":401 1126 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":403 1126 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":404 112A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":405 1130 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":406 1146 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":409 1154 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":410 1158 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":412 115A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":414 115A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":415 115E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":416 1164 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":417 116A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":418 1180 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":421 118E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":422 1192 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":424 1194 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":426 1194 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":427 1198 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":430 119E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":433 11A2 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":436 11A8 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":438 11A8 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":439 11AC text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":442 11B2 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":445 11B6 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":450 11BA text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":451 11D0 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":454 11DE text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":455 11F6 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":458 1204 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":459 121C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":473 122C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":479 1232 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":481 1246 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":485 1248 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":491 125C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":497 1264 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":499 127C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":503 127E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":509 128C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":515 12A0 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":521 12A8 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":522 12C2 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":523 12CA text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":526 12CC text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":532 12D4 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":538 12E8 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":544 12F2 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":551 1304 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":552 1308 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":553 1310 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":554 1316 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":555 132E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":556 1330 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":557 1348 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":565 134C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":566 1354 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":567 135C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":568 1362 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":569 137A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":570 137C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":571 1394 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":572 1396 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":578 139C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":579 139E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":580 13BC text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":581 13BE text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":582 13DC text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":583 13E2 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":585 13EA text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":586 13F0 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":592 13F2 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":597 140C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":602 1426 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":603 143E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":604 1442 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":607 1444 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":608 1460 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":609 1462 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":612 1464 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":617 1482 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":622 149C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":623 14B4 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":628 14B8 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":629 14BA text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":630 14D2 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":633 14D4 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":634 14D6 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":635 14EE text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":638 14F0 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":639 14F4 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":640 1512 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":643 1514 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":644 1516 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":645 1534 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":648 1536 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":649 1538 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":650 1556 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":657 1558 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":658 1560 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":659 157C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":660 158A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":661 158E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":665 1590 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":666 1598 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":667 15B4 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":669 15C2 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":674 15C8 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":676 15C8 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":677 15CE text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":678 15D4 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":679 15DC text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":680 15E4 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":681 1600 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":682 160E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":683 1612 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":685 1614 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":687 1614 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":688 161A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":689 1620 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":690 1628 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":691 1630 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":692 164C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":693 165A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":694 165E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":695 1662 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":699 1664 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":700 1670 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":701 168C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":702 169A text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":703 169C text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":707 169E text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":708 16A2 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":709 16B8 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":710 16C6 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":711 16C8 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":250 16CA text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":715 1870 text3 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":716 1874 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":226 1006 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":229 1006 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":232 100A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":233 100E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":234 1014 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":238 101C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":246 101E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":247 102C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":250 1030 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":251 103E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":254 1042 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":255 104A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":261 104E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":265 1056 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":270 1060 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":271 106A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":274 106E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":279 107A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":287 1086 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":291 1092 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":295 109A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":298 10A2 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":299 10A2 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":300 10A6 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":302 10A8 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":303 10A8 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":304 10AC text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":306 10AE text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":307 10AE text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":308 10B2 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":320 10B4 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":322 10C4 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":325 10C6 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":326 10D0 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":329 10D2 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":330 10DC text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":332 10DE text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":333 10DE text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":334 10E2 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":336 10E4 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":337 10E4 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":338 10E8 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":340 10EA text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":341 10EA text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":346 10F0 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":347 10F0 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":348 10F4 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":349 10F8 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":350 10FC text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":356 10FE text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":357 1102 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":361 1104 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":366 110A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":367 110E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":371 1110 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":376 1116 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":377 111A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":381 111C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":386 1122 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":387 1124 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":389 1126 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":391 1126 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":392 112A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":393 1130 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":394 1146 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":397 1154 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":398 1158 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":400 115A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":402 115A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":403 115E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":404 1164 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":405 116A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":406 1180 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":409 118E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":410 1192 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":412 1194 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":414 1194 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":415 1198 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":418 119E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":421 11A2 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":424 11A8 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":426 11A8 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":427 11AC text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":430 11B2 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":433 11B6 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":438 11BA text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":439 11D0 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":442 11DE text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":443 11F6 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":446 1204 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":447 121C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":461 122C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":467 1232 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":469 1246 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":473 1248 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":479 125C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":485 1264 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":487 127C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":491 127E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":497 128C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":503 12A0 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":509 12A8 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":510 12C2 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":511 12CA text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":514 12CC text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":520 12D4 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":526 12E8 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":532 12F2 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":539 1304 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":540 1308 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":541 1310 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":542 1316 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":543 132E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":544 1330 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":545 1348 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":553 134C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":554 1354 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":555 135C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":556 1362 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":557 137A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":558 137C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":559 1394 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":560 1396 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":566 139C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":567 139E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":568 13BC text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":569 13BE text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":570 13DC text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":571 13E2 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":573 13EA text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":574 13F0 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":580 13F2 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":585 140C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":590 1426 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":591 143E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":592 1442 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":595 1444 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":596 1460 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":597 1462 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":600 1464 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":605 1482 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":610 149C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":611 14B4 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":616 14B8 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":617 14BA text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":618 14D2 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":621 14D4 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":622 14D6 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":623 14EE text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":626 14F0 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":627 14F4 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":628 1512 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":631 1514 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":632 1516 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":633 1534 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":636 1536 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":637 1538 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":638 1556 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":645 1558 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":646 1560 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":647 157C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":648 158A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":649 158E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":653 1590 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":654 1598 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":655 15B4 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":657 15C2 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":662 15C8 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":664 15C8 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":665 15CE text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":666 15D4 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":667 15DC text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":668 15E4 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":669 1600 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":670 160E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":671 1612 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":673 1614 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":675 1614 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":676 161A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":677 1620 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":678 1628 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":679 1630 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":680 164C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":681 165A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":682 165E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":683 1662 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":687 1664 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":688 1670 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":689 168C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":690 169A text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":691 169C text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":695 169E text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":696 16A2 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":697 16B8 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":698 16C6 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":699 16C8 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":238 16CA text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":703 1870 text3 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":704 1874 text3 CODE
 "C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":13 1876 text8 CODE
 "C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":15 187A text8 CODE
 "C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":18 187C text8 CODE
@@ -424,253 +424,247 @@ $dist/default/production\TK-X03.production.obj
 "C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":179 1B20 text8 CODE
 "C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":180 1B26 text8 CODE
 "C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":15 1B28 text8 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":105 1BC2 text10 CODE
 "C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/segment.c":182 1BC2 text8 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":107 1BC6 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":108 1BCA text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":110 1BCE text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":113 1BD0 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":114 1BD4 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":115 1BD8 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":116 1BE0 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":119 1BE2 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":120 1BEA text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":121 1BF2 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":122 1BFC text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":126 1C06 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":127 1C12 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":128 1C1E text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":129 1C26 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":133 1C2E text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":134 1C34 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":135 1C3A text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":136 1C40 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":137 1C46 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":140 1C48 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":141 1C50 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":142 1C58 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":143 1C64 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":144 1C70 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":110 1C72 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":147 1C92 text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":148 1C9A text10 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":63 1C9C text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":65 1CA0 text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":66 1CA6 text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":67 1CAC text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":70 1CAE text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":72 1CB2 text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":74 1CB6 text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":76 1CBA text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":78 1CBE text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":80 1CC2 text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":82 1CC6 text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":84 1CCA text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":86 1CCE text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":88 1CD2 text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":90 1CD6 text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":92 1CDA text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":94 1CDE text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":96 1CE2 text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":98 1CE6 text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":100 1CEA text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":67 1CEE text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":102 1D50 text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":190 1D54 text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":103 1D54 text6 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":194 1D58 text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":196 1D5A text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":197 1D5A text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":198 1D66 text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":199 1D74 text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":200 1D84 text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":201 1D94 text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":202 1DA4 text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":203 1DB0 text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":205 1DB2 text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":206 1DB2 text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":207 1DB6 text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":210 1DB8 text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":211 1DC0 text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":212 1DCA text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":215 1DCC text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":216 1DD4 text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":217 1DDE text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":194 1DE0 text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":219 1DFC text5 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":221 1DFC text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":224 1DFC text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":225 1E1A text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":226 1E38 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":230 1E58 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":231 1E74 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":232 1E90 text4 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":21 1E92 text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":23 1E92 text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":26 1E94 text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":31 1E96 text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":34 1E9A text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":37 1E9E text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":40 1EA2 text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":43 1EA6 text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":44 1EAA text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":26 1EAC text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":46 1F04 text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":47 1F08 text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":48 1F0A text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":50 1F0C text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":51 1F0E text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":53 1F10 text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":54 1F12 text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":56 1F14 text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":57 1F16 text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":59 1F18 text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":60 1F1A text7 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":19 1F1C text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":21 1F1C text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":22 1F20 text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":23 1F24 text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":25 1F40 text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":27 1F44 text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":29 1F46 text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":31 1F52 text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":32 1F5A text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":35 1F5C text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":36 1F68 text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":27 1F6C text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":40 1F72 text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":41 1F8E text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":65 1F90 text14 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":42 1F90 text0 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":67 1F94 text14 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":69 1F98 text14 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":72 1F9A text14 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":77 1FA2 text14 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":78 1FAC text14 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":79 1FB2 text14 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":82 1FB4 text14 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":87 1FBC text14 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":92 1FC4 text14 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":69 1FD2 text14 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":97 1FF2 text14 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":37 1FF6 text9 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":98 1FF6 text14 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":39 1FFA text9 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":40 2000 text9 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":42 2008 text9 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":45 200A text9 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":46 2010 text9 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":47 2016 text9 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":48 201C text9 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":51 201E text9 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":52 2024 text9 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":53 202A text9 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":42 202C text9 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":56 203A text9 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":57 2046 text9 CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3374 2048 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3376 2048 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3379 2048 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3431 2048 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3432 204C cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3433 2050 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3434 2050 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3435 2052 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3436 2054 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3437 2056 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3438 2058 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3439 205A cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3442 205C cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3443 2060 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3444 2062 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3445 2062 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3446 2064 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3447 2066 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3452 2068 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3453 206A cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3454 206C cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3455 206E cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3456 2070 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3457 2072 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3458 2074 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3459 2078 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3460 207C cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3461 207C cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3462 207E cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3463 2082 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3464 2084 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3465 2086 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3466 2088 cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3467 208A cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3473 208C cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3474 208C cinit CODE
-"C:\Users\Blake\AppData\Local\Temp\s2hk.":3475 208E cinit CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":50 2092 text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":53 2092 text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":54 20B2 text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":55 20CE text1 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":54 20D0 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\wmul.c":4 20D2 text2 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\wmul.c":14 20D2 text2 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":55 20D2 text1 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\wmul.c":15 20DE text2 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\wmul.c":16 20F0 text2 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\wmul.c":30 2102 text2 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\wmul.c":31 210C text2 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":158 210C text15 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":160 210C text15 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":161 2114 text15 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":162 211C text15 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":163 2124 text15 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":164 212C text15 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":165 2134 text15 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":166 213C text15 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":26 213E text16 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":28 213E text16 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":29 2142 text16 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":30 2146 text16 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":32 214A text16 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":33 2152 text16 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":34 2154 text16 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":35 2156 text16 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":36 2158 text16 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":37 215A text16 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":39 215C text16 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":40 2160 text16 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":41 2164 text16 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":42 2168 text16 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":43 216C text16 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":150 216E text11 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":152 216E text11 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":153 2174 text11 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":154 217A text11 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":155 2182 text11 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":156 218C text11 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":9 218C text17 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":11 218C text17 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":12 218E text17 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":13 2194 text17 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":14 219C text17 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":15 219E text17 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":16 21A0 text17 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":19 21A2 text17 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":20 21A4 text17 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":19 21A6 text17 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":20 21A8 text13 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":20 21A8 text17 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":22 21AC text13 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":24 21B4 text13 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":26 21B8 text13 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":27 21BE text13 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":29 21BE text13 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":30 21C2 text13 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":174 21C2 text12 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":176 21C6 text12 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":178 21C8 text12 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":179 21C8 text12 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":176 21CC text12 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":182 21D4 text12 CODE
-"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":183 21D8 text12 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":63 1BC2 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":65 1BC6 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":66 1BCC text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":67 1BD2 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":70 1BD4 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":72 1BD8 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":74 1BDC text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":76 1BE0 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":78 1BE4 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":80 1BE8 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":82 1BEC text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":84 1BF0 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":86 1BF4 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":88 1BF8 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":90 1BFC text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":92 1C00 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":94 1C04 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":96 1C08 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":98 1C0C text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":100 1C10 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":67 1C14 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":102 1C76 text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":100 1C7A text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":103 1C7A text6 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":102 1C7E text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":103 1C82 text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":105 1C86 text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":108 1C88 text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":109 1C8C text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":110 1C90 text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":111 1C98 text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":114 1C9A text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":115 1CA2 text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":116 1CAA text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":117 1CB4 text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":121 1CBE text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":122 1CCA text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":123 1CD6 text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":124 1CDE text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":128 1CE6 text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":129 1CEC text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":130 1CF2 text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":131 1CF8 text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":132 1CFE text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":105 1D00 text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":135 1D1A text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":136 1D22 text10 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":178 1D24 text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":182 1D28 text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":184 1D2A text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":185 1D2A text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":186 1D36 text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":187 1D44 text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":188 1D54 text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":189 1D64 text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":190 1D74 text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":191 1D80 text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":193 1D82 text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":194 1D82 text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":195 1D86 text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":198 1D88 text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":199 1D90 text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":200 1D9A text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":203 1D9C text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":204 1DA4 text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":205 1DAE text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":182 1DB0 text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":207 1DCC text5 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":209 1DCC text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":212 1DCC text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":213 1DEA text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":214 1E08 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":218 1E28 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":219 1E44 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":220 1E60 text4 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":21 1E62 text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":23 1E62 text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":26 1E64 text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":31 1E66 text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":34 1E6A text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":37 1E6E text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":40 1E72 text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":43 1E76 text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":44 1E7A text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":26 1E7C text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":46 1ED4 text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":47 1ED8 text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":48 1EDA text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":50 1EDC text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":51 1EDE text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":53 1EE0 text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":54 1EE2 text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":56 1EE4 text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":57 1EE6 text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":59 1EE8 text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/serial.c":60 1EEA text7 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":19 1EEC text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":21 1EEC text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":22 1EF0 text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":23 1EF4 text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":25 1F10 text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":27 1F14 text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":29 1F16 text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":31 1F22 text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":32 1F2A text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":35 1F2C text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":36 1F38 text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":27 1F3C text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":40 1F42 text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":41 1F5E text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":37 1F60 text9 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/main.c":42 1F60 text0 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":39 1F64 text9 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":40 1F6A text9 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":42 1F72 text9 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":45 1F74 text9 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":46 1F7A text9 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":47 1F80 text9 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":48 1F86 text9 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":51 1F88 text9 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":52 1F8E text9 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":53 1F94 text9 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":42 1F96 text9 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":56 1FA4 text9 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":57 1FB0 text9 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":65 1FB2 text14 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":67 1FB6 text14 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":69 1FBA text14 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":72 1FBC text14 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":77 1FC4 text14 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":78 1FCE text14 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":79 1FD4 text14 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":82 1FD6 text14 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":87 1FDE text14 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":69 1FE6 text14 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":92 2000 text14 CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3380 2004 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3382 2004 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3385 2004 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3437 2004 cinit CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":93 2004 text14 CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3438 2008 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3439 200C cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3440 200C cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3441 200E cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3442 2010 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3443 2012 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3444 2014 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3445 2016 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3448 2018 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3449 201C cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3450 201E cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3451 201E cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3452 2020 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3453 2022 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3458 2024 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3459 2026 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3460 2028 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3461 202A cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3462 202C cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3463 202E cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3464 2030 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3465 2034 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3466 2038 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3467 2038 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3468 203A cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3469 203E cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3470 2040 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3471 2042 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3472 2044 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3473 2046 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3479 2048 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3480 2048 cinit CODE
+"C:\Users\Blake\AppData\Local\Temp\s4fk.":3481 204A cinit CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":50 204E text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":53 204E text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":54 206E text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":55 208A text1 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":54 208C text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\wmul.c":4 208E text2 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\wmul.c":14 208E text2 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":55 208E text1 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\wmul.c":15 209A text2 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\wmul.c":16 20AC text2 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\wmul.c":30 20BE text2 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.30\sources\common\wmul.c":31 20C8 text2 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":146 20C8 text15 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":148 20C8 text15 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":149 20D0 text15 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":150 20D8 text15 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":151 20E0 text15 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":152 20E8 text15 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":153 20F0 text15 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":154 20F8 text15 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":26 20FA text16 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":28 20FA text16 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":29 20FE text16 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":30 2102 text16 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":32 2106 text16 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":33 210E text16 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":34 2110 text16 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":35 2112 text16 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":36 2114 text16 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":37 2116 text16 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":39 2118 text16 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":40 211C text16 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":41 2120 text16 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":42 2124 text16 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":43 2128 text16 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":138 212A text11 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":140 212A text11 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":141 2130 text11 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":142 2136 text11 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":143 213E text11 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":144 2148 text11 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":9 2148 text17 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":11 2148 text17 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":12 214A text17 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":13 2150 text17 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":14 2158 text17 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":15 215A text17 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":16 215C text17 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":19 215E text17 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":20 2160 text17 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":19 2162 text17 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":20 2164 text13 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/system.c":20 2164 text17 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":22 2168 text13 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":24 2170 text13 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":26 2174 text13 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":27 217A text13 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":29 217A text13 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":30 217E text13 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":162 217E text12 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":164 2182 text12 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":166 2184 text12 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":167 2184 text12 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":164 2188 text12 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":170 2190 text12 CODE
+"C:\Users\Blake\MPLABXProjects\TK-X03_PIC18F46K22_firmware\TK-X03\source/emulator.c":171 2194 text12 CODE
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -694,8 +688,8 @@ __Lintentry 0 0 ABS 0 intentry dist/default/production\TK-X03.production.obj
 __CFG_PLLCFG$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 getFbits@subRegister 1 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
 setFbits@subRegister 3 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
-__end_of_getMXbits 21C2 0 CODE 0 text13 dist/default/production\TK-X03.production.obj
-_initOscillator 218C 0 CODE 0 text17 dist/default/production\TK-X03.production.obj
+__end_of_getMXbits 217E 0 CODE 0 text13 dist/default/production\TK-X03.production.obj
+_initOscillator 2148 0 CODE 0 text17 dist/default/production\TK-X03.production.obj
 _LATA F89 0 ABS 0 - dist/default/production\TK-X03.production.obj
 _LATC F8B 0 ABS 0 - dist/default/production\TK-X03.production.obj
 _LATD F8C 0 ABS 0 - dist/default/production\TK-X03.production.obj
@@ -704,9 +698,9 @@ _regA 1D 0 COMRAM 1 bssCOMRAM dist/default/production\TK-X03.production.obj
 _regB 1E 0 COMRAM 1 bssCOMRAM dist/default/production\TK-X03.production.obj
 _regF 1F 0 COMRAM 1 bssCOMRAM dist/default/production\TK-X03.production.obj
 __size_of_immData_toPointer 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-_main 1F1C 0 CODE 0 text0 dist/default/production\TK-X03.production.obj
-___sp 0 0 STACK 2 stack C:\Users\Blake\AppData\Local\Temp\s2hk.obj
-start 0 0 CODE 0 init C:\Users\Blake\AppData\Local\Temp\s2hk.obj
+_main 1EEC 0 CODE 0 text0 dist/default/production\TK-X03.production.obj
+___sp 0 0 STACK 2 stack C:\Users\Blake\AppData\Local\Temp\s4fk.obj
+start 0 0 CODE 0 init C:\Users\Blake\AppData\Local\Temp\s4fk.obj
 _haltFlag 1A 0 COMRAM 1 bssCOMRAM dist/default/production\TK-X03.production.obj
 _TRISA F92 0 ABS 0 - dist/default/production\TK-X03.production.obj
 _TRISC F94 0 ABS 0 - dist/default/production\TK-X03.production.obj
@@ -727,7 +721,7 @@ __CFG_FOSC$INTIO67 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production\TK-X03.production.obj
 __Lbigram 0 0 ABS 0 bigram dist/default/production\TK-X03.production.obj
 __Hrparam 0 0 ABS 0 rparam dist/default/production\TK-X03.production.obj
-__end_of_getFbits 1FF6 0 CODE 0 text14 dist/default/production\TK-X03.production.obj
+__end_of_getFbits 2004 0 CODE 0 text14 dist/default/production\TK-X03.production.obj
 __Lrparam 0 0 ABS 0 rparam dist/default/production\TK-X03.production.obj
 __Hram 0 0 ABS 0 ram dist/default/production\TK-X03.production.obj
 __Lram 0 0 ABS 0 ram dist/default/production\TK-X03.production.obj
@@ -748,7 +742,7 @@ setPortData@outputData_temp16 7 0 COMRAM 1 cstackCOMRAM dist/default/production\
 _RCREG2 F74 0 ABS 0 - dist/default/production\TK-X03.production.obj
 _TXREG2 F73 0 ABS 0 - dist/default/production\TK-X03.production.obj
 _SPBRG2 F75 0 ABS 0 - dist/default/production\TK-X03.production.obj
-__end_of_setMXbits 2048 0 CODE 0 text9 dist/default/production\TK-X03.production.obj
+__end_of_setMXbits 1FB2 0 CODE 0 text9 dist/default/production\TK-X03.production.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\TK-X03.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\TK-X03.production.obj
 _LATAbits F89 0 ABS 0 - dist/default/production\TK-X03.production.obj
@@ -770,13 +764,13 @@ __Hstruct 0 0 COMRAM 1 struct dist/default/production\TK-X03.production.obj
 __Lstruct 0 0 COMRAM 1 struct dist/default/production\TK-X03.production.obj
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\TK-X03.production.obj
 __Lbigdata 0 0 BIGRAM 1 bigdata dist/default/production\TK-X03.production.obj
-_getFbits 1F90 0 CODE 0 text14 dist/default/production\TK-X03.production.obj
+_getFbits 1FB2 0 CODE 0 text14 dist/default/production\TK-X03.production.obj
 __Hmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\TK-X03.production.obj
 __Lmediumconst 0 0 MEDIUMCONST 0 mediumconst dist/default/production\TK-X03.production.obj
-_setFbits 1BC2 0 CODE 0 text10 dist/default/production\TK-X03.production.obj
+_setFbits 1C7A 0 CODE 0 text10 dist/default/production\TK-X03.production.obj
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/production\TK-X03.production.obj
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\TK-X03.production.obj
-_update_immData 1DFC 0 CODE 0 text4 dist/default/production\TK-X03.production.obj
+_update_immData 1DCC 0 CODE 0 text4 dist/default/production\TK-X03.production.obj
 __Hintcode 0 0 CODE 0 intcode dist/default/production\TK-X03.production.obj
 __Lintcode 0 0 CODE 0 intcode dist/default/production\TK-X03.production.obj
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production\TK-X03.production.obj
@@ -791,41 +785,41 @@ __CFG_PBADEN$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __CFG_CCP2MX$PORTC1 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __CFG_EBTR2$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __CFG_CCP3MX$PORTB5 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-_hexToChar 1C9C 0 CODE 0 text6 dist/default/production\TK-X03.production.obj
-__end_of_setFbits 1C9C 0 CODE 0 text10 dist/default/production\TK-X03.production.obj
+_hexToChar 1BC2 0 CODE 0 text6 dist/default/production\TK-X03.production.obj
+__end_of_setFbits 1D24 0 CODE 0 text10 dist/default/production\TK-X03.production.obj
 __Hdata 0 0 ABS 0 data dist/default/production\TK-X03.production.obj
 __Ldata 0 0 ABS 0 data dist/default/production\TK-X03.production.obj
 __CFG_EBTR3$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 enableSerial@baudRate 1 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
-stackhi F37 0 ABS 0 - C:\Users\Blake\AppData\Local\Temp\s2hk.obj
+stackhi F37 0 ABS 0 - C:\Users\Blake\AppData\Local\Temp\s4fk.obj
 __Htemp 0 0 COMRAM 1 temp dist/default/production\TK-X03.production.obj
 __Ltemp 0 0 COMRAM 1 temp dist/default/production\TK-X03.production.obj
-stacklo A00 0 ABS 0 - C:\Users\Blake\AppData\Local\Temp\s2hk.obj
+stacklo A00 0 ABS 0 - C:\Users\Blake\AppData\Local\Temp\s4fk.obj
 __Hrbit 0 0 COMRAM 1 rbit dist/default/production\TK-X03.production.obj
 __Lrbit 0 0 COMRAM 1 rbit dist/default/production\TK-X03.production.obj
 __Hinit 0 0 CODE 0 init dist/default/production\TK-X03.production.obj
 __Linit 0 0 CODE 0 init dist/default/production\TK-X03.production.obj
 __Hintcodelo 0 0 CODE 0 intcodelo dist/default/production\TK-X03.production.obj
 __Lintcodelo 0 0 CODE 0 intcodelo dist/default/production\TK-X03.production.obj
-___wmul 20D2 0 CODE 0 text2 dist/default/production\TK-X03.production.obj
+___wmul 208E 0 CODE 0 text2 dist/default/production\TK-X03.production.obj
 __Hrbss 0 0 COMRAM 1 rbss dist/default/production\TK-X03.production.obj
-__end_of_main 1F90 0 CODE 0 text0 dist/default/production\TK-X03.production.obj
+__end_of_main 1F60 0 CODE 0 text0 dist/default/production\TK-X03.production.obj
 __Lrbss 0 0 COMRAM 1 rbss dist/default/production\TK-X03.production.obj
 __Htext 0 0 ABS 0 text dist/default/production\TK-X03.production.obj
 __Ltext 0 0 ABS 0 text dist/default/production\TK-X03.production.obj
 ___wmul@multiplier 1 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
-end_of_initialization 208C 0 CODE 0 cinit dist/default/production\TK-X03.production.obj
+end_of_initialization 2048 0 CODE 0 cinit dist/default/production\TK-X03.production.obj
 _SPBRGH2 F76 0 ABS 0 - dist/default/production\TK-X03.production.obj
 ___wmul@multiplicand 3 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
 __size_of_initializeRegisters 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 immData_toPointer@pointer 3 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
-__end_of_getPortData 21D8 0 CODE 0 text12 dist/default/production\TK-X03.production.obj
+__end_of_getPortData 2194 0 CODE 0 text12 dist/default/production\TK-X03.production.obj
 __size_of_setPortData 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 setFbits@value 1 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
 _TRISDbits F95 0 ABS 0 - dist/default/production\TK-X03.production.obj
-_immData_toPointer 216E 0 CODE 0 text11 dist/default/production\TK-X03.production.obj
-_getMXbits 21A8 0 CODE 0 text13 dist/default/production\TK-X03.production.obj
-_setMXbits 1FF6 0 CODE 0 text9 dist/default/production\TK-X03.production.obj
+_immData_toPointer 212A 0 CODE 0 text11 dist/default/production\TK-X03.production.obj
+_getMXbits 2164 0 CODE 0 text13 dist/default/production\TK-X03.production.obj
+_setMXbits 1F60 0 CODE 0 text9 dist/default/production\TK-X03.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\TK-X03.production.obj
 __Libigdata 0 0 CODE 0 ibigdata dist/default/production\TK-X03.production.obj
 __Hifardata 0 0 CODE 0 ifardata dist/default/production\TK-X03.production.obj
@@ -848,7 +842,7 @@ __Hbank6 0 0 ABS 0 bank6 dist/default/production\TK-X03.production.obj
 __Lbank6 0 0 ABS 0 bank6 dist/default/production\TK-X03.production.obj
 __Hbank7 0 0 ABS 0 bank7 dist/default/production\TK-X03.production.obj
 __Lbank7 0 0 ABS 0 bank7 dist/default/production\TK-X03.production.obj
-__end_of_initPorts 216E 0 CODE 0 text16 dist/default/production\TK-X03.production.obj
+__end_of_initPorts 212A 0 CODE 0 text16 dist/default/production\TK-X03.production.obj
 __Hbank8 0 0 ABS 0 bank8 dist/default/production\TK-X03.production.obj
 __Lbank8 0 0 ABS 0 bank8 dist/default/production\TK-X03.production.obj
 __Htext0 0 0 ABS 0 text0 dist/default/production\TK-X03.production.obj
@@ -856,17 +850,17 @@ __Ltext0 0 0 ABS 0 text0 dist/default/production\TK-X03.production.obj
 __Hbank9 0 0 ABS 0 bank9 dist/default/production\TK-X03.production.obj
 __Lbank9 0 0 ABS 0 bank9 dist/default/production\TK-X03.production.obj
 _OSCCON2bits FD2 0 ABS 0 - dist/default/production\TK-X03.production.obj
-__end_of_hexToChar 1D54 0 CODE 0 text6 dist/default/production\TK-X03.production.obj
+__end_of_hexToChar 1C7A 0 CODE 0 text6 dist/default/production\TK-X03.production.obj
 __Htext1 0 0 ABS 0 text1 dist/default/production\TK-X03.production.obj
 __Ltext1 0 0 ABS 0 text1 dist/default/production\TK-X03.production.obj
-__ptext0 1F1C 0 CODE 0 text0 dist/default/production\TK-X03.production.obj
+__ptext0 1EEC 0 CODE 0 text0 dist/default/production\TK-X03.production.obj
 __Htext2 0 0 ABS 0 text2 dist/default/production\TK-X03.production.obj
 __Ltext2 0 0 ABS 0 text2 dist/default/production\TK-X03.production.obj
-__ptext1 2092 0 CODE 0 text1 dist/default/production\TK-X03.production.obj
+__ptext1 204E 0 CODE 0 text1 dist/default/production\TK-X03.production.obj
 __Htext3 0 0 ABS 0 text3 dist/default/production\TK-X03.production.obj
 __Ltext3 0 0 ABS 0 text3 dist/default/production\TK-X03.production.obj
-__ptext2 20D2 0 CODE 0 text2 dist/default/production\TK-X03.production.obj
-_initPorts 213E 0 CODE 0 text16 dist/default/production\TK-X03.production.obj
+__ptext2 208E 0 CODE 0 text2 dist/default/production\TK-X03.production.obj
+_initPorts 20FA 0 CODE 0 text16 dist/default/production\TK-X03.production.obj
 __Htext4 0 0 ABS 0 text4 dist/default/production\TK-X03.production.obj
 __Ltext4 0 0 ABS 0 text4 dist/default/production\TK-X03.production.obj
 __ptext3 1006 0 CODE 0 text3 dist/default/production\TK-X03.production.obj
@@ -875,30 +869,30 @@ setMXbits@regMX_temp 5 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.pr
 __Htext5 0 0 ABS 0 text5 dist/default/production\TK-X03.production.obj
 __CFG_P2BMX$PORTD2 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __Ltext5 0 0 ABS 0 text5 dist/default/production\TK-X03.production.obj
-__ptext4 1DFC 0 CODE 0 text4 dist/default/production\TK-X03.production.obj
+__ptext4 1DCC 0 CODE 0 text4 dist/default/production\TK-X03.production.obj
 __Htext6 0 0 ABS 0 text6 dist/default/production\TK-X03.production.obj
 __Ltext6 0 0 ABS 0 text6 dist/default/production\TK-X03.production.obj
-__ptext5 1D54 0 CODE 0 text5 dist/default/production\TK-X03.production.obj
+__ptext5 1D24 0 CODE 0 text5 dist/default/production\TK-X03.production.obj
 __Htext7 0 0 ABS 0 text7 dist/default/production\TK-X03.production.obj
 __Ltext7 0 0 ABS 0 text7 dist/default/production\TK-X03.production.obj
-__ptext6 1C9C 0 CODE 0 text6 dist/default/production\TK-X03.production.obj
+__ptext6 1BC2 0 CODE 0 text6 dist/default/production\TK-X03.production.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\TK-X03.production.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\TK-X03.production.obj
 __Htext8 0 0 ABS 0 text8 dist/default/production\TK-X03.production.obj
 __Ltext8 0 0 ABS 0 text8 dist/default/production\TK-X03.production.obj
-__ptext7 1E92 0 CODE 0 text7 dist/default/production\TK-X03.production.obj
+__ptext7 1E62 0 CODE 0 text7 dist/default/production\TK-X03.production.obj
 __pbssCOMRAM 12 0 COMRAM 1 bssCOMRAM dist/default/production\TK-X03.production.obj
 __Htext9 0 0 ABS 0 text9 dist/default/production\TK-X03.production.obj
 __Ltext9 0 0 ABS 0 text9 dist/default/production\TK-X03.production.obj
 __ptext8 1876 0 CODE 0 text8 dist/default/production\TK-X03.production.obj
 __CFG_T3CMX$PORTC0 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-__ptext9 1FF6 0 CODE 0 text9 dist/default/production\TK-X03.production.obj
+__ptext9 1F60 0 CODE 0 text9 dist/default/production\TK-X03.production.obj
 __Hclrtext 0 0 ABS 0 clrtext dist/default/production\TK-X03.production.obj
 __Lclrtext 0 0 ABS 0 clrtext dist/default/production\TK-X03.production.obj
-__end_of_initializeRegisters 213E 0 CODE 0 text15 dist/default/production\TK-X03.production.obj
-__end_of_setPortData 1DFC 0 CODE 0 text5 dist/default/production\TK-X03.production.obj
+__end_of_initializeRegisters 20FA 0 CODE 0 text15 dist/default/production\TK-X03.production.obj
+__end_of_setPortData 1DCC 0 CODE 0 text5 dist/default/production\TK-X03.production.obj
 __CFG_HFOFST$ON 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-__end_of__initialization 208C 0 CODE 0 cinit dist/default/production\TK-X03.production.obj
+__end_of__initialization 2048 0 CODE 0 cinit dist/default/production\TK-X03.production.obj
 __CFG_PRICLKEN$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __size_of_wait_ms 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 getFbits@regF_temp 2 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
@@ -922,7 +916,7 @@ __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\TK-X03.production
 __pcstackCOMRAM 1 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
 __HidataBIGRAM 0 0 ABS 0 idataBIGRAM dist/default/production\TK-X03.production.obj
 __LidataBIGRAM 0 0 ABS 0 idataBIGRAM dist/default/production\TK-X03.production.obj
-__pidataBIGRAM 21D8 0 CODE 0 idataBIGRAM dist/default/production\TK-X03.production.obj
+__pidataBIGRAM 2194 0 CODE 0 idataBIGRAM dist/default/production\TK-X03.production.obj
 _immData_1 1B 0 COMRAM 1 bssCOMRAM dist/default/production\TK-X03.production.obj
 __Hsmallconst 1006 0 SMALLCONST 0 smallconst dist/default/production\TK-X03.production.obj
 __Lsmallconst 1000 0 SMALLCONST 0 smallconst dist/default/production\TK-X03.production.obj
@@ -933,16 +927,16 @@ __Lnvbit 0 0 COMRAM 1 nvbit dist/default/production\TK-X03.production.obj
 ?___wmul 1 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
 __Hcinit 0 0 ABS 0 cinit dist/default/production\TK-X03.production.obj
 __Lcinit 0 0 ABS 0 cinit dist/default/production\TK-X03.production.obj
-_wait_ms 2092 0 CODE 0 text1 dist/default/production\TK-X03.production.obj
-__pcinit 2048 0 CODE 0 cinit dist/default/production\TK-X03.production.obj
+_wait_ms 204E 0 CODE 0 text1 dist/default/production\TK-X03.production.obj
+__pcinit 2004 0 CODE 0 cinit dist/default/production\TK-X03.production.obj
 __CFG_EBTRB$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 getMXbits@subRegister 3 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
 setMXbits@subRegister 4 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
-__ramtop 1000 0 RAM 0 ramtop C:\Users\Blake\AppData\Local\Temp\s2hk.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Blake\AppData\Local\Temp\s2hk.obj
+__ramtop 1000 0 RAM 0 ramtop C:\Users\Blake\AppData\Local\Temp\s4fk.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\Blake\AppData\Local\Temp\s4fk.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-__end_of_enableSerial 1F1C 0 CODE 0 text7 dist/default/production\TK-X03.production.obj
-__end_of_initOscillator 21A8 0 CODE 0 text17 dist/default/production\TK-X03.production.obj
+__end_of_enableSerial 1EEC 0 CODE 0 text7 dist/default/production\TK-X03.production.obj
+__end_of_initOscillator 2164 0 CODE 0 text17 dist/default/production\TK-X03.production.obj
 __Hconst 0 0 CODE 0 const dist/default/production\TK-X03.production.obj
 __Lconst 0 0 CODE 0 const dist/default/production\TK-X03.production.obj
 hexToChar@number 1 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
@@ -955,10 +949,10 @@ __size_of_getFbits 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __CFG_WRT2$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __Hbank10 0 0 ABS 0 bank10 dist/default/production\TK-X03.production.obj
 __Lbank10 0 0 ABS 0 bank10 dist/default/production\TK-X03.production.obj
-_getPortData 21C2 0 CODE 0 text12 dist/default/production\TK-X03.production.obj
+_getPortData 217E 0 CODE 0 text12 dist/default/production\TK-X03.production.obj
 __Hbank11 0 0 ABS 0 bank11 dist/default/production\TK-X03.production.obj
 __Lbank11 0 0 ABS 0 bank11 dist/default/production\TK-X03.production.obj
-_setPortData 1D54 0 CODE 0 text5 dist/default/production\TK-X03.production.obj
+_setPortData 1D24 0 CODE 0 text5 dist/default/production\TK-X03.production.obj
 __CFG_WRT3$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __Hbank12 0 0 ABS 0 bank12 dist/default/production\TK-X03.production.obj
@@ -973,49 +967,49 @@ __pbssBANK1 100 0 BANK1 1 bssBANK1 dist/default/production\TK-X03.production.obj
 __Lbank14 0 0 ABS 0 bank14 dist/default/production\TK-X03.production.obj
 __Htext10 0 0 ABS 0 text10 dist/default/production\TK-X03.production.obj
 __Ltext10 0 0 ABS 0 text10 dist/default/production\TK-X03.production.obj
-__end_of_update_immData 1E92 0 CODE 0 text4 dist/default/production\TK-X03.production.obj
-__ptext10 1BC2 0 CODE 0 text10 dist/default/production\TK-X03.production.obj
+__end_of_update_immData 1E62 0 CODE 0 text4 dist/default/production\TK-X03.production.obj
+__ptext10 1C7A 0 CODE 0 text10 dist/default/production\TK-X03.production.obj
 __Hbank15 0 0 ABS 0 bank15 dist/default/production\TK-X03.production.obj
 __Lbank15 0 0 ABS 0 bank15 dist/default/production\TK-X03.production.obj
 __Htext11 0 0 ABS 0 text11 dist/default/production\TK-X03.production.obj
 __Ltext11 0 0 ABS 0 text11 dist/default/production\TK-X03.production.obj
 processOpcode@regA_temp8 E 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
-__ptext11 216E 0 CODE 0 text11 dist/default/production\TK-X03.production.obj
+__ptext11 212A 0 CODE 0 text11 dist/default/production\TK-X03.production.obj
 __Htext12 0 0 ABS 0 text12 dist/default/production\TK-X03.production.obj
 __Ltext12 0 0 ABS 0 text12 dist/default/production\TK-X03.production.obj
-__ptext12 21C2 0 CODE 0 text12 dist/default/production\TK-X03.production.obj
+__ptext12 217E 0 CODE 0 text12 dist/default/production\TK-X03.production.obj
 __Htext13 0 0 ABS 0 text13 dist/default/production\TK-X03.production.obj
 __Ltext13 0 0 ABS 0 text13 dist/default/production\TK-X03.production.obj
-__ptext13 21A8 0 CODE 0 text13 dist/default/production\TK-X03.production.obj
+__ptext13 2164 0 CODE 0 text13 dist/default/production\TK-X03.production.obj
 _RCSTA2bits F71 0 ABS 0 - dist/default/production\TK-X03.production.obj
 _TXSTA2bits F72 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __Htext14 0 0 ABS 0 text14 dist/default/production\TK-X03.production.obj
 __Ltext14 0 0 ABS 0 text14 dist/default/production\TK-X03.production.obj
-__ptext14 1F90 0 CODE 0 text14 dist/default/production\TK-X03.production.obj
+__ptext14 1FB2 0 CODE 0 text14 dist/default/production\TK-X03.production.obj
 __Htext15 0 0 ABS 0 text15 dist/default/production\TK-X03.production.obj
 __Ltext15 0 0 ABS 0 text15 dist/default/production\TK-X03.production.obj
-__ptext15 210C 0 CODE 0 text15 dist/default/production\TK-X03.production.obj
-___inthi_sp 0 0 STACK 2 stack C:\Users\Blake\AppData\Local\Temp\s2hk.obj
+__ptext15 20C8 0 CODE 0 text15 dist/default/production\TK-X03.production.obj
+___inthi_sp 0 0 STACK 2 stack C:\Users\Blake\AppData\Local\Temp\s4fk.obj
 __Htext16 0 0 ABS 0 text16 dist/default/production\TK-X03.production.obj
 __Ltext16 0 0 ABS 0 text16 dist/default/production\TK-X03.production.obj
-__ptext16 213E 0 CODE 0 text16 dist/default/production\TK-X03.production.obj
+__ptext16 20FA 0 CODE 0 text16 dist/default/production\TK-X03.production.obj
 __Htext17 0 0 ABS 0 text17 dist/default/production\TK-X03.production.obj
 __Ltext17 0 0 ABS 0 text17 dist/default/production\TK-X03.production.obj
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-__ptext17 218C 0 CODE 0 text17 dist/default/production\TK-X03.production.obj
+__ptext17 2148 0 CODE 0 text17 dist/default/production\TK-X03.production.obj
 __CFG_WDTEN$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-___intlo_sp 0 0 STACK 2 stack C:\Users\Blake\AppData\Local\Temp\s2hk.obj
+___intlo_sp 0 0 STACK 2 stack C:\Users\Blake\AppData\Local\Temp\s4fk.obj
 setMXbits@value 1 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
 _OSCCONbits FD3 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __Hend_init 4 0 CODE 0 end_init dist/default/production\TK-X03.production.obj
 __Lend_init 0 0 CODE 0 end_init dist/default/production\TK-X03.production.obj
-__end_of_immData_toPointer 218C 0 CODE 0 text11 dist/default/production\TK-X03.production.obj
+__end_of_immData_toPointer 2148 0 CODE 0 text11 dist/default/production\TK-X03.production.obj
 __size_of_hexToChar 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __HdataBIGRAM 0 0 ABS 0 dataBIGRAM dist/default/production\TK-X03.production.obj
 __LdataBIGRAM 0 0 ABS 0 dataBIGRAM dist/default/production\TK-X03.production.obj
 __pdataBIGRAM 200 0 BIGRAM 1 dataBIGRAM dist/default/production\TK-X03.production.obj
 __CFG_CP0$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\Blake\AppData\Local\Temp\s2hk.obj
+__smallconst 1000 0 SMALLCONST 0 smallconst C:\Users\Blake\AppData\Local\Temp\s4fk.obj
 __CFG_CP1$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __size_of___wmul 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __Hreset_vec 0 0 CODE 0 reset_vec dist/default/production\TK-X03.production.obj
@@ -1023,42 +1017,42 @@ __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\TK-X03.production.obj
 __CFG_CP2$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 _virtualMemory 200 0 BIGRAM 1 dataBIGRAM dist/default/production\TK-X03.production.obj
 __CFG_CP3$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-_initializeRegisters 210C 0 CODE 0 text15 dist/default/production\TK-X03.production.obj
+_initializeRegisters 20C8 0 CODE 0 text15 dist/default/production\TK-X03.production.obj
 __CFG_BORV$190 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 setPortData@outputData_temp8 9 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
-__accesstop 60 0 ABS 0 - C:\Users\Blake\AppData\Local\Temp\s2hk.obj
+__accesstop 60 0 ABS 0 - C:\Users\Blake\AppData\Local\Temp\s4fk.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production\TK-X03.production.obj
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\TK-X03.production.obj
-intlevel0 0 0 CODE 0 text C:\Users\Blake\AppData\Local\Temp\s2hk.obj
-intlevel1 0 0 CODE 0 text C:\Users\Blake\AppData\Local\Temp\s2hk.obj
+intlevel0 0 0 CODE 0 text C:\Users\Blake\AppData\Local\Temp\s4fk.obj
+intlevel1 0 0 CODE 0 text C:\Users\Blake\AppData\Local\Temp\s4fk.obj
 __CFG_WRTB$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 processOpcode@regPC_temp C 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
-intlevel2 0 0 CODE 0 text C:\Users\Blake\AppData\Local\Temp\s2hk.obj
-intlevel3 0 0 CODE 0 text C:\Users\Blake\AppData\Local\Temp\s2hk.obj
+intlevel2 0 0 CODE 0 text C:\Users\Blake\AppData\Local\Temp\s4fk.obj
+intlevel3 0 0 CODE 0 text C:\Users\Blake\AppData\Local\Temp\s4fk.obj
 setPortData@outputData 5 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
 __CFG_WRTC$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __end_of_dispSeg 1BC2 0 CODE 0 text8 dist/default/production\TK-X03.production.obj
 __CFG_WRTD$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 _BAUDCON2bits F70 0 ABS 0 - dist/default/production\TK-X03.production.obj
-__end_of_wait_ms 20D2 0 CODE 0 text1 dist/default/production\TK-X03.production.obj
+__end_of_wait_ms 208E 0 CODE 0 text1 dist/default/production\TK-X03.production.obj
 dispSeg@letter 1 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
 __size_of_setMXbits 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __CFG_CPB$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-__end_of___wmul 210C 0 CODE 0 text2 dist/default/production\TK-X03.production.obj
+__end_of___wmul 20C8 0 CODE 0 text2 dist/default/production\TK-X03.production.obj
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-start_initialization 2048 0 CODE 0 cinit dist/default/production\TK-X03.production.obj
+start_initialization 2004 0 CODE 0 cinit dist/default/production\TK-X03.production.obj
 __end_of_virtualMemory_size 1005 0 SMALLCONST 0 smallconst dist/default/production\TK-X03.production.obj
 wait_ms@time 7 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
 processOpcode@carriedBit B 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __size_of_setFbits 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
-__initialization 2048 0 CODE 0 cinit dist/default/production\TK-X03.production.obj
+__initialization 2004 0 CODE 0 cinit dist/default/production\TK-X03.production.obj
 __activetblptr 3 0 ABS 0 - dist/default/production\TK-X03.production.obj
 processOpcode@regA_temp16 F 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
 ___wmul@product 5 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
 getPortData@portNumber 1 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
 setPortData@portNumber 6 0 COMRAM 1 cstackCOMRAM dist/default/production\TK-X03.production.obj
-_enableSerial 1E92 0 CODE 0 text7 dist/default/production\TK-X03.production.obj
+_enableSerial 1E62 0 CODE 0 text7 dist/default/production\TK-X03.production.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __size_of_dispSeg 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
 __size_of_initOscillator 0 0 ABS 0 - dist/default/production\TK-X03.production.obj
@@ -1093,4 +1087,4 @@ idloc 0 200000 200000 8 1
 cstackCOMRAM 1 1 1 20 1
 bssBANK1 1 100 100 100 1
 dataBIGRAM 1 200 200 800 1
-text3 0 1006 1006 11DF 1
+text3 0 1006 1006 11A1 1

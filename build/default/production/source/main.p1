@@ -8347,15 +8347,15 @@ Version 3.2 HI-TECH Software Intermediate Code
 "18
 [v _regF `uc ~T0 @X0 1 e ]
 [; ;registers.h: 18: uint8_t regF;
-"27
+"26
 [v _immData_1 `uc ~T0 @X0 1 e ]
-[; ;registers.h: 27: uint8_t immData_1;
-"28
+[; ;registers.h: 26: uint8_t immData_1;
+"27
 [v _immData_2 `uc ~T0 @X0 1 e ]
-[; ;registers.h: 28: uint8_t immData_2;
-"32
+[; ;registers.h: 27: uint8_t immData_2;
+"31
 [v _stack `uc ~T0 @X0 -> 256 `i e ]
-[; ;registers.h: 32: uint8_t stack[256];
+[; ;registers.h: 31: uint8_t stack[256];
 "19 source/main.c
 [v _main `(v ~T0 @X0 1 ef ]
 "20
